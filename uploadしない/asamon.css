@@ -1,0 +1,158 @@
+html,body {
+  height:100%;
+}
+.Monster_table_box{
+  overflow-y: auto;
+  height:100%;
+  width:100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+        /* ナビゲーション */
+
+        .nav {
+            z-index: 100;
+            padding: 12px 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .nav-group {
+            margin: 0;
+            padding: 0;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .nav-group>li {
+            margin: 0;
+            padding: 0 12px;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .nav-group>li a {
+            display: block;
+            padding: 6px 12px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-group>li a:hover {
+            color: #999;
+        }
+
+        .nav-group>li a.active {
+            border-bottom: #333 solid 2px;
+            color: #999;
+        }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse
+}
+
+thead {
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-top: none;
+}
+.sticky::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background: #cef;
+  z-index: -1;
+}
+
+th,td {
+  width: 50px; max-width: 300px; min-width: 20px;
+  border: solid 1px #000;
+  text-align: center;
+}
+.list_no{
+  width: 24px
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+.hunting_ground{
+  width: 110px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+
+.monster_name{
+width: 110px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+.monster_lv{
+  width: 20px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+.monster_ac{
+  width: 20px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+.monster_mr{
+  width: 20px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+.monster_hp{
+  width: 60px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+.Weakness_Element{
+width: 60px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+
+.SizeinWeapons{
+width: 60px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+
+.Drop_item{
+width: 240px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+
+.remarks2{
+width: 100px;
+  border-left: 1px solid #000
+  border-right: 1px solid #000
+}
+
+
+tbody th,
+tbody td {
+font-weight: normal;
+}
+

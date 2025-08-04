@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TSVテスト</title>
+</head>
+<body>
+  <button id="loadBtn">読み込み</button>
+  <pre id="output"></pre>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log("DOM読み込み完了");
+
+      const btn = document.getElementById('loadBtn');
+      if (btn) {
+        console.log("ボタン取得成功");
+        btn.addEventListener('click', () => {
+          console.log("ボタンクリック");
+          fetch('LineageREMASTER_skill3.txt?v=' + new Date().getTime())
+            .then(response => {
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              return response.text();
+            })
+            .then(text => {
+              console.log("読み込み成功");
+              document.getElementById('output').textContent = text;
+            })
+            .catch(error => {
+              console.error("読み込みエラー:", error);
+            });
+        });
+      } else {
+        console.log("ボタンが見つかりません");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+    "0": {
+        "s-cls":"君",
+        "cls-id":"pri",
+        "cls-jp":"君主",
+        "cls-en":"prince・princess"
+        },
+    "1": {
+        "s-cls":"騎",
+        "cls-id":"kni",
+        "cls-jp":"ナイト",
+        "cls-en":"knight"
+        },
+    "2": {
+        "s-cls":"妖",
+        "cls-id":"elf",
+        "cls-jp":"エルフ",
+        "cls-en":"elf"
+        },
+    "3": {
+        "s-cls":"魔",
+        "cls-id":"wiz",
+        "cls-jp":"ウィザード",
+        "cls-en":"wizard"
+    },
+    "4": {
+        "s-cls":"闇",
+        "cls-id":"dak",
+        "cls-jp":"ダークエルフ",
+        "cls-en":"darkelf"
+    },
+    "5": {
+        "s-cls":"竜",
+        "cls-id":"dra",
+        "cls-jp":"ドラゴンナイト",
+        "cls-en":"dragonknight"
+    },
+    "6": {
+        "s-cls":"幻",
+        "cls-id":"ill",
+        "cls-jp":"イリュージョニスト",
+        "cls-en":"illusionist"
+    },
+    "7": {
+        "s-cls":"闘",
+        "cls-id":"war",
+        "cls-jp":"ウォリアー",
+        "cls-en":"warrior"
+    },
+    "8": {
+        "s-cls":"剣",
+        "cls-id":"fen",
+        "cls-jp":"フェンサー",
+        "cls-en":"Fencer"
+    },
+    "9": {
+        "s-cls":"槍",
+        "cls-id":"lan",
+        "cls-jp":"ランサー",
+        "cls-en":"lancer"
+    },
+    "10": {
+        "s-cls":"聖",
+        "cls-id":"Pal",
+        "cls-jp":"パラディン",
+        "cls-en":"Paladin"
+    }
+}

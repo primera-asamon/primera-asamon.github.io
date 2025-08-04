@@ -1,0 +1,25 @@
+// Windowサイズによって表示を切り替える
+// window.addEventListener('DOMContentLoaded', function() {
+//   if (window.innerWidth <= 438) {
+//     document.querySelectorAll('.record-table table').forEach(table => {
+//       table.querySelectorAll('tr').forEach(tr => {
+//         const cells = Array.from(tr.children);
+//         if (cells.length > 2) {
+//           let newRows = [];
+//           for (let i = 0; i < cells.length; i += 2) {
+//             let newTr = document.createElement('tr');
+//             if (cells[i]) newTr.appendChild(cells[i].cloneNode(true));
+//             if (cells[i+1]) newTr.appendChild(cells[i+1].cloneNode(true));
+//             newRows.push(newTr);
+//           }
+//           let parent = tr.parentNode;
+//           parent.insertBefore(newRows[0], tr);
+//           for (let i = 1; i < newRows.length; i++) {
+//             parent.insertBefore(newRows[i], newRows[i-1].nextSibling);
+//           }
+//           parent.removeChild(tr);
+//         }
+//       });
+//     });
+//   }
+// });

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>各列のフィルター</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>各列のフィルター</h2>
+
+<table id="myTable">
+    <thead>
+        <tr>
+            <th><input type="text" id="nameFilter" onkeyup="filterTable()" placeholder="名前で検索"></th>
+            <th><input type="text" id="ageFilter" onkeyup="filterTable()" placeholder="年齢で検索"></th>
+            <th><input type="text" id="cityFilter" onkeyup="filterTable()" placeholder="都市で検索"></th>
+        </tr>
+        <tr>
+            <th>名前</th>
+            <th>年齢</th>
+            <th>都市</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>山田太郎</td>
+            <td>30</td>
+            <td>東京</td>
+        </tr>
+        <tr>
+            <td>佐藤花子</td>
+            <td>25</td>
+            <td>大阪</td>
+        </tr>
+        <tr>
+            <td>鈴木一郎</td>
+            <td>28</td>
+            <td>名古屋</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+function filterTable() {
+    var nameFilter, ageFilter, cityFilter, table, tr, td, i, j, txtValue;
+    nameFilter = document.getElementById("nameFilter").value.toLowerCase();
+    ageFilter = document.getElementById("ageFilter").value.toLowerCase();
+    cityFilter = document.getElementById("cityFilter").value.toLowerCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 2; i < tr.length; i++) { // 2行目からデータ行をループ
+        tr[i].style.display = "none";  // 初期状態で非表示にする
+        td = tr[i].getElementsByTagName("td");
+        if (td) {
+            var nameMatch = td[0].textContent.toLowerCase().indexOf(nameFilter) > -1;
+            var ageMatch = td[1].textContent.toLowerCase().indexOf(ageFilter) > -1;
+            var cityMatch = td[2].textContent.toLowerCase().indexOf(cityFilter) > -1;
+
+            if (nameMatch && ageMatch && cityMatch) {
+                tr[i].style.display = "";
+            }
+        }
+    }
+}
+</script>
+
+</body>
+</html>

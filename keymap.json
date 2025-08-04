@@ -1,0 +1,16 @@
+{
+  "US": {
+    "Control": "Ctrl",
+    "Shift": "Shift",
+    "Alt": "Alt",
+    "A": "A",
+    "Delete": "Delete"
+  },
+  "JP": {
+    "Control": "Ctrl",
+    "Shift": "Shift",
+    "Alt": "Alt",
+    "A": "あ",
+    "Delete": "デリート"
+  }
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "group": "skill_domain_identification",
+    "fields": {
+      "no": { "label": "スキル番号", "data_type": "numeric" },
+      "img": { "label": "画像", "data_type": "url" },
+      "level": { "label": "等級・スキルレベル", "data_type": "string" },
+      "name": { "label": "名称", "data_type": "string" }
+    }
+  },
+  {
+    "group": "skill_domain_eligible_character",
+    "fields": {
+      "cls": { "label": "習得クラス", "data_type": "enum" },
+      "elf": { "label": "属性（妖）", "data_type": "enum" }
+    }
+  },
+  {
+    "group": "skill_domain_tendency",
+    "fields": {
+      "active": { "label": "Active / Passive", "data_type": "enum" },
+      "type": { "label": "種類", "data_type": "enum" },
+      "align": { "label": "性向", "data_type": "enum" }
+    }
+  },
+  {
+    "group": "skill_domain_resource",
+    "fields": {
+      "mp": { "label": "消耗MP", "data_type": "numeric" },
+      "hp": { "label": "消耗HP", "data_type": "numeric" },
+      "material": { "label": "材料・触媒", "data_type": "string" }
+    }
+  },
+  {
+    "group": "skill_domain_effect",
+    "fields": {
+      "duration": { "label": "持続時間", "data_type": "string" },
+      "target": { "label": "対象", "data_type": "string" },
+      "reuse": { "label": "再使用時間", "data_type": "string" },
+      "effect": { "label": "効果・性能", "data_type": "multiline_text" }
+    }
+  },
+  {
+    "group": "skill_domain_acquisition",
+    "fields": {
+      "acq_lv": { "label": "習得レベル", "data_type": "numeric" },
+      "obtain": { "label": "取得方法", "data_type": "string" },
+      "price": { "label": "価格情報", "data_type": "structured_text" }
+    }
+  },
+  {
+    "group": "skill_domain_dropmob",
+    "fields": {
+      "drop_origin": { "label": "ドロップモンスター", "data_type": "string" },
+      "drop_comp": { "label": "【蘇生】ドロップモンスター", "data_type": "string" }
+    }
+  },
+  {
+    "group": "skill_domain_notes",
+    "fields": {
+      "note1": { "label": "備考1", "data_type": "structured_text" },
+      "note2": { "label": "備考2", "data_type": "structured_text" }
+    }
+  },
+  {
+    "group": "skill_domain_eor",
+    "fields": {
+      "eor": { "label": "終端", "data_type": "constant" }
+    }
+  }
+]

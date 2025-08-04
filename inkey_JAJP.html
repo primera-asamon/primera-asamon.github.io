@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キー押下表示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asamon_lineage.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #output {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body id="top">
+    <div class="nav">
+        <ul class="nav-group">
+            <li><a href="/index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+            <li><a href="Lineage_table_monster.html">Monsters</a></li>
+            <li><a href="Lineage_table_drop.html">Drops</a></li>
+            <li><a href="Lineage_table_skill.html">Skills</a></li>
+            <li><a href="LineageREMASTER_IME.html">IME</a></li>
+            <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+            <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
+            <li><a href="font.html">大字</a></li>
+            <li><a href="inkey_JAJP.html" class="active">押下釦</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>キー押下表示ツール</h1>
+        <p>ShiftキーやCtrlキーなどを押し続けてください。</p>
+        <label for="layout">キーボードレイアウト:</label>
+        <select id="layout">
+            <option value="US">US</option>
+            <option value="JP">JP</option>
+        </select>
+        <input type="radio" name="trap" id="start-trap" value="start"> 判定
+        <input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
+        <div id="output">押されたキーがここに表示されます。</div>
+    </div>
+
+    <script>
+        let isTrapping = false;
+        let pressedKeys = new Set();
+        let output = document.getElementById('output');
+        let keyMap = {};
+        let selectedLayout = 'US';
+
+        async function loadKeyMap() {
+            const response = await fetch('keymap.json');
+            keyMap = await response.json();
+        }
+
+        loadKeyMap();
+
+        document.getElementById('layout').addEventListener('change', function(event) {
+            selectedLayout = event.target.value;
+        });
+
+        document.getElementById('start-trap').addEventListener('click', function() {
+            isTrapping = true;
+        });
+
+        document.getElementById('stop-trap').addEventListener('click', function() {
+            isTrapping = false;
+            pressedKeys.clear();
+            updateOutput();
+        });
+
+        window.addEventListener('beforeunload', function() {
+            isTrapping = false;
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (!isTrapping) return;
+
+            event.preventDefault();
+
+            if (event.key === 'Control' || event.key === 'Shift' || event.key === 'Alt' || event.key.length === 1) {
+                pressedKeys.add(event.key);
+            }
+
+            updateOutput(event);
+        });
+
+        document.addEventListener('keyup', function(event) {
+            if (!isTrapping) return;
+
+            if (event.key === 'Control' || event.key === 'Shift' || event.key === 'Alt') {
+                pressedKeys.delete(event.key);
+            } else {
+                pressedKeys.clear();
+            }
+
+            updateOutput();
+        });
+
+        function updateOutput(event) {
+            let keys = Array.from(pressedKeys).map(key => keyMap[selectedLayout][key] || key);
+            let locationText = '';
+
+            if (event) {
+                if (event.location === KeyboardEvent.DOM_KEY_LOCATION_LEFT) {
+                    locationText = ' (Left)';
+                } else if (event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
+                    locationText = ' (Right)';
+                }
+            }
+
+            if (keys.length > 0) {
+                output.textContent = `Keys pressed: ${keys.join(' + ')}${locationText}`;
+                output.classList.add('highlight');
+                setTimeout(() => {
+                    output.classList.remove('highlight');
+                }, 500); // 500ms後にハイライトを解除
+            } else {
+                output.textContent = '押されたキーがここに表示されます。';
+            }
+        }
+        async function loadKeyMap() {
+    try {
+        const response = await fetch('keymap.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        keyMap = await response.json();
+    } catch (error) {
+        console.error('Failed to load key map:', error);
+    }
+}
+document.getElementById('layout').addEventListener('change', function(event) {
+    selectedLayout = event.target.value;
+    console.log('Selected layout:', selectedLayout);
+});
+
+document.getElementById('start-trap').addEventListener('click', function() {
+    isTrapping = true;
+    console.log('Trapping started:', isTrapping);
+});
+
+document.getElementById('stop-trap').addEventListener('click', function() {
+    isTrapping = false;
+    console.log('Trapping stopped:', isTrapping);
+    pressedKeys.clear();
+    updateOutput();
+});
+
+    </script>
+</body>
+</html>

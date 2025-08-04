@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #cef;
+        }
+        tr.record-table{
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 6px;
+            text-align: left;
+        }
+        .row-header {
+            background-color: #cef;
+            font-weight:normal;
+            font-size:smaller;
+        }
+        .row-data {
+            background-color: #ffffff;
+            border: 2px solid #bdf;
+        }
+        .col-header {
+            background-color: #cef;
+            width:70px;           
+            font-weight:normal;
+            font-size:smaller;
+        }
+        .col-data {
+            background-color: #ffffff;
+            min-width :70px;
+
+        }
+    </style>
+    <title>技術・魔法一覧</title>
+</head>
+<body>
+<input type="file" id="fileInput">
+<div id="output"></div>
+<script>
+document.getElementById('fileInput').addEventListener('change', function(e) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const lines = reader.result.trim().split('\n');
+        // let html = `<table>\n<tr><th class="row-header">No.</th><th class="row-header">画像</th><th class="row-header">等級・スキルレベル</th><th class="row-header">名称</th><th class="row-header">習得クラス</th><th class="row-header">エルフ属性</th></tr>\n`;
+        let html = `<table>\n<tr><th class="row-header">No.</th><th class="row-header">等級・スキルレベル</th><th class="row-header">名称</th><th class="row-header">習得クラス</th><th class="row-header">エルフ属性</th></tr>\n`;
+        for (let line of lines) {
+            if (!line.trim()) continue; // 空行をスキップ
+            if (line.endsWith('\t')) {
+                line += "_"; // 空フィールド補完用のダミー値を追加
+            }
+            const fields = line.split('\t');
+            const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,duration,target,reuse,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2] = fields;
+            // html += `<tr class="row-data"><td>No.${no}</td><td><img src="${img}" alt="画像"></td><td>${level}</td><td>${name}</td><td>${cls}</td><td>${elf}</td></tr>\n`;
+            html += `<tr class="row-data"><td>No.${no}</td><td>${level}</td><td>${name}</td><td>${cls}</td><td>${elf}</td></tr>\n`;
+            html += `<tr class="record-table"><td colspan="5">
+                    <table>
+                        <tr>
+                            <th class="col-header">活性</th><td class="col-data">${active}</td>
+                            <th class="col-header">種類</th><td class="col-data">${type}</td>
+                            <th class="col-header">性向</th><td class="col-data">${align}</td>
+                            <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
+                            <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
+                            <th class="col-header">材料・触媒</th><td class="col-data">${material}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-header">持続時間</th><td class="col-data">${duration}</td>
+                            <th class="col-header">対象</th><td class="col-data">${target}</td>
+                            <th class="col-header">再使用時間</th><td class="col-data">${reuse}</td>
+                            <th class="col-header">効果・性能</th><td class="col-data" colspan="5">${effect}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-header">習得Lv.</th><td class="col-data">${acqLv}</td>
+                            <th class="col-header">取得方法</th><td class="col-data" colspan="5">${obtain}</td>
+                            <th class="col-header">価格</th><td class="col-data" colspan="3">${price}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-header">ドロップ</th><td class="col-data" colspan="15">${Droporigin}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-header">【蘇生】</th><td class="col-data" colspan="15">${Dropcomp}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-header">備考1</th><td class="col-data" colspan="7">${note1}</td>
+                            <th class="col-header">備考2</th><td class="col-data" colspan="7">${note2}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>\n`;
+        }
+        html += `</table>`;
+        document.getElementById('output').innerHTML = html;
+    };
+    reader.readAsText(e.target.files[0], 'UTF-8');
+});
+</script>
+</body>
+</html>

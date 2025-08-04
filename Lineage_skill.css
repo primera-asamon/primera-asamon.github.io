@@ -1,0 +1,198 @@
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+margin: -1px;
+padding: 0;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+border: 0;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+background-color: #ffffff;
+}
+.child-table {
+border-collapse: collapse;
+background-color: #ffffff;
+font-size:xx-small;
+}
+tr.record-table{
+background-color: #ffffff;
+border-color:#ffffff
+}
+th {
+background-color: #f2f2f2;
+border: 1px solid #ccc;
+padding: 6px;
+text-align: left;
+font-size: small;
+font-weight: normal;
+}
+td {
+border: 1px solid #ccc;
+padding: 6px;
+text-align: left;
+font-size: small;
+font-weight: normal;
+}
+.row-header {
+background-color: #f2f2f2;
+font-weight:normal;
+font-size:smaller;
+min-width:30px;
+}
+.row-header_skillname {
+background-color: #f2f2f2;
+font-weight:normal;
+font-size:smaller;
+width: calc(100% - 5 * 100px);
+min-width:60px;
+}
+.row-data {
+background-color: #ffffff;
+min-width:60px;
+}
+.col-header {
+background-color: #f2f2f2;
+width:72px;
+font-weight:normal;
+font-size:smaller;
+}
+.col-data {
+background-color: #ffffff;
+min-width:72px;
+}
+.col-data_no {
+background-color: #edf;
+width:60px;
+border-right-color: #edf;
+font-size: small;
+}
+.col-data_level {
+background-color: #edf;
+width: 60px;
+border-left-color: #edf;
+border-right-color: #edf;
+font-size: medium;
+}
+.col-data_skillname {
+background-color: #edf;
+width: calc(100% - 5 * 100px);
+min-width:300px;
+border-left-color: #edf;
+font-size: medium;
+}
+.footer-text {
+margin-bottom: 6px;
+color: #999;
+font-size: 0.8em;
+}
+
+.footer-copyright {
+color: #000;
+font-size: 0.8em;
+}
+@media (max-width: 438px) {
+.spv-sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+margin: -1px;
+padding: 0;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+border: 0;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+background-color: #ffffff;
+}
+.spv-child-table {
+border-collapse: collapse;
+background-color: #ffffff;
+font-size:xx-small;
+}
+tr.spv-layout{
+background-color: #ffffff;
+border-color:#ffffff
+}
+th {
+background-color: #f2f2f2;
+border: 1px solid #ccc;
+padding: 6px;
+text-align: left;
+font-size: small;
+font-weight: normal;
+}
+td {
+border: 1px solid #ccc;
+padding: 6px;
+text-align: left;
+font-size: small;
+font-weight: normal;
+}
+.spv-row-header {
+background-color: #f2f2f2;
+font-weight:normal;
+font-size:smaller;
+min-width:30px;
+}
+.spv-row-header_skillname {
+background-color: #f2f2f2;
+font-weight:normal;
+font-size:smaller;
+width: calc(100% - 5 * 100px);
+min-width:60px;
+}
+.spv-row-data {
+background-color: #ffffff;
+min-width:60px;
+}
+.spv-col-header {
+background-color: #f2f2f2;
+min-width:72px;
+font-weight:normal;
+font-size:smaller;
+}
+.spv-col-data {
+background-color: #ffffff;
+min-width:72px;
+}
+.spv-col-data_no {
+background-color: #edf;
+width:60px;
+border-right-color: #edf;
+font-size: small;
+}
+.spv-col-data_level {
+background-color: #edf;
+width: 60px;
+border-left-color: #edf;
+border-right-color: #edf;
+font-size: medium;
+}
+.spv-col-data_skillname {
+background-color: #edf;
+width: calc(100% - 5 * 100px);
+min-width:300px;
+border-left-color: #edf;
+font-size: medium;
+}
+.spv-footer-text {
+margin-bottom: 6px;
+color: #999;
+font-size: 0.8em;
+}
+
+.spv-footer-copyright {
+color: #000;
+font-size: 0.8em;
+}
+}
+/* スマホ用メディアクエリ対応 2025-06-22-16:40 */
+/* thtdの繰り返しとなって空白が多くスクロールが増えるのでjsによりtrthtdtrthtdにする   */
+/* 2025-06-23 6:00 */
+/* if (window.innerWidth <= 398) 判定によりthtdテーブル構造をスマホ版とPC版で切り分け　*/

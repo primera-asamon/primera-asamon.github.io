@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML表のフィルター</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>HTML表のフィルター</h2>
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="検索キーワードを入力">
+
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>年齢</th>
+            <th>都市</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>山田太郎</td>
+            <td>30</td>
+            <td>東京</td>
+        </tr>
+        <tr>
+            <td>佐藤花子</td>
+            <td>25</td>
+            <td>大阪</td>
+        </tr>
+        <tr>
+            <td>鈴木一郎</td>
+            <td>28</td>
+            <td>名古屋</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+function filterTable() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toLowerCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 1; i < tr.length; i++) {
+        tr[i].style.display = "none";  // 初期状態で非表示にする
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                }
+            }
+        }
+    }
+}
+</script>
+
+</body>
+</html>

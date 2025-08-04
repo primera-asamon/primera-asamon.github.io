@@ -1,0 +1,74 @@
+/* Drop2Monster_table (d2m) */
+
+  html,body {
+    width: auto;
+    height:calc(100% -70px);
+  }
+  .d2m_table_box{
+    overflow-y: auto;
+    width:98%;
+    height:calc(100% - 20px);
+  }
+
+  table.d2m {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 98%;
+  }
+
+  thead.sticky_d2m {
+    position: sticky;
+    top: 0;
+  }
+  thead.sticky_d2m::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background: #fec;
+    z-index: -1;
+  }
+
+  th,td {
+    height:50px;
+    border: solid 1px #000;
+    text-align: center;
+  }
+
+  .Item_No{
+    width: 60px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+
+  .Search_Drop{
+    width: 320px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+
+  .monster_name_d2m{
+    width: calc(100% - 300px);
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+
+  tbody.d2m{
+    font-weight: normal;
+    padding: 6px 8px;
+  }
+  td.Item_No_d2m{
+    width: 60px;
+  }
+
+  td.drop_item_d2m{
+    width: 320px;
+  }
+
+  td.monster_list_d2m{
+    width: calc(100% - 300px);
+    text-align: left;
+  }

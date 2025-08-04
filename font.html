@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動的フォントサイズ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <!-- <link rel="stylesheet" href="normalize.css"> -->
+    <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+    <link rel="stylesheet" href="asamon_lineage.css">
+    <style>
+        @font-face {
+        font-family: 'Kyoukasho'; src: url('HGKyokashotai.woff') format('woff');
+        }
+        .textbox {
+            display: block;
+            margin: 0px auto;
+            font-size: calc(1vw + 1vh);
+            font-family: 'Kyoukasho', sans-serif;
+            font-size: 70vmin;
+            text-align: center;
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body id="top">
+    <div class="nav">
+        <ul class="nav-group">
+            <li><a href="/index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+            <li><a href="Lineage_table_monster.html">Monsters</a></li>
+            <li><a href="Lineage_table_drop.html">Drops</a></li>
+            <li><a href="Lineage_table_skill.html">Skills</a></li>
+            <li><a href="LineageREMASTER_IME.html">IME</a></li>
+            <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+            <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
+            <li><a href="font.html" class="active">大字</a></li>
+            <li><a href="inkey_JAJP.html">押下釦</a></li>
+        </ul>
+    </div>
+    <div class="content">
+    	<input type="text" class="textbox" placeholder="文字">
+    </div>
+</body>
+</html>
