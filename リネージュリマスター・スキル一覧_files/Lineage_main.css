@@ -235,7 +235,7 @@
         background: #fff;
         color: #aab2bd;
         text-align: center;
-        font-size: 2em;
+        font-size: 3em;
         vertical-align: baseline;
         display: -moz-inline-stack;
         display: inline-block;
@@ -252,12 +252,6 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
-
-    span.label-text {
-        font-size: 1rem; /* 矢印サイズと分離 */
-        vertical-align: middle;
-        width: 96px;
-        display: inline-block;}
     /* フッター */
 
     .footer {

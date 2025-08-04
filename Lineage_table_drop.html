@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
     <title>Item2Monster</title>
     <meta name="description" content="">
     <meta name="keywords" content="Lineage">
@@ -10,8 +10,9 @@
     <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
-    <link rel="stylesheet" href="lineage_main.css">
-    <link rel="stylesheet" href="Lineage_Drops.css">
+    <!-- <link rel="stylesheet" href="Lineage_main.css">  -->
+    <!-- <link rel="stylesheet" href="Lineage_Drops.css"> thead 固定不能-->
+    <link rel="stylesheet" href="asamon_lineage.css">
     <!-- <script src="jquery.min.js"></script> -->
     <!--  script 末尾。 -->
 </head>
@@ -31,7 +32,6 @@
 </ul>
 <!-- button onclick="scrollToFirstRecord()">1件目にジャンプ</button> -->
 </div>
-
 <div class="d2m_table_box">
 <table class="d2m">
   <thead class="sticky_d2m">
@@ -5382,22 +5382,19 @@ function scrollToFirstRecord() {
   var firstRow = tbody.getElementsByTagName("tr")[0];
   firstRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
   // ヘッダーの高さを取得
-  var headerHeight = table.querySelector("thead.sticky").offsetHeight; //80pxを取得Edgeコンソールより確認
+  var headerHeight = table.querySelector("thead.sticky_d2m").offsetHeight; //80pxを取得Edgeコンソールより確認
   // スクロール位置を調整して1件目の行が見えるようにする
   var firstRowTop = firstRow.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
   window.scrollTo({ top: firstRowTop - headerHeight, behavior: 'smooth' });
 }
 </script>
 <!-- FC2カウンター ここから -->
-    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
+    <script src="https://counter1.fc2.com/counter.php?id=11198962&main=1"></script>
+    <noscript><img src="https://counter1.fc2.com/counter_img.php?id=11198962&main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
 <!-- FC2カウンター ここまで -->
 <!-- FC2カウンター ここから -->
-    現在の閲覧者数:<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
+    現在の閲覧者数:<script src="https://counter1.fc2.com/views.php?id=11198962&main=1" ></script>
+    <noscript><img src="https://counter1.fc2.com/counter_now.php?id=11198962&main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
 <!-- FC2カウンター ここまで -->
-<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
-    <script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2910170" type="text/javascript"></script>
-    <noscript><div align="right"><img src="//analyzer54.fc2.com/ana/icon.php?uid=2910170&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
-<!-- [FC2 Analyzer]  -->
-
 </body>
 </html>

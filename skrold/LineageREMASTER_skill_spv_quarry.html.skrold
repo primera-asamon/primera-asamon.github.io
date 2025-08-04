@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset=UTF-8" />
     <title>リネージュリマスター・スキル一覧</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
     <link rel="stylesheet" href="Lineage_main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <!-- <script src="jquery.min.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,18 +113,40 @@
         color: #000;
         font-size: 0.8em;
     }
-    @media (max-width: 398px) {
-        .col-header {
-            width:30px;
+    #user_operation {
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+    }
+
+    #classFilterBtns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    }
+    @media (max-width: calc(100% - 30px)) {
+        .spv-col-header {
+            width: 50px;
         }
-        .col-data_no {
-            width:30px;
+        .spv-col-header-cost {
+            width:50px;
         }
-        .col-data {
-            width:calc(100% - 30px);
+        .spv-col-data_no {
+            width:50px;
         }
-        .col-data_level {
-            width:30px;
+        .spv-col-data {
+            width:calc(100% - 50px);
+        }
+        .spv-col-data_level {
+            width:50px;
+        }
+        .spv-col-data_mp {
+            width:50px
+        }
+        .spv-col-data_hp {
+            width:50px;
+        }
+        .spv-col-data_material {
+            width:calc(100% - 265px);
         }
     }
 /* スマホ用メディアクエリ対応 2025-06-22-16:40 */
@@ -171,9 +193,9 @@
     <div class="nav">
         <ul class="nav-group">
             <li><a href="index.html">ホーム</a><i class="fa fa-home"></i></li>
-            <li><a href="Lineage_table_monster.html">Monsters</a></li>
-            <li><a href="Lineage_table_drop.html">Drops</a></li>
-            <li><a href="LineageREMASTER_skill_spv.html" class="active">&nbsp;Skills</a></li>
+            <li><a href="Lineage_table_monster.html">MonsterList</a></li>
+            <li><a href="Lineage_table_drop.html">DropList</a></li>
+            <li><a href="LineageREMASTER_skill_spv.html" class="active">&nbsp;SkillList</a></li>
             <li><a href="LineageREMASTER_IME.html">IME</a></li>
             <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
             <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
@@ -196,22 +218,24 @@
      <div id="output"></div>
 -->
 <!-- 技術・魔法一覧のインポート(新仕様)※ファイル名のハードコーディング -->
-    <button id="loadBtn">表示</button>
+    <div id="user_operation">
+        <button id="loadBtn" class="btn-visual" data-cls="all">表示</button>
 <!-- HTML（ボタンやセレクトボックスを追加） -->
-    <div id="classFilterBtns" style="margin-bottom: 10px;">
+        <div id="classFilterBtns">
 <!--         <button class="class-btn" data-cls="all">全て</button> -->
-        <button class="class-btn" data-cls="君">君</button>
-        <button class="class-btn" data-cls="騎">騎</button>
-        <button class="class-btn" data-cls="妖">妖</button>
-        <button class="class-btn" data-cls="魔">魔</button>
-        <button class="class-btn" data-cls="闇">闇</button>
-        <button class="class-btn" data-cls="竜">竜</button>
-        <button class="class-btn" data-cls="闘">闘</button>
-        <button class="class-btn" data-cls="剣">剣</button>
-        <button class="class-btn" data-cls="槍">槍</button>
-        <button class="class-btn" data-cls="闘">闘</button>
-        <button class="class-btn" data-cls="幻">幻</button>
-        <button class="class-btn" data-cls="聖">聖</button>
+            <button class="class-btn btn-visual" data-cls="君">君</button>
+            <button class="class-btn btn-visual" data-cls="騎">騎</button>
+            <button class="class-btn btn-visual" data-cls="妖">妖</button>
+            <button class="class-btn btn-visual" data-cls="魔">魔</button>
+            <button class="class-btn btn-visual" data-cls="闇">闇</button>
+            <button class="class-btn btn-visual" data-cls="竜">竜</button>
+            <button class="class-btn btn-visual" data-cls="闘">闘</button>
+            <button class="class-btn btn-visual" data-cls="剣">剣</button>
+            <button class="class-btn btn-visual" data-cls="槍">槍</button>
+            <button class="class-btn btn-visual" data-cls="闘">闘</button>
+            <button class="class-btn btn-visual" data-cls="幻">幻</button>
+            <button class="class-btn btn-visual" data-cls="聖">聖</button>
+        </div>
     </div>
 <!-- 技術・魔法一覧の表示 -->    
     <div id="result"></div>
@@ -290,12 +314,43 @@ console.log("DOM読み込み待機中");
 //});
 function setup() {
   console.log("setup開始");
-
-  const btn = document.getElementById('loadBtn');
+  const btn = document.getElementById('loadBtn'); // 開始ボタン=loadBtn
   if (btn) {
+// ↓デバッグ用コンソールへテスト用テキストの送出。
     console.log("ボタン取得成功");
     btn.addEventListener('click', () => {
-      console.log("ボタンクリック");
+      console.log("ボタンクリックされました");
+    if (typeof test === "string") {
+        console.log("testの先頭100文字:", test.slice(0, 100));
+    } else {
+        console.log("表示ボタンが押されました");
+    }
+// ↑デバッグ用コンソールへテスト用テキストの送出。
+// 開始ボタンと全てボタン分離。
+    let quarry = null;
+    let alreadyFetched = false;
+
+    const loadBtn = document.getElementById("loadBtn");
+    loadBtn.addEventListener("click", () => {
+    if (alreadyFetched && quarry) {
+        console.log("再描画のみ：fetchせず");
+        renderTable(parseTSV(quarry));
+    } else {
+        console.log("初回fetch開始");
+        fetch("LineageREMASTER_skill3.txt?v=" + Date.now())
+        .then(res => res.text())
+        .then(tsv => {
+            quarry = tsv;
+            alreadyFetched = true;
+            renderTable(parseTSV(quarry));
+        })
+        .catch(err => {
+            console.error("読み込み失敗:", err);
+        });
+    }
+    });
+
+// タイムスタンプを附与したリクエストによる強制再読み込みによって、FC2Serverのキャッシュ寿命を回避。
       fetch('LineageREMASTER_skill3.txt?v=' + new Date().getTime())
         .then(response => {
           if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -303,8 +358,7 @@ function setup() {
         })
         .then(text => {
           console.log("読み込み成功");
-          document.getElementById('result').innerHTML = html;
-//          document.getElementById('result').textContent = text;
+          document.getElementById('result').textContent = text;
         })
         .catch(error => {
           console.error("読み込みエラー:", error);
@@ -322,7 +376,8 @@ if (document.readyState === 'loading') {
   console.log("DOMすでに構築済み、即時実行");
   setup();
 }
-            // Windowサイズによって表示を切り替える
+
+// Windowサイズによって表示を切り替える
 window.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth <= 398) {
     document.querySelectorAll('.record-table table').forEach(table => {
@@ -377,31 +432,32 @@ window.addEventListener('DOMContentLoaded', function() {
                 clsDisplay += `（${elf}）`;
             }
 // 各フィールドの値を変数に格納
-            if (window.innerWidth <= 398) {
+            if (window.innerWidth <= 450) {
 // #region sauce
 //  --- スマホ用テーブル出力 ---
-                html += `<tr class="record-table" data-cls="${cls}"><td colspan="2"><table>`;
-                html += `<tr><td class="col-data_no">No.${no}</td><td class="col-data_level">${level}</td></tr>`;
-                html += `<tr><td class="col-data_skillname" colspan="2">${name}</td></tr>`;
-                html += `<tr><th class="col-header">習得クラス</th><td class="col-data">${clsDisplay}</td></tr>`;
-                html += `<tr><th class="col-header">活性</th><td class="col-data">${active}</td></tr>`;
-                html += `<tr><th class="col-header">種類</th><td class="col-data">${type}</td></tr>`;
-                html += `<tr><th class="col-header">性向</th><td class="col-data">${align}</td></tr>`;
-                html += `<tr><th class="col-header">消耗MP</th><td class="col-data">${mp}</td></tr>`;
-                html += `<tr><th class="col-header">消耗HP</th><td class="col-data">${hp}</td></tr>`;
-                html += `<tr><th class="col-header">材料・触媒</th><td class="col-data">${material}</td></tr>`;
-                html += `<tr><th class="col-header">持続時間</th><td class="col-data">${duration}</td></tr>`;
-                html += `<tr><th class="col-header">対象</th><td class="col-data">${target}</td></tr>`;
-                html += `<tr><th class="col-header">再使用時間</th><td class="col-data">${reuse}</td></tr>`;
-                html += `<tr><th class="col-header">効果・性能</th><td class="col-data">${effect}</td></tr>`;
-                html += `<tr><th class="col-header">習得Lv.</th><td class="col-data">${acqLv}</td></tr>`;
-                html += `<tr><th class="col-header">取得方法</th><td class="col-data">${obtain}</td></tr>`;
-                html += `<tr><th class="col-header">価格</th><td class="col-data">${price}</td></tr>`;
-                html += `<tr><th class="col-header">ドロップ</th><td class="col-data">${Droporigin}</td></tr>`;
-                html += `<tr><th class="col-header">【蘇生】</th><td class="col-data">${Dropcomp}</td></tr>`;
-                html += `<tr><th class="col-header">備考1</th><td class="col-data">${note1}</td></tr>`;
-                html += `<tr><th class="col-header">備考2</th><td class="col-data">${note2}</td></tr>`;
-                html += `</table></td></tr>`;
+                html += `<tbody>`//<tr class="spv-record-table" data-cls="${cls}"><td colspan="6">`;
+                html += `<tr><td class="spv-col-data_no">No.${no}</td><td class="spv-col-data_level">${level}</td>`;
+                html += `<td class="spv-col-data_skillname" colspan="5">${name}</td></tr>`;
+                html += `<tr><th class="spv-col-header">クラス</th><td class="spv-col-data" colspan="5">${clsDisplay}</td></tr>`;
+                html += `<tr><th class="spv-col-header">活性</th><td class="spv-col-data" colspan="5">${active}</td></tr>`;
+                html += `<tr><th class="spv-col-header">種類</th><td class="spv-col-data" colspan="5">${type}</td></tr>`;
+                html += `<tr><th class="spv-col-header">性向</th><td class="spv-col-data" colspan="5">${align}</td></tr>`;
+                html += `<tr class="slkill_cost"><th class="spv-col-header-cost">消耗MP</th><td class="spv-col-data-mp">${mp}</td>`;
+                html += `<th class="spv-col-header-cost">消耗HP</th><td class="spv-col-data-hp">${hp}</td>`;
+                html += `<th class="spv-col-header-cost">材料触媒</th><td class="spv-col-data-material">${material}</td></tr>`;
+                html += `<tr><th class="spv-col-header">持続時間</th><td class="spv-col-data" colspan="5">${duration}</td></tr>`;
+                html += `<tr><th class="spv-col-header">対象</th><td class="spv-col-data" colspan="5">${target}</td></tr>`;
+                html += `<tr><th class="spv-col-header">再使用秒</th><td class="spv-col-data" colspan="5">${reuse}</td></tr>`;
+                html += `<tr><th class="spv-col-header">効果性能</th><td class="spv-col-data" colspan="5">${effect}</td></tr>`;
+                html += `<tr><th class="spv-col-header">習得Lv.</th><td class="spv-col-data" colspan="5">${acqLv}</td></tr>`;
+                html += `<tr><th class="spv-col-header">取得方法</th><td class="spv-col-data" colspan="5">${obtain}</td></tr>`;
+                html += `<tr><th class="spv-col-header">価格</th><td class="spv-col-data" colspan="5">${price}</td></tr>`;
+                html += `<tr><th class="spv-col-header">ドロップ</th><td class="spv-col-data" colspan="5">${Droporigin}</td></tr>`;
+                html += `<tr><th class="spv-col-header">【蘇生】</th><td class="spv-col-data" colspan="5">${Dropcomp}</td></tr>`;
+                html += `<tr><th class="spv-col-header">備考1</th><td class="spv-col-data" colspan="5">${note1}</td></tr>`;
+                html += `<tr><th class="spv-col-header">備考2</th><td class="spv-col-data" colspan="5">${note2}</td></tr>`;
+                // html += `</td></tr>`;
+                html += `</tbody>`;
             } else {
 // #endregion
 //  --- PC用テーブル出力 ---
@@ -419,7 +475,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                 html += `<td class="col-data_level">${level}</td>`;
                             }   
                  //            <th class="col-header" colspan="2">等級・スキルレベル</th><td class="col-data">${level}</td>
-                    html += `<td class="col-data_skillname" colspan="7">${name}</td>
+                    html += `<td class="col-data_skillname" colspan="9">${name}</td>
                         </tr>`
                 html += `<tr>
                             <th class="col-header">習得クラス</th>
@@ -431,7 +487,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         <tr>
                             <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
                             <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
-                            <th class="col-header">材料・触媒</th><td class="col-data" colspan="2">${material}</td>
+                            <th class="col-header">材料・触媒</th><td class="col-data" colspan="3">${material}</td>
                             <th class="col-header">持続時間</th><td class="col-data" colspan="3">${duration}</td>
                         </tr>
                         <tr>

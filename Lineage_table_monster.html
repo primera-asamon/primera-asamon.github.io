@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
     <title>ぷりめらの</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -28,7 +28,6 @@
 <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
 <li><a href="font.html">大字</a></li>
 <li><a href="inkey_JAJP.html">押下釦</a></li>
-<!-- <li><button onclick="scrollToFirstRecord()">1件目にジャンプ</button></li> -->
 </ul>
 <!-- button onclick="scrollToFirstRecord()">1件目にジャンプ</button> -->
 </div>
@@ -15065,7 +15064,6 @@
 <div class="footer-text">
 <div class="footer-copyright">「当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation. NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.」</div>
 </div>
-<p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up">　</i> ページの先頭へ</a></p>
 
 <!-- ── スクリプト｜テーブルの並び替え＆絞込み ── -->
 <script>
@@ -15382,48 +15380,15 @@ tblcontrol.refine( evt );
 /* ── 実装 ── */
 window.addEventListener( "DOMContentLoaded", tblcontrol.init, false );
 
-<!-- // 画面上部にスクロールするボタン
-$(function() {
-    var pageTop = $('.btn-pagetop');
-    pageTop.hide();
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 600) {
-            pageTop.fadeIn();
-        } else {
-            pageTop.fadeOut();
-        }
-    });
-    pageTop.click(function() {
-        $('body, html').animate({
-            scrollTop: 0
-        }, 500, 'swing');
-        pageTop.blur();
-        return false;
-    });
-});
-function scrollToFirstRecord() {
-  var table = document.querySelector("table");
-  var tbody = table.getElementsByTagName("tbody")[0];
-  var firstRow = tbody.getElementsByTagName("tr")[0];
-  firstRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // ヘッダーの高さを取得
-  var headerHeight = table.querySelector("thead.sticky").offsetHeight; //80pxを取得Edgeコンソールより確認
-  // スクロール位置を調整して1件目の行が見えるようにする
-  var firstRowTop = firstRow.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-  window.scrollTo({ top: firstRowTop - headerHeight, behavior: 'smooth' });
-}
--->
+
 </script>
 <!-- FC2カウンター ここから -->
-    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
+    <script src="https://counter1.fc2.com/counter.php?id=11198962&main=1"></script>
+    <noscript><img src="https://counter1.fc2.com/counter_img.php?id=11198962&main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
 <!-- FC2カウンター ここまで -->
 <!-- FC2カウンター ここから -->
-    現在の閲覧者数:<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
+    現在の閲覧者数:<script src="https://counter1.fc2.com/views.php?id=11198962&main=1"></script>
+    <noscript><img src="https://counter1.fc2.com/counter_now.php?id=11198962&main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
 <!-- FC2カウンター ここまで -->
-<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
-    <script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2910170" type="text/javascript"></script>
-    <noscript><div align="right"><img src="//analyzer54.fc2.com/ana/icon.php?uid=2910170&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
-<!-- [FC2 Analyzer]  -->
-
 </body>
 </html>

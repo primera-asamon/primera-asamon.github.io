@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
     <title>リネージュリマスター・スキル一覧</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -17,6 +17,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Lineage_main.css">
     <style>
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            border-color: #ffffff;
+            background-color: #ffffff;
+        }
+        tbody {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
         .sr-only {
             position: absolute;
             width: 1px;
@@ -27,88 +41,11 @@
             clip: rect(0, 0, 0, 0);
             border: 0;
         }
-       table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #ffffff;
-        }
-        .child-table {
-            border-collapse: collapse;
-            background-color: #ffffff;
-            font-size:xx-small;
-        }
-        tr.record-table{
-            background-color: #ffffff;
-            border-color:#ffffff
-        }
-        th {
-            background-color: #f2f2f2;
-            border: 1px solid #ccc;
-            padding: 6px;
-            text-align: left;
-            font-size: small;
-            font-weight: normal;
-        }
-        td {
-            border: 1px solid #ccc;
-            padding: 6px;
-            text-align: left;
-            font-size: small;
-            font-weight: normal;
-        }
-        .row-header {
-            background-color: #f2f2f2;
-            font-weight:normal;
-            font-size:smaller;
-            min-width:30px;
-        }
-        .row-header_skillname {
-            background-color: #f2f2f2;
-            font-weight:normal;
-            font-size:smaller;
-            width: calc(100% - 5 * 100px);
-            min-width:60px;
-        }
-        .row-data {
-            background-color: #ffffff;
-            min-width:60px;
-        }
-        .col-header {
-            background-color: #f2f2f2;
-            min-width:80px;
-            font-weight:normal;
-            font-size:smaller;
-        }
-        .col-data {
-            background-color: #ffffff;
-            min-width:80px;
-        }
-        .col-data_no {
-            background-color: #edf;
-            width:60px;
-            border-right-color: #edf;
-            font-size: small;
-        }
-        .col-data_level {
-            background-color: #edf;
-            width: 60px;
-            border-left-color: #edf;
-            border-right-color: #edf;
-            font-size: medium;
-        }
-        .col-data_skillname {
-            background-color: #edf;
-            width: calc(100% - 5 * 100px);
-            min-width:300px;
-            border-left-color: #edf;
-            font-size: medium;
-        }
     .footer-text {
         margin-bottom: 6px;
         color: #999;
         font-size: 0.8em;
     }
-
     .footer-copyright {
         color: #000;
         font-size: 0.8em;
@@ -124,56 +61,18 @@
             width:calc(100% - 30px);
         }
         .col-data_level {
-            width:30px;
+            width:calc(100% - 30px);
         }
     }
-/* スマホ用メディアクエリ対応 2025-06-22-16:40 */
-/* thtdの繰り返しとなって空白が多くスクロールが増えるのでjsによりtrthtdtrthtdにする   */
-/* 2025-06-23 6:00 */
-/* if (window.innerWidth <= 398) 判定によりthtdテーブル構造をスマホ版とPC版で切り分け　
-    @media (max-width: 398px) {
-        .record-table table,
-        .record-table tr,
-        .record-table td,
-        .record-table th {
-            display: block;
-            width: 100%;
-            font-size: 1em;
-    }
-    }
-    @media (max-width: 600px) {
-        .record-table > td {
-        padding: 0;
-        }
-        .record-table table,
-        .record-table tr,
-        .record-table td,
-        .record-table th {
-            display: block;
-            width: 100%;
-        }
-        .record-table {
-            margin-bottom: 1.5em;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px #eee;
-            overflow: hidden;
-        }
-        .col-data_skillname {
-            font-size: 1.1em;
-            font-weight: bold;
-            background: #eaf6ff;
-            margin-bottom: 6px;
-        }
-    }*/
     </style>
 </head>
-<body id="top">
+<body>
     <div class="nav">
         <ul class="nav-group">
-            <li><a href="index.html">ホーム</a><i class="fa fa-home"></i></li>
-            <li><a href="Lineage_table_monster.html">Monsters</a></li>
-            <li><a href="Lineage_table_drop.html">Drops</a></li>
-            <li><a href="LineageREMASTER_skill_spv.html" class="active">&nbsp;Skills</a></li>
+            <li><a href="/index.html">ホーム</a><i class="fa fa-home"></i></li>
+            <li><a href="Lineage_table_monster.html">MonsterList</a></li>
+            <li><a href="Lineage_table_drop.html">DropList</a></li>
+            <li><a href="LineageREMASTER_skill_spv.html" class="active">&nbsp;SkillList</a></li>
             <li><a href="LineageREMASTER_IME.html">IME</a></li>
             <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
             <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
@@ -419,7 +318,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                 html += `<td class="col-data_level">${level}</td>`;
                             }   
                  //            <th class="col-header" colspan="2">等級・スキルレベル</th><td class="col-data">${level}</td>
-                    html += `<td class="col-data_skillname" colspan="7">${name}</td>
+                    html += `<td class="col-data_skillname" colspan="9">${name}</td>
                         </tr>`
                 html += `<tr>
                             <th class="col-header">習得クラス</th>
@@ -431,7 +330,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         <tr>
                             <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
                             <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
-                            <th class="col-header">材料・触媒</th><td class="col-data" colspan="2">${material}</td>
+                            <th class="col-header">材料・触媒</th><td class="col-data" colspan="3">${material}</td>
                             <th class="col-header">持続時間</th><td class="col-data" colspan="3">${duration}</td>
                         </tr>
                         <tr>
@@ -478,8 +377,6 @@ window.addEventListener('DOMContentLoaded', function() {
             // クリックされたボタンにアクティブクラスを追加
             this.classList.add('active');
             const selected = this.dataset.cls;
-// クリックされたボタンのデータ属性からクラス名を取得
-// 選択されたクラスに基づいて行をフィルタリング
         // 選択されたクラスに基づいて行をフィルタリング
             document.querySelectorAll('.record-table').forEach(tr => {
             // 各行に対して表示/非表示を設定
@@ -492,49 +389,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     tr.style.display = 'none';
                 }
             });
-            document.querySelectorAll('.record-table').forEach(tr => {
-                // tr.dataset.cls に selected の文字列が含まれるかチェック
-                if (selected === 'all' || tr.dataset.cls.includes(selected)) {
-                    tr.style.display = '';
-                } else {
-                    tr.style.display = 'none';
-                }
-});
         });
     });
-// クラスコードマップ(url用/数字は公式webページのClassID)
-const classCodeMap = {
-  "君": "pri",  //0/君主prince・princess
-  "騎": "kni",  //1/ナイトknight
-  "妖": "elf",  //2/エルフelf
-  "魔": "wiz",  //3/ウィザードwizard
-  "闇": "dak",  //4/ダークエルフdarkelf
-  "竜": "dra",  //5/ドラゴンナイトdragonknight
-  "幻": "ill",  //6/イリュージョニストillusionist
-  "闘": "war",  //7/ウォリアーwarrior
-  "剣": "fen",  //8/フェンサーFencer
-  "槍": "lan",  //9/ランサーlancer
-  "聖": "Pal"   //10/パラディンPaladin
-};
-// クラスコード取得関数
-function getClassCode(label) {
-  return classCodeMap[label] || "etc"; // 未定義なら仮のフォールバック
-}// クラスフィルタリング関数
-document.querySelectorAll('.class-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const label = this.dataset.cls; // たとえば "聖"
-        const code = getClassCode(label); // たとえば "hol"
-        history.replaceState(null, null, `#class=${code}`);
-        filterByClass(code); // 既存の注出関数
-    });
-});
-    // reader.readAsText(e.target.files[0], 'UTF-8');
-    console.log(text); // デバッグ用
-        })
-        .catch(error => {
-            document.getElementById('result').textContent = '読み込み失敗: ' + error;
-        });
-    // ここでaddEventListenerの関数を閉じる
+})
 });
 </script>
 </body>

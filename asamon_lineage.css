@@ -771,7 +771,8 @@
     overflow-y: auto;
     width:98%;
     height:calc(100% - 20px);
-  }
+    position: relative; /* sticky が機能するための親の基準 */
+}
 
   table.d2m {
     border-collapse: collapse;
@@ -782,7 +783,8 @@
   thead.sticky_d2m {
     position: sticky;
     top: 0;
-  }
+    z-index: 1;          /* 背景に沈まないよう明示的に前面へ */
+}
   thead.sticky_d2m::before {
     content: "";
     position: absolute;

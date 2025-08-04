@@ -28,7 +28,8 @@
     "fields": {
       "mp": { "label": "消耗MP", "data_type": "numeric" },
       "hp": { "label": "消耗HP", "data_type": "numeric" },
-      "material": { "label": "材料・触媒", "data_type": "string" }
+      "material": { "label": "材料・触媒", "data_type": "string" },
+      "gear": { "label": "装備", "data_type": "string" }
     }
   },
   {

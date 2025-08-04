@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset=UTF-8" />
     <title>ぷりめらの</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="https：//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <!-- <link rel="stylesheet" href="normalize.css"> -->
     <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -18,39 +18,42 @@
 </head>
 <!-- html -->
     <body id="top">
-<div class="nav">
-<ul class="nav-group">
-<li><a href="index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
-<li><a href="Lineage_table_monster.html">MonsterList</a></li>
-<li><a href="Lineage_table_drop.html">DropList</a></li>
-<li><a href="LineageREMASTER_IME.html" class="active">IME</a></li>
-<li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
-<li><a href="LineageREMASTERED_etc.html">諸表</a></li>
-</ul>
-</div>
-<div class="main">リネージュメモ</div>
-<div class="header">
-<h1 class="header-title"><a href="https://asamon.web.fc2.com/data/LineageREMASTER_IME2024-11-21.zip" title="LineageREMASTER_IME2024-11-21.zip">リネージュリマスターItemMonster辞書2024(IME)</a></h1>
-<p class="header-description">ブログなどで公開していたものを更新しました。</p>
-</div>
-<div class="content">
-<div class="article">
-<div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年11月21日</div>
-<h2 class="article-title"><a href="https://asamon.web.fc2.com/data/LineageREMASTER_IME2024-11-21.zip" title="LineageREMASTER_IME2024-11-21.zip">リネージュリマスターItemMonster辞書2024(IME)<img src="https://asamon.web.fc2.com/picture/zip_download_arrow32.png" /></a></h2>
-<p class="article-paragraph">リネージュリマスター狩り場図鑑から「狩り場リスト」「棲息するモンスター」「アイテム」を収録しました。読みはasamonの想定した読みで正しさは保証しません。一部に省入力のための略称もあります。</p>
-<h3 class="article-paragraph-title">オリジナルはATOK版</h3>
-<p class="article-paragraph"><img class="article-img_left" src="./picture/IME_hennkan_SS.png" />　システムの違いから収録されていないユーザーコメントもありますが漢字としては同じく網羅されています。<br />
-　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。変換メニュー上の変換候補に「アイテム」「モンスター」といったユーザーコメントが表示されます。</p>
-</div>
-<div class="article">
-<h2 class="article-title">更新履歴</h2>
-<ul class="article-list">
-<li><span class="article-list-date">2024年11月21日</span>修正。追加。<span class="label label_normal">！</span></li>
-<li><span class="article-list-date">2024年11月11日</span>修正。追加。<span class="label label_normal">！</span></li>
-<li><span class="article-list-date">2024年11月01日</span>ここでの初公開<span class="label label_primary">&hellip;</span></li>
-</ul>
-</div>
-<!--
+        <div class="nav">
+            <ul class="nav-group">
+                <li><a href="index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+                <li><a href="Lineage_table_monster.html">Monsters</a></li>
+                <li><a href="Lineage_table_drop.html">Drops</a></li>
+                <li><a href="Lineage_table_skill.html">Skills</a></li>
+                <li><a href="LineageREMASTER_IME.html">IME</a></li>
+                <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+                <li><a href="LineageREMASTERED_etc.html" class="active">諸表</a></li>
+                <li><a href="font.html">大字</a></li>
+                <li><a href="inkey_JAJP.html">押下釦</a></li>
+            </ul>
+        </div>
+        <div class="main">リネージュメモ</div>
+            <div class="header">
+                <h1 class="header-title">ぷりめらの</h1>
+                <p class="header-description">プレーしたゲームのデータなど。</p>
+            </div>
+            <div class="content">
+                <div class="article">
+                    <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;20xx年xx月xx日</div>
+                    <h2 class="article-title">H2ゲーム内データーや公式からの公知などを転載</h2>
+                    <p class="article-paragraph">　プレーしたゲームのゲーム内データーリストや公式サイトのお知らせなどを再編集して転載しています。<br />
+                    　告知の再編集の表などを掲載予定。</p>
+                    <h3 class="article-paragraph-title">H3ｘｘｘｘｘｘｘｘｘｘ</h3>
+                    <p class="article-paragraph"><!-- <img class="img-circle article-img_left" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> --></p>
+                    <p class="article-paragraph"><!-- <img class="img-thumbnail article-img_right" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> --></p>
+                </div>
+                <div class="article">
+                    <h2 class="article-title">更新履歴</h2>
+                    <ul class="article-list">
+                        <li><span class="article-list-date">20xx年xx月xx日</span>更新されたら情報が入る予定<span class="label label_normal">！</span></li>
+                        <li><span class="article-list-date">20xx年xx月xx日</span>更新されたら情報が入る予定<span class="label label_primary">…</span></li>
+                    </ul>
+                </div>
+    <!--
                 <div class="article">
                     <h2 class="article-title">テンプレートで利用できるパーツ</h2>
                     <p class="article-paragraph">ソースをコピー・アンド・ペーストしてご利用ください。</p>
@@ -77,14 +80,30 @@
                         <div class="panel-body">文字の大きさ、量、字間、行間等を確認するために入れています。</div>
                     </div>
                 </div>
-    --></div>
-<div class="footer">
-<div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br />Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation. NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
-<div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
-</div>
-<p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up">&uarr;</i></a></p>
-<!-- -->
-<script>
+            </div>
+            <div class="address">
+                <div class="address-body"><strong class="address-body-name"></strong>
+                    <div class="address-body-addressline"></div>
+                <strong class="address-body-tel"><i class="fa fa-phone"></i></strong>
+                </div>
+            </div>
+    -->
+            <div class="footer">
+                <div class="footer-nav">
+                    <ul class="footer-nav-group">
+                        <!-- <li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li> -->
+                        <li><a href="https://x.com/AsamonPrimera"><i class="fa fa-twitter"></i>&nbsp;X</a></li>
+                        <!-- <li><a href="#"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+                Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation. NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
+                <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
+            </div>
+            <p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></p>
+        </div>
+<!-- script -->
+        <script>
             // 画面上部にスクロールするボタン
             $(function() {
                 var pageTop = $('.btn-pagetop');
@@ -106,14 +125,14 @@
             });
         </script>
     <!-- FC2カウンター ここから -->
-        <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
+        <script type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- FC2カウンター ここから -->
-        現在の閲覧者数:<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
+        現在の閲覧者数:<script type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
         <script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2910170" type="text/javascript"></script>
         <noscript><div align="right"><img src="//analyzer54.fc2.com/ana/icon.php?uid=2910170&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
     <!-- [FC2 Analyzer]  -->
-</body>
+    </body>
 </html>

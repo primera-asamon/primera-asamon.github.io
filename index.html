@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8" />
         <title>ぷりめらの</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -32,31 +32,67 @@
         <div class="main">リネージュメモ</div>
             <div class="header">
                 <h1 class="header-title">ぷりめらの</h1>
-                <p class="header-description">プレーしたゲームのデータなど。</p>
+                <div class="header-description">プレーしたゲームのデータなど。</div>
             </div>
             <div class="content">
                 <div class="article">
+                  <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2025年07月10日</div>
+                    <h2 class="article-title">スキル一覧表追加・ページ体裁調整</h2>
+                    <div class="article-paragraph"></div>  
+                    <h3 class="article-paragraph-title">スキル一覧表を追加</h3>
+                    <div class="article-paragraph">
+                        スキル一覧表ドロップとチュートリアルクエストNPCから購入などスキルの入手方法の表を作成。
+                    </div>
+                    <ol>
+                      <li>Skillと入手方法の詠唱コストや効果・能力などをブロックで表示<br>
+                        <ul>表の概要
+                          <li>スキルテーブル<a href="LineageREMASTER_skill3.tsv">TSV本体</a></li>
+                          <!-- 表示用JSON構造の提供は技術的制約により見送っています -->
+                          <li>skill_domain_identification：通し番号やスキル名称</li>
+                          <li>skill_domain_eligible_character：習得クラスとエルフ属性</li>
+                          <li>skill_domain_tendency：アクティブ/パッシブ、性向など</li>
+                          <li>skill_domain_resource：詠唱コスト消費HPMPと材料・触媒</li>
+                          <li>skill_domain_effect：スキルの効果持続時間、対象、効果・性能など</li>
+                          <li>skill_domain_acquisition：習得条件。習得レベル、取得方法、NPC価格</li>
+                          <li>skill_domain_dropmob：ドロップモンスター(レギュラー・蘇生)</li>
+                          <li>skill_domain_notes：備考</li>
+                          <li>習得レベルやドロップモンスターに未収載があります。<br>
+                            覚えていないスキルはスキルウィンドウの説明のまま。<br>
+                            持っていないスキルは魔法書や書板などアイテム説明に書いてある情報などが未収載</li>
+                        </ul>
+                      </li>
+                      <li>折りたたみ表示・クラス表示ボタン<br>
+                        <ul>
+                          <li>初期表示は全件折りたたみ</li>
+                          <li>クラス名ボタンをクリックするとそのクラスのみを表示</li>
+                          <li>完全一致はクラス固有スキル、部分一致は共通一般魔法を含めたスキルを表示</li>
+                        </ul>
+                      </li>
+                    </ol>
+                    <h3 class="article-paragraph-title">ページの体裁調整</h3>
+                    <div class="article-paragraph">
+                    　ページのリンクの追加。スタイルの変更。
+                    </div>
                   <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年11月21日</div>
                     <h2 class="article-title">漢字変換辞書テキストを更新。ページの体裁調整</h2>
-                    <p class="article-paragraph">
+                    <div class="article-paragraph"></div>  
                     <h3 class="article-paragraph-title">漢字変換辞書テキストを更新</h3>
-                    <p class="article-paragraph">
-                    　<a href="LineageREMASTER_ATOK.html">リネージュリマスターItemMonster辞書2024(ATOK)<img src="./picture/link_icon.png" height="18px" wigth="24px" alt="link icon" /></a>の更新<br>
-                    　<a href="LineageREMASTER_IME.html">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/link_icon.png" height="18px" wigth="24px" alt="link icon" /></a>の更新<br>
-                    </p>
+                    <div class="article-paragraph">
+                    　<a href="LineageREMASTER_ATOK.html">リネージュリマスターItemMonster辞書2024(ATOK)<img src="./picture/link_icon.png" height="18" width="24" alt="link icon" /></a>の更新<br>
+                    　<a href="LineageREMASTER_IME.html">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/link_icon.png" height="18" width="24" alt="link icon" /></a>の更新<br>
+                    </div>
                     <h3 class="article-paragraph-title">ページの体裁調整</h3>
-                    <p class="article-paragraph">
+                    <div class="article-paragraph">
                     　辞書更新履歴をそれぞれの辞書ページに移動
-                    </p>
-                    <p class="article-paragraph">
+                    </div>
+                    <div class="article-paragraph">
                     　CSS、アイコンなどの調整
-                    </p>
-                    </p>
-                    <p class="article-paragraph"></p>
+                    </div>
+                    <div class="article-paragraph"></div>
                     <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年11月13日</div>
                     <h2 class="article-title">DropListを公開</h2>
                     <h3 class="article-paragraph-title">MonsterListのアイテムからの逆引き</h3>
-                    <p class="article-paragraph">
+                    <div class="article-paragraph">
                     <ol>
                       <li>DropItemとMonsterの2列<br>
                         <ul>
@@ -73,59 +109,32 @@
                         </ul>
                       </li>
                     </ol>
-                    </p>
-                    <p class="article-paragraph"></p>
+                </div>
+                    <div class="article-paragraph"></div>
                     <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年11月11日</div>
                     <h2 class="article-title">漢字変換辞書テキストを更新</h2>
-                    <p class="article-paragraph">
+                    <div class="article-paragraph">
                     　リネージュリマスターItemMonster辞書2024(ATOK)の更新<br>
                     　リネージュリマスターItemMonster辞書2024(IME)の更新<br>
-                    </p>
+                    </div>
                     <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年10月30日</div>
                     <h2 class="article-title">モンスターリスト/漢字変換辞書テキストを公開</h2>
                     <h3 class="article-paragraph-title">モンスターリスト</h3>
-                    <p class="article-paragraph">　狩場図鑑を入力していた資料を一覧できるようにしたものです。</p>
+                    <div class="article-paragraph">　狩場図鑑を入力していた資料を一覧できるようにしたものです。</div>
                     <h3 class="article-paragraph-title">漢字変換辞書テキスト</h3>
-                    <p class="article-paragraph">　狩り場図鑑の入力中正しい名称が面倒になってきたので副産物のIMEとATOKの辞書も公開。<br>
-                    　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。</p>
+                    <div class="article-paragraph">　狩り場図鑑の入力中正しい名称が面倒になってきたので副産物のIMEとATOKの辞書も公開。<br>
+                    　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。</div>
                 </div>
                 <div class="article">
                     <h2 class="article-title">更新履歴</h2>
                     <ul class="article-list">
-                        <li><span class="article-list-date">2024年11月21日</span>ATOK/IME辞書テキストファイル更新。ページ体裁の調整<span class="label label_normal">！</span></li>
+                        <li><span class="article-list-date">2025年07月10日</span>スキル一覧表追加・ページ体裁調整<span class="label label_normal">！</span></li>
+                        <li><span class="article-list-date">2024年11月21日</span>ATOK/IME辞書テキストファイル更新。ページ体裁の調整</li>
                         <li><span class="article-list-date">2024年11月13日</span>アイテムからドロップするモンスターの一覧を追加</li>
                         <li><span class="article-list-date">2024年11月11日</span>ATOK/IME辞書テキストファイル更新</li>
                         <li><span class="article-list-date">2024年10月30日</span>初公開<!-- <span class="label label_primary">…</span> --></li>
                     </ul>
                 </div>
-    <!--
-                <div class="article">
-                    <h2 class="article-title">テンプレートで利用できるパーツ</h2>
-                    <p class="article-paragraph">ソースをコピー・アンド・ペーストしてご利用ください。</p>
-                    <h3 class="article-paragraph-title">テキスト</h3>
-                    <p class="article-paragraph"><span class="text_normal">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="text_primary">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="text_success">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="text_warning">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="text_danger">文字の大きさ、量、字間、行間等を確認するために入れています。</span></p>
-                    <h3 class="article-paragraph-title">メッセージ</h3>
-                    <p class="article-paragraph"><span class="message message_normal">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="message message_default">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="message message_primary">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="message message_success">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="message message_warning">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br>
-                    <span class="message message_danger">文字の大きさ、量、字間、行間等を確認するために入れています。</span></p>
-                    <h3 class="article-paragraph-title">ボタン</h3>
-                    <p class="article-paragraph"><a class="btn btn_lg btn_normal">大ボタン</a> <a class="btn btn_lg btn_default">大ボタン</a> <a class="btn btn_lg btn_primary">大ボタン</a> <a class="btn btn_lg btn_success">大ボタン</a> <a class="btn btn_lg btn_warning">大ボタン</a> <a class="btn btn_lg btn_danger">大ボタン</a></p>
-                    <p class="article-paragraph"><a class="btn btn_normal">中ボタン</a> <a class="btn btn_default">中ボタン</a> <a class="btn btn_primary">中ボタン</a> <a class="btn btn_success">中ボタン</a> <a class="btn btn_warning">中ボタン</a> <a class="btn btn_danger">中ボタン</a></p>
-                    <p class="article-paragraph"><a class="btn btn_sm btn_normal">小ボタン</a> <a class="btn btn_sm btn_default">ボタン</a> <a class="btn btn_sm btn_primary">小ボタン</a> <a class="btn btn_sm btn_success">小ボタン</a> <a class="btn btn_sm btn_warning">小ボタン</a> <a class="btn btn_sm btn_danger">小ボタン</a></p>
-                    <h3 class="article-paragraph-title">パネル</h3>
-                    <div class="panel">
-                        <div class="panel-header">パネルの見出しが入ります</div>
-                        <div class="panel-body">文字の大きさ、量、字間、行間等を確認するために入れています。</div>
-                    </div>
-                </div>
-    -->
             </div>
             <div class="address">
                 <div class="address-body"><strong class="address-body-name"></strong>
@@ -137,7 +146,7 @@
                 <div class="footer-nav">
                     <ul class="footer-nav-group">
                         <!-- <li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li> -->
-                        <li><a href="https://x.com/AsamonPrimera" ><img src="./picture/X_icon.png" height="16px" wigth="16px" /><!-- <i class="fa fa-twitter"></i> -->&nbsp;X</a></li>
+                        <li><a href="https://x.com/AsamonPrimera" ><img src="./picture/X_icon.png" height="16" width="16" alt="X_icon"/><!-- <i class="fa fa-twitter"></i> -->&nbsp;X</a></li>
                         <!-- <li><a href="#"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li> -->
                     </ul>
                 </div>
@@ -145,7 +154,7 @@
                 Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation. NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
                 <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
             </div>
-            <p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></p>
+            <div><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></div>
         <script>
             // 画面上部にスクロールするボタン
             $(function() {
@@ -168,14 +177,12 @@
             });
         </script>
     <!-- FC2カウンター ここから -->
-        <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
+        <script type="text/javascript" src="https://counter1.fc2.com/counter.php?id=11198962&amp;main=1"></script>
+        <noscript><img src="https://counter1.fc2.com/counter_img.php?id=11198962&amp;main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- FC2カウンター ここから -->
-        現在の閲覧者数:<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
+        現在の閲覧者数:<script type="text/javascript" src="https://counter1.fc2.com/views.php?id=11198962&amp;main=1"></script>
+        <noscript><img src="https://counter1.fc2.com/counter_now.php?id=11198962&amp;main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
     <!-- FC2カウンター ここまで -->
-    <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
-        <script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2910170" type="text/javascript"></script>
-        <noscript><div align="right"><img src="//analyzer54.fc2.com/ana/icon.php?uid=2910170&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
-    <!-- [FC2 Analyzer]  -->
     </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset=UTF-8" />
         <title>ぷりめらの</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
         <link rel="stylesheet" href="Lineage_main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
         <!-- <script src="jquery.min.js"></script> -->
     <!-- スクリプトは末尾 -->
     </head>
@@ -41,8 +41,8 @@
                     <p class="article-paragraph">
                     <h3 class="article-paragraph-title">漢字変換辞書テキストを更新</h3>
                     <p class="article-paragraph">
-                    　<a href="LineageREMASTER_ATOK.html">リネージュリマスターItemMonster辞書2024(ATOK)<img src="./picture/link_icon.png" height="18px" wigth="24px" alt="link icon" /></a>の更新<br>
-                    　<a href="LineageREMASTER_IME.html">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/link_icon.png" height="18px" wigth="24px" alt="link icon" /></a>の更新<br>
+                    　<a href="LineageREMASTER_ATOK.html">リネージュリマスターItemMonster辞書2024(ATOK)<img src="./picture/link_icon.png" height="18" width="24" alt="link icon" /></a>の更新<br>
+                    　<a href="LineageREMASTER_IME.html">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/link_icon.png" height="18" width="24" alt="link icon" /></a>の更新<br>
                     </p>
                     <h3 class="article-paragraph-title">ページの体裁調整</h3>
                     <p class="article-paragraph">
@@ -50,7 +50,6 @@
                     </p>
                     <p class="article-paragraph">
                     　CSS、アイコンなどの調整
-                    </p>
                     </p>
                     <p class="article-paragraph"></p>
                     <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年11月13日</div>
@@ -137,7 +136,7 @@
                 <div class="footer-nav">
                     <ul class="footer-nav-group">
                         <!-- <li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li> -->
-                        <li><a href="https://x.com/AsamonPrimera" ><img src="./picture/X_icon.png" height="16px" wigth="16px" /><!-- <i class="fa fa-twitter"></i> -->&nbsp;X</a></li>
+                        <li><a href="https://x.com/AsamonPrimera" ><img src="./picture/X_icon.png" height="16" width="16" /><!-- <i class="fa fa-twitter"></i> -->&nbsp;X</a></li>
                         <!-- <li><a href="#"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li> -->
                     </ul>
                 </div>
@@ -168,10 +167,10 @@
             });
         </script>
     <!-- FC2カウンター ここから -->
-        <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
+        <script type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- FC2カウンター ここから -->
-        現在の閲覧者数:<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
+        現在の閲覧者数:<script type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
         <script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2910170" type="text/javascript"></script>

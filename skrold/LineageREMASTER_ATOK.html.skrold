@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta charset=UTF-8" />
       <title>ぷりめらの</title>
       <meta name="description" content="">
       <meta name="keywords" content="">
@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
       <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
       <link rel="stylesheet" href="asamon_lineage.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
       <!-- <script src="jquery.min.js"></script> -->
       <!-- スクリプトは末尾 -->
   </head>
@@ -184,10 +184,10 @@
             });
         </script>
     <!-- FC2カウンター ここから -->
-        <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
+        <script type="text/javascript" src="//counter1.fc2.com/counter.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=11198962&main=1" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- FC2カウンター ここから -->
-        現在の閲覧者数:<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
+        現在の閲覧者数:<script type="text/javascript" src="//counter1.fc2.com/views.php?id=11198962&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=11198962&main=1" /></noscript>
     <!-- FC2カウンター ここまで -->
     <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
         <script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2910170" type="text/javascript"></script>

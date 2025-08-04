@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset=UTF-8" />
     <title>ぷりめらの</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -106,7 +106,7 @@
         /* メインイメージ */
 
         .main {
-            padding: 144px 0;
+            padding: 34px 0;
             width: 100%;
             background: #ea5866;
             background-image: linear-gradient(135deg, #8cc152, #da4453, #f6bb42);
@@ -651,98 +651,111 @@
             box-sizing: border-box;
         }
     </style>
-    <script>
-        // 画面上部にスクロールするボタン
-        $(function() {
-            var pageTop = $('.btn-pagetop');
-            pageTop.hide();
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 600) {
-                    pageTop.fadeIn();
-                } else {
-                    pageTop.fadeOut();
-                }
-            });
-            pageTop.click(function() {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 500, 'swing');
-                pageTop.blur();
-                return false;
-            });
-        });
-    </script>
+
+<!-- スクリプトは末尾 -->
+
 </head>
-
-<body id="top">
-<div class="nav">
-<ul class="nav-group">
-<li><a href="/index.html" class="active"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
-<li><a href="Lineage_table_monster.html">Lineage_table_monster_Drop</a></li>
-<li><a href="#">ページ2</a></li>
-<li><a href="#">ページ3</a></li>
-<li><a href="#">ページ4</a></li>
-</ul>
-</div>
-<div class="main">ゲームメモ</div>
-<div class="header">
-<h1 class="header-title">ぷりめらの</h1>
-<p class="header-description">プレーしたゲームのデータなど。</p>
-</div>
-<div class="content">
-<div class="article">
-<div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;20xx年xx月xx日</div>
-<h2 class="article-title">記事の見出し</h2>
-<p class="article-paragraph">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
-<h3 class="article-paragraph-title">段落の見出し</h3>
-<p class="article-paragraph"><img class="img-circle article-img_left" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</p>
-<p class="article-paragraph"><img class="img-thumbnail article-img_right" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</p>
-</div>
-<div class="article">
-<h2 class="article-title">更新履歴</h2>
-<ul class="article-list">
-<li><span class="article-list-date">20xx年xx月xx日</span>更新情報が入ります<span class="label label_normal">ラベル</span></li>
-<li><span class="article-list-date">20xx年xx月xx日</span>更新情報が入ります<span class="label label_primary">ラベル</span></li>
-<li><span class="article-list-date">20xx年xx月xx日</span>更新情報が入ります<span class="label label_success">ラベル</span></li>
-<li><span class="article-list-date">20xx年xx月xx日</span>更新情報が入ります<span class="label label_warning">ラベル</span></li>
-<li><span class="article-list-date">20xx年xx月xx日</span>更新情報が入ります<span class="label label_danger">ラベル</span></li>
-</ul>
-</div>
-<div class="article">
-<h2 class="article-title">テンプレートで利用できるパーツ</h2>
-<p class="article-paragraph">ソースをコピー・アンド・ペーストしてご利用ください。</p>
-<h3 class="article-paragraph-title">テキスト</h3>
-<p class="article-paragraph"><span class="text_normal">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="text_primary">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="text_success">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="text_warning">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="text_danger">文字の大きさ、量、字間、行間等を確認するために入れています。</span></p>
-<h3 class="article-paragraph-title">メッセージ</h3>
-<p class="article-paragraph"><span class="message message_normal">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="message message_default">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="message message_primary">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="message message_success">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="message message_warning">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br /><span class="message message_danger">文字の大きさ、量、字間、行間等を確認するために入れています。</span></p>
-<h3 class="article-paragraph-title">ボタン</h3>
-<p class="article-paragraph"><a class="btn btn_lg btn_normal">大ボタン</a> <a class="btn btn_lg btn_default">大ボタン</a> <a class="btn btn_lg btn_primary">大ボタン</a> <a class="btn btn_lg btn_success">大ボタン</a> <a class="btn btn_lg btn_warning">大ボタン</a> <a class="btn btn_lg btn_danger">大ボタン</a></p>
-<p class="article-paragraph"><a class="btn btn_normal">中ボタン</a> <a class="btn btn_default">中ボタン</a> <a class="btn btn_primary">中ボタン</a> <a class="btn btn_success">中ボタン</a> <a class="btn btn_warning">中ボタン</a> <a class="btn btn_danger">中ボタン</a></p>
-<p class="article-paragraph"><a class="btn btn_sm btn_normal">小ボタン</a> <a class="btn btn_sm btn_default">ボタン</a> <a class="btn btn_sm btn_primary">小ボタン</a> <a class="btn btn_sm btn_success">小ボタン</a> <a class="btn btn_sm btn_warning">小ボタン</a> <a class="btn btn_sm btn_danger">小ボタン</a></p>
-<h3 class="article-paragraph-title">パネル</h3>
-<div class="panel">
-<div class="panel-header">パネルの見出しが入ります</div>
-<div class="panel-body">文字の大きさ、量、字間、行間等を確認するために入れています。</div>
-</div>
-</div>
-</div>
-<div class="address">
-<div class="address-body"><strong class="address-body-name">会社名・団体名・個人名が入ります</strong>
-<div class="address-body-addressline">〒123-4567 東京都千代田区XXX町12-3 千代田ビル4F</div>
-<strong class="address-body-tel"><i class="fa fa-phone"></i>&nbsp;123-4567-8910</strong></div>
-</div>
-<div class="footer">
-<div class="footer-nav">
-<ul class="footer-nav-group">
-<li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li>
-<li><a href="#"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
-<li><a href="#"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li>
-</ul>
-</div>
-<div class="footer-text">ホームページに関する注意事項など入ります</div>
-<div class="footer-copyright">Copyright &copy; 20xx xxxxx.</div>
-</div>
-<p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></p>
-</body>
-
+<!-- html -->
+    <body id="top">
+        <div class="nav">
+            <ul class="nav-group">
+                <li><a href="/index.html" class="active"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+                <li><a href="Lineage_table_monster.html">Lineage_table_monster_Drop</a></li>
+                <li><a href="LineageREMASTER_IME.html">IME</a></li>
+                <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+                <li><a href="#">表</a></li>
+            </ul>
+        </div>
+        <div class="main">ゲームメモ</div>
+            <div class="header">
+                <h1 class="header-title">ぷりめらの</h1>
+                <p class="header-description">プレーしたゲームのデータなど。</p>
+            </div>
+            <div class="content">
+                <div class="article">
+                    <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2024年10月30日</div>
+                    <h2 class="article-title">ゲーム内データーや公式からの公知などを転載</h2>
+                    <p class="article-paragraph">プレーしたゲームのゲーム内データーリストや公式サイトのお知らせなどを再編集して転載しています。ゲームシステムからのリバースエンジニアリングや転送データの吸出しはしていません。</p>
+                    <h3 class="article-paragraph-title">もとはエクセル</h3>
+                    <p class="article-paragraph"><!-- <img class="img-circle article-img_left" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> -->狩場図鑑を入力していた資料を一覧できるようにしたものです。副産物のIMEとATOKの辞書も公開します。</p>
+                    <p class="article-paragraph"><!-- <img class="img-thumbnail article-img_right" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> -->略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。</p>
+                </div>
+                <div class="article">
+                    <h2 class="article-title">更新履歴</h2>
+                    <ul class="article-list">
+                        <li><span class="article-list-date">20xx年xx月xx日</span>更新されたら情報が入る予定<span class="label label_normal">！</span></li>
+                        <li><span class="article-list-date">2024年10月30日</span>初公開<span class="label label_primary">…</span></li>
+                    </ul>
+                </div>
+    <!--
+                <div class="article">
+                    <h2 class="article-title">テンプレートで利用できるパーツ</h2>
+                    <p class="article-paragraph">ソースをコピー・アンド・ペーストしてご利用ください。</p>
+                    <h3 class="article-paragraph-title">テキスト</h3>
+                    <p class="article-paragraph"><span class="text_normal">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="text_primary">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="text_success">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="text_warning">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="text_danger">文字の大きさ、量、字間、行間等を確認するために入れています。</span></p>
+                    <h3 class="article-paragraph-title">メッセージ</h3>
+                    <p class="article-paragraph"><span class="message message_normal">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="message message_default">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="message message_primary">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="message message_success">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="message message_warning">文字の大きさ、量、字間、行間等を確認するために入れています。</span><br />
+                    <span class="message message_danger">文字の大きさ、量、字間、行間等を確認するために入れています。</span></p>
+                    <h3 class="article-paragraph-title">ボタン</h3>
+                    <p class="article-paragraph"><a class="btn btn_lg btn_normal">大ボタン</a> <a class="btn btn_lg btn_default">大ボタン</a> <a class="btn btn_lg btn_primary">大ボタン</a> <a class="btn btn_lg btn_success">大ボタン</a> <a class="btn btn_lg btn_warning">大ボタン</a> <a class="btn btn_lg btn_danger">大ボタン</a></p>
+                    <p class="article-paragraph"><a class="btn btn_normal">中ボタン</a> <a class="btn btn_default">中ボタン</a> <a class="btn btn_primary">中ボタン</a> <a class="btn btn_success">中ボタン</a> <a class="btn btn_warning">中ボタン</a> <a class="btn btn_danger">中ボタン</a></p>
+                    <p class="article-paragraph"><a class="btn btn_sm btn_normal">小ボタン</a> <a class="btn btn_sm btn_default">ボタン</a> <a class="btn btn_sm btn_primary">小ボタン</a> <a class="btn btn_sm btn_success">小ボタン</a> <a class="btn btn_sm btn_warning">小ボタン</a> <a class="btn btn_sm btn_danger">小ボタン</a></p>
+                    <h3 class="article-paragraph-title">パネル</h3>
+                    <div class="panel">
+                        <div class="panel-header">パネルの見出しが入ります</div>
+                        <div class="panel-body">文字の大きさ、量、字間、行間等を確認するために入れています。</div>
+                    </div>
+                </div>
+    -->
+            </div>
+            <div class="address">
+                <div class="address-body"><strong class="address-body-name">asamon</strong>
+                    <div class="address-body-addressline">日本・住所非公開</div>
+                <strong class="address-body-tel"><i class="fa fa-phone"></i>&nbsp;電話番号非公開</strong>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-nav">
+                    <ul class="footer-nav-group">
+                        <!-- <li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li> -->
+                        <li><a href="https://x.com/AsamonPrimera"><i class="fa fa-twitter"></i>&nbsp;X</a></li>
+                        <!-- <li><a href="#"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+                Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation. NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
+                <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
+            </div>
+            <p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></p>
+        </div>
+        <script>
+            // 画面上部にスクロールするボタン
+            $(function() {
+                var pageTop = $('.btn-pagetop');
+                pageTop.hide();
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 600) {
+                        pageTop.fadeIn();
+                    } else {
+                        pageTop.fadeOut();
+                    }
+                });
+                pageTop.click(function() {
+                    $('body, html').animate({
+                        scrollTop: 0
+                    }, 500, 'swing');
+                    pageTop.blur();
+                    return false;
+                });
+            });
+        </script>
+    </body>
 </html>

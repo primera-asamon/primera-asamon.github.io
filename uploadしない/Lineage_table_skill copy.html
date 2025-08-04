@@ -57,16 +57,16 @@
         <button class="class-btn" data-cls="妖" data-elf="水">水</button>
         <button class="class-btn" data-cls="妖" data-elf="風">風</button>
         <button class="class-btn" data-cls="妖" data-elf="地">地</button>
-        <button class="class-btn" data-cls="魔">魔</button><br>
+        <button class="class-btn" data-cls="魔">魔</button>
         <button class="class-btn" data-cls="闇">闇</button>
         <button class="class-btn" data-cls="竜">竜</button>
-        <button class="class-btn" data-cls="戦">戦</button>
+        <button class="class-btn" data-cls="闘">闘</button>
         <button class="class-btn" data-cls="剣">剣</button>
         <button class="class-btn" data-cls="槍">槍</button>
+        <button class="class-btn" data-cls="闘">闘</button>
         <button class="class-btn" data-cls="幻">幻</button>
         <button class="class-btn" data-cls="聖">聖</button>
-        <button class="class-btn" data-cls="闘">闘</button> <!-- ファイターfighter -->
- <!-- スキル一覧のフィルタリングラジオボタン -->
+<!-- スキル一覧のフィルタリングラジオボタン -->
         <label><input type="radio" name="matchType" value="only" checked> 完全一致</label>
         <label><input type="radio" name="matchType" value="includes"> 部分一致</label>
     </div>
@@ -91,13 +91,6 @@
             </section>
         </footer>
     </div>
-<!-- ページ上部にスクロールするボタン -->
-<p>
-    <a href="#top" class="btn-pagetop" aria-label="ページの先頭へ戻る">
-        <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
-        <span class="label-text">ページ先頭へ</span>
-    </a>
-</p>
 <!-- FC2ではapplication/scriptでもjsファイル読み込み時にtext/htmlに変更され駆動しない。Javascript中にhtmlタグで開始される行がある場合誤認される。
 対策：全ての行はhtml_pcv =+`～ではじめること。またはjs独立ファイルはあきらめる。 -->
 <!--    <script src="lineage_skill.js" defer></script> -->
@@ -393,11 +386,10 @@ const classCodeMap = {
   "闇": "dak",  //4/ダークエルフdarkelf
   "竜": "dra",  //5/ドラゴンナイトdragonknight
   "幻": "ill",  //6/イリュージョニストillusionist
-  "戦": "war",  //7/ウォリアーwarrior
+  "闘": "war",  //7/ウォリアーwarrior
   "剣": "fen",  //8/フェンサーFencer
   "槍": "lan",  //9/ランサーlancer
-  "聖": "Pal",  //10/パラディンPaladin
-  "闘": "fig"   //11/ファイターfighter
+  "聖": "Pal"  //10/パラディンPaladin
 };
 // クラスコード取得関数
 function getClassCode(label) {
@@ -447,36 +439,6 @@ function initializeTableBehavior() {
 // イベントリスナーの再登録を含めた初期化関数↑ここまで
 
 });
-// 画面上部にスクロールするボタン
-$(function() {
-    var pageTop = $('.btn-pagetop');
-    pageTop.hide();
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 600) {
-            pageTop.fadeIn();
-        } else {
-            pageTop.fadeOut();
-        }
-    });
-    pageTop.click(function() {
-        $('body, html').animate({
-            scrollTop: 0
-        }, 500, 'swing');
-        pageTop.blur();
-        return false;
-    });
-});
-function scrollToFirstRecord() {
-  var table = document.querySelector("table");
-  var tbody = table.getElementsByTagName("tbody")[0];
-  var firstRow = tbody.getElementsByTagName("tr")[0];
-  firstRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // ヘッダーの高さを取得
-  var headerHeight = table.querySelector("thead.sticky").offsetHeight; //80pxを取得Edgeコンソールより確認
-  // スクロール位置を調整して1件目の行が見えるようにする
-  var firstRowTop = firstRow.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-  window.scrollTo({ top: firstRowTop - headerHeight, behavior: 'smooth' });
-}
 </script>
 </body>
 </html>
