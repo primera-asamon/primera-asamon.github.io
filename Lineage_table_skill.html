@@ -197,12 +197,12 @@ if (document.readyState === 'loading') {
             const fields = line.split('\t');
             console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
 
-            if (fields.length < 24) {
+            if (fields.length < 25) {
                 console.warn("データ不足:", fields);
                 continue; // フィールド数が不足している場合スキップ
             }
 // 各フィールドの値を変数に格納
-            const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,duration,target,reuse,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2,EOR] = line.split('\t');
+            const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,gear,duration,target,reuse,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2,EOR] = line.split('\t');
             // 各フィールドをTAB分割 EOR(End Of Record)を無視
             // imgは画像のURLだが、ここでは使用しないので無視。値は"全角Space"
             // EORは行の終わりを示すが、ここでは使用しないので無視。値は"■"
@@ -233,6 +233,7 @@ if (document.readyState === 'loading') {
             html_pcv += `<tr><th class="spv-col-header">消耗MP</th><td class="spv-col-data">${mp}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">消耗HP</th><td class="spv-col-data">${hp}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">材料・触媒</th><td class="spv-col-data">${material}</td></tr>`;
+            html_pcv += `<tr><th class="spv-col-header">装備条件</th><td class="spv-col-data">${gear}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">持続時間</th><td class="spv-col-data">${duration}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">対象</th><td class="spv-col-data">${target}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">再使用時間</th><td class="spv-col-data">${reuse}</td></tr>`;
@@ -248,8 +249,8 @@ if (document.readyState === 'loading') {
             } else {
 // #endregion
 //  --- PC用テーブル出力 ---
-            html_pcv += `<tbody class="record-table" data-cls="${cls}" data-elf="${elf}">`
-            // No.とLevelとスキル名は「<th>～」を使用しない。
+            html_pcv += `<tbody class="record-table" data-cls=${cls} data-elf=${elf}>`
+            // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
                 html_pcv += `<tr class="record-title">
                             <td class="col-data_no">No.${no}</td>`
                 // ...existing code...
@@ -261,38 +262,46 @@ if (document.readyState === 'loading') {
                     // 空または文字列（神話・伝説など）の場合
                                 html_pcv += `<td class="col-data_level">${level}</td>`;
                             }   
-                    html_pcv += `<td class="col-data_skillname" colspan="7">${name}</td>
+                    html_pcv += `<td class="col-data_skillname" colspan="9">${name}</td>
                         </tr>`
+            // skill_domain_eligible_character:5列
+            // skill_domain_tendency:2+2+2=6列
                 html_pcv += `<tr>
-                            <th class="col-header">習得クラス</th>
-                            <td class="col-data" colspan="2">${clsDisplay}</td>
-                            <th class="col-header">活性</th><td class="col-data">${active}</td>
+                            <th class="col-header">習得クラス</th><td class="col-data" colspan="4">${clsDisplay}</td>`
+                html_pcv += `<th class="col-header">活性</th><td class="col-data">${active}</td>
                             <th class="col-header">種類</th><td class="col-data">${type}</td>
                             <th class="col-header">性向</th><td class="col-data">${align}</td>
-                        </tr>
-                        <tr>
+                        </tr>`
+            // skill_domain_resource:2+2+3+2+2=11列
+                html_pcv += `<tr>
                             <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
                             <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
                             <th class="col-header">材料・触媒</th><td class="col-data" colspan="2">${material}</td>
-                            <th class="col-header">持続時間</th><td class="col-data" colspan="3">${duration}</td>
-                        </tr>
-                        <tr>
+                            <th class="col-header">装備条件</th><td class="col-data">${gear}</td>
+                            <th class="col-header">持続時間</th><td class="col-data">${duration}</td>
+                        </tr>`
+            // skill_domain_effect:3+2+6=11列
+                html_pcv += `<tr>
                             <th class="col-header">対象</th><td class="col-data" colspan="2">${target}</td>
                             <th class="col-header">再使用時間</th><td class="col-data">${reuse}</td>
-                            <th class="col-header">効果・性能</th><td class="col-data" colspan="7">${effect}</td>
-                        </tr>
-                        <tr>
+                            <th class="col-header">効果・性能</th><td class="col-data" colspan="5">${effect}</td>
+                        </tr>`
+            // skill_domain_acquisition:2+3+6=11列
+                html_pcv += `<tr>
                             <th class="col-header">習得Lv.</th><td class="col-data">${acqLv}</td>
-                            <th class="col-header">取得方法</th><td class="col-data" colspan="3">${obtain}</td>
+                            <th class="col-header">取得方法</th><td class="col-data" colspan="2">${obtain}</td>
                             <th class="col-header">価格</th><td class="col-data" colspan="5">${price}</td>
-                        </tr>
-                        <tr>
-                            <th class="col-header">ドロップ</th><td class="col-data" colspan="10">${Droporigin}</td>
-                        </tr>
-                        <tr>
-                            <th class="col-header">【蘇生】</th><td class="col-data" colspan="10">${Dropcomp}</td>
-                        </tr>
-                        <tr>
+                        </tr>`
+            // skill_domain_dropmob:11列
+                html_pcv += `<tr>
+                            <th class="col-header">ドロップ</th><td class="col-data" colspan="11">${Droporigin}</td>
+                        </tr>`
+            // skill_domain_dropmob:11列
+                html_pcv += `<tr>
+                            <th class="col-header">【蘇生】</th><td class="col-data" colspan="11">${Dropcomp}</td>
+                        </tr>`
+            // skill_domain_notes:6+5=11列
+                html_pcv += `<tr>
                             <th class="col-header">備考1</th><td class="col-data" colspan="5">${note1}</td>
                             <th class="col-header">備考2</th><td class="col-data" colspan="4">${note2}</td>
                         </tr>`
@@ -346,7 +355,7 @@ document.querySelectorAll('.class-btn').forEach(btn => {
                 if (selectedCls === '妖') {
                     isMatch =
                         (cls === '妖') &&
-                        (elf === selectedElf || elf === '無属性');
+                        (elf === selectedElf || elf === '共');
                 } else {
                     isMatch = cls === selectedCls;
                 }
@@ -355,7 +364,7 @@ document.querySelectorAll('.class-btn').forEach(btn => {
                 if (selectedCls === '妖') {
                     isMatch =
                         cls.includes('妖') &&
-                        (elf === selectedElf || elf === '無属性');
+                        (elf === selectedElf || elf === '共');
                 } else {
                     isMatch = cls.includes(selectedCls);
                 }
