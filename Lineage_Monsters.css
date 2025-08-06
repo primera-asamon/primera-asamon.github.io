@@ -3,7 +3,7 @@
   html,body {
     width:100%;
     height:calc(100% - 68px);
-    font-size:0.95em
+    font-size:0.95em;
   }
   .Monster_table_box{
     overflow-y: auto;
@@ -40,6 +40,7 @@
     background-clip: padding-box;
     z-index: -1;
   }
+
   th,td {
     width: 20px;
     max-width: 300px;

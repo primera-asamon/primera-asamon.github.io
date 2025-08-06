@@ -2,7 +2,7 @@
 
   html,body {
     width: auto;
-    height:calc(100% -70px);
+    height:calc(100% - 70px);
   }
   .d2m_table_box{
     overflow-y: auto;
