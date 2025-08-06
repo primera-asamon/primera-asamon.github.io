@@ -117,6 +117,13 @@
         /*zoom: 1;*/
     }
 
+    .content-block {
+    display: none;
+    }
+    .toggle-button {
+    cursor: pointer;
+    }
+
     .content:after,
     .article:after,
     .article-paragraph:after {
