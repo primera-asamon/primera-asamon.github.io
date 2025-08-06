@@ -118,7 +118,7 @@
     }
 
     .content-block {
-    display: none;
+    display: none !important;
     }
     .toggle-button {
     cursor: pointer;
