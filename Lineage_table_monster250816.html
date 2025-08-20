@@ -31,25 +31,19 @@
 <div class="Monster_table_box">
 <table>
 <thead class="sticky">
-<!-- データコントロール。列ごとに処理区分を設定する 
-sort：ソートアイコンボタンと文字列としての並び替え
-number：ソートアイコンボタンと数値としての並び替え
-refine：フィルターアイコンボタンとクリックによるダイアログフォーム表示
-checklist：ダイアログフォームにチェックボックス付リストアイテムを表示する
--->
 <tr>
-  <th class="list_no" data-control="sort number">No.</th>
-  <th class="hunting_ground" data-control="sort refine checklist">狩り場リスト</th>
-  <th class="monster_name" data-control="sort refine">棲息する<br>モンスター</th>
-  <th class="monster_lv" data-control="sort number refine">Lv.</th>
-  <th class="monster_ac" data-control="sort number refine">AC</th>
-  <th class="monster_mr" data-control="sort number refine">MR</th>
-  <th class="monster_hp" data-control="sort number refine">HP</th>
-  <th class="monster_mp" data-control="sort number refine">MP</th>
-  <th class="Weakness_Element" data-control="sort refine checklist">弱点<br>属性</th>
-  <th class="SizeinWeapons" data-control="sort refine checklist">大きさ</th>
-  <th class="Drop_item" data-control="sort refine">アイテム</th>
-  <th class="remarks2" data-control="sort refine">記事2</th>
+<th class="list_no" data-control="sort number">No.</th>
+<th class="hunting_ground" data-control="sort refine">狩り場リスト</th>
+<th class="monster_name" data-control="sort refine">棲息する<br>モンスター</th>
+<th class="monster_lv" data-control="sort number refine">Lv.</th>
+<th class="monster_ac" data-control="sort number refine">AC</th>
+<th class="monster_mr" data-control="sort number refine">MR</th>
+<th class="monster_hp" data-control="sort number refine">HP</th>
+<th class="monster_mp" data-control="sort number refine">MP</th>
+<th class="Weakness_Element" data-control="sort refine">弱点<br>属性</th>
+<th class="SizeinWeapons" data-control="sort refine">大きさ</th>
+<th class="Drop_item" data-control="sort refine">アイテム</th>
+<th class="remarks2" data-control="sort refine">記事2</th>
 </tr>
 </thead>
 <tbody>
@@ -15146,9 +15140,7 @@ margin: 2px;
 ` );
 tblcontrol.css( `
 th[ data-control ] .tbl-filter-buttons input[ value="絞込み" ],
-th[ data-control ] .tbl-filter-buttons input[ value="クリア" ],
-th[ data-control ] .tbl-filter-range input[ name="min" ],
-th[ data-control ] .tbl-filter-range input[ name="max" ]
+th[ data-control ] .tbl-filter-buttons input[ value="クリア" ]
 `, `
 width: 80px;
 margin: 2px;
@@ -15178,9 +15170,10 @@ tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
 
 /* ── 関数：初期化 ── */
 tblcontrol.init =()=> {
+
 //─] コントロール追加
 document.querySelectorAll( "thead th[ data-control ]" ).forEach( th => {
-  console.log(th.textContent, th.dataset.control); // ← 追加
+
 //─]─] 取得
 const index = th.cellIndex;
 const table = th.closest( "table" );
@@ -15194,14 +15187,17 @@ control.classList.add( "tbl-control" );
 if( /sort/.test( th.dataset.control ) ){
 //─]─]─]─] 昇順ボタン
 const ascend = control.appendChild( document.createElement( "button" ) );
+ascend.type = "button";
 ascend.dataset.type = "sort-ascend";
 ascend.appendChild( tblcontrol.btnicon.ascend.cloneNode( true ) );
 //─]─]─]─] 降順ボタン
 const descend = control.appendChild( document.createElement( "button" ) );
+descend.type = "button";
 descend.dataset.type = "sort-descend";
 descend.appendChild( tblcontrol.btnicon.descend.cloneNode( true ) );
 //─]─]─]─] イベントハンドラ
-ascend.onclick = descend.onclick = tblcontrol.sort;
+ascend.onclick = tblcontrol.sort;
+descend.onclick = tblcontrol.sort;
 }
 
 //─]─]─] 絞込み
@@ -15217,10 +15213,8 @@ const filter = control.appendChild( document.createElement( "form" ) );
 filter.classList.add( "tbl-filter" );
 filter.onsubmit = tblcontrol.refine;
 filter.onreset = tblcontrol.unrefine;
-
-
-
-
+// ダイアログフォーム項目
+//※ チェックボックス付リストアイテム
 //─]─]─]─]─] 全選択
 let div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-all" );
@@ -15232,39 +15226,27 @@ input.checked = true;
 input.onchange = tblcontrol.checkAll;
 label.appendChild( document.createTextNode( "すべて" ) );
 
-// index: フィルター対象列のインデックス
-// th: index番目のth要素
-const th = table.querySelectorAll('th')[index];
-const controlValue = th.dataset.control || "";
-
-// checklistが含まれているか判定
-const isChecklist = controlValue.split(/\s+/).includes("checklist");
-
 //─]─]─]─]─] キーアイテム
 div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-inventory" );
-if (isChecklist) {
-  div.style.display = "block";
-}else{
-  div.style.display = "none";
-}
 const list = [].reduce.call( tbody.rows, ( arr, row ) => {
-  const text = row.cells[ index ].textContent;
-  if( ! arr.includes( text ) ){ arr.push( text ) }
-  return arr;
+const text = row.cells[ index ].textContent;
+if( ! arr.includes( text ) ){ arr.push( text ) }
+return arr;
 }, [] );
 list.forEach( text => {
-  label = div.appendChild( document.createElement( "label" ) );
-  input = label.appendChild( document.createElement( "input" ) );
-  input.name = "filter_item";
-  input.type = "checkbox";
-  input.value = text;
-  input.checked = true;
-  input.onchange = tblcontrol.checkAll;
-  label.appendChild( document.createTextNode( text ) );
+label = div.appendChild( document.createElement( "label" ) );
+input = label.appendChild( document.createElement( "input" ) );
+input.name = "filter_item";
+input.type = "checkbox";
+input.value = text;
+input.checked = true;
+input.onchange = tblcontrol.checkAll;
+label.appendChild( document.createTextNode( text ) );
 } );
 filter.dataset.keyitem = JSON.stringify( list );
 
+//※ 絞込みテキストボックス
 //─]─]─]─]─] キーワード
 div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-keyword" );
@@ -15272,46 +15254,18 @@ input = div.appendChild( document.createElement( "input" ) );
 input.name = "filter_keyword";
 input.type = "text";
 input.placeholder = "絞込みワード";
-input.style.width = "160px";
 filter.dataset.keyword = "";
 
-/* ↓　textbox → min/max 2025-08-17*/
-
-//─]─]─]─]─] min/max（数値列のみ）
-if (/number/.test(th.dataset.control)) {
-  div = filter.appendChild(document.createElement("div"));
-  div.classList.add("tbl-filter-range");
-
-  input = div.appendChild(document.createElement("input"));
-  input.name = "min";
-  input.type = "number";
-  input.placeholder = "最小";
-  input.style.width = "72px";
-  input.className = "tbl-filter-minmax";
-
-  input = div.appendChild(document.createElement("input"));
-  input.name = "max";
-  input.type = "number";
-  input.placeholder = "最大";
-  input.style.width = "72px";
-  input.className = "tbl-filter-minmax";
-}
-
-/* ↑　textbox → min/max */
-
-
+//※ 各ボタン
 //─]─]─]─]─] 各ボタン
 div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-buttons" );
-
 input = div.appendChild( document.createElement( "input" ) );
 input.type = "submit";
 input.value = "絞込み";
-
 input = div.appendChild( document.createElement( "input" ) );
 input.type = "reset";
 input.value = "クリア";
-
 input = div.appendChild( document.createElement( "input" ) );
 input.type = "button";
 input.value = "キャンセル";
@@ -15324,14 +15278,14 @@ input.onclick = tblcontrol.toggleFilter;
 /* ── 関数：並び替え ── */
 tblcontrol.sort = evt => {
 //─] HTML 要素
-const target = evt.target;
-const thead = target.closest( "thead" );
-const th = target.closest( "th" );
-const tbody = target.closest( "table" ).querySelector( "tbody" );
+const btn = evt.currentTarget; // 修正evt.target,btn<--target
+const thead = btn.closest( "thead" );
+const th = btn.closest( "th" );
+const tbody = btn.closest( "table" ).querySelector( "tbody" );
 //─] 列番号
 const index = th.cellIndex;
 //─] ソート方法
-const type = target.dataset.type;
+const type = btn.dataset.type;
 const numsort = /number/.test( th.dataset.control );
 //─] ソート
 Array.from( tbody.rows ).sort( ( row1, row2 ) => {
@@ -15386,49 +15340,6 @@ filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item
 };
 
 /* ── 関数：絞込み ── */
-/* ↓　textbox → min/max */
-
-//-] 関数数値範囲での絞り込み
-
-tblcontrol.refine = function(event) {
-  event.preventDefault();
-
-  const form = event.target;
-  const th = form.closest("th");
-  const colIndex = Array.from(th.parentNode.children).indexOf(th);
-
-  const rows = th.closest("table").tBodies[0].rows;
-
-  const isNumber = controlValue.split(/\s+/).includes("number");
-  if (isNumber) {
-  const min = parseFloat(form.min.value);
-  const max = parseFloat(form.max.value);
-    for (const row of rows) {
-      const cell = row.cells[colIndex];
-      const value = parseFloat(cell.textContent.trim());
-      const text = cell.textContent.trim();
-
-      let show = true;
-      // 数値範囲での絞り込み
-      if (!isNaN(min) && value < min) show = false;
-      if (!isNaN(max) && value >= max) show = false;
-    }
-  } else {
-  const keyword = form.filter_keyword?.value?.trim();
-    for (const row of rows) {
-      const cell = row.cells[colIndex];
-      const value = parseFloat(cell.textContent.trim());
-      const text = cell.textContent.trim();
-
-      let show = true;
-      // キーワードでの絞り込み
-      if (keyword && !text.includes(keyword)) show = false;
-
-      row.style.display = show ? "" : "none";
-    }
-  }
-};
-/* ↑　textbox → min/max */
 tblcontrol.refine = evt => {
 //─] フォーム送信中止
 evt.preventDefault();
@@ -15466,16 +15377,13 @@ const filter = evt.target;
 filter.filter_all.checked = true;
 Array.from( filter.filter_item ).forEach( item => item.checked = true );
 filter.filter_keyword.value = "";
-
-/* ↓　textbox → min/max 2025-08-17*/
-filter.min.value = "";
-filter.max.value = "";
-/* ↑　textbox → min/max */
-
 tblcontrol.refine( evt );
 };
 
 /* ── 実装 ── */
+//  イベントリスナ・クリックascend/decendを記述していく予定
+// ascend.addEventListener("click", tblcontrol.sort);
+// descend.addEventListener("click", tblcontrol.sort);
 window.addEventListener( "DOMContentLoaded", tblcontrol.init, false );
 </script>
 </body>
