@@ -103,12 +103,12 @@
     /* コンテンツ */
 
     .content {
-        padding: 48px 0 24px;
+        padding: 16px 0 16px;
         /*zoom: 1;*/
     }
 
     .article {
-        margin: 0 auto 48px;
+        margin: 16px ;
         padding-bottom: 48px;
         width: auto;
         -webkit-box-sizing: border-box;
@@ -193,6 +193,10 @@
     .article-paragraph:last-child,
     .article-img:last-child {
         margin: 0;
+    }
+
+    img.ss {
+        margin: 24px;
     }
 
     .address {

@@ -15217,6 +15217,9 @@ filter.classList.add( "tbl-filter" );
 filter.onsubmit = tblcontrol.refine;
 filter.onreset = tblcontrol.unrefine;
 
+
+
+
 //─]─]─]─]─] 全選択
 let div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-all" );
@@ -15294,6 +15297,7 @@ if (/number/.test(th.dataset.control)) {
 }
 
 /* ↑　textbox → min/max */
+
 
 //─]─]─]─]─] 各ボタン
 div = filter.appendChild( document.createElement( "div" ) );
