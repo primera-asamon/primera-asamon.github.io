@@ -75,21 +75,20 @@ function setup() {
     //checklist：ダイアログフォームにチェックボックス付リストアイテムを表示する
     //--> 
           html_tsv += `<tr>`;
-            html_tsv += `<th class="list_no" data-control="sort number">No.</th>`;
-            html_tsv += `<th class="hunting_ground" data-control="sort refine checklist">狩り場リスト</th>`;
-            html_tsv += `<th class="monster_name" data-control="sort refine">棲息する<br>モンスター</th>`;
-            html_tsv += `<th class="monster_lv" data-control="sort number refine">Lv.</th>`;
-            html_tsv += `<th class="monster_ac" data-control="sort number refine">AC</th>`;
-            html_tsv += `<th class="monster_mr" data-control="sort number refine">MR</th>`;
-            html_tsv += `<th class="monster_hp" data-control="sort number refine">HP</th>`;
-            html_tsv += `<th class="monster_mp" data-control="sort number refine">MP</th>`;
-            html_tsv += `<th class="Weakness_Element" data-control="sort refine checklist">弱点<br>属性</th>`;
-            html_tsv += `<th class="SizeinWeapons" data-control="sort refine checklist">大きさ</th>`;
-            html_tsv += `<th class="Drop_item" data-control="sort refine">アイテム</th>`;
-            html_tsv += `<th class="remarks2" data-control="sort refine">記事2</th>`;
+            html_tsv += `<th data-control="sort number">No.</th>`;
+            html_tsv += `<th data-control="sort refine checklist">狩り場リスト</th>`;
+            html_tsv += `<th data-control="sort refine">棲息する<br>モンスター</th>`;
+            html_tsv += `<th data-control="sort number refine">Lv.</th>`;
+            html_tsv += `<th data-control="sort number refine">AC</th>`;
+            html_tsv += `<th data-control="sort number refine">MR</th>`;
+            html_tsv += `<th data-control="sort number refine">HP</th>`;
+            html_tsv += `<th data-control="sort number refine">MP</th>`;
+            html_tsv += `<th data-control="sort refine checklist">弱点<br>属性</th>`;
+            html_tsv += `<th data-control="sort refine checklist">大きさ</th>`;
+            html_tsv += `<th data-control="sort refine">アイテム</th>`;
+            html_tsv += `<th data-control="sort refine">記事</th>`;
           html_tsv += `</tr>`;
         html_tsv += `</thead>`;
-//    <!-- tbody は JSで挿入 --> //
  
         // const table = document.querySelector('.Monster_table_box table');
         // table.querySelector('tbody')?.remove(); // 既存削除
@@ -107,18 +106,18 @@ function setup() {
           ] = fields;
 //          console.log(`Parsed line: No.${list_no}, Monster: ${monster_name}`);
           html_tsv += `<tr>`;
-          html_tsv += `<td>${list_no}</td>`;
-          html_tsv += `<td>${hunting_ground}</td>`;
-          html_tsv += `<td>${monster_name}</td>`;
-          html_tsv += `<td>${monster_lv}</td>`;
-          html_tsv += `<td>${monster_ac}</td>`;
-          html_tsv += `<td>${monster_mr}</td>`;
-          html_tsv += `<td>${monster_hp}</td>`;
-          html_tsv += `<td>${monster_mp}</td>`;
-          html_tsv += `<td>${Weakness_Element}</td>`;
-          html_tsv += `<td>${SizeinWeapons}</td>`;
-          html_tsv += `<td>${Drop_item}</td>`;
-          html_tsv += `<td>${remarks2}</td>`;
+          html_tsv += `<td class="list_no" >${list_no}</td>`;
+          html_tsv += `<td class="hunting_ground" >${hunting_ground}</td>`;
+          html_tsv += `<td class="monster_name" >${monster_name}</td>`;
+          html_tsv += `<td class="monster_lv" >${monster_lv}</td>`;
+          html_tsv += `<td class="monster_ac" >${monster_ac}</td>`;
+          html_tsv += `<td class="monster_mr" >${monster_mr}</td>`;
+          html_tsv += `<td class="monster_hp" >${monster_hp}</td>`;
+          html_tsv += `<td class="monster_mp" >${monster_mp}</td>`;
+          html_tsv += `<td class="Weakness_Element" >${Weakness_Element}</td>`;
+          html_tsv += `<td class="SizeinWeapons" >${SizeinWeapons}</td>`;
+          html_tsv += `<td class="Drop_item" >${Drop_item}</td>`;
+          html_tsv += `<td class="remarks2" >${remarks2}</td>`;
           html_tsv += `</tr>`;
         }
         html_tsv += `</tbody>`;
