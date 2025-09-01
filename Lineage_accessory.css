@@ -1,0 +1,105 @@
+/* accessory table(acce) */
+
+  html,body {
+    width: auto;
+    height:calc(100% - 70px);
+  }
+  .acce_table_box{
+    overflow-y: auto;
+    width:98%;
+    height:calc(100% - 20px);
+    position: relative;
+  }
+
+  .create_date {
+      text-align: right;
+      margin: 6px 24px;
+      color: #999;
+      font-size: 0.9em;
+  }
+
+  .update_date {
+      text-align: right;
+      margin: 6px 24px;
+      color: #000;
+      font-size: 0.9em;
+  }
+
+h2 {
+    text-align: left;
+    margin: 0 0 6px 18px;
+    font-size: 1.2em;
+  }
+
+  table.acce {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 98%;
+    margin: auto;
+  }
+
+  thead.sticky_acce {
+  position: sticky;
+  top: 0;
+  z-index: 2; /* 背景レイヤの ::before より前面 */
+  height: 50px; /* sticky基準の安定化 */
+  background-color: #fec; /* stickyには明示的背景必須 */
+}
+  .sticky_acce {
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-top: none;
+  }
+  .sticky_acce::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #fec;
+    background-clip: padding-box;
+    z-index: -1;
+  }
+  th,td {
+    height:50px;
+    border: solid 1px #000;
+    text-align: center;
+    font-weight: normal;
+    padding: 3px 6px;
+    font-size:small;
+  }
+  tr,td {
+    height:24px;
+  }
+  
+  .Item_No {
+    width: 60px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+  .Search_Drop {
+    width: 320px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+  tbody.acce {
+    font-weight: normal;
+    padding: 6px 8px;
+  }
+  .Item_No_acce {
+    width: 60px;
+  }
+  .drop_item_acce {
+    width: 320px;
+  }
+  .monster_list_acce {
+    width: calc(100% - 300px);
+    text-align: left;
+  }
+  .Item_No_odd_acce {
+    background-color: #fec;
+  }
