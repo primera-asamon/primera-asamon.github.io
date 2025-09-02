@@ -656,3 +656,18 @@
     .fc2analyzer {
         text-align:right ;
     }
+
+    /* 画像リスト(LineageREMASTER_etc.html) */
+    .image_list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .image_list img {
+        display: block;
+        max-width: 80%;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+    }

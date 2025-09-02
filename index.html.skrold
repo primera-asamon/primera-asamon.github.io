@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ぷりめらの</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <!-- <link rel="stylesheet" href="normalize.css"> -->
+    <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+    <link rel="stylesheet" href="Lineage_main.css">
+  </head>
+  <body id="top">
+    <div class="nav">
+      <ul class="nav-group">
+        <li><a href="index.html" class="active"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+        <li><a href="Lineage_table_monster.html">Monsters</a></li>
+        <li><a href="Lineage_table_drop.html">Drops</a></li>
+        <li><a href="Lineage_table_skill.html">Skills</a></li>
+        <li><a href="LineageREMASTER_IME.html">IME</a></li>
+        <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+        <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
+        <li><a href="font.html">大字</a></li>
+        <li><a href="inkey_JAJP.html">押下釦</a></li>
+      </ul>
+    </div>
+    <div class="main">リネージュメモ</div>
+    <div class="header">
+      <h1 class="header-title">ぷりめらの</h1>
+      <div class="header-description">プレーしたゲームのデータなど。</div>
+    </div>
+    <div class="content">
+      <div class="article">
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2025年09月01日</div>
+        <h2 class="article-title toggle-button">棲息場所と階層を集約(skills)</h2>
+        <div class="article-paragraph content-block">モンスター毎に棲息場所を集約、生息場所毎に階層を集約
+          <br>
+          <h3 class="article-paragraph-title">skill(スキル一覧表)</h3>
+          <ul>
+            <li>モンスター毎に棲息場所を集約、生息場所毎に階層を集約従来は「ダークエルフ(アデン大陸)、ダークエルフ(暗黒竜の傷跡)」であったものを「ダークエルフ〈アデン大陸、暗黒竜の傷跡〉」のように同じモンスター毎に集約した。<br>
+            <img class="ss" src="./picture/skill_monster_habitat_integration.png" height="433" width="737" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+            <li>また「ケルベロス(メインランドのダンジョン4階)、ケルベロス(メインランドのダンジョン5階)」であったものを「ケルベロス〈メインランドのダンジョン4階、5階〉」のように同じ狩り場の階層を集約した。<br>
+            <img class="ss" src="./picture/skill_monster_floor_integration.png" height="476" width="832" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+          </ul>
+        </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2025年08月29日</div>
+        <h2 class="article-title toggle-button">棲息場所と階層を集約(drops)</h2>
+        <div class="article-paragraph content-block">モンスター毎に棲息場所を集約、生息場所毎に階層を集約
+          <br>
+          <h3 class="article-paragraph-title">Drops(Item2Monsterリスト)</h3>
+          <ul>
+            <li>モンスター毎に棲息場所を集約、生息場所毎に階層を集約従来は「悪魔王のアックス：デーモン ゴーレム(隠された象牙の塔)、デーモン ゴーレム(隠された象牙の塔Boost)、デーモン ゴーレム(象牙の塔6階)、デーモン ゴーレム(象牙の塔7階)」であったものを「悪魔王のアックス	：デーモン ゴーレム〈隠された象牙の塔、隠された象牙の塔Boost、象牙の塔6階、7階〉のように同じモンスター毎に集約した。」<br>
+            <img class="ss" src="./picture/d2m_floorintegration1.png" height="301" width="961" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+            <li>また「地竜のスケルトン ガード(ドラゴンバレー ダンジョン4階)、地竜のスケルトン ガード(ドラゴンバレー ダンジョン5階)、地竜のスケルトン ガード(ドラゴンバレー ダンジョン6階)」であったものを「地竜のスケルトン ガード〈ドラゴンバレー ダンジョン4階、5階、6階〉」のように同じ狩り場の階層を集約した。<br>
+            <img class="ss" src="./picture/d2m_floorintegration2.png" height="310" width="1245" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+          </ul>
+        </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2025年08月27日</div>
+          <h2 class="article-title toggle-button">htmlとデータtsv分離。追記</h2>
+          <div class="article-paragraph content-block">マスターエクセルのデータをHTML直接記述からTSVファイル読み込みに変更しました。<br>
+            <h3 class="article-paragraph-title">モンスター一覧表</h3>
+            <ul>
+              <li>初期表示はtableがblankになりました。テキストファイル読み込みの[表示]ボタンをクリックしてください。
+              <img class="ss" src="./picture/blankpage_renderbutton.png" height="118" width="642" alt="修正後画面スクリーンショット：blanktableとrenderbutton" /><br>
+              クリック後表示されるtableはソートとフィルター機能は従来と同様です。</li>
+              <li>ドロップの一部修正
+                <ul>
+                  <li>ライカンスロープ：○武器強化スクロール×防具強化スクロール</li>
+                  <li>亡者の看守：高級スキル選択箱、高級蘇生スキル選択箱追加</li>
+                  <li>ブラックナイト チーフ：技術書(アブソルート ブレイド：プリズン)、技術書(アブソルート ブレイド：プリズン)(蘇生)、高級スキル選択箱、高級蘇生スキル選択箱追加</li>
+                </ul>
+              </li>
+              <li>記事欄の追記。出現場所と周期、アップデート付記
+                <ul>
+                  <li>アクモ ボス(★)：ドラゴンバレー ダンジョン7階＠6時間</li>
+                  <li>イフリート ボス(★)：火竜の棲処＠8時間</li>
+                  <li>オルクス ボス(★)：オークの森＠4時間</li>
+                  <li>カーツ ボス(★)：メインランド フィールド＠8時間</li>
+                  <li>カスパー ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+                  <li>グレート ブラック エルダー ボス(★)：ドラゴンバレーフィールド＠毎日22時～23時</li>
+                  <li>サンドワーム ボス(★)：砂漠＠金曜日・土曜日21時</li>
+                  <li>ジャイアントドレイク ボス(★)：ドラゴンバレーフィールド＠12時間</li>
+                  <li>セマ ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+                  <li>ゼロス ボス(★)：ドラゴンバレーフィールド＠12時間</li>
+                  <li>デーモン ボス(★)：象牙の塔7階＠4時間</li>
+                  <li>デスナイト ボス(★)：メインランドのダンジョン7階＠12時間</li>
+                  <li>デスナイト ボス(★)：2段階(マント)、メインランドのダンジョン7階＠12時間</li>
+                  <li>デスナイト ボス(★)：2段階(騎乗)、メインランドのダンジョン7階＠12時間</li>
+                  <li>ドッペルゲンガー ボス ボス(★)：鏡の森＠8時間</li>
+                  <li>ネクロマンサー ボス(★)：ドラゴンバレーフィールド＠6時間</li>
+                  <li>バルタザール ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+                  <li>ビッグフット マーヨ ボス(★)：オーレン雪山＠8時間</li>
+                  <li>フェニックス ボス(★)：火竜の棲処＠12時間</li>
+                  <li>ブラックナイト チーフ ボス(★)(アデン大陸)：「騎士道」Up＝アブソルート ブレイド：プリズン、亡者の墓・ケント フィールド＠6時間</li>
+                  <li>ブラックナイト チーフ ボス(★)(亡者の墓)：「騎士道」Up＝アブソルート ブレイド：プリズン、亡者の墓・ケント フィールド＠6時間</li>
+                  <li>マイノ シャーマン ボス(★)：風竜の棲処＠8時間</li>
+                  <li>マンボ キング ボス(★)：古代精霊の墓＠6時間</li>
+                  <li>メルキオール ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+                  <li>リカント ボス(★)：メインランド フィールド</li>
+                  <li>看守長 タロス ボス(★)：ギラン監獄2階＠毎日21時</li>
+                  <li>狂風のシャスキー ボス(★)：エルモア激戦地＠8時間</li>
+                  <li>疾風のシャスキー ボス(★)：エルモア激戦地＠8時間</li>
+                  <li>精霊監視者 ボス(★)：古代精霊の墓＠4時間</li>
+                  <li>亡者の看守 ボス(★)：死の廃墟＠6時間</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2025年08月20日</div>
+          <h2 class="article-title toggle-button">絞り込み機能強化</h2>
+          <div class="article-paragraph content-block">フィルターボタンのダイアログに最小値と最大値のBOXを追加しました。<br>
+            <h3 class="article-paragraph-title">モンスター一覧表</h3>
+            <img class="ss" src="./picture/filter20250820001.png" height="437" width="283" alt="最小/最大値対応ダイアログ" /><img class="ss" src="./picture/filter20250820002.png" height="331" width="240" alt="チェックボックスリスト対応ダイアログ" /><br>
+            「Lv.」「AC」「MR」「HP」「MP」の各項目に最小値と最大値の入力欄を追加しました。<br>
+            一方しか入力がない場合はそれ以上・それ未満を表示します。<br>
+            なお、両方の入力がある場合はその範囲内のモンスターを表示します。<br>
+            「狩り場リスト」「弱点属性」「大きさ」にはチェックボックスリストがあります。<br>
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2025年08月05日</div>
+          <h2 class="article-title toggle-button">スキル箱化対応</h2>
+          <div class="article-paragraph content-block">「騎士道」アップデート　2024.11.20. 09:55 一部対応  
+            <h3 class="article-paragraph-title">モンスター一覧表</h3>
+            一部スキルを削除しスキル選択箱を登録 (＊下記[]のモンスターは未収録・狩り場図鑑ベース)
+            <ul>
+              <li>一部のモンスターがドロップする唯一～高級等級の魔法書(蘇生含む)を削除しました。
+                <ul>
+                  <li>[アステリオス]、カヘル ヤヒ、[抑制したハルパス]、[ハルパス]</li>
+                  <li>支配の塔各階層ボスモンスター11種(覚醒ボス含む)、傲慢の塔各階層ボスモンスター11種</li>
+                  <li>[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス、[エルシャベ]、[クイーン センチュリオン]</li>
+                </ul>
+              </li>
+              <li>等級別の魔法書(スキル)選択箱をドロップするモンスターを追加しました。
+                <ol>
+                  <li>唯一スキル選択箱</li>
+                    [アステリオス3段階]、カヘル ヤヒ、[ハルパス]、[覚醒したデス グリムリーパー]
+                  <li>唯一蘇生スキル選択箱</li>
+                    [アステリオス3段階]、カヘル ヤヒ、[ハルパス]、[覚醒したデス グリムリーパー]
+                  <li>神話スキル選択箱</li>
+                    [アステリオス2/3段階]、カヘル ヤヒ、[ハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、ヴァラカス、パプリオン、リンドビオル、アンタラス、憤怒のバルログ
+                   <li>神話蘇生スキル選択箱</li>
+                    [ハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、ヴァラカス、パプリオン、リンドビオル、アンタラス、憤怒のバルログ
+                   <li>伝説のスキル選択箱</li>
+                    [アステリオス1/2/3段階]、カヘル ヤヒ、[ハルパス]、デス グリムリーパー、支配の塔各階層覚醒ボスモンスター11種、[エルシャベ]、憤怒のバルログ、[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス
+                   <li>伝説蘇生スキル選択箱</li>
+                    [ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス
+                   <li>英雄スキル選択箱</li>
+                    [アステリオス1/2/3段階]、カヘル ヤヒ、[ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、ヴァラカス、パプリオン、リンドビオル、アンタラス、[ラザルス]、デス グリムリーパー(傲慢の塔最上階)、[エルシャベ]
+                   <li>英雄蘇生スキル選択箱</li>
+                    [ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]、[クイーン センチュリオン]
+                   <li>希少スキル選択箱</li>
+                    [アステリオス1/2/3段階]、カヘル ヤヒ、[抑制したハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]
+                   <li>希少蘇生スキル選択箱</li>
+                    [抑制したハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]
+                   <li>高級スキル選択箱</li>
+                    [アステリオス1/2/3段階]、カヘル ヤヒ、[抑制したハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、傲慢の塔各階層ボスモンスター11種
+                   <li>高級蘇生スキル選択箱</li>
+                    [抑制したハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、傲慢の塔各階層ボスモンスター11種
+                </ol>
+              </li>
+            </ul>
+            <h3 class="article-paragraph-title">ドロップ一覧表</h3>
+            一部スキルを削除しスキル選択箱を登録 (＊上記[]のモンスターは未収録・狩り場図鑑ベース)
+            <h3 class="article-paragraph-title">スキル一覧表</h3>
+            スキル選択箱以外の従来ドロップとスキル選択箱を展開したスキルアイテムを統合。<br>スキル使用条件：装備を追加
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2025年07月10日</div>
+          <h2 class="article-title toggle-button">スキル一覧表追加・ページ体裁調整</h2>
+          <div class="article-paragraph content-block">
+            <h3 class="article-paragraph-title">スキル一覧表を追加</h3>
+                スキル一覧表ドロップとチュートリアルクエストNPCから購入などスキルの入手方法の表を作成。
+            <ol>
+              <li>Skillと入手方法の詠唱コストや効果・能力などをブロックで表示<br>
+                <ul>表の概要
+                  <li>スキルテーブル<a href="LineageREMASTER_skill3.tsv">TSV本体</a></li>
+                  <!-- 表示用JSON構造の提供は技術的制約により見送っています -->
+                  <li>skill_domain_identification：通し番号やスキル名称</li>
+                  <li>skill_domain_eligible_character：習得クラスとエルフ属性</li>
+                  <li>skill_domain_tendency：アクティブ/パッシブ、性向など</li>
+                  <li>skill_domain_resource：詠唱コスト消費HPMPと材料・触媒</li>
+                  <li>skill_domain_effect：スキルの効果持続時間、対象、効果・性能など</li>
+                  <li>skill_domain_acquisition：習得条件。習得レベル、取得方法、NPC価格</li>
+                  <li>skill_domain_dropmob：ドロップモンスター(レギュラー・蘇生)</li>
+                  <li>skill_domain_notes：備考</li>
+                  <li>習得レベルやドロップモンスターに未収載があります。<br>
+                    覚えていないスキルはスキルウィンドウの説明のまま。<br>
+                    持っていないスキルは魔法書や書板などアイテム説明に書いてある情報などが未収載</li>
+                </ul>
+              </li>
+              <li>折りたたみ表示・クラス表示ボタン<br>
+                <ul>
+                  <li>初期表示は全件折りたたみ</li>
+                  <li>クラス名ボタンをクリックするとそのクラスのみを表示</li>
+                  <li>完全一致はクラス固有スキル、部分一致は共通一般魔法を含めたスキルを表示</li>
+                </ul>
+              </li>
+            </ol>
+            <h3 class="article-paragraph-title">ページの体裁調整</h3>
+            　ページのリンクの追加。スタイルの変更。
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月21日</div>
+          <h2 class="article-title toggle-button">漢字変換辞書テキストを更新。ページの体裁調整</h2>
+          <div class="article-paragraph content-block">
+            <h3 class="article-paragraph-title">漢字変換辞書テキストを更新</h3>
+              <a href="LineageREMASTER_ATOK.html">リネージュリマスターItemMonster辞書2024(ATOK)<img src="./picture/link_icon.png" height="18" width="24" alt="link icon" /></a>の更新<br>
+              <a href="LineageREMASTER_IME.html">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/link_icon.png" height="18" width="24" alt="link icon" /></a>の更新<br>
+            <h3 class="article-paragraph-title">ページの体裁調整</h3>
+            　辞書更新履歴をそれぞれの辞書ページに移動
+            　CSS、アイコンなどの調整
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月13日</div>
+          <h2 class="article-title toggle-button">DropListを公開</h2>
+          <div class="article-paragraph content-block">
+            <h3 class="article-paragraph-title">MonsterListのアイテムからの逆引き</h3>
+            <ol>
+              <li>DropItemとMonsterの2列<br>
+                <ul>
+                  <li>Drop：アイテム名の辞書よみで並んでいます</li>
+                  <li>Monster：モンスター名（生息地）です。「★」はボスです。</li>
+                </ul>
+              </li>
+              <li>表示順など<br>
+                <ul>
+                  <li>初期表示は「b-」「c-」「(蘇生)」「魔法書(」などの接頭語や接尾語を除いた名称で並べています。<br>例：「精霊の水晶(ハリケーン)」は【せいれいのすいしょう～】ではなく【はりけーん】の場所に並んでいます。</li>
+                  <li>「－ドロップなし」「アデナ」も入っています。</li>
+                  <li>一つのアイテムに名前が同じモンスターが含まれることがあります。</li>
+                  <li>MonsterListと同じようにフィルターが使えます。「フェンサーの書」を指定してスキルだけを表示したりできます。</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月11日</div>
+          <h2 class="article-title toggle-button">漢字変換辞書テキストを更新</h2>
+          <div class="article-paragraph content-block">
+          　リネージュリマスターItemMonster辞書2024(ATOK)の更新<br>
+          　リネージュリマスターItemMonster辞書2024(IME)の更新<br>
+          </div>
+        <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年10月30日</div>
+          <h2 class="article-title toggle-button">モンスターリスト/漢字変換辞書テキストを公開</h2>
+          <div class="article-paragraph content-block">
+            <h3 class="article-paragraph-title">モンスターリスト</h3>
+            　狩場図鑑を入力していた資料を一覧できるようにしたものです
+            <h3 class="article-paragraph-title">漢字変換辞書テキスト</h3>
+            　狩り場図鑑の入力中正しい名称が面倒になってきたので副産物のIMEとATOKの辞書も公開。<br>
+            　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。
+          </div>
+        <div class="article">
+          <h2 class="article-title toggle-button">更新履歴</h2>
+          <ul class="article-list content-block">
+            <li><span class="article-list-date">2025年09月01日</span>棲息場所と階層を集約(skills)<span class="label label_normal">！</span></li>
+            <li><span class="article-list-date">2025年08月29日</span>棲息場所と階層を集約(drops)</li>
+            <li><span class="article-list-date">2025年08月27日</span>htmlとデータtsv分離。追記</li>
+            <li><span class="article-list-date">2025年08月20日</span>絞り込み機能強化。Monsters</li>
+            <li><span class="article-list-date">2025年08月05日</span>スキル選択箱対応。Monsters・Drops</li>
+            <li><span class="article-list-date">2025年07月10日</span>スキル一覧表追加・ページ体裁調整</li>
+            <li><span class="article-list-date">2024年11月21日</span>ATOK/IME辞書テキストファイル更新。ページ体裁の調整</li>
+            <li><span class="article-list-date">2024年11月13日</span>アイテムからドロップするモンスターの一覧を追加</li>
+            <li><span class="article-list-date">2024年11月11日</span>ATOK/IME辞書テキストファイル更新</li>
+            <li><span class="article-list-date">2024年10月30日</span>初公開<!-- <span class="label label_primary">…</span> --></li>
+          </ul>
+        </div>
+      </div>
+      <div class="address">
+      <div class="address-body"><strong class="address-body-name"></strong>
+          <div class="address-body-addressline"></div>
+          <!-- <strong class="address-body-tel"><i class="fa fa-phone"></i></strong> -->
+      </div>
+      </div>
+      <div class="footer">
+      <div class="footer-nav">
+          <ul class="footer-nav-group">
+              <!-- <li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li> -->
+              <li><a href="https://x.com/AsamonPrimera" ><img src="./picture/X_icon.png" height="16" width="16" alt="X_icon"/><!-- <i class="fa fa-twitter"></i> -->&nbsp;X</a></li>
+              <!-- <li><a href="#"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li> -->
+          </ul>
+      </div>
+      <div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+      &copy; NCSOFT Corporation. Licensed to NC Japan K.K. All Rights Reserved.</div>
+      <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
+      </div>
+      <div><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></div>
+    </div>
+    <script>
+        // 画面上部にスクロールするボタン
+        $(function() {
+            var pageTop = $('.btn-pagetop');
+            pageTop.hide();
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 600) {
+                    pageTop.fadeIn();
+                } else {
+                    pageTop.fadeOut();
+                }
+            });
+            pageTop.click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500, 'swing');
+                pageTop.blur();
+                return false;
+            });
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".toggle-button");
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const next = btn.nextElementSibling;
+            if (next && next.classList.contains("content-block")) {
+              next.style.display = next.style.display === "none" ? "block" : "none";
+              btn.textContent = btn.textContent.includes("▼")
+                ? btn.textContent.replace("▼", "▲")
+                : btn.textContent.replace("▲", "▼");
+            }
+          });
+        });
+      });
+    </script>
+
+    <!--
+    以下のカウンター参照はFC2外部利用規約および信義則に抵触する可能性があるため、
+    https://primera-asamon.github.io/
+    においてはindex.htmlから撤去する。
+    語義空間の自律と構造の倫理性維持のため、FC2　サーバーにてのみ使用する。
+    元コード（参考）:
+    <script type="text/javascript" src="https://counter1.fc2.com/counter.php?id=11198962&amp;main=1"></script>
+    <noscript><img src="https://counter1.fc2.com/counter_img.php?id=11198962&amp;main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
+    現在の閲覧者数:<script type="text/javascript" src="https://counter1.fc2.com/views.php?id=11198962&amp;main=1"></script>
+    <noscript><img src="https://counter1.fc2.com/counter_now.php?id=11198962&amp;main=1" alt="FC2カウンター" height="160" width="21" /></noscript>
+    FC2カウンター ここまで
+    -->
+  </body>
+</html>

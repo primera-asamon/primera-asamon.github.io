@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ぷりめらの</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <!-- <link rel="stylesheet" href="normalize.css"> -->
+  <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+  <link rel="stylesheet" href="Lineage_main.css">
+</head>
+<body id="top">
+  <div class="nav">
+    <ul class="nav-group">
+      <li><a href="index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+      <li><a href="Lineage_table_monster.html">Monsters</a></li>
+      <li><a href="Lineage_table_drop.html">Drops</a></li>
+      <li><a href="Lineage_table_skill.html">Skills</a></li>
+      <li><a href="LineageREMASTER_IME.html" class="active">IME</a></li>
+      <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+      <li><a href="LineageREMASTERED_etc.html">諸表</a></li>
+      <li><a href="font.html">大字</a></li>
+      <li><a href="inkey_JAJP.html">押下釦</a></li>
+    </ul>
+  </div>
+  <div class="main">リネージュメモ</div>
+  <div class="header">
+    <h1 class="header-title"><a href="./data/LineageREMASTER_IME2024-11-21.zip" title="LineageREMASTER_IME2024-11-21.zip">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/zip_download_arrow32.png" /></a></h1>
+    <p class="header-description">ブログなどで公開していたものを更新しました。</p>
+  </div>
+  <div class="content">
+    <div class="article">
+      <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月21日</div>
+      <h2 class="article-title toggle-button">リネージュリマスターItemMonster辞書2024(IME)の更新</h2>
+      <div class="article-paragraph content-block">
+        <h3 class="article-paragraph-title"></h3>
+        <ol>
+          <li>変更点
+            <ul>
+              <li>ナイトメア→ナイトメア(ないとめあ)：半角スペース誤り・重複登録削除</li>
+              <li>ブラッド ガーゴイル→ブラッド ガーゴイル(ぶらっどがーごいる)半角スペース除去</li>
+              <li>震努のクロウ→震怒のクロウ(しんどのくろう)：漢字誤り</li>
+              <li>刃のかけた武器→刃の欠けた武器(はのかけたぶき)：漢字誤り</li>
+              <li>ｂ－→b-(ｂ－)：半角に統一</li>
+              <li>テレポート アミュレット→テレポートアミュレット(てれぽーとあみゅれっと［読み省略あり］)：半角スペース除去</li>
+              <li>ミストラスト フローティング アイ→ミストラスト フローティング アイ(みすとらすとふろーてぃんぐあい)：半角スペース除去(連続)</li>
+              <li>(まにーろーど)→マミー ロード(まみーろーど)：読み誤り</li>
+              <li>(へぼーんどらごん)→ヘル ボーンドラゴン(へるぼーんどらごん)：読み誤り</li>
+              <li>(ふしのぞんびろーど)→不死のゾンビ ウィザード(ふしのぞんびうぃざーど)：読み誤り</li>
+              <li>(うぉーえばーりっち)→フォーエバー リッチ(ふぉーえばーりっち)：読み誤り</li>
+              <li>(うぉーえばーすけるとんふぁいたー)→フォーエバー スケルトン ファイター(ふぉーえばーすけるとんふぁいたー)：読み誤り</li>
+              <li>(ぱーとうぃう゛ぁいあさん)→パート リヴァイアサン(ぱーとりう゛ぁいあさん)：読み誤り</li>
+              <li>死神(しにがみ)品詞[名詞]→[接頭語]、コメント[傲慢の塔最上階]：「死に神」変換抑止のため登録</li>
+              <li>傲慢の塔※階テレポート アミュレット→封印された傲慢の塔※階テレポート アミュレット(ごうまんのとう※)：封印されたを付与※＝1～10</li>
+              <li>傲慢の塔※階テレポート アミュレット→封印された傲慢の塔※階テレポート アミュレット(ごうまんのとう※かいてれぽーとあみゅれっと)：封印されたを付与※＝1～10</li>
+              <li>エクスキューション(えくすきゅーしょん)：タイラント：エクスキューション(たいらんとえくすきゅーしょん)等で登録済みのため削除</li>
+            </ul>
+          </li>
+          <li>旧版に追加<br>
+          　封印された傲慢の塔9階テレポートアミュレット(ごうまんのとう９かいてれぽーとあみゅれっと)、エクセレント ソード(えくせれんとそーど)、技術書(エクセレント ソード)(蘇生)(えくせれんとそーど)、技術書(エクセレント ソード)(えくせれんとそーど)、アブソルート ブレイド：プリズン(あぶそるーとぶれいどぷりずん)、技術書(アブソルート ブレイド：プリズン)(蘇生)(あぶそるーとぶれいどぷりずん)、技術書(アブソルート ブレイド：プリズン)(あぶそるーとぶれいどぷりずん)、シールド ブレイカー(しーるどぶれいかー)、技術書(シールド ブレイカー)(蘇生)(しーるどぶれいかー)、技術書(シールド ブレイカー)(しーるどぶれいかー)、フォース スタン：アルティメット(ふぉーすすたんあるてぃめっと)、技術書(フォース スタン：アルティメット)(蘇生)(ふぉーすすたんあるてぃめっと)、技術書(フォース スタン：アルティメット)(ふぉーすすたんあるてぃめっと)<br>
+          </li>
+        </ol>
+      </div>
+      <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月11日</div>
+      <h2 class="article-title toggle-button">リネージュリマスターItemMonster辞書2024(IME)の更新</h2>
+      <div class="article-paragraph content-block">
+        <h3 class="article-paragraph-title"></h3>
+        <ol>
+          <li>変更点
+            <ul>
+              <li>審判者のグレート ソード→審判者のグレートソード(しんぱんしゃのぐれーとそーど)：スペースの除去</li>
+              <li>ゼニスクイーンの戦利品箱→ゼニス クイーンの戦利品箱(ぜにすくいーんのせんりひんばこ)：スペースの追加</li>
+              <li>ガースト(だーすと)読み誤りで削除</li>
+              <li>ブラッド サッカー→ブラッドサッカー(ぶらっどさっかー)：スペースの除去</li>
+              <li>レッド アラート→記憶の水晶(インスネア：レッド アラート)(いんすねあれっどあらーと)等登録済みで削除</li>
+            </ul>
+          </li>
+          <li>旧版に追加<br>
+          　アイアン ブーツ(あいあんぶーつ)、アイスクイーン サンダル(あいすくいーんさんだる)、アイスクイーン ティアラ(あいすくいーんてぃあら)、アイスクイーン ドレス(あいすくいーんどれす)、悪魔王のアックス(あくまおうのあっくす)、悪魔王のキーリンク(あくまおうのきーりんく)、悪魔王のスタッフ(あくまおうのすたっふ)、悪魔王のソード(あくまおうのそーど)、悪魔王のチェーンソード(あくまおうのちぇーんそーど)、悪魔王の ツーハンド ソード(あくまおうのつーはんどそーど)、悪魔王のデュアルブレード(あくまおうのでゅあるぶれーど)、悪魔王のボウ(あくまおうのぼう)、悪夢のロング ボウ(あくむのろんぐぼう)、アデンの迅速強力体力回復剤(あでんのじんそくきょうりょくたいりょくかいふくざい)、アデンの濃縮強力体力回復剤(あでんののうしゅくきょうりょくたいりょくかいふくざい)、ウォーター グローブ(うぉーたーぐろーぶ)、ウサギの肝(うさぎのきも)、機敏のベルト(きびんのべると)、クリスタル ショートソード(くりすたるしょーとそーど)、クリムゾン ランス(くりむぞんらんす)、グランカインの涙(ぐらんかいんのなみだ)、凍りついた心臓(こおりついたしんぞう)、凍りついた箱(こおりついたはこ)、古代神の思念(1)(こだいしんのしねん１)、古代神の思念(2)(こだいしんのしねん２)、古代神の思念(3)(こだいしんのしねん３)、古代神の思念(4)(こだいしんのしねん４)、古代神の思念(5)(こだいしんのしねん５)、古代神の思念(6)(こだいしんのしねん６)、古代神の思念(7)(こだいしんのしねん７)、殺意のキーリンク(さついのきーりんく)、死血のスピアー(しけつのすぴあー)、死神(しにがみ)、震努のクロウ(しんどのくろう)、審判者のグレートソード(しんぱんしゃのぐれーとそーど)、水霊のイアリング(すいれいのいありんぐ)、精神のベルト(せいしんのべると)、ゼニス クイーンの戦利品箱(ぜにすくいーんのせんりひんばこ)、体力のゲートル(たいりょくのげーとる)、ダーク ストーン(だーくすとーん)、ダーク フォレスター ブーツ(だーくふぉれすたーぶーつ)、ダーク フォレスター ポーション(だーくふぉれすたーぽーしょん)、ダーク ベルト(だーくべると)、ダーク ローブ(だーくろーぶ)、知力のブーツ(ちりょくのぶーつ)、知力のベルト(ちりょくのべると)、砥石(といし)、ドラゴンキー(ハルパス)(どらごんきーはるぱす)、刃のかけた武器(はのかけたぶき)、バルログ ブラッディ クローク(ばるろぐぶらっでぃくろーく)、バーニング ウェポン(ばーにんぐうぇぽん)、ピュア エリクサー(EXP)(ぴゅあえりくさーえｘｐ)、ブラック タイガーの牙(ぶらっくたいがーのきば)、ブラック タイガーの爪(ぶらっくたいがーのつめ)、ブラッド グレートソード(ぶらっどぐれーとそーど)、ブラッドサッカー(ぶらっどさっかー)、ブランク スクロール(Lv1)(ぶらんくすくろーる１)、ブランク スクロール(Lv2)(ぶらんくすくろーる２)、ブランク スクロール(Lv3)(ぶらんくすくろーる３)、ブランク スクロール(Lv4)(ぶらんくすくろーる４)、ブランク スクロール(Lv5)(ぶらんくすくろーる５)、プレート ワームの毒袋(ぷれーとわーむのどくぶくろ)、マジック ワンド(浄化)(まじっくわんど)、勇猛のメダル(25個入り)箱(ゆうもうのめだる２５こいりばこ)、勇猛のメダル(30個入り)箱(ゆうもうのめだる３０こいりばこ)、勇猛のメダル(50個入り)箱(ゆうもうのめだる５０こいりばこ)、ルナ ロング ボウ(るなろんぐぼう)、レッドクリスタル スタッフ(れっどくりすたるすたっふ)、腕力のベルト(わんりょくのべると)<br>
+          </li>
+        </ol>
+      </div>
+      <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月01日</div>
+      <h2 class="article-title toggle-button">リネージュリマスターItemMonster辞書2024(IME)の公開</h2>
+      <div class="article-paragraph content-block">
+        <p class="article-paragraph">　リネージュリマスター狩り場図鑑から「狩り場リスト」「棲息するモンスター」「アイテム」を収録しました。読みはasamonの想定した読みで正しさは保証しません。一部に省入力のための略称もあります。</p>
+        <h3 class="article-paragraph-title"></h3>
+        <p class="article-paragraph"><img class="article-img_left" src="./picture/IME_hennkan_SS.png" />　システムの違いから収録されていないユーザーコメントもありますが漢字としては同じく網羅されています。<br>
+        　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。変換メニュー上の変換候補に「アイテム」「モンスター」といったユーザーコメントが表示されます。</p>
+      </div>
+    </div>
+    <div class="article">
+    <h2 class="article-title">更新履歴</h2>
+    <ul class="article-list">
+    <li><span class="article-list-date">2024年11月21日</span>修正。追加。<span class="label label_normal">！</span></li>
+    <li><span class="article-list-date">2024年11月11日</span>修正。追加。</li>
+    <li><span class="article-list-date">2024年11月01日</span>ここでの初公開<span class="label label_primary">&hellip;</span></li>
+    </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+    Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation. NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
+      <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
+    </div>
+    <p><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></p>
+  <!-- -->
+  <script>
+    // 画面上部にスクロールするボタン
+    $(function() {
+      var pageTop = $('.btn-pagetop');
+      pageTop.hide();
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 600) {
+          pageTop.fadeIn();
+          } else {
+          pageTop.fadeOut();
+          }
+          });
+        pageTop.click(function() {
+        $('body, html').animate({
+        scrollTop: 0
+        }, 500, 'swing');
+        pageTop.blur();
+        return false;
+        });
+      });
+  </script>
+  <script>
+// タイトル(class="toggle-button")のクリックでコンテンツ(class="content-block")の表示・非表示を切り替える
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".toggle-button");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const next = btn.nextElementSibling;
+        if (next && next.classList.contains("content-block")) {
+          next.style.display = next.style.display === "none" ? "block" : "none";
+          btn.textContent = btn.textContent.includes("▼")
+            ? btn.textContent.replace("▼", "▲")
+            : btn.textContent.replace("▲", "▼");
+        }
+      });
+    });
+  });
+  </script>
+
+  </body>
+</html>

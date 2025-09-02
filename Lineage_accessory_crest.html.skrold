@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lineage_accessory_crest</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="Lineage">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <!-- <link rel="stylesheet" href="normalize.css"> -->
+  <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+  <link rel="stylesheet" href="Lineage_main.css">
+  <link rel="stylesheet" href="Lineage_accessory.css">
+</head>
+<body id="top">
+  <div class="nav">
+    <ul class="nav-group">
+      <li><a href="index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+      <li><a href="Lineage_table_monster.html">Monsters</a></li>
+      <li><a href="Lineage_table_drop.html">Drops</a></li>
+      <li><a href="Lineage_table_skill.html">Skills</a></li>
+      <li><a href="LineageREMASTER_IME.html">IME</a></li>
+      <li><a href="LineageREMASTER_ATOK.html">ATOK</a></li>
+      <li><a href="LineageREMASTERED_etc.html" class="active">諸表</a></li>
+      <li><a href="font.html">大字</a></li>
+      <li><a href="inkey_JAJP.html">押下釦</a></li>
+    </ul>
+  <!-- button onclick="scrollToFirstRecord()">1件目にジャンプ</button> -->
+  </div>
+    <h2>紋章・性能一覧</h2>
+    <div class="update_date"><i class="fa fa-clock-o">更新</i>&nbsp;2025/5/21</div>
+    <div class="create_date"><i class="fa fa-clock-o">初出</i>&nbsp;2025/4/7</div>
+  <div class="acce_table_box">
+    <table>
+      <thead class="sticky_acce">
+        <tr><td rowspan ="4">強化数</td><td>装身具：番号</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>装身具：番号</td></tr>
+        <tr><td>：画像</td><td><img class="icon_pict" src="./picture/crest_fighter.png" height="48" width="48" alt="闘士の紋章" /></td><td><img class="icon_pict" src="./picture/crest_archer.png" height="48" width="48" alt="射手の紋章" /></td><td><img class="icon_pict" src="./picture/crest_wizard.png" height="48" width="48" alt="賢者の紋章" /></td><td><img class="icon_pict" src="./picture/crest_protection.png" height="48" width="48" alt="守護の紋章" /></td><td><img class="icon_pict" src="./picture/crest_fighter_protection.png" height="48" width="48" alt="闘士の守護紋章" /></td><td><img class="icon_pict" src="./picture/crest_archer_protection.png" height="48" width="48" alt="射手の守護紋章" /></td><td><img class="icon_pict" src="./picture/crest_wizard_protection.png" height="48" width="48" alt="賢者の守護紋章" /></td><td>：画像</td></tr>
+        <tr><td>性能項目</td><td>闘士の<br>紋章</td><td>射手の<br>紋章</td><td>賢者の<br>紋章</td><td>守護の<br>紋章</td><td>闘士の<br>守護紋章</td><td>射手の<br>守護紋章</td><td>賢者の<br>守護紋章</td><td>性能項目</td></tr>
+      </thead>
+      <tbody>
+        <tr><td>+0</td><td>AC</td><td></td><td></td><td></td><td>-1</td><td>-1 </td><td>-1 </td><td>-1 </td><td>AC</td></tr>
+        <tr><td>+0</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr><td>+0</td><td>DEX</td><td></td><td>1</td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr><td>+0</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>AC</td><td></td><td></td><td></td><td>-1</td><td>-1 </td><td>-1 </td><td>-1 </td><td>AC</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>DEX</td><td></td><td>1</td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>ポーション回復量</td><td>2%,+2</td><td>2%,+2</td><td>2%,+2</td><td></td><td>2%,+2</td><td>2%,+2</td><td>2%,+2</td><td>ポーション回復量</td></tr>
+        <tr class="Item_No_odd_acce"><td>+1</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr><td>+2</td><td>AC</td><td></td><td></td><td></td><td>-1 </td><td>-1 </td><td>-1 </td><td>-1 </td><td>AC</td></tr>
+        <tr><td>+2</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr><td>+2</td><td>DEX</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr><td>+2</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr><td>+2</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr><td>+2</td><td>ポーション回復量</td><td>4%,+4</td><td>4%,+4</td><td>4%,+4</td><td></td><td>4%,+4</td><td>4%,+4</td><td>4%,+4</td><td>ポーション回復量</td></tr>
+        <tr><td>+2</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>AC</td><td></td><td></td><td></td><td>-1</td><td>-1 </td><td>-1 </td><td>-1 </td><td>AC</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>DEX</td><td></td><td>1</td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>ポーション回復量</td><td>8%,+8</td><td>8%,+8</td><td>8%,+8</td><td></td><td>8%,+8</td><td>8%,+8</td><td>8%,+8</td><td>ポーション回復量</td></tr>
+        <tr class="Item_No_odd_acce"><td>+3</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr><td>+4</td><td>AC</td><td></td><td></td><td></td><td>-1 </td><td>-1 </td><td>-1 </td><td>-1 </td><td>AC</td></tr>
+        <tr><td>+4</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr><td>+4</td><td>DEX</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr><td>+4</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr><td>+4</td><td>近距離命中</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>近距離命中</td></tr>
+        <tr><td>+4</td><td>遠距離命中</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>遠距離命中</td></tr>
+        <tr><td>+4</td><td>魔法命中</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>魔法命中</td></tr>
+        <tr><td>+4</td><td>MR</td><td></td><td></td><td></td><td>+1 </td><td>+1 </td><td>+1 </td><td>+1 </td><td>MR</td></tr>
+        <tr><td>+4</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr><td>+4</td><td>ポーション回復量</td><td>10%,+10</td><td>10%,+10</td><td>10%,+10</td><td></td><td>10%,+10</td><td>10%,+10</td><td>10%,+10</td><td>ポーション回復量</td></tr>
+        <tr><td>+4</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>AC</td><td></td><td></td><td></td><td>-1 </td><td>-2 </td><td>-2 </td><td>-2 </td><td>AC</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>DEX</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>近距離ダメージ</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>近距離ダメージ</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>近距離命中</td><td>+1 </td><td></td><td></td><td></td><td>+2 </td><td></td><td></td><td>近距離命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>遠距離ダメージ</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>遠距離ダメージ</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>遠距離命中</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+2 </td><td></td><td>遠距離命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>SP</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>SP</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>魔法命中</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+2 </td><td>魔法命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>MR</td><td></td><td></td><td></td><td>+2 </td><td>+4 </td><td>+4 </td><td>+4 </td><td>MR</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>ポーション回復量</td><td>12%,+12</td><td>12%,+12</td><td>12%,+12</td><td></td><td>12%,+12</td><td>12%,+12</td><td>12%,+12</td><td>ポーション回復量</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>祝福消耗効率</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>祝福消耗効率</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>ダメージ減少</td><td></td><td></td><td></td><td></td><td>+1 </td><td>+1 </td><td>+1 </td><td>ダメージ減少</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>PvP魔法ダメージ減少</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>PvP魔法ダメージ減少</td></tr>
+        <tr class="Item_No_odd_acce"><td>+5</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr><td>+6</td><td>AC</td><td></td><td></td><td></td><td>-1 </td><td>-3 </td><td>-3 </td><td>-3 </td><td>AC</td></tr>
+        <tr><td>+6</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr><td>+6</td><td>DEX</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr><td>+6</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr><td>+6</td><td>近距離ダメージ</td><td>+2 </td><td></td><td></td><td></td><td>+2 </td><td></td><td></td><td>近距離ダメージ</td></tr>
+        <tr><td>+6</td><td>近距離命中</td><td>+2 </td><td></td><td></td><td></td><td>+3 </td><td></td><td></td><td>近距離命中</td></tr>
+        <tr><td>+6</td><td>遠距離ダメージ</td><td></td><td>+2 </td><td></td><td></td><td></td><td>+2 </td><td></td><td>遠距離ダメージ</td></tr>
+        <tr><td>+6</td><td>遠距離命中</td><td></td><td>+2 </td><td></td><td></td><td></td><td>+3 </td><td></td><td>遠距離命中</td></tr>
+        <tr><td>+6</td><td>SP</td><td></td><td></td><td>+2 </td><td></td><td></td><td></td><td>+2 </td><td>SP</td></tr>
+        <tr><td>+6</td><td>魔法命中</td><td></td><td></td><td>+2 </td><td></td><td></td><td></td><td>+3 </td><td>魔法命中</td></tr>
+        <tr><td>+6</td><td>MR</td><td></td><td></td><td></td><td>+3 </td><td>+6 </td><td>+6 </td><td>+6 </td><td>MR</td></tr>
+        <tr><td>+6</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr><td>+6</td><td>ポーション回復量</td><td>14%,+14</td><td>14%,+14</td><td>14%,+14</td><td></td><td>14%,+14</td><td>14%,+14</td><td>14%,+14</td><td>ポーション回復量</td></tr>
+        <tr><td>+6</td><td>祝福消耗効率</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>祝福消耗効率</td></tr>
+        <tr><td>+6</td><td>ダメージ減少</td><td></td><td></td><td></td><td></td><td>+1 </td><td>+1 </td><td>+1 </td><td>ダメージ減少</td></tr>
+        <tr><td>+6</td><td>PvP魔法ダメージ減少</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>PvP魔法ダメージ減少</td></tr>
+        <tr><td>+6</td><td>全スキル命中</td><td></td><td></td><td></td><td></td><td>+1 </td><td>+1 </td><td>+1 </td><td>全スキル命中</td></tr>
+        <tr><td>+6</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>AC</td><td></td><td></td><td></td><td>-1 </td><td>-4 </td><td>-4 </td><td>-4 </td><td>AC</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>DEX</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>近距離ダメージ</td><td>+3 </td><td></td><td></td><td></td><td>+4 </td><td></td><td></td><td>近距離ダメージ</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>近距離命中</td><td>+3 </td><td></td><td></td><td></td><td>+5 </td><td></td><td></td><td>近距離命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>遠距離ダメージ</td><td></td><td>+3 </td><td></td><td></td><td></td><td>+4 </td><td></td><td>遠距離ダメージ</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>遠距離命中</td><td></td><td>+3 </td><td></td><td></td><td></td><td>+5 </td><td></td><td>遠距離命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>SP</td><td></td><td></td><td>+3 </td><td></td><td></td><td></td><td>+4 </td><td>SP</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>魔法命中</td><td></td><td></td><td>+3 </td><td></td><td></td><td></td><td>+5 </td><td>魔法命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>MR</td><td></td><td></td><td></td><td>+4 </td><td>+8 </td><td>+8 </td><td>+8 </td><td>MR</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>ポーション回復量</td><td>16%,+16</td><td>16%,+16</td><td>16%,+16</td><td></td><td>16%,+16</td><td>16%,+16</td><td>16%,+16</td><td>ポーション回復量</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>祝福消耗効率</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>祝福消耗効率</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>ダメージ減少</td><td></td><td></td><td></td><td></td><td>+3 </td><td>+3 </td><td>+3 </td><td>ダメージ減少</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>PvP魔法ダメージ減少</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>PvP魔法ダメージ減少</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>全スキル命中</td><td></td><td></td><td></td><td></td><td>+2 </td><td>+2 </td><td>+2 </td><td>全スキル命中</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>状態異常時間増加</td><td></td><td></td><td></td><td></td><td>0.1秒</td><td>0.1秒</td><td>0.1秒</td><td>状態異常時間増加</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+        <tr><td>+8</td><td>AC</td><td></td><td></td><td></td><td>-1 </td><td>-6 </td><td>-6 </td><td>-6 </td><td>AC</td></tr>
+        <tr><td>+8</td><td>STR</td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td></td><td>STR</td></tr>
+        <tr><td>+8</td><td>DEX</td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td></td><td>DEX</td></tr>
+        <tr><td>+8</td><td>INT</td><td></td><td></td><td>+1 </td><td></td><td></td><td></td><td>+1 </td><td>INT</td></tr>
+        <tr><td>+8</td><td>近距離ダメージ</td><td>+4 </td><td></td><td></td><td></td><td>+6 </td><td></td><td></td><td>近距離ダメージ</td></tr>
+        <tr><td>+8</td><td>近距離命中</td><td>+4 </td><td></td><td></td><td></td><td>+7 </td><td></td><td></td><td>近距離命中</td></tr>
+        <tr><td>+8</td><td>遠距離ダメージ</td><td></td><td>+4 </td><td></td><td></td><td></td><td>+6 </td><td></td><td>遠距離ダメージ</td></tr>
+        <tr><td>+8</td><td>遠距離命中</td><td></td><td>+4 </td><td></td><td></td><td></td><td>+7 </td><td></td><td>遠距離命中</td></tr>
+        <tr><td>+8</td><td>SP</td><td></td><td></td><td>+4 </td><td></td><td></td><td></td><td>+5 </td><td>SP</td></tr>
+        <tr><td>+8</td><td>魔法命中</td><td></td><td></td><td>+4 </td><td></td><td></td><td></td><td>+7 </td><td>魔法命中</td></tr>
+        <tr><td>+8</td><td>MR</td><td></td><td></td><td></td><td>+5 </td><td>+10 </td><td>+10 </td><td>+10 </td><td>MR</td></tr>
+        <tr><td>+8</td><td>回復悪化防御(恐怖)</td><td>+0 </td><td>+0 </td><td>+0 </td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>回復悪化防御(恐怖)</td></tr>
+        <tr><td>+8</td><td>ポーション回復量</td><td>18%,+18</td><td>18%,+18</td><td>18%,+18</td><td></td><td>18%,+18</td><td>18%,+18</td><td>18%,+18</td><td>ポーション回復量</td></tr>
+        <tr><td>+8</td><td>祝福消耗効率</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>祝福消耗効率</td></tr>
+        <tr><td>+8</td><td>ダメージ減少</td><td></td><td></td><td></td><td></td><td>+5 </td><td>+5 </td><td>+5 </td><td>ダメージ減少</td></tr>
+        <tr><td>+8</td><td>PvP魔法ダメージ減少</td><td></td><td></td><td></td><td></td><td>+0 </td><td>+0 </td><td>+0 </td><td>PvP魔法ダメージ減少</td></tr>
+        <tr><td>+8</td><td>全スキル命中</td><td></td><td></td><td></td><td></td><td>+3 </td><td>+3 </td><td>+3 </td><td>全スキル命中</td></tr>
+        <tr><td>+8</td><td>状態異常時間増加</td><td></td><td></td><td></td><td></td><td>0.2秒</td><td>0.2秒</td><td>0.2秒</td><td>状態異常時間増加</td></tr>
+        <tr><td>+8</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
+      </tbody>
+    </table>
+    </div><!-- acce_table_box -->
+  </body>
+</html>

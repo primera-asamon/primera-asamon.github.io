@@ -33,11 +33,17 @@
   </div>
   <div class="content">
     <div class="article">
-      <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;20xx年xx月xx日</div>
-      <h2 class="article-title toggle-button">H2ゲーム内データーや公式からの公知などを転載</h2>
-      <div class="article-paragraph content-block">　プレーしたゲームのゲーム内データーリストや公式サイトのお知らせなどを再編集して転載しています。<br>
-      　告知の再編集の表などを掲載予定。<br>
-        <h3 class="article-paragraph-title">H3ｘｘｘｘｘｘｘｘｘｘ</h3>
+      <div class="article-date"><i class="fa fa-clock-o"></i>&nbsp;2025年09月01日</div>
+      <h2 class="article-title toggle-button">accessory強化性能表</h2>
+      <div class="article-paragraph content-block">
+        　アクセサリーの強化性能をまとめた表です。<br>
+        <div class="image_list"><a href="Lineage_accessory_crest.html">紋章<img src="./picture/table/accessory_crest_typeB_2025-05-21.png"  height="300" width="430"/></a></div>
+        <div class="image_list"><a href="Lineage_accessory_insignia.html">インシグニア<img src="./picture/table/accessory_insignia_typeB_2025-05-21.png"  height="300" width="430"/></a></div>
+        <div class="image_list"><a href="Lineage_accessory_earring.html">ルームティスのイアリング<img src="./picture/table/accessory_earring_typeB_2025-05-21.png"  height="300" width="430"/></a></div>
+        <div class="image_list"><a href="Lineage_accessory_bracelet.html">ブレスレット<img src="./picture/table/accessory_bracelet_typeB_2025-05-21.png"  height="300" width="430"/></a></div>
+        <div class="image_list"><a href="Lineage_accessory_pendant.html">ルームティスのペンダント<img src="./picture/table/accessory_pendant_typeB_2025-05-21.png"  height="300" width="430"/></a></div>
+        <div class="image_list"><a href="Lineage_accessory_ring.html">スナッパーのリング<img src="./picture/table/accessory_ring_typeB_2025-05-21.png"  height="300" width="430"/></a></div>
+        <h3 class="article-paragraph-title">紋章</h3>
         <div><!-- <img class="img-circle article-img_left" src="//via.placeholder.com/200x200/dddddd/   ffffff.png&amp;text=IMAGE" /> --></div>
         <div><!-- <img class="img-thumbnail article-img_right" src="//via.placeholder.com/200x200/dddddd/ffffff.png&amp;text=IMAGE" /> --></div>
       </div>
