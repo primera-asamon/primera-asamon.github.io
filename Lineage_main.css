@@ -103,13 +103,13 @@
     /* コンテンツ */
 
     .content {
-        padding: 16px 0 16px;
+        padding: 16px 12px 12px 16px;
         /*zoom: 1;*/
     }
 
     .article {
         margin: 16px ;
-        padding-bottom: 48px;
+        padding-bottom: 12px;
         width: auto;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -133,24 +133,23 @@
     }
 
     .article-title {
-        padding-bottom: 6px;
         border-bottom: #333 solid 1px;
     }
 
     .article-title,
     .article-paragraph-title {
         clear: both;
-        margin: 0 0 24px;
+        margin: 0 0 0 0;
     }
 
     .article-date {
-        margin: 0 0 6px;
+        margin: 16px 0 0 0;
         color: #999;
         font-size: 0.9em;
     }
 
     .article-paragraph {
-        margin: 0 0 24px;
+        margin: 12px 0 0 0 ;
         line-height: 1.7;
         /*zoom: 1;*/
     }
@@ -162,7 +161,7 @@
     }
 
     .article-list>li {
-        padding: 12px 0;
+        padding: 6px 0;
         border-bottom: #ddd dotted 1px;
     }
 
