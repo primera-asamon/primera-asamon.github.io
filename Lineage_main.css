@@ -24,21 +24,21 @@
 
     .header {
         z-index: 100;
-        padding: 24px 0;
+        padding: 12px 0;
         width: 100%;
         border-bottom: #ccd1d9 solid 1px;
         background-color: #fff;
-        color: #333;
         text-align: center;
     }
 
     .header-title {
         margin: 0;
-        font-size: 2.4em;
+        color: #555;
+        font-size: 2em;
     }
 
     .header-description {
-        color: #999;
+        color: #444;
     }
     /* ナビゲーション */
 
@@ -91,14 +91,14 @@
     /* メインイメージ */
 
     .main {
-        padding: 10px 0;
+        padding: 4px 0;
         width: 100%;
         background: #ea5866;
         background-image: linear-gradient(135deg, #8cc152, #da4453, #f6bb42);
         color: #fff;
         text-align: center;
         font-weight: bold;
-        font-size: 2em;
+        font-size: 1.2em;
     }
     /* コンテンツ */
 

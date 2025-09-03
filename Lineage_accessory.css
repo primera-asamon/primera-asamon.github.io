@@ -4,31 +4,46 @@
     width: auto;
     height:calc(100% - 70px);
   }
-  .acce_table_box{
-    overflow-y: auto;
-    width:98%;
-    height:calc(100% - 20px);
-    position: relative;
+  .table_lead {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 18px);
+    text-align: left;
+    margin: 12px 0 0 18px;
+    font-size: 1em;
+  }
+
+  .lead_text {
+    text-align: left;
+    color: #000;
+    font-size: 0.9em;
   }
 
   .create_date {
-      text-align: right;
-      margin: 6px 24px;
-      color: #999;
-      font-size: 0.9em;
+    text-align: right;
+    padding: 0 30px 0 0;
+    color: #999;
+    font-size: 0.9em;
   }
 
   .update_date {
-      text-align: right;
-      margin: 6px 24px;
-      color: #000;
-      font-size: 0.9em;
+    text-align: right;
+    padding: 0 30px 0 0;
+    color: #000;
+    font-size: 0.9em;
   }
 
 h2 {
     text-align: left;
-    margin: 0 0 6px 18px;
+    margin: 0 0 2px 18px;
     font-size: 1.2em;
+  }
+
+  .table_box_acce{
+    overflow-y: auto;
+    width:98%;
+    height:calc(100% - 202px);
+    position: relative;
   }
 
   table.acce {
@@ -39,12 +54,12 @@ h2 {
   }
 
   thead.sticky_acce {
-  position: sticky;
-  top: 0;
-  z-index: 2; /* 背景レイヤの ::before より前面 */
-  height: 50px; /* sticky基準の安定化 */
-  background-color: #fec; /* stickyには明示的背景必須 */
-}
+    position: sticky;
+    top: 0;
+    z-index: 2; /* 背景レイヤの ::before より前面 */
+    height: 50px; /* sticky基準の安定化 */
+    background-color: #fec; /* stickyには明示的背景必須 */
+  }
   .sticky_acce {
     position: sticky;
     top: 0;
@@ -98,6 +113,9 @@ h2 {
   }
   .monster_list_acce {
     width: calc(100% - 300px);
+    text-align: left;
+  }
+  .description_acce {
     text-align: left;
   }
   .Item_No_odd_acce {
