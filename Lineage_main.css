@@ -718,7 +718,7 @@
         text-align: left;
     }
     /* 先頭列は責任分離のため装飾を排除 */
-    td:first-child,th:first-child {
+    td.noborder:first-child,th.noborder:first-child {
         border: none;
         background-color: transparent;
         min-width:auto;
