@@ -670,3 +670,85 @@
         margin: 0px;
         padding: 0px;
     }
+
+    /* 文中小表 */
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 0 12px 0;
+        width: auto;
+        max-width: 100%;
+        font-size: 0.9em;
+    }
+    th {
+        border: 1px solid #cc0;
+        padding: 6px 12px;
+        text-align: left;
+        background-color: #dd9;
+        vertical-align: middle;
+    }
+    th.item_name {
+        width: 15em;
+    }
+    th.quantity {
+        width: 3em;
+    }
+    th.description {
+        width: 24em;
+    }
+
+    .smalltable td {
+        border: 1px solid #cc0;
+        padding: 6px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+    td.item_name {
+        width: 14em;
+    }
+    td.quantity {
+        width: 3em;
+        text-align: right;
+    }
+    td.Restriction {
+        width: 10em;
+    }
+    td.description {
+        width: 24em;
+        text-align: left;
+    }
+    /* 先頭列は責任分離のため装飾を排除 */
+    td:first-child,th:first-child {
+        border: none;
+        background-color: transparent;
+        min-width:auto;
+    }
+  /* 小表のリード文と日付表記のコンテナ */
+  .table_lead {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 18px);
+    text-align: left;
+    margin: 12px 0 0 18px;
+    font-size: 1em;
+  }
+  /* テーブル前リード文と日付表記 */
+  .lead_text {
+    text-align: left;
+    color: #000;
+    font-size: 0.9em;
+  }
+
+  .create_date {
+    text-align: right;
+    padding: 0 30px 0 0;
+    color: #999;
+    font-size: 0.9em;
+  }
+
+  .update_date {
+    text-align: right;
+    padding: 0 30px 0 0;
+    color: #000;
+    font-size: 0.9em;
+  }
