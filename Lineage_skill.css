@@ -196,3 +196,8 @@ font-size: 0.8em;
 /* thtdの繰り返しとなって空白が多くスクロールが増えるのでjsによりtrthtdtrthtdにする   */
 /* 2025-06-23 6:00 */
 /* if (window.innerWidth <= 398) 判定によりthtdテーブル構造をスマホ版とPC版で切り分け　*/
+
+.highlight {
+  background-color: #ffeeba;
+  transition: background-color 0.5s ease;
+}
