@@ -195,9 +195,10 @@ if (document.readyState === 'loading') {
         let html_pcv = `<table>`;
         for (const line of lines) {
             const fields = line.split('\t');
+            console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
+
             if (fields.length < 25) {
                 console.warn("データ不足:", fields);
-                console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
                 continue; // フィールド数が不足している場合スキップ
             }
 // 各フィールドの値を変数に格納
@@ -223,7 +224,7 @@ if (document.readyState === 'loading') {
             // 空または文字列（神話・伝説など）の場合
                 lvDisplay += `${level}`;
             }
-            html_pcv += `<tbody class="record-table" id="(${name})" data-cls="${cls}" data-elf="${elf}">`  // 1レコードが1tbodyで341個(2025/07/07時点)～ある
+            html_pcv += `<tbody class="record-table" data-cls="${cls}" data-elf="${elf}">`  // 1レコードが1tbodyで341個(2025/07/07時点)～ある
             html_pcv += `<tr class="spv-layout record-title"><td class="spv-col-data_no">No.${no}</td><td class="spv-col-data_skillname">${lvDisplay}　${name}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">習得クラス</th><td class="spv-col-data">${clsDisplay}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">活性</th><td class="spv-col-data">${active}</td></tr>`;
@@ -248,7 +249,7 @@ if (document.readyState === 'loading') {
             } else {
 // #endregion
 //  --- PC用テーブル出力 ---
-            html_pcv += `<tbody id="(${name})" class="record-table" data-cls=${cls} data-elf=${elf}>`;
+            html_pcv += `<tbody class="record-table" data-cls=${cls} data-elf=${elf}>`
             // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
                 html_pcv += `<tr class="record-title">
                             <td class="col-data_no">No.${no}</td>`
@@ -328,7 +329,7 @@ document.querySelectorAll('tbody.record-table').forEach(tbody => {
         tr.style.display = (isTarget || isTitle) ? '' : 'none';
 // isTitle=true？それともrecord-titleでない行がtrueなの？
         const text = tr.textContent.trim().slice(0, 10);
-       // console.log(`tr: "${text}", isTitle: ${isTitle}`);
+        console.log(`tr: "${text}", isTitle: ${isTitle}`);
     });
 });
 // 各ボタンにクリックイベントリスナーを追加
@@ -453,9 +454,10 @@ function initializeTableBehavior() {
   });
 }
 // イベントリスナーの再登録を含めた初期化関数↑ここまで
+
 });
 // 画面上部にスクロールするボタン
-/* $(function() {
+$(function() {
     var pageTop = $('.btn-pagetop');
     pageTop.hide();
     $(window).scroll(function() {
@@ -472,8 +474,8 @@ function initializeTableBehavior() {
         pageTop.blur();
         return false;
     });
-}); */
-/* function scrollToFirstRecord() {
+});
+function scrollToFirstRecord() {
   var table = document.querySelector("table");
   var tbody = table.getElementsByTagName("tbody")[0];
   var firstRow = tbody.getElementsByTagName("tr")[0];
@@ -484,20 +486,6 @@ function initializeTableBehavior() {
   var firstRowTop = firstRow.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
   window.scrollTo({ top: firstRowTop - headerHeight, behavior: 'smooth' });
 }
-*/
-
-// URLパラメータからskillを取得して該当行にスクロール＆ハイライト
-const params = new URLSearchParams(window.location.search);
-const skillName = params.get('skill');
-
-window.addEventListener('DOMContentLoaded', () => {
-  const target = document.getElementById(skillName);
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    target.classList.add('highlight'); // CSSで注目表示
-  }
-});
-
 </script>
 </body>
 </html>
