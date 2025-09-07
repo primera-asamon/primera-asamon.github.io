@@ -552,7 +552,7 @@ function autoLink(text) {
 
     const skillName = phraseWithBrackets.replace(/^\(|\)$/g, ''); // 外側の括弧だけ除去
 
-    text = text.replace(regex, `<a href="#" class="skill-link" data-skill="${skillName}">${phraseWithBrackets}</a>`);
+    text = text.replace(regex, `<a href="#" class="skill-link" data-skill="${skillName}" title="クリックで詳細表示">${phraseWithBrackets}</a>`);
     //    text = text.replace(regex, `<a href="Lineage_table_skill_copy.html?skill=${encodeURIComponent(phrase)}">${phrase}</a>`);
   }
   return text;
