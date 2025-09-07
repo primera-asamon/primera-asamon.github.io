@@ -1,0 +1,59 @@
+{
+  "name": "rightclick-commands",
+  "displayName": "はい、Makotoさん。extensions-rightclick",
+  "description": "エディタペインの右クリックメニューに折りたたみ・展開などのコマンドを追加する拡張機能",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rightclick-commands.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "editor.unfoldAll",
+        "title": "すべて展開"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "existing.command",
+          "when": "editorFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "editor.unfoldAll",
+          "when": "editorFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.103.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
