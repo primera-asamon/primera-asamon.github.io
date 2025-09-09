@@ -198,6 +198,7 @@
   </div> <!-- footer -->
   <div><a href="#top" class="btn-pagetop"><i class="fa fa-arrow-up"></i></a></div>
   <script>
+/* skilllinksと同内容のtsvファイルを読み込むように変更したため、旧autolink関数は使用しない。
 // skilllinks 定義
   const skilllinks = {
   "1":"(ディスインテグレート：ネメシス)",
@@ -556,17 +557,18 @@ function autoLink(text) {
     //    text = text.replace(regex, `<a href="Lineage_table_skill_copy.html?skill=${encodeURIComponent(phrase)}">${phrase}</a>`);
   }
   return text;
-}
 // 使用例（HTMLの一部をリンク化）
 const article = document.getElementById('article'); //<div id="article">
 article.innerHTML = autoLink(article.innerHTML);
 //    const originalText = document.body.innerHTML;
 //    document.body.innerHTML = autoLink(originalText);
+}  旧autolink関数は使用しない。*/
 
 // スキルデータを保持する変数
 let skillDataList = [];
 
 // TSVファイルを読み込んで skillDataList に格納
+/* 
 fetch('LineageREMASTER_skill3.tsv')
   .then(response => response.text())
   .then(text => {
@@ -587,7 +589,47 @@ fetch('LineageREMASTER_skill3.tsv')
         price, Droporigin, Dropcomp, note1, note2
       });
     }
+  });*/
+
+fetch('LineageREMASTER_skill3.tsv')
+  .then(response => response.text())
+  .then(text => {
+    const lines = text.trim().split('\n');
+    for (const line of lines) {
+      const fields = line.split('\t');
+      if (fields.length < 25) continue;
+
+      const [no, img, level, name, cls, elf, active, type, align, mp, hp,
+        material, gear, duration, target, reuse, effect, acqLv, obtain,
+        price, Droporigin, Dropcomp, note1, note2, EOR] = fields;
+
+      skillDataList.push({
+        no, level, name, cls, elf, active, type, align, mp, hp,
+        material, gear, duration, target, reuse, effect, acqLv, obtain,
+        price, Droporigin, Dropcomp, note1, note2
+      });
+    }
+
+    // 読み込み完了後にリンク化処理を実行
+    const article = document.getElementById('article');
+    article.innerHTML = autoLink(article.innerHTML);
   });
+// htmlソース内リスト読み込みのskilllinksは使用しない。
+  function autoLink(text) {
+  // skillDataListが読み込まれている前提
+  const phrases = skillDataList
+    .map(skill => `(${skill.name})`)
+    .sort((a, b) => b.length - a.length); // 長い順にソート
+
+  for (const phraseWithBrackets of phrases) {
+    const escaped = phraseWithBrackets.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(escaped, 'g');
+    const skillName = phraseWithBrackets.replace(/^\(|\)$/g, ''); // 括弧を除去
+    text = text.replace(regex, `<a href="#" class="skill-link" data-skill="${skillName}" title="クリックで詳細表示">${phraseWithBrackets}</a>`);
+  }
+
+  return text;
+}
 
 // リンククリック時にポップアップ表示
 document.addEventListener('click', (e) => {
