@@ -14,7 +14,7 @@ h2 {
   .table_box_acce{
     overflow-y: auto;
     width:98%;
-    height:calc(100% - 202px);
+    height:calc(100% - 100px);
     position: relative;
   }
 
@@ -56,6 +56,7 @@ h2 {
     border: solid 1px #000;
     text-align: center;
     font-weight: normal;
+    margin: 1px;
     padding: 3px 6px;
     font-size:small;
   }
@@ -93,3 +94,45 @@ h2 {
   .Item_No_odd_acce {
     background-color: #fec;
   }
+  .Not_applicable {
+    background-color: #ddd;
+  }
+      .nav-group_acce {
+        margin: 0;
+        padding: 0;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        /*vertical-align: auto;*/
+        zoom: 1;
+        font-size: 0.9em;
+        /*display: inline;*/
+    }
+
+    .nav-group_acce>li {
+        margin: 0;
+        padding: 0 6px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        /*vertical-align: auto;*/
+        zoom: 1;
+        /*display: inline;*/
+    }
+
+    .nav-group_acce>li a {
+        display: block;
+        padding: 6px 6px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .nav-group_acce li a:hover {
+        color: #e22;
+        font-weight:bold;
+    }
+
+    .nav-group_acce>li a.active {
+        border-bottom: #333 solid 2px;
+        color: #999;
+    }
