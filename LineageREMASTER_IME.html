@@ -24,17 +24,19 @@
       <li><a href="LineageREMASTER_etc.html">諸表</a></li>
       <li><a href="font.html">大字</a></li>
       <li><a href="inkey_JAJP.html">押下釦</a></li>
-    </ul>
+        <li><a href="updates.html">変更歴</a></li>    </ul>
   </div>
   <div class="main">リネージュメモ</div>
   <div class="header">
-    <h1 class="header-title"><a href="./data/LineageREMASTER_IME2024-11-21.zip" title="LineageREMASTER_IME2024-11-21.zip">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/zip_download_arrow32.png" /></a></h1>
+    <h1 class="header-title">
+      <a href="./data/LineageREMASTER_IME2024-11-21.zip" title="LineageREMASTER_IME2024-11-21.zip">リネージュリマスターItemMonster辞書2024(IME)<img src="./picture/zip_download_arrow32.png" /></a>
+    </h1>
     <p class="header-description">ブログなどで公開していたものを更新しました。</p>
   </div>
   <div class="content">
     <div class="article">
       <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月21日</div>
-      <h2 class="article-title toggle-button">リネージュリマスターItemMonster辞書2024(IME)の更新</h2>
+      <h2 class="article-title">リネージュリマスターItemMonster辞書2024(IME)の更新<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
       <div class="article-paragraph content-block">
         <h3 class="article-paragraph-title"></h3>
         <ol>
@@ -65,7 +67,7 @@
         </ol>
       </div>
       <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月11日</div>
-      <h2 class="article-title toggle-button">リネージュリマスターItemMonster辞書2024(IME)の更新</h2>
+      <h2 class="article-title">リネージュリマスターItemMonster辞書2024(IME)の更新<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
       <div class="article-paragraph content-block">
         <h3 class="article-paragraph-title"></h3>
         <ol>
@@ -84,7 +86,7 @@
         </ol>
       </div>
       <div class="article-date"><i class="fa fa-clock-o">更新</i>&nbsp;2024年11月01日</div>
-      <h2 class="article-title toggle-button">リネージュリマスターItemMonster辞書2024(IME)の公開</h2>
+      <h2 class="article-title">リネージュリマスターItemMonster辞書2024(IME)の公開<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
       <div class="article-paragraph content-block">
         <p class="article-paragraph">　リネージュリマスター狩り場図鑑から「狩り場リスト」「棲息するモンスター」「アイテム」を収録しました。読みはasamonの想定した読みで正しさは保証しません。一部に省入力のための略称もあります。</p>
         <h3 class="article-paragraph-title"></h3>
@@ -93,7 +95,7 @@
       </div>
     </div>
     <div class="article">
-    <h2 class="article-title">更新履歴</h2>
+    <h2 class="article-title">更新履歴<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
     <ul class="article-list">
     <li><span class="article-list-date">2024年11月21日</span>修正。追加。<span class="label label_normal">！</span></li>
     <li><span class="article-list-date">2024年11月11日</span>修正。追加。</li>
@@ -130,22 +132,27 @@
       });
   </script>
   <script>
-// タイトル(class="toggle-button")のクリックでコンテンツ(class="content-block")の表示・非表示を切り替える
-  document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".toggle-button");
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        const next = btn.nextElementSibling;
-        if (next && next.classList.contains("content-block")) {
-          next.style.display = next.style.display === "none" ? "block" : "none";
-          btn.textContent = btn.textContent.includes("▼")
-            ? btn.textContent.replace("▼", "▲")
-            : btn.textContent.replace("▲", "▼");
-        }
+// 折りたたみ表示の共通スクリプト。スタイルはLineage_main.css
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".toggle-button");
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            // const next = btn.nextElementSibling; //spanに次の要素はないのでエラーになる。親のh2から探す
+              const h2 = btn.closest("h2");
+              const next = h2.nextElementSibling;
+            if (next && next.classList.contains("content-block")) {
+              const isHidden = window.getComputedStyle(next).display === "none";
+              next.style.display = isHidden ? "block" : "none";
+              btn.title = isHidden
+               ? "クリックで折り畳み"
+               : "クリックで詳細表示";
+              btn.textContent = isHidden
+                ? btn.textContent.replace("▲", "▼")
+                : btn.textContent.replace("▼", "▲");
+            }
+          });
+        });
       });
-    });
-  });
   </script>
-
   </body>
 </html>

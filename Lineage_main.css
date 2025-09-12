@@ -764,3 +764,9 @@
     background-color: #ffffff; /* ヘッダーの背景色を指定する */
     color: #000000; /* フォントの色を指定する */
 }
+/* 折り畳み展開ボタン記号▲▼の強調表示 */
+  .toggle-button:hover {
+    color: #e22;
+    font-weight: bold;
+    cursor: pointer;
+  }
