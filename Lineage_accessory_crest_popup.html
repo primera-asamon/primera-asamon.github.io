@@ -44,9 +44,12 @@
       </ul>
     </div>
   </div>
+  
     <div class="update_date"><i class="fa fa-clock-o">更新</i>&nbsp;2025/5/21</div>
     <div class="create_date"><i class="fa fa-clock-o">初出</i>&nbsp;2025/4/7</div>
   <div class="table_box_acce">
+    <div　class="content">
+    <div id="article">
     <table class="acce">
       <thead class="sticky_acce">
         <tr><td rowspan ="3">強化数</td><td>画像</td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_fighter.png" height="48" width="48" alt="闘士の紋章" /></td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_archer.png" height="48" width="48" alt="射手の紋章" /></td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_wizard.png" height="48" width="48" alt="賢者の紋章" /></td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_protection.png" height="48" width="48" alt="守護の紋章" /></td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_fighter_protection.png" height="48" width="48" alt="闘士の守護紋章" /></td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_archer_protection.png" height="48" width="48" alt="射手の守護紋章" /></td><td><img class="icon_pict" src="./picture/item_thumbnail/crest_wizard_protection.png" height="48" width="48" alt="賢者の守護紋章" /></td><td>画像</td></tr>
@@ -164,6 +167,193 @@
         <tr><td>+8</td><td>EXP</td><td></td><td></td><td></td><td>+0 </td><td></td><td></td><td></td><td>EXP</td></tr>
       </tbody>
     </table>
+    </div><!--article -->
+  </div><!-- content -->
     </div><!-- acce_table_box -->
+    <script>
+// スキルデータを保持する変数
+let tsvDataList = [];
+
+
+fetch('crest_20250912.tsv')
+// 装身具名	性能・強化数	+0	+1	+2	+3	+4	+5	+6	+7	+8
+  .then(response => response.text())
+  .then(text => {
+    const lines = text.trim().split('\n');
+    for (const line of lines) {
+      const fields = line.split('\t');
+      if (fields.length < 11) continue;
+        const [name, property, pvalue0, pvalue1, pvalue2, pvalue3, pvalue4, pvalue5, pvalue6, pvalue7, pvalue8] = fields;
+        tsvDataList.push({name, property, pvalue0, pvalue1, pvalue2, pvalue3, pvalue4, pvalue5, pvalue6, pvalue7, pvalue8});
+    }
+
+    // 読み込み完了後にリンク化処理を実行
+    const article = document.getElementById('article');
+    article.innerHTML = autoLink(article.innerHTML);
+  });
+// htmlソース内リスト読み込みのskilllinksは使用しない。
+  function autoLink(text) {
+  // tsvDataListが読み込まれている前提
+  const phrases = tsvDataList
+  console.log(phrases);
+  for (const phraseWithBrackets of phrases) {
+    const escaped = phraseWithBrackets.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(escaped, 'g');
+    const keyname = phraseWithBrackets.replace(/^\(|\)$/g, ''); // 括弧を除去
+    text = text.replace(regex, `<a href="#" class="skill-link" keyname="${keyname}" title="クリックで詳細表示">${phraseWithBrackets}</a>`);
+  }
+
+  return text;
+}
+
+// リンククリック時にポップアップ表示
+document.addEventListener('click', (e) => {
+if (e.target.classList.contains('skill-link')) {
+  e.preventDefault();
+  const keyname = e.target.dataset.skill;
+
+  const skill = tsvDataList.find(s => s.name === keyname);
+  if (!skill) {
+    alert(`KeyName「${keyname}」が見つかりませんでした`);
+    return;
+  }
+  // clsとelfのまとめ表示
+  let clsDisplay = skill.cls;
+  if (skill.cls === "妖" && skill.elf) {
+      clsDisplay += `（${skill.elf}）`;
+  }
+
+let popup_html = `<html><head>
+    <link rel="stylesheet" href="Lineage_skill.css">
+    <title>${skill.name}</title>
+    <style>
+  body {
+    font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
+<!--      font-family: 'Segoe UI', sans-serif; -->
+    padding: 1em;
+    background-color: #fdfdf0;
+    color: #333;
+  }
+  h2 {
+    color: #0066cc;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 4px;
+  }
+  table {
+    border-collapse: collapse;
+    width: auto;
+    margin-top: 0.9em;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 2px 4px 2px 4px;
+    vertical-align: top;
+  }
+  th.col-header {
+    text-align: center;
+    background-color: #d8d8d8;
+  }
+  td {
+    text-align: left;
+  }
+  </style>
+  </head>
+<body>
+<!--  <h2>スキル詳細：${skill.name}</h2>  -->
+<table>`
+popup_html += `<tbody id="(${skill.name})" class="record-table" data-cls=${skill.cls} data-elf=${skill.elf}>`;
+// No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
+  popup_html += `<tr class="record-title">
+              <td class="col-data_no">No.${skill.no}</td>`
+  // ...existing code...
+  // 等級・スキルレベルの出力部分
+              if (/^\d+$/.test(skill.level)) {
+      // 数字のみの場合
+                  popup_html += `<td class="col-data_level">Lv.${skill.level}</td>`;
+              } else {
+      // 空または文字列（神話・伝説など）の場合
+                  popup_html += `<td class="col-data_level">${skill.level}</td>`;
+              }   
+      popup_html += `<td class="col-data_skillname" colspan="9">${skill.name}</td>
+          </tr>`
+// skill_domain_eligible_character:5列
+// skill_domain_tendency:2+2+2=6列
+  popup_html += `<tr>
+              <th class="col-header">職業</th><td class="col-data" colspan="4">${clsDisplay}</td>`
+  popup_html += `<th class="col-header">活性</th><td class="col-data">${skill.active}</td>
+              <th class="col-header">種類</th><td class="col-data">${skill.type}</td>
+              <th class="col-header">性向</th><td class="col-data">${skill.align}</td>
+          </tr>`
+// skill_domain_resource:2+2+3+2+2=11列
+  popup_html += `<tr>
+              <th class="col-header">MP</th><td class="col-data">${skill.mp}</td>
+              <th class="col-header">HP</th><td class="col-data">${skill.hp}</td>
+              <th class="col-header">材料</th><td class="col-data" colspan="2">${skill.material}</td>
+              <th class="col-header">装備</th><td class="col-data">${skill.gear}</td>
+              <th class="col-header">持続</th><td class="col-data">${skill.duration}</td>
+          </tr>`
+// skill_domain_effect:3+2+6=11列
+  popup_html += `<tr>
+              <th class="col-header">対象</th><td class="col-data" colspan="2">${skill.target}</td>
+              <th class="col-header">間隔</th><td class="col-data">${skill.reuse}</td>
+              <th class="col-header">効果</th><td class="col-data" colspan="5">${skill.effect}</td>
+          </tr>`
+// skill_domain_acquisition:2+3+6=11列
+  popup_html += `<tr>
+              <th class="col-header">習得</th><td class="col-data">${skill.acqLv}</td>
+              <th class="col-header">入手</th><td class="col-data" colspan="2">${skill.obtain}</td>
+              <th class="col-header">価格</th><td class="col-data" colspan="5">${skill.price}</td>
+          </tr>`
+// skill_domain_dropmob:11列
+  popup_html += `<tr>
+              <th class="col-header">Drop</th><td class="col-data" colspan="11">${skill.Droporigin}</td>
+          </tr>`
+// skill_domain_dropmob:11列
+  popup_html += `<tr>
+              <th class="col-header">蘇生</th><td class="col-data" colspan="11">${skill.Dropcomp}</td>
+          </tr>`
+// skill_domain_notes:6+5=11列
+  popup_html += `<tr>
+              <th class="col-header">備考1</th><td class="col-data" colspan="5">${skill.note1}</td>
+              <th class="col-header">備考2</th><td class="col-data" colspan="4">${skill.note2}</td>
+          </tr>`          
+popup_html += `</table>
+</bo`;
+popup_html += `dy></ht`;
+popup_html += `ml>`;
+console.log(popup_html);
+// const popup = window.open('', 'skillPopup', 'width=780,height=320');
+// popup.document.write(popup_html);
+// popup.document.close();
+const modal = document.getElementById('skillModal');
+const container = document.getElementById('skillDetailContainer');
+const closeBtn = document.querySelector('.close-button');
+
+// HTML生成部分はそのまま
+container.innerHTML = popup_html;
+
+// モーダル表示
+modal.style.display = 'block';
+
+// 閉じるボタン処理
+closeBtn.onclick = () => {
+  modal.style.display = 'none';
+};
+
+// 背景クリックで閉じる
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+}
+});
+</script>
+<div id="skillModal" class="modal">
+<div class="modal-content">
+  <span class="close-button">&times;</span>
+  <div id="skillDetailContainer"></div>
+</div>
+</div>
   </body>
 </html>
