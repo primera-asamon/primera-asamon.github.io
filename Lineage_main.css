@@ -688,13 +688,13 @@
         vertical-align: middle;
     }
     th.item_name {
-        width: 15em;
+        width: 23em;
     }
     th.quantity {
-        width: 3em;
+        width: 4em;
     }
     th.description {
-        width: 24em;
+        width: 26em;
     }
 
     .smalltable td {
@@ -704,17 +704,17 @@
         vertical-align: top;
     }
     td.item_name {
-        width: 14em;
+        width: 23em;
     }
     td.quantity {
-        width: 3em;
+        width: 4em;
         text-align: right;
     }
     td.Restriction {
         width: 10em;
     }
     td.description {
-        width: 24em;
+        width: 26em;
         text-align: left;
     }
     /* 先頭列は責任分離のため装飾を排除 */
