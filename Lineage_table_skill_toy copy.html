@@ -11,11 +11,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
     <link rel="stylesheet" href="Lineage_main.css">
+    <link rel="stylesheet" href="Lineage_skill.css">
     <!-- <script src="jquery.min.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Lineage_main.css">
-    <link rel="stylesheet" href="Lineage_skill.css">
 </head>
 <body id="top">
     <div class="nav">
@@ -193,6 +192,62 @@ if (document.readyState === 'loading') {
 // ここにTSVパース＆表示処理を書く
         const lines = text.trim().split('\n');
         let html_pcv = `<table>`;
+// filter_header
+    // <!-- data-control fieldごとに処理区分を設定する 
+    //sort：ソートアイコンボタンと文字列としての並び替え
+    //number：ソートアイコンボタンと数値としての並び替え
+    //refine：フィルターアイコンボタンとクリックによるダイアログフォーム表示
+    //checklist：ダイアログフォームにチェックボックス付リストアイテムを表示する
+    //--> 
+// No.とLevelとスキル名はtheaderでは使用しない。1+1+9=11列。
+          html_pcv += `<tbody id="filter_header" class="record-table" data-cls="君騎妖魔闇竜戦剣槍幻聖" data-elf="共">`
+          html_pcv += `<tr class="record-title">
+            <th class="col-data_no">No.</th>
+            <th class="col-data_level">Lv.</th>
+            <th class="col-data_skillname" colspan="9">フィルター</th>
+          </tr>`
+            // skill_domain_tendency:2+2+2=6列
+          html_pcv += `<tr>
+            <th class="col-header" colspan="5">習得クラス</th>
+            <th class="col-header" data-control="sort refine checklist" colspan="2">活性</th>
+            <th class="col-header" data-control="sort refine checklist" colspan="2">種類</th>
+            <th class="col-header" data-control="sort refine checklist" colspan="2">性向</th>
+          </tr>`
+            // skill_domain_resource:2+2+3+2+2=11列
+          html_pcv += `<tr>
+            <th class="col-header" data-control="sort number" colspan="2">消耗MP</th>
+            <th class="col-header" data-control="sort number" colspan="2">消耗HP</th>
+            <th class="col-header" colspan="3">材料・触媒</th>
+            <th class="col-header" data-control="sort refine checklist" colspan="2">装備条件</th>
+            <th class="col-header" colspan="2">持続時間</th>
+          </tr>`
+            // skill_domain_effect:3+2+6=11列
+          html_pcv += `<tr>
+            <th class="col-header" colspan="3">対象</th>
+            <th class="col-header" colspan="2">再使用時間</th>
+            <th class="col-header" colspan="6">効果・性能</th>
+          </tr>`
+            // skill_domain_acquisition:2+3+6=11列
+          html_pcv += `<tr>
+            <th class="col-header" colspan="2">習得Lv.</th>
+            <th class="col-header" data-control="sort refine checklist" colspan="3">取得方法</th>
+            <th class="col-header" colspan="6">価格</th>
+          </tr>`
+            // skill_domain_dropmob:11列
+          html_pcv += `<tr>
+            <th class="col-header" colspan="11">ドロップ</th>
+          </tr>`
+            // skill_domain_dropmob:11列
+          html_pcv += `<tr>
+            <th class="col-header" colspan="11">【蘇生】</th>
+          </tr>`
+            // skill_domain_notes:6+5=11列
+          html_pcv += `<tr>
+            <th class="col-header" colspan="6">備考1</th>
+            <th class="col-header" colspan="5">備考2</th>
+          </tr>`
+          html_pcv +=`</tbody>`
+// table全体のheader
         for (const line of lines) {
             const fields = line.split('\t');
             console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
@@ -211,49 +266,11 @@ if (document.readyState === 'loading') {
             let clsDisplay = cls;
             if (cls === "妖" && elf) {
                 clsDisplay += `（${elf}）`;
-            }
-            if (window.innerWidth <= 438) {
-// #region sauce
-//  --- スマホ用テーブル出力 ---
-            // 等級・スキルレベルの出力部分
-            let lvDisplay ="";
-            if (/^\d+$/.test(level)) {
-            // 数字のみの場合
-                lvDisplay += `Lv.${level}`;
-            } else {
-            // 空または文字列（神話・伝説など）の場合
-                lvDisplay += `${level}`;
-            }
-            html_pcv += `<tbody class="record-table" data-cls="${cls}" data-elf="${elf}">`  // 1レコードが1tbodyで341個(2025/07/07時点)～ある
-            html_pcv += `<tr class="spv-layout record-title"><td class="spv-col-data_no">No.${no}</td><td class="spv-col-data_skillname">${lvDisplay}　${name}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">習得クラス</th><td class="spv-col-data">${clsDisplay}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">活性</th><td class="spv-col-data">${active}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">種類</th><td class="spv-col-data">${type}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">性向</th><td class="spv-col-data">${align}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">消耗MP</th><td class="spv-col-data">${mp}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">消耗HP</th><td class="spv-col-data">${hp}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">材料・触媒</th><td class="spv-col-data">${material}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">装備条件</th><td class="spv-col-data">${gear}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">持続時間</th><td class="spv-col-data">${duration}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">対象</th><td class="spv-col-data">${target}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">再使用時間</th><td class="spv-col-data">${reuse}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">効果・性能</th><td class="spv-col-data">${effect}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">習得Lv.</th><td class="spv-col-data">${acqLv}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">取得方法</th><td class="spv-col-data">${obtain}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">価格</th><td class="spv-col-data">${price}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">ドロップ</th><td class="spv-col-data">${Droporigin}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">【蘇生】</th><td class="spv-col-data">${Dropcomp}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">備考1</th><td class="spv-col-data">${note1}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">備考2</th><td class="spv-col-data">${note2}</td></tr>`;
-            html_pcv += `</tbody>`;
-            } else {
-// #endregion
-//  --- PC用テーブル出力 ---
-            html_pcv += `<tbody class="record-table" data-cls=${cls} data-elf=${elf}>`
+            };
+            html_pcv += `<tbody id="(${name})" class="record-table" data-cls=${cls} data-elf=${elf}>`;
             // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
                 html_pcv += `<tr class="record-title">
                             <td class="col-data_no">No.${no}</td>`
-                // ...existing code...
                 // 等級・スキルレベルの出力部分
                             if (/^\d+$/.test(level)) {
                     // 数字のみの場合
@@ -262,54 +279,53 @@ if (document.readyState === 'loading') {
                     // 空または文字列（神話・伝説など）の場合
                                 html_pcv += `<td class="col-data_level">${level}</td>`;
                             }   
-                    html_pcv += `<td class="col-data_skillname" colspan="9">${name}</td>
-                        </tr></tbody></table>`
+            html_pcv += `<td class="col-data_skillname" colspan="9">${name}</td>
+                        </tr>`
             // skill_domain_eligible_character:5列
             // skill_domain_tendency:2+2+2=6列
-                html_pcv += `<table><tbody class="record-table" data-cls=${cls}><tr>
+                html_pcv += `<tr>
                             <th class="col-header">習得クラス</th><td class="col-data" colspan="4">${clsDisplay}</td>`
                 html_pcv += `<th class="col-header">活性</th><td class="col-data">${active}</td>
                             <th class="col-header">種類</th><td class="col-data">${type}</td>
                             <th class="col-header">性向</th><td class="col-data">${align}</td>
-                        </tr></tbody></table>`
+                        </tr>`
             // skill_domain_resource:2+2+3+2+2=11列
-                html_pcv += `<table><tbody class="record-table" data-cls=${cls}><tr>
+                html_pcv += `<tr>
                             <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
                             <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
                             <th class="col-header">材料・触媒</th><td class="col-data" colspan="2">${material}</td>
                             <th class="col-header">装備条件</th><td class="col-data">${gear}</td>
                             <th class="col-header">持続時間</th><td class="col-data">${duration}</td>
-                        </tr></tbody></table>`
+                        </tr>`
             // skill_domain_effect:3+2+6=11列
-                html_pcv += `<table><tbody class="record-table" data-cls=${cls}><tr>
+                html_pcv += `<tr>
                             <th class="col-header">対象</th><td class="col-data" colspan="2">${target}</td>
                             <th class="col-header">再使用時間</th><td class="col-data">${reuse}</td>
                             <th class="col-header">効果・性能</th><td class="col-data" colspan="5">${effect}</td>
-                        </tr></tbody></table>`
+                        </tr>`
             // skill_domain_acquisition:2+3+6=11列
-                html_pcv += `<table><tbody class="record-table" data-cls=${cls}><tr>
+                html_pcv += `<tr>
                             <th class="col-header">習得Lv.</th><td class="col-data">${acqLv}</td>
                             <th class="col-header">取得方法</th><td class="col-data" colspan="2">${obtain}</td>
                             <th class="col-header">価格</th><td class="col-data" colspan="5">${price}</td>
-                        </tr></tbody></table>`
+                        </tr>`
             // skill_domain_dropmob:11列
-                html_pcv += `<table><tbody class="record-table" data-cls=${cls}><tr>
+                html_pcv += `<tr>
                             <th class="col-header">ドロップ</th><td class="col-data" colspan="11">${Droporigin}</td>
-                        </tr></tbody></table>`
+                        </tr>`
             // skill_domain_dropmob:11列
-                html_pcv += `<table><tbody class="record-table" data-cls=${cls}><tr>
+                html_pcv += `<tr>
                             <th class="col-header">【蘇生】</th><td class="col-data" colspan="11">${Dropcomp}</td>
-                        </tr></tbody></table>`
+                        </tr>`
             // skill_domain_notes:6+5=11列
-                html_pcv += `<table><tbody><tr>
+                html_pcv += `<tr>
                             <th class="col-header">備考1</th><td class="col-data" colspan="5">${note1}</td>
                             <th class="col-header">備考2</th><td class="col-data" colspan="4">${note2}</td>
                         </tr>`
-            }
-            html_pcv +=`</tbody>`;
+            html_pcv +=`</tbody>`
         }
         html_pcv += `</table>`;
-        document.getElementById('result').innerHTML = html_pcv;
+                document.getElementById('result').innerHTML = html_pcv;
 // テーブル描画後
 // クラスフィルタリングの初期化
         document.querySelectorAll('.class-btn').forEach(btn => {
@@ -379,7 +395,7 @@ document.querySelectorAll('.class-btn').forEach(btn => {
     });
 });
 // タイトル行クリックで展開／折りたたみ切り替え
-document.querySelectorAll('tr.record-title').forEach(titleRow => {
+document.querySelectorAll('.record-title').forEach(titleRow => {
     titleRow.addEventListener('click', function () {
         const tbody = this.closest('tbody');
         const isCollapsed = tbody.dataset.collapsed === 'true';
@@ -454,27 +470,8 @@ function initializeTableBehavior() {
   });
 }
 // イベントリスナーの再登録を含めた初期化関数↑ここまで
+});
 
-});
-// 画面上部にスクロールするボタン
-$(function() {
-    var pageTop = $('.btn-pagetop');
-    pageTop.hide();
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 600) {
-            pageTop.fadeIn();
-        } else {
-            pageTop.fadeOut();
-        }
-    });
-    pageTop.click(function() {
-        $('body, html').animate({
-            scrollTop: 0
-        }, 500, 'swing');
-        pageTop.blur();
-        return false;
-    });
-});
 function scrollToFirstRecord() {
   var table = document.querySelector("table");
   var tbody = table.getElementsByTagName("tbody")[0];
@@ -486,6 +483,654 @@ function scrollToFirstRecord() {
   var firstRowTop = firstRow.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
   window.scrollTo({ top: firstRowTop - headerHeight, behavior: 'smooth' });
 }
+
+/* ── 関数：初期化 ── */
+tblcontrol.init =()=> {
+  //─] コントロール追加
+  document.querySelectorAll( "tbody th[data-control]" ).forEach( th => {
+  //─]─] 取得
+  const index = th.cellIndex;
+  const table = th.closest( "table" );
+  const tbody = table.querySelector( "tbody" );
+
+  //─]─] コントロール
+  const control = th.appendChild( document.createElement( "div" ) );
+  control.classList.add( "tbl-control" );
+
+  //─]─]─] ソート
+  if( /sort/.test( th.dataset.control ) ){
+  //─]─]─]─] 昇順ボタン
+  const ascend = control.appendChild( document.createElement( "button" ) );
+  ascend.dataset.type = "sort-ascend";
+  ascend.appendChild( tblcontrol.btnicon.ascend.cloneNode( true ) );
+  //─]─]─]─] 降順ボタン
+  const descend = control.appendChild( document.createElement( "button" ) );
+  descend.dataset.type = "sort-descend";
+  descend.appendChild( tblcontrol.btnicon.descend.cloneNode( true ) );
+  //─]─]─]─] イベントハンドラ
+  ascend.onclick = descend.onclick = tblcontrol.sort;
+  }
+
+  //─]─]─] 絞込み
+  if( /refine/.test( th.dataset.control ) ){
+  //─]─]─]─] ボタン
+  const refine = control.appendChild( document.createElement( "button" ) );
+  refine.dataset.type = "refine";
+  refine.appendChild( tblcontrol.btnicon.refine.cloneNode( true ) );
+  refine.onclick = tblcontrol.toggleFilter;
+
+  //─]─]─]─] フィルター
+  const filter = control.appendChild( document.createElement( "form" ) );
+  filter.classList.add( "tbl-filter" );
+  filter.onsubmit = tblcontrol.refine;
+  filter.onreset = tblcontrol.unrefine;
+
+  //─]─]─]─]─] 全選択
+  let div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-all" );
+  let label = div.appendChild( document.createElement( "label" ) );
+  let input = label.appendChild( document.createElement( "input" ) );
+  input.name = "filter_all";
+  input.type = "checkbox";
+  input.checked = true;
+  input.onchange = tblcontrol.checkAll;
+  label.appendChild( document.createTextNode( "すべて" ) );
+
+  // index: フィルター対象列のインデックス
+  // th: index番目のth要素
+  const th = table.querySelectorAll('th')[index];
+  const controlValue = th.dataset.control || "";
+
+  // checklistが含まれているか判定
+  const isChecklist = controlValue.split(/\s+/).includes("checklist");
+
+  //─]─]─]─]─] キーアイテム
+  div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-inventory" );
+  if (isChecklist) {
+    div.style.display = "block";
+  }else{
+    div.style.display = "none";
+  }
+  const list = [].reduce.call( tbody.rows, ( arr, row ) => {
+    const text = row.cells[ index ].textContent;
+    if( ! arr.includes( text ) ){ arr.push( text ) }
+    return arr;
+  }, [] );
+  list.forEach( text => {
+    label = div.appendChild( document.createElement( "label" ) );
+    input = label.appendChild( document.createElement( "input" ) );
+    input.name = "filter_item";
+    input.type = "checkbox";
+    input.value = text;
+    input.checked = true;
+    input.onchange = tblcontrol.checkAll;
+    label.appendChild( document.createTextNode( text ) );
+  } );
+  filter.dataset.keyitem = JSON.stringify( list );
+
+  //─]─]─]─]─] キーワード
+  div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-keyword" );
+  input = div.appendChild( document.createElement( "input" ) );
+  input.name = "filter_keyword";
+  input.type = "text";
+  input.placeholder = "絞込みワード";
+  input.style.width = "160px";
+  filter.dataset.keyword = "";
+
+  /* ↓　textbox → min/max 2025-08-17*/
+
+  //─]─]─]─]─] min/max（数値列のみ）
+  if (/number/.test(th.dataset.control)) {
+    div = filter.appendChild(document.createElement("div"));
+    div.classList.add("tbl-filter-range");
+
+    input = div.appendChild(document.createElement("input"));
+    input.name = "min";
+    input.type = "number";
+    input.placeholder = "最小";
+    input.style.width = "72px";
+    input.className = "tbl-filter-minmax";
+
+    input = div.appendChild(document.createElement("input"));
+    input.name = "max";
+    input.type = "number";
+    input.placeholder = "最大";
+    input.style.width = "72px";
+    input.className = "tbl-filter-minmax";
+  }
+
+  /* ↑　textbox → min/max */
+
+  //─]─]─]─]─] 各ボタン
+  div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-buttons" );
+
+  input = div.appendChild( document.createElement( "input" ) );
+  input.type = "submit";
+  input.value = "絞込み";
+
+  input = div.appendChild( document.createElement( "input" ) );
+  input.type = "reset";
+  input.value = "クリア";
+
+  input = div.appendChild( document.createElement( "input" ) );
+  input.type = "button";
+  input.value = "メニュー閉じる";
+  input.onclick = tblcontrol.toggleFilter;
+  }
+  } );
+// ↓debugCode
+//  document.querySelectorAll("thead th[data-control]").forEach(th => {
+//    console.log("対象列:", th.textContent.trim(), "属性:", th.dataset.control);
+//  });
+// ↑debugCode
+};
+
+/* ── 関数：並び替え ── */
+tblcontrol.sort = evt => {
+//─] HTML 要素
+const target = evt.target;
+const thead = target.closest( "thead" );
+const th = target.closest( "th" );
+const tbody = target.closest( "table" ).querySelector( "tbody" );
+//─] 列番号
+const index = th.cellIndex;
+//─] ソート方法
+const type = target.dataset.type;
+const numsort = /number/.test( th.dataset.control );
+//─] ソート
+Array.from( tbody.rows ).sort( ( row1, row2 ) => {
+const [ a, b ] = [
+row1.cells[ index ].textContent,
+row2.cells[ index ].textContent
+].map( value => numsort ? Number( value ) : value );
+return a==b ? 0 :
+type=="sort-ascend" ? ( a>b ? 1 : -1 ) : ( a>b ? -1 : 1 ) ;
+} ).forEach( row => tbody.appendChild( row ) );
+//─] ボタンの色
+thead.querySelectorAll( "button[ data-type|='sort' ]" ).
+forEach( button => button.classList[ button==target ? "add" : "remove" ]( "filter" ) );
+};
+
+/* ── 関数：フィルター開閉 ── */
+tblcontrol.toggleFilter = evt => {
+//─] HTML 要素
+const target = evt.target.closest( ".tbl-control" ).querySelector( ".tbl-filter" );
+const filters = target.closest( "thead" ).querySelectorAll( ".tbl-filter" );
+//─] 開閉フラグ
+const open = ! target.classList.contains( "open" );
+//─] すべてのフィルターを閉じる
+filters.forEach( filter => {
+//──] リセット：キーアイテム
+const keyitem = JSON.parse( filter.dataset.keyitem );
+filter.filter_item.forEach(
+item => item.checked = keyitem.includes( item.value )
+);
+filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item.checked ) ;
+//──] リセット：キーワード
+const keyword =
+filter.filter_keyword.value = filter.dataset.keyword;
+//──] ボタンの色
+filter.closest( "th" ).
+querySelector( "button[ data-type='refine' ]" ).
+classList[ ( ! keyword ) && filter.filter_all.checked ? "remove" : "add" ]( "filter" );
+//──] 閉じる
+filter.classList.remove( "open" );
+} );
+//─] フィルターを開く
+if( open ) target.classList.add( "open" );
+};
+
+/* ── 関数：全選択 ── */
+tblcontrol.checkAll = evt => {
+const target = evt.target;
+const filter = target.form;
+target.name=="filter_all" ?
+Array.from( filter.filter_item ).forEach( item => item.checked = target.checked ) :
+filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item.checked ) ;
+};
+
+/* ── 関数：絞込み ── */
+/* ↓　textbox → min/max */
+
+//-] 関数数値範囲での絞り込み
+
+tblcontrol.refine = function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const th = form.closest("th");
+  const colIndex = th.cellIndex;
+  const rows = th.closest("table").tBodies[0].rows;
+
+  // 絞り込み条件取得（意味保証された属性から）
+  const controlValue = th.dataset.control ?? "";
+  const isNumber = controlValue.split(/\s+/).includes("number");
+//  console.log(controlValue, isNumber, th.dataset.control); // ← デバッグ用
+
+  const min = isNumber ? parseFloat(form.min?.value) : undefined;
+  const max = isNumber ? parseFloat(form.max?.value) : undefined;
+  const keyword = form.filter_keyword?.value?.trim();
+
+  // keyitem（チェックボックス）取得
+  const keyitem = form.filter_item
+    ? Array.from(form.filter_item).filter(input => input.checked).map(input => input.value)
+    : [];
+  form.dataset.keyitem = JSON.stringify(keyitem);
+
+  // 行ごとに絞り込み判定
+  for (const row of rows) {
+    const cell = row.cells[colIndex];
+    const text = cell.textContent.trim();
+    let show = true;
+
+  // チェックボックスによる絞り込み
+    if (keyitem.length > 0 && !keyitem.includes(text)) {
+    show = false;
+  }
+
+    if (isNumber) {
+      const value = parseFloat(text);
+      if (!isNaN(min) && value < min) show = false;
+      if (!isNaN(max) && value >= max) show = false;
+
+      // キーワードでの数値絞り込み完全一致
+      if (keyword && text !== keyword) show = false;
+    } else {
+      // キーワードでの文字列絞り込み部分一致
+      if (keyword && !text.includes(keyword)) show = false;
+    }
+
+    row.style.display = show ? "" : "none";
+  }
+};
+
+/* ── スタイルシート ── */
+//─] オブジェクト
+tblcontrol.stylesheet =
+document.querySelector( "head" ).
+appendChild( document.createElement( "style" ) ).sheet;
+//─] 関数
+tblcontrol.css =( selector, style )=> {
+const sheet = tblcontrol.stylesheet;
+sheet.insertRule( `${ selector } { ${ style } }`, sheet.cssRules.length );
+};
+//─] 設定
+//─]─] コントロール
+tblcontrol.css( "th[ data-control ] .tbl-control", `
+position: relative;
+text-align: center;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-control > button", `
+width: 16px;
+height: 16px;
+padding: 0px;
+margin: 2px;
+border: solid 1px #ccc;
+background: #eee;
+cursor: pointer;
+outline: none !important;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-control > button:hover", `
+border-color: #666;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-control > button:active", `
+background: #fff;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-control button.filter", `
+border-color: #fc6;
+background: #ffc;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-control button img", `
+width: 100%; height: 100%;
+border: none;
+pointer-events: none;
+` );
+//─]─] フィルター
+tblcontrol.css( "th[ data-control ] .tbl-filter", `
+position: absolute; left: 0px; top: 100%; z-index: 100;
+display: none;
+box-sizing: border-box;
+width: 200px;
+padding: 4px;
+margin: 0px;
+border: solid 1px #ccc;
+background: #ffe;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-filter.open", `
+display: block;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-filter label", `
+display: block;
+text-align: left;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-filter-inventory", `
+max-height: 200px;
+overflow: auto;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-filter-keyword", `
+margin: 4px auto;
+` );
+tblcontrol.css( "th[ data-control ] .tbl-filter-buttons input", `
+box-sizing: border-box;
+width: 164px;
+margin: 2px;
+` );
+tblcontrol.css( `
+th[ data-control ] .tbl-filter-buttons input[ value="絞込み" ],
+th[ data-control ] .tbl-filter-buttons input[ value="クリア" ],
+th[ data-control ] .tbl-filter-range input[ name="min" ],
+th[ data-control ] .tbl-filter-range input[ name="max" ]
+`, `
+width: 80px;
+margin: 2px;
+` );
+
+/* ── ボタンアイコン ── */
+tblcontrol.btnicon = new Object();
+//─] ソート：昇順
+tblcontrol.btnicon.ascend = new Image();
+tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<polygon fill="%23666" stroke="none" points="8,3 3,11 13,11" />
+</svg>`;
+//─] ソート：降順
+tblcontrol.btnicon.descend = new Image();
+tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<polygon fill="%23666" stroke="none" points="8,13 3,5 13,5" />
+</svg>`;
+//─] 絞込み
+tblcontrol.btnicon.refine = new Image();
+tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<polygon fill="%23666" stroke="none" points="8,11 3,3 13,3" />
+<rect fill="%23666" stroke="none" x="6" y="6" width="4" height="6" />
+</svg>`;
+
+/* ── 関数：初期化 ── */
+tblcontrol.init =()=> {
+  //─] コントロール追加
+  document.querySelectorAll( "th[ data-control ]" ).forEach( th => {
+  //─]─] 取得
+  const index = th.cellIndex;
+  const table = th.closest( "table" );
+  const tbody = table.querySelector( "tbody" );
+
+  //─]─] コントロール
+  const control = th.appendChild( document.createElement( "div" ) );
+  control.classList.add( "tbl-control" );
+
+  //─]─]─] ソート
+  if( /sort/.test( th.dataset.control ) ){
+  //─]─]─]─] 昇順ボタン
+  const ascend = control.appendChild( document.createElement( "button" ) );
+  ascend.dataset.type = "sort-ascend";
+  ascend.appendChild( tblcontrol.btnicon.ascend.cloneNode( true ) );
+  //─]─]─]─] 降順ボタン
+  const descend = control.appendChild( document.createElement( "button" ) );
+  descend.dataset.type = "sort-descend";
+  descend.appendChild( tblcontrol.btnicon.descend.cloneNode( true ) );
+  //─]─]─]─] イベントハンドラ
+  ascend.onclick = descend.onclick = tblcontrol.sort;
+  }
+
+  //─]─]─] 絞込み
+  if( /refine/.test( th.dataset.control ) ){
+  //─]─]─]─] ボタン
+  const refine = control.appendChild( document.createElement( "button" ) );
+  refine.dataset.type = "refine";
+  refine.appendChild( tblcontrol.btnicon.refine.cloneNode( true ) );
+  refine.onclick = tblcontrol.toggleFilter;
+
+  //─]─]─]─] フィルター
+  const filter = control.appendChild( document.createElement( "form" ) );
+  filter.classList.add( "tbl-filter" );
+  filter.onsubmit = tblcontrol.refine;
+  filter.onreset = tblcontrol.unrefine;
+
+  //─]─]─]─]─] 全選択
+  let div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-all" );
+  let label = div.appendChild( document.createElement( "label" ) );
+  let input = label.appendChild( document.createElement( "input" ) );
+  input.name = "filter_all";
+  input.type = "checkbox";
+  input.checked = true;
+  input.onchange = tblcontrol.checkAll;
+  label.appendChild( document.createTextNode( "すべて" ) );
+
+  // index: フィルター対象列のインデックス
+  // th: index番目のth要素
+  const th = table.querySelectorAll('th')[index];
+  const controlValue = th.dataset.control || "";
+
+  // checklistが含まれているか判定
+  const isChecklist = controlValue.split(/\s+/).includes("checklist");
+
+  //─]─]─]─]─] キーアイテム
+  div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-inventory" );
+  if (isChecklist) {
+    div.style.display = "block";
+  }else{
+    div.style.display = "none";
+  }
+  const list = [].reduce.call( tbody.rows, ( arr, row ) => {
+    const text = row.cells[ index ].textContent;
+    if( ! arr.includes( text ) ){ arr.push( text ) }
+    return arr;
+  }, [] );
+  list.forEach( text => {
+    label = div.appendChild( document.createElement( "label" ) );
+    input = label.appendChild( document.createElement( "input" ) );
+    input.name = "filter_item";
+    input.type = "checkbox";
+    input.value = text;
+    input.checked = true;
+    input.onchange = tblcontrol.checkAll;
+    label.appendChild( document.createTextNode( text ) );
+  } );
+  filter.dataset.keyitem = JSON.stringify( list );
+
+  //─]─]─]─]─] キーワード
+  div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-keyword" );
+  input = div.appendChild( document.createElement( "input" ) );
+  input.name = "filter_keyword";
+  input.type = "text";
+  input.placeholder = "絞込みワード";
+  input.style.width = "160px";
+  filter.dataset.keyword = "";
+
+  /* ↓　textbox → min/max 2025-08-17*/
+
+  //─]─]─]─]─] min/max（数値列のみ）
+  if (/number/.test(th.dataset.control)) {
+    div = filter.appendChild(document.createElement("div"));
+    div.classList.add("tbl-filter-range");
+
+    input = div.appendChild(document.createElement("input"));
+    input.name = "min";
+    input.type = "number";
+    input.placeholder = "最小";
+    input.style.width = "72px";
+    input.className = "tbl-filter-minmax";
+
+    input = div.appendChild(document.createElement("input"));
+    input.name = "max";
+    input.type = "number";
+    input.placeholder = "最大";
+    input.style.width = "72px";
+    input.className = "tbl-filter-minmax";
+  }
+
+  /* ↑　textbox → min/max */
+
+  //─]─]─]─]─] 各ボタン
+  div = filter.appendChild( document.createElement( "div" ) );
+  div.classList.add( "tbl-filter-buttons" );
+
+  input = div.appendChild( document.createElement( "input" ) );
+  input.type = "submit";
+  input.value = "絞込み";
+
+  input = div.appendChild( document.createElement( "input" ) );
+  input.type = "reset";
+  input.value = "クリア";
+
+  input = div.appendChild( document.createElement( "input" ) );
+  input.type = "button";
+  input.value = "メニュー閉じる";
+  input.onclick = tblcontrol.toggleFilter;
+  }
+  } );
+// ↓debugCode
+//  document.querySelectorAll("thead th[data-control]").forEach(th => {
+//    console.log("対象列:", th.textContent.trim(), "属性:", th.dataset.control);
+//  });
+// ↑debugCode
+};
+
+/* ── 関数：並び替え ── */
+tblcontrol.sort = evt => {
+//─] HTML 要素
+const target = evt.target;
+const thead = target.closest( "thead" );
+const th = target.closest( "th" );
+const tbody = target.closest( "table" ).querySelector( "tbody" );
+//─] 列番号
+const index = th.cellIndex;
+//─] ソート方法
+const type = target.dataset.type;
+const numsort = /number/.test( th.dataset.control );
+//─] ソート
+Array.from( tbody.rows ).sort( ( row1, row2 ) => {
+const [ a, b ] = [
+row1.cells[ index ].textContent,
+row2.cells[ index ].textContent
+].map( value => numsort ? Number( value ) : value );
+return a==b ? 0 :
+type=="sort-ascend" ? ( a>b ? 1 : -1 ) : ( a>b ? -1 : 1 ) ;
+} ).forEach( row => tbody.appendChild( row ) );
+//─] ボタンの色
+thead.querySelectorAll( "button[ data-type|='sort' ]" ).
+forEach( button => button.classList[ button==target ? "add" : "remove" ]( "filter" ) );
+};
+
+/* ── 関数：フィルター開閉 ── */
+tblcontrol.toggleFilter = evt => {
+//─] HTML 要素
+const target = evt.target.closest( ".tbl-control" ).querySelector( ".tbl-filter" );
+const filters = target.closest( "thead" ).querySelectorAll( ".tbl-filter" );
+//─] 開閉フラグ
+const open = ! target.classList.contains( "open" );
+//─] すべてのフィルターを閉じる
+filters.forEach( filter => {
+//──] リセット：キーアイテム
+const keyitem = JSON.parse( filter.dataset.keyitem );
+filter.filter_item.forEach(
+item => item.checked = keyitem.includes( item.value )
+);
+filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item.checked ) ;
+//──] リセット：キーワード
+const keyword =
+filter.filter_keyword.value = filter.dataset.keyword;
+//──] ボタンの色
+filter.closest( "th" ).
+querySelector( "button[ data-type='refine' ]" ).
+classList[ ( ! keyword ) && filter.filter_all.checked ? "remove" : "add" ]( "filter" );
+//──] 閉じる
+filter.classList.remove( "open" );
+} );
+//─] フィルターを開く
+if( open ) target.classList.add( "open" );
+};
+
+/* ── 関数：全選択 ── */
+tblcontrol.checkAll = evt => {
+const target = evt.target;
+const filter = target.form;
+target.name=="filter_all" ?
+Array.from( filter.filter_item ).forEach( item => item.checked = target.checked ) :
+filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item.checked ) ;
+};
+
+/* ── 関数：絞込み ── */
+/* ↓　textbox → min/max */
+
+//-] 関数数値範囲での絞り込み
+
+tblcontrol.refine = function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const th = form.closest("th");
+  const colIndex = th.cellIndex;
+  const rows = th.closest("table").tBodies[0].rows;
+
+  // 絞り込み条件取得（意味保証された属性から）
+  const controlValue = th.dataset.control ?? "";
+  const isNumber = controlValue.split(/\s+/).includes("number");
+//  console.log(controlValue, isNumber, th.dataset.control); // ← デバッグ用
+
+  const min = isNumber ? parseFloat(form.min?.value) : undefined;
+  const max = isNumber ? parseFloat(form.max?.value) : undefined;
+  const keyword = form.filter_keyword?.value?.trim();
+
+  // keyitem（チェックボックス）取得
+  const keyitem = form.filter_item
+    ? Array.from(form.filter_item).filter(input => input.checked).map(input => input.value)
+    : [];
+  form.dataset.keyitem = JSON.stringify(keyitem);
+
+  // 行ごとに絞り込み判定
+  for (const row of rows) {
+    const cell = row.cells[colIndex];
+    const text = cell.textContent.trim();
+    let show = true;
+
+  // チェックボックスによる絞り込み
+    if (keyitem.length > 0 && !keyitem.includes(text)) {
+    show = false;
+  }
+
+    if (isNumber) {
+      const value = parseFloat(text);
+      if (!isNaN(min) && value < min) show = false;
+      if (!isNaN(max) && value >= max) show = false;
+
+      // キーワードでの数値絞り込み完全一致
+      if (keyword && text !== keyword) show = false;
+    } else {
+      // キーワードでの文字列絞り込み部分一致
+      if (keyword && !text.includes(keyword)) show = false;
+    }
+
+    row.style.display = show ? "" : "none";
+  }
+};
+
+/* ── 関数：絞込み解除 ── */
+tblcontrol.unrefine = evt => {
+const filter = evt.target;
+filter.filter_all.checked = true;
+Array.from( filter.filter_item ).forEach( item => item.checked = true );
+filter.filter_keyword.value = "";
+
+/* ↓　textbox → min/max 2025-08-17*/
+filter.min.value = "";
+filter.max.value = "";
+/* ↑　textbox → min/max */
+
+tblcontrol.refine( evt );
+};
+
+/* ── tsv読み込み以前：全レコードhtml記述時代の旧・実装 ── */
+// tblcontrol.init()は最初のrequestAnimationFrame()の中で呼び出される事となった。
+// window.addEventListener( "DOMContentLoaded", tblcontrol.init, false );
 </script>
 </body>
 </html>
