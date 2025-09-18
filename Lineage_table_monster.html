@@ -240,7 +240,7 @@ tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
 /* ── 関数：初期化 ── */
 tblcontrol.init =()=> {
   //─] コントロール追加
-  document.querySelectorAll( "thead th[ data-control ]" ).forEach( th => {
+  document.querySelectorAll( "th[ data-control ]" ).forEach( th => {
   //─]─] 取得
   const index = th.cellIndex;
   const table = th.closest( "table" );
