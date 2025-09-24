@@ -192,6 +192,23 @@ color: #000;
 font-size: 0.8em;
 }
 }
+
+#loadBtn {
+  margin-bottom: 6px;
+}
+
+.in-line_icon {
+  vertical-align: middle;/*text-bottom または middle */
+  height: 18px;
+  width: 30px;
+}
+.ellipsis {
+  cursor: pointer;
+  color: blue;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: underline;
+}
 /* スマホ用メディアクエリ対応 2025-06-22-16:40 */
 /* thtdの繰り返しとなって空白が多くスクロールが増えるのでjsによりtrthtdtrthtdにする   */
 /* 2025-06-23 6:00 */
