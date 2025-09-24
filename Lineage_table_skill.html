@@ -73,11 +73,11 @@
       <div class="matchTypeOptions" style="margin-top: 8px;">
         <label>
         <input type="radio" name="matchType" value="only" checked>
-        完全一致：選択したクラスのみのスキルを表示
+        完全一致：選択したクラスのスキルのみを表示
         </label><br>
         <label>
         <input type="radio" name="matchType" value="includes">
-        部分一致：選択したクラスを含む一般魔法も含む表示
+        部分一致：選択したクラスのスキルに一般魔法も加えた表示
         </label>
       </div>
 <!--  <label><input type="radio" name="matchType" value="only" checked> 完全一致</label>
@@ -303,7 +303,10 @@ function renderSkillTAble(text) {
                 </tr>`
             // skill_domain_effect:3+2+6=11列
                 html_pcv += `<tr>
-                  <th class="col-header">対象</th><td class="col-data" colspan="2">${target}</td>
+                  <th class="col-header">対象</th><td class="col-data" colspan="2">
+                  <span class="text">${truncateForDisplayWithTag(target,24)}</span>
+                  <span class="full-text" style="display:none;">${target}</span>
+                  </td>
                   <th class="col-header">再使用時間</th><td class="col-data">${reuse}</td>
                   <th class="col-header">効果・性能</th><td class="col-data" colspan="5">
                   <span class="text">${truncateForDisplayWithTag(effect,60)}</span>
