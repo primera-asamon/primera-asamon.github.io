@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
     <link rel="stylesheet" href="Lineage_main.css">
+    <link rel="stylesheet" href="Lineage_skill.css">
   </head>
   <style>
   .modal {
@@ -310,13 +311,10 @@ function generateSubHTML(tsvRecord) {
     clsDisplay += `（${tsvRecord.elf}）`;
   }
   let popup_html =`
-  <html><head>
-    <link rel="stylesheet" href="Lineage_skill.css">
-    <title>${tsvRecord.name}</title>
       <style>
   body {
     font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
-<!--      font-family: 'Segoe UI', sans-serif; -->
+    /* font-family: 'Segoe UI', sans-serif; */
     padding: 1em;
     background-color: #fdfdf0;
     color: #333;
@@ -355,7 +353,6 @@ popup_html +=`
     text-align: left;
   }
   </style>
-  </head><body>
   <table>`
 popup_html += `<tbody id="(${tsvRecord.name})" class="record-table" data-cls=${tsvRecord.cls} data-elf=${tsvRecord.elf}>`;
 // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
@@ -413,11 +410,6 @@ popup_html += `<tbody id="(${tsvRecord.name})" class="record-table" data-cls=${t
               <th class="col-header">備考1</th><td class="col-data" colspan="5">${tsvRecord.note1}</td>
               <th class="col-header">備考2</th><td class="col-data" colspan="4">${tsvRecord.note2}</td>
           </tr>`
-// ↑ skillDeta依存。適宜変更する。
-// LiveServer script code inject対策。
-popup_html += `</table></bo`;  // タグbodyやhtmlの出現がキー
-popup_html += `dy></ht`;       // タグbodyやhtmlの出現がキー
-popup_html += `ml>`;           // タグbodyやhtmlの出現がキー
   return popup_html;
 }
 
