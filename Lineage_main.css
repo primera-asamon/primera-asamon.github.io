@@ -90,6 +90,28 @@
     }
     /* メインイメージ */
 
+    h3 {
+        margin: 0 0 0 12px ;
+        padding: 0;
+        font-size: 1.2em;
+        text-align: left;
+    }
+
+    .h3-indent {
+        margin-left: 12px;
+    }
+
+    h4 {
+        margin: 0 0 0 12px ;
+        padding: 0;
+        font-size: 1em;
+        text-align: left;
+    }
+
+    .h4-indent {
+        margin-left: 24px;
+    }
+
     .main {
         padding: 4px 0;
         width: 100%;
