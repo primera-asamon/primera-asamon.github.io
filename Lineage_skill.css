@@ -30,12 +30,23 @@ text-align: left;
 font-size: small;
 font-weight: normal;
 }
+th.grade {
+width: 2em;
+}
 td {
 border: 1px solid #ccc;
 padding: 6px;
 text-align: left;
 font-size: small;
 font-weight: normal;
+}
+td.grade_no {
+width: 2em;
+text-align: right;
+}
+td.cls {
+width: 2em;
+text-align: right;
 }
 .row-header {
 background-color: #d0d0e0;
