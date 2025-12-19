@@ -224,9 +224,24 @@ const CONFIG = {
   containerSelector: '#recordDetailContainer_1', 
   closeButtonSelector: '.close-button'
 };
+// popup表示data 外部化(Pop-upRecordDataSource.html)修正部2025-12-20
+  async function loadPopupTable() {
+    const res = await fetch('/partials/Pop-upRecordDataSource.html');
+    return await res.text();
+  }
+// 全部のフィルター後HTML生成関数
+  async function generateSubHTML_all(key) {
+  const tableHTML = await loadPopupTable();
 
+  return `
+    <h3 class="lineage_accessory_popup_title">${key}<span class="style_regular">の性能</span></h3>
+    <span class="lineage_accessory_popup_subtitle">強化値による性能変化一覧</span><br>
+    ${tableHTML}
+  `;
+}
+//
 // 全部のフィルター前HTML生成関数
-function generateSubHTML_all(key) {
+/* function generateSubHTML_all(key) {
   return `
   <h3 class="lineage_accessory_popup_title">${key}<span class="style_regular">の性能</span></h3>
   <span class="lineage_accessory_popup_subtitle">強化値による性能変化一覧</span><br>
@@ -280,7 +295,7 @@ function generateSubHTML_all(key) {
         <tr class="賢者の守護インシグニア"><th class="col_header">魔法命中</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>+2 </td><td>+3 </td></tr>
       </tbody>
     </table>`
-}
+} */
 // リンククリックイベント
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('record-link')) {
@@ -299,13 +314,13 @@ function filterModalRows(key) {
   });
 }
 // モーダル表示関数（filterModalRowsを呼び出し、表示対象のみ可視化）
-function showModal(key) {
+async function showModal(key) {
   console.log(`Container: "${CONFIG.containerSelector}"`);
   const modal = document.querySelector(CONFIG.modalSelector);
   const container = document.querySelector(CONFIG.containerSelector);
   const closeBtn = document.querySelector(CONFIG.closeButtonSelector);
-  container.innerHTML = generateSubHTML_all(key); // 全体HTMLを挿入
-  setTimeout(() => filterModalRows(key), 0); // 非同期で行フィルタリング＊遅延実行
+  container.innerHTML = await generateSubHTML_all(key); // 全体HTMLを挿入 awaite追加2025-12-20
+  // setTimeout(() => filterModalRows(key), 0); // 非同期で行フィルタリング＊遅延実行
   console.log(container.innerHTML); // 「<tbody class="modal_selection">」が存在するか確認
   filterModalRows(key);                 // 表示対象のみ可視化
   modal.style.display = 'block';
