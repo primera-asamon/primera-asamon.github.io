@@ -13,6 +13,83 @@
   <link rel="stylesheet" href="Lineage_main.css">
   <link rel="stylesheet" href="Lineage_accessory.css">
 </head>
+  <style>
+/* モーダル用 */
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background-color: #fdfdf0;
+  margin: 5% auto;
+  padding: 1em;
+  border: 1px solid #888;
+  width: 70%;
+  max-width:660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px #333;
+}
+.close-button {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+table.lineage_accessory_popup_table {
+  border: 1px solid #888;
+  font-size: small;
+  color: #222;
+  text-align:center;
+  border-collapse: collapse;
+  width: 100%;
+}
+.lineage_accessory_popup_table th {
+  height: 20px;
+  border: 1px solid #888;
+  background-color: #bfb;
+  text-align:center;
+  padding: 2px 4px 2px 4px;
+  font-weight: normal;
+}
+.lineage_accessory_popup_table th.col_header {
+  max-width:88px;
+}
+.lineage_accessory_popup_table td {
+  width:44px;
+  border: 1px solid #888;
+  text-align:right;
+  padding: 1px 6px 1px 6px;
+}
+.modal_selection tr {
+  display: none;
+}
+.lineage_accessory_popup_title {
+  margin: 0px;
+}
+.style_regular {
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #555;
+}
+.lineage_accessory_popup_subtitle {
+  margin: 0px;
+  font-size: 0.9em;
+  color: #555;
+}
+.record-link {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover { color: #f33; }
+}
+</style>
 <body id="top">
   <div class="nav">
     <ul class="nav-group">
@@ -44,14 +121,46 @@
       </ul>
     </div>
   </div>
-    <div class="update_date"><i class="fa fa-clock-o">更新</i>&nbsp;2025/4/2</div>
+    <div class="update_date"><i class="fa fa-clock-o">更新</i>&nbsp;2025/12/21</div>
     <div class="create_date"><i class="fa fa-clock-o">初出</i>&nbsp;2025/4/1</div>
   <div class="table_box_acce">
     <table class="acce">
       <thead class="sticky_acce">
-        <tr><td rowspan="3">エンチャント</td><td>名称</td><td colspan="3">ルームティスの闘士の<br>ペンダント</td><td colspan="3">ルームティスの射手の<br>ペンダント</td><td colspan="3">ルームティスの賢者の<br>ペンダント</td><td>名称</td><td rowspan="3">エンチャント</td></tr>
-        <tr><td>画像</td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_fighter.png" height="48" width="48" alt="ルームティスの闘士のペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_fighter_blessed.png" height="48" width="48" alt="祝福されたルームティスの闘士のペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_fighter_protection.png" height="48" width="48" alt="祝福されたルームティスの闘士の守護ペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_archer.png" height="48" width="48" alt="ルームティスの射手のペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_archer_blessed.png" height="48" width="48" alt="祝福されたルームティスの射手のペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_archer_protection.png" height="48" width="48" alt="祝福されたルームティスの射手の守護ペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_wizard.png" height="48" width="48" alt="ルームティスの賢者のペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_wizard_blessed.png" height="48" width="48" alt="祝福されたルームティスの賢者のペンダント"/></td><td><img class="icon_pict" src="./picture/item_thumbnail/pendant_wizard_protection.png" height="48" width="48" alt="祝福されたルームティスの賢者の守護ペンダント"/></td><td>画像</td></tr>
-        <tr><td>性能項目</td><td>n</td><td>b</td><td>守護</td><td>n</td><td>b</td><td>守護</td><td>n</td><td>b</td><td>守護</td><td>性能項目</td></tr>
+        <tr>
+          <td rowspan="3">エンチャント</td>
+          <td>名称</td>
+          <td colspan="3">ルームティスの闘士の<br>ペンダント</td>
+          <td colspan="3">ルームティスの射手の<br>ペンダント</td>
+          <td colspan="3">ルームティスの賢者の<br>ペンダント</td>
+          <td>名称</td>
+          <td rowspan="3">エンチャント</td>
+        </tr>
+        <tr>
+          <td>画像</td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_fighter.png" height="48" width="48" alt="ルームティスの闘士のペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_fighter_blessed.png" height="48" width="48" alt="祝福されたルームティスの闘士のペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_fighter_protection.png" height="48" width="48" alt="祝福された闘士の守護ペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_archer.png" height="48" width="48" alt="ルームティスの射手のペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_archer_blessed.png" height="48" width="48" alt="祝福されたルームティスの射手のペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_archer_protection.png" height="48" width="48" alt="祝福された射手の守護ペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_wizard.png" height="48" width="48" alt="ルームティスの賢者のペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_wizard_blessed.png" height="48" width="48" alt="祝福されたルームティスの賢者のペンダント"/></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_wizard_protection.png" height="48" width="48" alt="祝福された賢者の守護ペンダント"/></td>
+          <td>画像</td>
+        </tr>
+        <tr>
+          <td>性能項目</td>
+          <td><a href="#" class="record-link" data-key="ルームティスの闘士のペンダント" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスの闘士のペンダント" title="クリックで詳細表示">祝福</a></td>
+          <td><a href="#" class="record-link" data-key="祝福された闘士の守護ペンダント" title="クリックで詳細表示">守護</a></td>
+          <td><a href="#" class="record-link" data-key="ルームティスの射手のペンダント" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスの射手のペンダント" title="クリックで詳細表示">祝福</a></td>
+          <td><a href="#" class="record-link" data-key="祝福された射手の守護ペンダント" title="クリックで詳細表示">守護</a></td>
+          <td><a href="#" class="record-link" data-key="ルームティスの賢者のペンダント" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスの賢者のペンダント" title="クリックで詳細表示">祝福</a></td>
+          <td><a href="#" class="record-link" data-key="祝福された賢者の守護ペンダント" title="クリックで詳細表示">守護</a></td>
+          <td>性能項目</td>
+        </tr>
       </thead>
       <tbody class="acce">
         <tr><td>+0</td><td>最大HP</td><td>+10</td><td rowspan="3" class="Not_applicable"></td><td rowspan="3" class="Not_applicable"></td><td>+10</td><td rowspan="3" class="Not_applicable"></td><td rowspan="3" class="Not_applicable"></td><td>+10</td><td rowspan="3" class="Not_applicable"></td><td rowspan="3" class="Not_applicable"></td><td>最大HP</td><td>+10</td></tr>
@@ -101,8 +210,8 @@
         <tr><td>+6</td><td>最大MP</td><td>+10</td><td>+10</td><td>+7%,+90</td><td>+10</td><td>+10</td><td>+11%,+90</td><td>+10</td><td>+10</td><td>+14%,+90</td><td>最大MP</td><td>+6</td></tr>
         <tr><td>+6</td><td>PVPダメージ減少</td><td>+2</td><td>+3</td><td>+8</td><td>+2</td><td>+3</td><td>+8</td><td>+2</td><td>+3</td><td>+8</td><td>PVPダメージ減少</td><td>+6</td></tr>
         <tr><td>+6</td><td>所持重量増加</td><td>+360</td><td>+500</td><td>+500</td><td>+360</td><td>+500</td><td>+500</td><td>+360</td><td>+500</td><td>+500</td><td>所持重量増加</td><td>+6</td></tr>
-        <tr><td>+6</td><td>状態異常時、PVPダメージ減少</td><td></td><td></td><td>+1</td><td></td><td></td><td>+1</td><td></td><td></td><td>+1</td><td>状態異常時、PVPダメージ減少</td><td>+6</td></tr>
-        <tr><td>+6</td><td>適用状態異常</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td>適用状態異常</td><td>+6</td></tr>
+        <tr><td>+6</td><td>状態異常時、<br>PVPダメージ減少</td><td></td><td></td><td>+1</td><td></td><td></td><td>+1</td><td></td><td></td><td>+1</td><td>状態異常時、<br>PVPダメージ減少</td><td>+6</td></tr>
+        <tr><td>+6</td><td>適用状態異常</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td>適用状態異常</td><td>+6</td></tr>
         <tr><td>+6</td><td>全スキル耐性</td><td>+2</td><td>+3</td><td>+3</td><td>+2</td><td>+3</td><td>+3</td><td>+2</td><td>+3</td><td>+3</td><td>全スキル耐性</td><td>+6</td></tr>
         <tr class="Item_No_odd_acce"><td>+7</td><td>AC</td><td></td><td>-1</td><td>-4</td><td></td><td>-1</td><td>-4</td><td></td><td>-1</td><td>-4</td><td>AC</td><td>+7</td></tr>
         <tr class="Item_No_odd_acce"><td>+7</td><td>近距離ダメージ</td><td>+4</td><td>+4</td><td>+4</td><td></td><td></td><td></td><td></td><td></td><td></td><td>近距離ダメージ</td><td>+7</td></tr>
@@ -117,8 +226,8 @@
         <tr class="Item_No_odd_acce"><td>+7</td><td>最大MP</td><td>+10</td><td>+10</td><td>+8%,+125</td><td>+10</td><td>+10</td><td>+13%,+125</td><td>+10</td><td>+10</td><td>+17%,+125</td><td>最大MP</td><td>+7</td></tr>
         <tr class="Item_No_odd_acce"><td>+7</td><td>PVPダメージ減少</td><td>+4</td><td>+5</td><td>+12</td><td>+4</td><td>+5</td><td>+12</td><td>+4</td><td>+5</td><td>+12</td><td>PVPダメージ減少</td><td>+7</td></tr>
         <tr class="Item_No_odd_acce"><td>+7</td><td>所持重量増加</td><td>+360</td><td>+500</td><td>+500</td><td>+360</td><td>+500</td><td>+500</td><td>+360</td><td>+500</td><td>+500</td><td>所持重量増加</td><td>+7</td></tr>
-        <tr class="Item_No_odd_acce"><td>+7</td><td>状態異常時、PVPダメージ減少</td><td></td><td></td><td>+6</td><td></td><td></td><td>+6</td><td></td><td></td><td>+6</td><td>状態異常時、PVPダメージ減少</td><td>+7</td></tr>
-        <tr class="Item_No_odd_acce"><td>+7</td><td>適用状態異常</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td>適用状態異常</td><td>+7</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>状態異常時、<br>PVPダメージ減少</td><td></td><td></td><td>+6</td><td></td><td></td><td>+6</td><td></td><td></td><td>+6</td><td>状態異常時、<br>PVPダメージ減少</td><td>+7</td></tr>
+        <tr class="Item_No_odd_acce"><td>+7</td><td>適用状態異常</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td>適用状態異常</td><td>+7</td></tr>
         <tr class="Item_No_odd_acce"><td>+7</td><td>全スキル耐性</td><td>+4</td><td>+5</td><td>+6</td><td>+4</td><td>+5</td><td>+6</td><td>+4</td><td>+5</td><td>+6</td><td>全スキル耐性</td><td>+7</td></tr>
         <tr><td>+8</td><td>AC</td><td></td><td>-1</td><td>-5</td><td></td><td>-1</td><td>-5</td><td></td><td>-1</td><td>-5</td><td>AC</td><td>+8</td></tr>
         <tr><td>+8</td><td>近距離ダメージ</td><td>+5</td><td>+5</td><td>+5</td><td></td><td></td><td></td><td></td><td></td><td></td><td>近距離ダメージ</td><td>+8</td></tr>
@@ -134,12 +243,81 @@
         <tr><td>+8</td><td>PVPダメージ減少</td><td>+6</td><td>+7</td><td>+16</td><td>+6</td><td>+7</td><td>+16</td><td>+6</td><td>+7</td><td>+16</td><td>PVPダメージ減少</td><td>+8</td></tr>
         <tr><td>+8</td><td>所持重量増加</td><td>+360</td><td>+500</td><td>+500</td><td>+360</td><td>+500</td><td>+500</td><td>+360</td><td>+500</td><td>+500</td><td>所持重量増加</td><td>+8</td></tr>
         <tr><td>+8</td><td>EXP</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>EXP</td><td>+8</td></tr>
-        <tr><td>+8</td><td>状態異常時、PVPダメージ減少</td><td></td><td></td><td>+15</td><td></td><td></td><td>+15</td><td></td><td></td><td>+15</td><td>状態異常時、PVPダメージ減少</td><td>+8</td></tr>
-        <tr><td>+8</td><td>適用状態異常</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td></td><td></td><td>スタン,ホールド,帰還不可,テレポート不可</td><td>適用状態異常</td><td>+8</td></tr>
+        <tr><td>+8</td><td>状態異常時、<br>PVPダメージ減少</td><td></td><td></td><td>+15</td><td></td><td></td><td>+15</td><td></td><td></td><td>+15</td><td>状態異常時、<br>PVPダメージ減少</td><td>+8</td></tr>
+        <tr><td>+8</td><td>適用状態異常</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td></td><td></td><td>スタン,ホールド,<br>帰還不可,<br>テレポート不可</td><td>適用状態異常</td><td>+8</td></tr>
         <tr><td>+8</td><td>全スキル耐性</td><td>+6</td><td>+7</td><td>+9</td><td>+6</td><td>+7</td><td>+9</td><td>+6</td><td>+7</td><td>+9</td><td>全スキル耐性</td><td>+8</td></tr>
-
       </tbody>
     </table>
     </div><!-- acce_table_box -->
+<script>
+// 変数規定部（CONFIGオブジェクトのプロパティとして。必要に応じて変更。）
+const CONFIG = {
+ // モーダル構成(html末尾)div ID指定(recordModal_1…,recordDetailContainer_1…)
+  modalSelector: '#recordModal_1',
+  containerSelector: '#recordDetailContainer_1', 
+  closeButtonSelector: '.close-button'
+};
+// popup表示data 外部化(Pop-upRecordDataSource.html)修正部2025-12-20
+  async function loadPopupTable() {
+    const res = await fetch('/partials/Pop-upRecordDataSource.html');
+    return await res.text();
+  }
+// 全部のフィルター後HTML生成関数
+  async function generateSubHTML_all(key) {
+  const tableHTML = await loadPopupTable();
+
+  return `
+    <h3 class="lineage_accessory_popup_title">${key}<span class="style_regular">の性能</span></h3>
+    <span class="lineage_accessory_popup_subtitle">強化値による性能変化一覧</span><br>
+    <table class="lineage_accessory_popup_table">
+      <thead>
+        <tr><th>項目</th><th>強化0</th><th>強化1</th><th>強化2</th><th>強化3</th><th>強化4</th><th>強化5</th><th>強化6</th><th>強化7</th><th>強化8</th></tr>
+      </thead>
+    ${tableHTML}
+  `;
+}
+// リンククリックイベント
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('record-link')) {
+    e.preventDefault();
+    const key = e.target.dataset.key;
+    showModal(key, generateSubHTML_all);
+  }
+});
+function filterModalRows(key) {
+  const container = document.querySelector(CONFIG.containerSelector);
+  const rows = container.querySelectorAll('.modal_selection tr');
+  console.log(`Filtering for key: "${key}"`);
+  rows.forEach(row => {
+    console.log(`row.className: [${row.className}]`);
+    row.style.display = row.classList.contains(key) ? 'table-row' : 'none';
+  });
+}
+// モーダル表示関数（filterModalRowsを呼び出し、表示対象のみ可視化）
+async function showModal(key) {
+  console.log(`Container: "${CONFIG.containerSelector}"`);
+  const modal = document.querySelector(CONFIG.modalSelector);
+  const container = document.querySelector(CONFIG.containerSelector);
+  const closeBtn = document.querySelector(CONFIG.closeButtonSelector);
+  container.innerHTML = await generateSubHTML_all(key); // 全体HTMLを挿入 awaite追加2025-12-20
+  // setTimeout(() => filterModalRows(key), 0); // 非同期で行フィルタリング＊遅延実行
+  console.log(container.innerHTML); // 「<tbody class="modal_selection">」が存在するか確認
+  filterModalRows(key);                 // 表示対象のみ可視化
+  modal.style.display = 'block';
+
+  closeBtn.onclick = () => modal.style.display = 'none';
+  window.onclick = (event) => {
+    if (event.target === modal) modal.style.display = 'none';
+  };
+}
+</script>
+<!-- ↓モーダル1 -->
+    <div id="recordModal_1" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="recordDetailContainer_1"></div>
+    </div>
+    </div>
+<!-- ↑モーダル1 -->
   </body>
 </html>

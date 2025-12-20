@@ -13,6 +13,83 @@
   <link rel="stylesheet" href="Lineage_main.css">
   <link rel="stylesheet" href="Lineage_accessory.css">
 </head>
+  <style>
+/* モーダル用 */
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background-color: #fdfdf0;
+  margin: 5% auto;
+  padding: 1em;
+  border: 1px solid #888;
+  width: 70%;
+  max-width:660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px #333;
+}
+.close-button {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+table.lineage_accessory_popup_table {
+  border: 1px solid #888;
+  font-size: small;
+  color: #222;
+  text-align:center;
+  border-collapse: collapse;
+  width: 100%;
+}
+.lineage_accessory_popup_table th {
+  height: 20px;
+  border: 1px solid #888;
+  background-color: #bfb;
+  text-align:center;
+  padding: 2px 4px 2px 4px;
+  font-weight: normal;
+}
+.lineage_accessory_popup_table th.col_header {
+  max-width:88px;
+}
+.lineage_accessory_popup_table td {
+  width:44px;
+  border: 1px solid #888;
+  text-align:right;
+  padding: 1px 6px 1px 6px;
+}
+.modal_selection tr {
+  display: none;
+}
+.lineage_accessory_popup_title {
+  margin: 0px;
+}
+.style_regular {
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #555;
+}
+.lineage_accessory_popup_subtitle {
+  margin: 0px;
+  font-size: 0.9em;
+  color: #555;
+}
+.record-link {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover { color: #f33; }
+}
+</style>
 <body id="top">
   <div class="nav">
     <ul class="nav-group">
@@ -44,59 +121,46 @@
       </ul>
     </div>
   </div>
-    <div class="update_date"><i class="fa fa-clock-o">更新</i>&nbsp;2025/5/21</div>
+    <div class="update_date"><i class="fa fa-clock-o">更新</i>&nbsp;2025/12/21</div>
     <div class="create_date"><i class="fa fa-clock-o">初出</i>&nbsp;2025/4/26</div>
   <div class="table_box_acce">
     <table class="acce">
       <thead class="sticky_acce">
         <tr>
-          <td rowspan="3">エンチャント</td>
-          <td>画像名称</td>
-          <td colspan="2">
-            <div style="display: flex; align-items: flex-start;">
-              <img class="icon_pict" src="./picture/item_thumbnail/earring_blue.png" height="48" width="48" alt="ルームティスブルーイアリング">
-              <div>
-                <p style="margin: 0;">ルームティス</p>
-                <p style="margin: 0;">ブルー</p>
-                <p style="margin: 0;">イアリング</p>
-              </div>
-            </div>
-          </td>
-          <td colspan="2">
-            <div style="display: flex; align-items: flex-start;">
-              <img class="icon_pict" src="./picture/item_thumbnail/earring_red.png" height="48" width="48" alt="ルームティスレッドイアリング">
-              <div>
-                <p style="margin: 0;">ルームティス</p>
-                <p style="margin: 0;">レッド</p>
-                <p style="margin: 0;">イアリング</p>
-              </div>
-            </div>
-          </td>
-          <td colspan="2">
-            <div style="display: flex; align-items: flex-start;">
-              <img class="icon_pict" src="./picture/item_thumbnail/earring_black.png" height="48" width="48" alt="ルームティスブラックイアリング">
-              <div>
-                <p style="margin: 0;">ルームティス</p>
-                <p style="margin: 0;">ブラック</p>
-                <p style="margin: 0;">イアリング</p>
-              </div>
-            </div>
-          </td>
-          <td colspan="2">
-            <div style="display: flex; align-items: flex-start;">
-              <img class="icon_pict" src="./picture/item_thumbnail/earring_purple.png" height="48" width="48" alt="ルームティスパープルイアリング">
-              <div>
-                <p style="margin: 0;">ルームティス</p>
-                <p style="margin: 0;">パープル</p>
-                <p style="margin: 0;">イアリング</p>
-              </div>
-            </div>
-          </td>
-          <td>画像名称</td>
+          <th rowspan="3">強化値</th>
+          <th>名称</th>
+          <th colspan="2">ルームティス<br>ブルーイアリング</th>
+          <th colspan="2">ルームティス<br>レッドイアリング</th>
+          <th colspan="2">ルームティス<br>ブラックイアリング</th>
+          <th colspan="2">ルームティス<br>パープルイアリング</th>
+          <th>名称</th>
         </tr>
-        <tr><td>性能項目</td><td>n</td><td>祝福</td><td>n</td><td>祝福</td><td>n</td><td>祝福</td><td>n</td><td>祝福</td><td>性能項目</td></tr>
-        </thead>
-        <tbody class="acce">
+        <tr>
+          <td>画像</td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_blue.png" height="48" width="48" alt="ルームティスブルーイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_blue.png" height="48" width="48" alt="ルームティスブルーイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_red.png" height="48" width="48" alt="ルームティスレッドイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_red.png" height="48" width="48" alt="ルームティスレッドイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_black.png" height="48" width="48" alt="ルームティスブラックイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_black.png" height="48" width="48" alt="ルームティスブラックイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_purple.png" height="48" width="48" alt="ルームティスパープルイアリング"></td>
+          <td><img class="icon_pict" src="./picture/item_thumbnail/earring_purple.png" height="48" width="48" alt="ルームティスパープルイアリング"></td>
+          <td>画像</td>
+        </tr>
+        <tr>
+          <td>性能項目</td>
+          <td><a href="#" class="record-link" data-key="ルームティスブルーイアリング" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスブルーイアリング" title="クリックで詳細表示">祝福</a></td>
+          <td><a href="#" class="record-link" data-key="ルームティスレッドイアリング" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスレッドイアリング" title="クリックで詳細表示">祝福</a></td>
+          <td><a href="#" class="record-link" data-key="ルームティスブラックイアリング" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスブラックイアリング" title="クリックで詳細表示">祝福</a></td>
+          <td><a href="#" class="record-link" data-key="ルームティスパープルイアリング" title="クリックで詳細表示">一般</a></td>
+          <td><a href="#" class="record-link" data-key="祝福されたルームティスパープルイアリング" title="クリックで詳細表示">祝福</a></td>
+          <td>性能項目</td>
+        </tr>
+      </thead>
+      <tbody class="acce">
         <tr>
           <td>+0</td><td>回復悪化防御</td><td>+2%(恐怖)</td><td rowspan="6" class="Not_applicable"></td><td></td><td rowspan="6" class="Not_applicable"></td><td></td><td rowspan="6" class="Not_applicable"></td><td></td><td rowspan="6" class="Not_applicable"></td><td>回復悪化防御</td>
         </tr>
@@ -385,5 +449,75 @@
       </tbody>
     </table>
     </div><!-- acce_table_box -->
+<script>
+// 変数規定部（CONFIGオブジェクトのプロパティとして。必要に応じて変更。）
+const CONFIG = {
+ // モーダル構成(html末尾)div ID指定(recordModal_1…,recordDetailContainer_1…)
+  modalSelector: '#recordModal_1',
+  containerSelector: '#recordDetailContainer_1', 
+  closeButtonSelector: '.close-button'
+};
+// popup表示data 外部化(Pop-upRecordDataSource.html)修正部2025-12-20
+  async function loadPopupTable() {
+    const res = await fetch('/partials/Pop-upRecordDataSource.html');
+    return await res.text();
+  }
+// 全部のフィルター後HTML生成関数
+  async function generateSubHTML_all(key) {
+  const tableHTML = await loadPopupTable();
+
+  return `
+    <h3 class="lineage_accessory_popup_title">${key}<span class="style_regular">の性能</span></h3>
+    <span class="lineage_accessory_popup_subtitle">強化値による性能変化一覧</span><br>
+    <table class="lineage_accessory_popup_table">
+      <thead>
+        <tr><th>項目</th><th>強化0</th><th>強化1</th><th>強化2</th><th>強化3</th><th>強化4</th><th>強化5</th><th>強化6</th><th>強化7</th><th>強化8</th></tr>
+      </thead>
+    ${tableHTML}
+  `;
+}
+// リンククリックイベント
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('record-link')) {
+    e.preventDefault();
+    const key = e.target.dataset.key;
+    showModal(key, generateSubHTML_all);
+  }
+});
+function filterModalRows(key) {
+  const container = document.querySelector(CONFIG.containerSelector);
+  const rows = container.querySelectorAll('.modal_selection tr');
+  console.log(`Filtering for key: "${key}"`);
+  rows.forEach(row => {
+    console.log(`row.className: [${row.className}]`);
+    row.style.display = row.classList.contains(key) ? 'table-row' : 'none';
+  });
+}
+// モーダル表示関数（filterModalRowsを呼び出し、表示対象のみ可視化）
+async function showModal(key) {
+  console.log(`Container: "${CONFIG.containerSelector}"`);
+  const modal = document.querySelector(CONFIG.modalSelector);
+  const container = document.querySelector(CONFIG.containerSelector);
+  const closeBtn = document.querySelector(CONFIG.closeButtonSelector);
+  container.innerHTML = await generateSubHTML_all(key); // 全体HTMLを挿入 awaite追加2025-12-20
+  // setTimeout(() => filterModalRows(key), 0); // 非同期で行フィルタリング＊遅延実行
+  console.log(container.innerHTML); // 「<tbody class="modal_selection">」が存在するか確認
+  filterModalRows(key);                 // 表示対象のみ可視化
+  modal.style.display = 'block';
+
+  closeBtn.onclick = () => modal.style.display = 'none';
+  window.onclick = (event) => {
+    if (event.target === modal) modal.style.display = 'none';
+  };
+}
+</script>
+<!-- ↓モーダル1 -->
+    <div id="recordModal_1" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="recordDetailContainer_1"></div>
+    </div>
+    </div>
+<!-- ↑モーダル1 -->
   </body>
 </html>
