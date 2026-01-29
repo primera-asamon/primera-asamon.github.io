@@ -1093,21 +1093,21 @@ margin: 2px;
 tblcontrol.btnicon = new Object();
 //─] ソート：昇順
 tblcontrol.btnicon.ascend = new Image();
-tblcontrol.btnicon.ascend.src = "../picture/sort_up.svg";
+tblcontrol.btnicon.ascend.src = "../picture/icons/sort_up.svg";
 /* tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,3 3,11 13,11" />
 </svg>`;*/
 //─] ソート：降順
 tblcontrol.btnicon.descend = new Image();
-tblcontrol.btnicon.descend.src = "../picture/sort_down.svg";
+tblcontrol.btnicon.descend.src = "../picture/icons/sort_down.svg";
 /* tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,13 3,5 13,5" />
 </svg>`; */
 //─] 絞込み
 tblcontrol.btnicon.refine = new Image();
-tblcontrol.btnicon.refine.src = "../picture/filterfunnel.svg";
+tblcontrol.btnicon.refine.src = "../picture/icons/filterfunnel.svg";
 /* tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,11 3,3 13,3" />
@@ -1323,37 +1323,6 @@ tblcontrol.refine( evt );
 /* ── 実装 ── */
 window.addEventListener( "DOMContentLoaded", tblcontrol.init, false );
 
-<!-- // 画面上部にスクロールするボタン
-$(function() {
-    var pageTop = $('.btn-pagetop');
-    pageTop.hide();
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 600) {
-            pageTop.fadeIn();
-        } else {
-            pageTop.fadeOut();
-        }
-    });
-    pageTop.click(function() {
-        $('body, html').animate({
-            scrollTop: 0
-        }, 500, 'swing');
-        pageTop.blur();
-        return false;
-    });
-});
--->
-function scrollToFirstRecord() {
-  var table = document.querySelector("table");
-  var tbody = table.getElementsByTagName("tbody")[0];
-  var firstRow = tbody.getElementsByTagName("tr")[0];
-  firstRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // ヘッダーの高さを取得
-  var headerHeight = table.querySelector("thead.sticky_d2m").offsetHeight; //80pxを取得Edgeコンソールより確認
-  // スクロール位置を調整して1件目の行が見えるようにする
-  var firstRowTop = firstRow.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-  window.scrollTo({ top: firstRowTop - headerHeight, behavior: 'smooth' });
-}
 </script>
 </body>
 </html>

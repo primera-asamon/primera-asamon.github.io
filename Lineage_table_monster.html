@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <!-- <link rel="stylesheet" href="normalize.css"> -->
   <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
   <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
   <link rel="stylesheet" href="stylesheet/Lineage_main.css">
   <link rel="stylesheet" href="stylesheet/Lineage_Monsters.css">
@@ -218,23 +218,27 @@ margin: 2px;
 tblcontrol.btnicon = new Object();
 //─] ソート：昇順
 tblcontrol.btnicon.ascend = new Image();
-tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
+tblcontrol.btnicon.ascend.src = "../picture/icons/sort_up.svg";
+/* tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,3 3,11 13,11" />
-</svg>`;
+</svg>`;*/
 //─] ソート：降順
 tblcontrol.btnicon.descend = new Image();
-tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
+tblcontrol.btnicon.descend.src = "../picture/icons/sort_down.svg";
+/* tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,13 3,5 13,5" />
-</svg>`;
+</svg>`; */
 //─] 絞込み
 tblcontrol.btnicon.refine = new Image();
-tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
+tblcontrol.btnicon.refine.src = "../picture/icons/filterfunnel.svg";
+/* tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,11 3,3 13,3" />
 <rect fill="%23666" stroke="none" x="6" y="6" width="4" height="6" />
-</svg>`;
+</svg>`; */
+
 
 /* ── 関数：初期化 ── */
 tblcontrol.init =()=> {
