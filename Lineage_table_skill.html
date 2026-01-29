@@ -20,7 +20,7 @@
 <body id="top">
     <div class="nav">
         <ul class="nav-group">
-            <li><a href="index.html">ホーム</a><i class="fa fa-home"></i></li>
+            <li><a href="index.html">ホーム</a></li>
             <li><a href="Lineage_table_monster.html">Monsters</a></li>
             <li><a href="Lineage_table_drop.html">Drops</a></li>
             <li><a href="Lineage_table_skill.html" class="active">&nbsp;Skills</a></li>
@@ -104,12 +104,9 @@
         </footer>
     </div>
 <!-- ページ上部にスクロールするボタン -->
-<p>
-    <a href="#top" class="btn-pagetop" aria-label="ページの先頭へ戻る">
-        <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
-        <span class="label-text">ページ先頭へ</span>
-    </a>
-</p>
+    <div>
+        <a href="#top" class="btn-pagetop"><img src="./picture/jump2top.svg" alt="ページの先頭へ戻る" class="responsive-image"/></a>
+    </div>
 <!-- FC2ではapplication/scriptでもjsファイル読み込み時にtext/htmlに変更され駆動しない。Javascript中にhtmlタグで開始される行がある場合誤認される。
 対策：全ての行はhtml_pcv =+`～ではじめること。またはjs独立ファイルはあきらめる。 -->
 <!--    <script src="lineage_skill.js" defer></script> -->
