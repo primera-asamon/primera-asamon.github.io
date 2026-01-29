@@ -88,6 +88,16 @@
         border-bottom: #333 solid 2px;
         color: #999;
     }
+
+    .homeicon {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        background-image: url("../picture/home24in.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+}
     /* メインイメージ */
 
     h3 {
