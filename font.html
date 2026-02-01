@@ -3,46 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動的フォントサイズ</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
-    <!-- <link rel="stylesheet" href="normalize.css"> -->
-    <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-    <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+    <title>おおきなフォントサイズ</title>
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
     <style>
-        @font-face {
-        font-family: 'Kyoukasho'; src: url('HGKyokashotai.woff') format('woff');
-        }
-        .textbox {
-            display: block;
-            margin: 0px auto;
-            font-size: calc(1vw + 1vh);
-            font-family: 'Kyoukasho', sans-serif;
-            font-size: 70vmin;
-            text-align: center;
-            width: 90%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+			@font-face {
+			font-family: 'Kyoukasho'; src: url('HGKyokashotai.woff') format('woff');
+			}
+			.textbox {
+				display: block;
+				margin: 0px auto;
+				font-size: calc(1vw + 1vh);
+				font-family: 'Kyoukasho', sans-serif;
+				font-size: 70vmin;
+				text-align: center;
+				width: 90%;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+			}
+/* ナビゲーションバー（tools共通）*/
+			.nav-group_tools {
+				margin: 0;
+				padding: 0;
+				display: -moz-inline-stack;
+				display: inline-block;
+				vertical-align: middle;
+				/*vertical-align: auto;*/
+				zoom: 1;
+				font-size: 0.9em;
+				/*display: inline;*/
+			}
+			.nav-group_tools>li {
+				margin: 0;
+				padding: 0 6px;
+				display: -moz-inline-stack;
+				display: inline-block;
+				vertical-align: middle;
+				/*vertical-align: auto;*/
+				zoom: 1;
+				/*display: inline;*/
+			}
+			.nav-group_tools>li a {
+				display: block;
+				padding: 6px 6px;
+				color: #333;
+				text-decoration: none;
+			}
+			.nav-group_tools>li a:hover {
+				color: #e22;
+				font-weight:bold;
+			}
+			.nav-group_tools>li a.active {
+				border-bottom: #333 solid 2px;
+				color: #999;
+			}
+		</style>
 </head>
 <body id="top">
-    <div class="nav">
-        <ul class="nav-group">
-            <li><a href="/index.html">ホーム</a></li>
-            <li><a href="Lineage_table_monster.html">Monsters</a></li>
-            <li><a href="Lineage_table_drop.html">Drops</a></li>
-            <li><a href="Lineage_table_skill.html">Skills</a></li>
-            <li><a href="LineageREMASTER_kanji.html">kanji</a></li>
-            <li><a href="LineageREMASTER_etc.html">諸表</a></li>
-            <li><a href="font.html" class="active">大字</a></li>
-            <li><a href="inkey_JAJP.html">押下釦</a></li>
-        <li><a href="updates.html">変更歴</a></li>        </ul>
+	<div class="nav">
+		<ul class="nav-group">
+			<li><a href="index.html">ホーム</a></li>
+			<li><a href="Lineage_table_monster.html">Monsters</a></li>
+			<li><a href="Lineage_table_drop.html">Drops</a></li>
+			<li><a href="Lineage_table_skill.html">Skills</a></li>
+			<li><a href="Lineage_accessory_crest.html">Accessorys</a></li>
+			<li><a href="LineageREMASTER_kanji.html">Kanji</a></li>
+			<li><a href="LineageREMASTER_etc.html">諸表</a></li>
+			<li><a href="font.html" class="active">Tools</a></li>
+			<li><a href="updates.html">変更歴</a></li>
+		</ul>
+	</div>
+  <div class="main">リネージュメモ</div>
+  <div class="header">
+    <!-- tools 共通 -->
+    <div class="header-description">
+      <ul class="nav-group_tools">
+				<li><a href="font.html" class="active">大字</a></li>
+				<li><a href="inkey_JAJP.html">押下釦</a></li>
+      </ul>
     </div>
-    <div class="content">
-    	<input type="text" class="textbox" placeholder="文字">
-    </div>
+  </div>
+	<div class="content">
+		<input type="text" class="textbox" placeholder="文字">
+	</div>
 </body>
 </html>

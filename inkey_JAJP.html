@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>キー押下表示</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
         #output {
             font-size: 24px;
             margin-top: 20px;
@@ -18,33 +13,80 @@
         .highlight {
             background-color: yellow;
         }
+/* ナビゲーションバー（tools共通）*/
+			.nav-group_tools {
+				margin: 0;
+				padding: 0;
+				display: -moz-inline-stack;
+				display: inline-block;
+				vertical-align: middle;
+				/*vertical-align: auto;*/
+				zoom: 1;
+				font-size: 0.9em;
+				/*display: inline;*/
+			}
+			.nav-group_tools>li {
+				margin: 0;
+				padding: 0 6px;
+				display: -moz-inline-stack;
+				display: inline-block;
+				vertical-align: middle;
+				/*vertical-align: auto;*/
+				zoom: 1;
+				/*display: inline;*/
+			}
+			.nav-group_tools>li a {
+				display: block;
+				padding: 6px 6px;
+				color: #333;
+				text-decoration: none;
+			}
+			.nav-group_tools>li a:hover {
+				color: #e22;
+				font-weight:bold;
+			}
+			.nav-group_tools>li a.active {
+				border-bottom: #333 solid 2px;
+				color: #999;
+			}
     </style>
 </head>
 <body id="top">
-    <div class="nav">
-        <ul class="nav-group">
-            <li><a href="/index.html">ホーム</a></li>
-            <li><a href="Lineage_table_monster.html">Monsters</a></li>
-            <li><a href="Lineage_table_drop.html">Drops</a></li>
-            <li><a href="Lineage_table_skill.html">Skills</a></li>
-            <li><a href="LineageREMASTER_kanji.html">kanji</a></li>
-            <li><a href="LineageREMASTER_etc.html">諸表</a></li>
-            <li><a href="font.html">大字</a></li>
-            <li><a href="inkey_JAJP.html" class="active">押下釦</a></li>
-        <li><a href="updates.html">変更歴</a></li>        </ul>
+	<div class="nav">
+		<ul class="nav-group">
+			<li><a href="index.html">ホーム</a></li>
+			<li><a href="Lineage_table_monster.html">Monsters</a></li>
+			<li><a href="Lineage_table_drop.html">Drops</a></li>
+			<li><a href="Lineage_table_skill.html">Skills</a></li>
+			<li><a href="Lineage_accessory_crest.html">Accessorys</a></li>
+			<li><a href="LineageREMASTER_kanji.html">Kanji</a></li>
+			<li><a href="LineageREMASTER_etc.html">諸表</a></li>
+			<li><a href="inkey_JAJP.html" class="active">Tools</a></li>
+			<li><a href="updates.html">変更歴</a></li>
+		</ul>
+	</div>
+  <div class="main">リネージュメモ</div>
+  <div class="header">
+    <!-- tools 共通 -->
+    <div class="header-description">
+      <ul class="nav-group_tools">
+				<li><a href="font.html">大字</a></li>
+				<li><a href="inkey_JAJP.html" class="active">押下釦</a></li>
+      </ul>
     </div>
-    <div class="content">
-        <h1>キー押下表示ツール</h1>
-        <p>ShiftキーやCtrlキーなどを押し続けてください。</p>
-        <label for="layout">キーボードレイアウト:</label>
-        <select id="layout">
-            <option value="US">US</option>
-            <option value="JP">JP</option>
-        </select>
-        <input type="radio" name="trap" id="start-trap" value="start"> 判定
-        <input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
-        <div id="output">押されたキーがここに表示されます。</div>
-    </div>
+  </div>
+	<div class="content">
+		<h1>キー押下表示ツール</h1>
+		<p>ShiftキーやCtrlキーなどを押し続けてください。</p>
+		<label for="layout">キーボードレイアウト:</label>
+		<select id="layout">
+			<option value="US">US</option>
+			<option value="JP">JP</option>
+		</select>
+		<input type="radio" name="trap" id="start-trap" value="start"> 判定
+		<input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
+		<div id="output">押されたキーがここに表示されます。</div>
+	</div>
 
     <script>
         let isTrapping = false;
