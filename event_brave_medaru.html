@@ -37,24 +37,26 @@
 }
 </style>
 <body id="top">
-  <div class="nav">
-    <ul class="nav-group">
-			<li><a href="index.html">ホーム</a></li>
-			<li><a href="Lineage_table_monster.html">Monsters</a></li>
-			<li><a href="Lineage_table_drop.html">Drops</a></li>
-			<li><a href="Lineage_table_skill.html">Skills</a></li>
-			<li><a href="Lineage_accessory_crest.html">Accessorys</a></li>
-			<li><a href="LineageREMASTER_kanji.html">Kanji</a></li>
-			<li><a href="LineageREMASTER_etc.html" class="active">諸表</a></li>
-			<li><a href="font.html">Tools</a></li>
-			<li><a href="updates.html">変更歴</a></li>
-    </ul>
-  </div>
-  <div class="main">リネージュメモ</div> <!-- サイト共通のmain title 帯 -->
   <div class="header"> <!-- サイト共通のheaderエリア -->
+    <!-- site 共通nav -->
+    <div class="nav">
+      <ul class="nav-group">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="Lineage_table_monster.html">Monsters</a></li>
+        <li><a href="Lineage_table_drop.html">Drops</a></li>
+        <li><a href="Lineage_table_skill.html">Skills</a></li>
+        <li><a href="Lineage_accessory_crest.html">Accessorys</a></li>
+        <li><a href="LineageREMASTER_kanji.html">Kanji</a></li>
+        <li><a href="LineageREMASTER_etc.html" class="active">諸表</a></li>
+        <li><a href="font.html">Tools</a></li>
+        <li><a href="updates.html">変更歴</a></li>
+      </ul>
+    </div>
+    <div class="main">リネージュメモ</div> <!-- サイト共通のmain title 帯 -->
     <h1 class="header-title">勇猛のメダル交換表</h1>
     <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
     UBや極寒の神殿、ユニコーンテンプルクリアで獲得できる勇猛のメダルを各種アイテムと交換できます。
+    <!-- accessory 共通nav <ul>は、ここに入る-->
     </div> <!-- サイト共通のheader説明文エリア -->
   </div> <!-- サイト共通のheaderエリア -->
   <div class="table_lead"> <!-- テーブル中心ページのテーブル説明文エリア -->
@@ -215,227 +217,227 @@
     &copy; NCSOFT Corporation. Licensed to NC Japan K.K. All Rights Reserved.</div>
     <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
   </div> <!-- footer -->
-  <div><a href="#top" class="btn-pagetop"><img src="./picture/icons/jump2top.svg" /></a></div>
+  <div><a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" /></a></div>
 
-<script>
-// 変数規定部（CONFIGオブジェクトのプロパティとして。必要に応じて変更。）
-const CONFIG = {
- //tsvファイル指定
-  tsvPath: 'LineageREMASTER_skill3.tsv',
- //tsvフィールド数(カラム数)
-  expectedFieldCount: 25,
- // フィールド格納割り当て
-  fieldNames: [
-    'no', 'img', 'level', 'name', 'cls', 'elf', 'active', 'type', 'align', 'mp', 'hp',
-    'material', 'gear', 'duration', 'target', 'reuse', 'effect', 'acqLv', 'obtain',
-    'price', 'Droporigin', 'Dropcomp', 'note1', 'note2', 'eor'
-  ],
- //本文探索語句フィールド名
-  linkField: 'name',
- //探索対象div ID指定
-  articleSelector: '#article',
- // モーダル構成(html末尾)div ID指定(recordModal_1…,recordDetailContainer_1…)
-  modalSelector: '#recordModal_1',
-  containerSelector: '#recordDetailContainer_1', 
-  closeButtonSelector: '.close-button'
-};
-console.log(CONFIG);
-// データ保持用
-let recordList = [];
+  <script>
+  // 変数規定部（CONFIGオブジェクトのプロパティとして。必要に応じて変更。）
+  const CONFIG = {
+  //tsvファイル指定
+    tsvPath: 'LineageREMASTER_skill3.tsv',
+  //tsvフィールド数(カラム数)
+    expectedFieldCount: 25,
+  // フィールド格納割り当て
+    fieldNames: [
+      'no', 'img', 'level', 'name', 'cls', 'elf', 'active', 'type', 'align', 'mp', 'hp',
+      'material', 'gear', 'duration', 'target', 'reuse', 'effect', 'acqLv', 'obtain',
+      'price', 'Droporigin', 'Dropcomp', 'note1', 'note2', 'eor'
+    ],
+  //本文探索語句フィールド名
+    linkField: 'name',
+  //探索対象div ID指定
+    articleSelector: '#article',
+  // モーダル構成(html末尾)div ID指定(recordModal_1…,recordDetailContainer_1…)
+    modalSelector: '#recordModal_1',
+    containerSelector: '#recordDetailContainer_1', 
+    closeButtonSelector: '.close-button'
+  };
+  console.log(CONFIG);
+  // データ保持用
+  let recordList = [];
 
-// TSV読み込みとリンク化処理
-fetch(CONFIG.tsvPath)
-  .then(response => response.text())
-  .then(text => {
-    const lines = text.trim().split('\n');
-    for (const line of lines) {
-      const fields = line.split('\t');
-      if (fields.length < CONFIG.expectedFieldCount) continue;
+  // TSV読み込みとリンク化処理
+  fetch(CONFIG.tsvPath)
+    .then(response => response.text())
+    .then(text => {
+      const lines = text.trim().split('\n');
+      for (const line of lines) {
+        const fields = line.split('\t');
+        if (fields.length < CONFIG.expectedFieldCount) continue;
 
-      const record = {};
-      CONFIG.fieldNames.forEach((name, i) => {
-        record[name] = fields[i] || '';
-      });
-      recordList.push(record);
+        const record = {};
+        CONFIG.fieldNames.forEach((name, i) => {
+          record[name] = fields[i] || '';
+        });
+        recordList.push(record);
+      }
+  // 語句リンク化
+      const article = document.querySelector(CONFIG.articleSelector);
+  console.log(CONFIG.articleSelector);
+  console.log(document.querySelector(CONFIG.articleSelector));
+  console.log(article);
+      article.innerHTML = autoLink(article.innerHTML, recordList, CONFIG.linkField);
+    });
+
+  // 語句自動リンク関数
+  function autoLink(text, dataList, keyField) {
+    const phrases = dataList
+      .map(item => `(${item[keyField]})`)
+      .sort((a, b) => b.length - a.length);
+
+    for (const phrase of phrases) {
+      const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(escaped, 'g');
+      const plain = phrase.replace(/^\(|\)$/g, '');
+      text = text.replace(regex, `<a href="#" class="record-link" data-key="${plain}" title="クリックで詳細表示">${phrase}</a>`);
     }
-// 語句リンク化
-    const article = document.querySelector(CONFIG.articleSelector);
-console.log(CONFIG.articleSelector);
-console.log(document.querySelector(CONFIG.articleSelector));
-console.log(article);
-    article.innerHTML = autoLink(article.innerHTML, recordList, CONFIG.linkField);
+
+    return text;
+  }
+
+  // モーダル表示関数
+  function showModal(record, generateHTML) {
+    const modal = document.querySelector(CONFIG.modalSelector);
+    const container = document.querySelector(CONFIG.containerSelector);
+    const closeBtn = document.querySelector(CONFIG.closeButtonSelector);
+
+    container.innerHTML = generateHTML(record);
+    modal.style.display = 'block';
+
+    closeBtn.onclick = () => modal.style.display = 'none';
+    window.onclick = (event) => {
+      if (event.target === modal) modal.style.display = 'none';
+    };
+  }
+
+  // SubHTMLのスタイルとタグを記述する。↓はskill一覧表依存、適宜変更する。
+  // HTML生成関数（スキル用テンプレート）
+  function generateSubHTML(tsvRecord) {
+    let clsDisplay = tsvRecord.cls;
+    if (tsvRecord.cls === "妖" && tsvRecord.elf) {
+      clsDisplay += `（${tsvRecord.elf}）`;
+    }
+    let popup_html =`
+        <style>
+    body {
+      font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
+      /* font-family: 'Segoe UI', sans-serif; */
+      padding: 1em;
+      background-color: #fdfdf0;
+      color: #333;
+    }
+    h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 4px;
+    }
+    table {
+      border-collapse: collapse;
+      width: auto;
+      margin-top: 0.9em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 2px 4px 2px 4px;
+      vertical-align: top;
+    }`
+  // モーダル指定によるstyleのケース分け(クラス名を増やしたくない時)
+  if (CONFIG.modalSelector==='#recordModal_1'){
+      popup_html +=`
+      th.col-header {
+        text-align: center;
+        background-color: #d8d8d8;
+      }`
+    } else {
+      popup_html +=`
+      th.col-header {
+        text-align: center;
+        background-color: #68a8a8;
+      }`
+    };
+  popup_html +=`
+    td {
+      text-align: left;
+    }
+    </style>
+    <table>`
+  popup_html += `<tbody id="(${tsvRecord.name})" class="record-table" data-cls=${tsvRecord.cls} data-elf=${tsvRecord.elf}>`;
+  // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
+    popup_html += `<tr class="record-title">
+                <td class="col-data_no">No.${tsvRecord.no}</td>`
+    // ...existing code...
+    // 等級・スキルレベルの出力部分
+                if (/^\d+$/.test(tsvRecord.level)) {
+        // 数字のみの場合
+                    popup_html += `<td class="col-data_level">Lv.${tsvRecord.level}</td>`;
+                } else {
+        // 空または文字列（神話・伝説など）の場合
+                    popup_html += `<td class="col-data_level">${tsvRecord.level}</td>`;
+                }   
+        popup_html += `<td class="col-data_skillname" colspan="9">${tsvRecord.name}</td>
+            </tr>`
+  // skill_domain_eligible_character:5列
+  // skill_domain_tendency:2+2+2=6列
+    popup_html += `<tr>
+                <th class="col-header">職業</th><td class="col-data" colspan="4">${clsDisplay}</td>`
+    popup_html += `<th class="col-header">活性</th><td class="col-data">${tsvRecord.active}</td>
+                <th class="col-header">種類</th><td class="col-data">${tsvRecord.type}</td>
+                <th class="col-header">性向</th><td class="col-data">${tsvRecord.align}</td>
+            </tr>`
+  // skill_domain_resource:2+2+3+2+2=11列
+    popup_html += `<tr>
+                <th class="col-header">MP</th><td class="col-data">${tsvRecord.mp}</td>
+                <th class="col-header">HP</th><td class="col-data">${tsvRecord.hp}</td>
+                <th class="col-header">材料</th><td class="col-data" colspan="2">${tsvRecord.material}</td>
+                <th class="col-header">装備</th><td class="col-data">${tsvRecord.gear}</td>
+                <th class="col-header">持続</th><td class="col-data">${tsvRecord.duration}</td>
+            </tr>`
+  // skill_domain_effect:3+2+6=11列
+    popup_html += `<tr>
+                <th class="col-header">対象</th><td class="col-data" colspan="2">${tsvRecord.target}</td>
+                <th class="col-header">間隔</th><td class="col-data">${tsvRecord.reuse}</td>
+                <th class="col-header">効果</th><td class="col-data" colspan="5">${tsvRecord.effect}</td>
+            </tr>`
+  // skill_domain_acquisition:2+3+6=11列
+    popup_html += `<tr>
+                <th class="col-header">習得</th><td class="col-data">${tsvRecord.acqLv}</td>
+                <th class="col-header">入手</th><td class="col-data" colspan="2">${tsvRecord.obtain}</td>
+                <th class="col-header">価格</th><td class="col-data" colspan="5">${tsvRecord.price}</td>
+            </tr>`
+  // skill_domain_dropmob:11列
+    popup_html += `<tr>
+                <th class="col-header">Drop</th><td class="col-data" colspan="11">${tsvRecord.Droporigin}</td>
+            </tr>`
+  // skill_domain_dropmob:11列
+    popup_html += `<tr>
+                <th class="col-header">蘇生</th><td class="col-data" colspan="11">${tsvRecord.Dropcomp}</td>
+            </tr>`
+  // skill_domain_notes:6+5=11列
+    popup_html += `<tr>
+                <th class="col-header">備考1</th><td class="col-data" colspan="5">${tsvRecord.note1}</td>
+                <th class="col-header">備考2</th><td class="col-data" colspan="4">${tsvRecord.note2}</td>
+            </tr>`
+    return popup_html;
+  }
+
+  // リンククリックイベント
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('record-link')) {
+      e.preventDefault();
+      const key = e.target.dataset.key;
+      const record = recordList.find(r => r[CONFIG.linkField] === key);
+      if (!record) {
+        alert(`「${key}」が見つかりませんでした`);
+        return;
+      }
+      showModal(record, generateSubHTML);
+    }
   });
-
-// 語句自動リンク関数
-function autoLink(text, dataList, keyField) {
-  const phrases = dataList
-    .map(item => `(${item[keyField]})`)
-    .sort((a, b) => b.length - a.length);
-
-  for (const phrase of phrases) {
-    const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(escaped, 'g');
-    const plain = phrase.replace(/^\(|\)$/g, '');
-    text = text.replace(regex, `<a href="#" class="record-link" data-key="${plain}" title="クリックで詳細表示">${phrase}</a>`);
-  }
-
-  return text;
-}
-
-// モーダル表示関数
-function showModal(record, generateHTML) {
-  const modal = document.querySelector(CONFIG.modalSelector);
-  const container = document.querySelector(CONFIG.containerSelector);
-  const closeBtn = document.querySelector(CONFIG.closeButtonSelector);
-
-  container.innerHTML = generateHTML(record);
-  modal.style.display = 'block';
-
-  closeBtn.onclick = () => modal.style.display = 'none';
-  window.onclick = (event) => {
-    if (event.target === modal) modal.style.display = 'none';
-  };
-}
-
-// SubHTMLのスタイルとタグを記述する。↓はskill一覧表依存、適宜変更する。
-// HTML生成関数（スキル用テンプレート）
-function generateSubHTML(tsvRecord) {
-  let clsDisplay = tsvRecord.cls;
-  if (tsvRecord.cls === "妖" && tsvRecord.elf) {
-    clsDisplay += `（${tsvRecord.elf}）`;
-  }
-  let popup_html =`
-      <style>
-  body {
-    font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
-    /* font-family: 'Segoe UI', sans-serif; */
-    padding: 1em;
-    background-color: #fdfdf0;
-    color: #333;
-  }
-  h2 {
-    color: #0066cc;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 4px;
-  }
-  table {
-    border-collapse: collapse;
-    width: auto;
-    margin-top: 0.9em;
-  }
-  th, td {
-    border: 1px solid #ccc;
-    padding: 2px 4px 2px 4px;
-    vertical-align: top;
-  }`
-// モーダル指定によるstyleのケース分け(クラス名を増やしたくない時)
-if (CONFIG.modalSelector==='#recordModal_1'){
-    popup_html +=`
-    th.col-header {
-      text-align: center;
-      background-color: #d8d8d8;
-    }`
-  } else {
-    popup_html +=`
-    th.col-header {
-      text-align: center;
-      background-color: #68a8a8;
-    }`
-  };
-popup_html +=`
-  td {
-    text-align: left;
-  }
-  </style>
-  <table>`
-popup_html += `<tbody id="(${tsvRecord.name})" class="record-table" data-cls=${tsvRecord.cls} data-elf=${tsvRecord.elf}>`;
-// No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
-  popup_html += `<tr class="record-title">
-              <td class="col-data_no">No.${tsvRecord.no}</td>`
-  // ...existing code...
-  // 等級・スキルレベルの出力部分
-              if (/^\d+$/.test(tsvRecord.level)) {
-      // 数字のみの場合
-                  popup_html += `<td class="col-data_level">Lv.${tsvRecord.level}</td>`;
-              } else {
-      // 空または文字列（神話・伝説など）の場合
-                  popup_html += `<td class="col-data_level">${tsvRecord.level}</td>`;
-              }   
-      popup_html += `<td class="col-data_skillname" colspan="9">${tsvRecord.name}</td>
-          </tr>`
-// skill_domain_eligible_character:5列
-// skill_domain_tendency:2+2+2=6列
-  popup_html += `<tr>
-              <th class="col-header">職業</th><td class="col-data" colspan="4">${clsDisplay}</td>`
-  popup_html += `<th class="col-header">活性</th><td class="col-data">${tsvRecord.active}</td>
-              <th class="col-header">種類</th><td class="col-data">${tsvRecord.type}</td>
-              <th class="col-header">性向</th><td class="col-data">${tsvRecord.align}</td>
-          </tr>`
-// skill_domain_resource:2+2+3+2+2=11列
-  popup_html += `<tr>
-              <th class="col-header">MP</th><td class="col-data">${tsvRecord.mp}</td>
-              <th class="col-header">HP</th><td class="col-data">${tsvRecord.hp}</td>
-              <th class="col-header">材料</th><td class="col-data" colspan="2">${tsvRecord.material}</td>
-              <th class="col-header">装備</th><td class="col-data">${tsvRecord.gear}</td>
-              <th class="col-header">持続</th><td class="col-data">${tsvRecord.duration}</td>
-          </tr>`
-// skill_domain_effect:3+2+6=11列
-  popup_html += `<tr>
-              <th class="col-header">対象</th><td class="col-data" colspan="2">${tsvRecord.target}</td>
-              <th class="col-header">間隔</th><td class="col-data">${tsvRecord.reuse}</td>
-              <th class="col-header">効果</th><td class="col-data" colspan="5">${tsvRecord.effect}</td>
-          </tr>`
-// skill_domain_acquisition:2+3+6=11列
-  popup_html += `<tr>
-              <th class="col-header">習得</th><td class="col-data">${tsvRecord.acqLv}</td>
-              <th class="col-header">入手</th><td class="col-data" colspan="2">${tsvRecord.obtain}</td>
-              <th class="col-header">価格</th><td class="col-data" colspan="5">${tsvRecord.price}</td>
-          </tr>`
-// skill_domain_dropmob:11列
-  popup_html += `<tr>
-              <th class="col-header">Drop</th><td class="col-data" colspan="11">${tsvRecord.Droporigin}</td>
-          </tr>`
-// skill_domain_dropmob:11列
-  popup_html += `<tr>
-              <th class="col-header">蘇生</th><td class="col-data" colspan="11">${tsvRecord.Dropcomp}</td>
-          </tr>`
-// skill_domain_notes:6+5=11列
-  popup_html += `<tr>
-              <th class="col-header">備考1</th><td class="col-data" colspan="5">${tsvRecord.note1}</td>
-              <th class="col-header">備考2</th><td class="col-data" colspan="4">${tsvRecord.note2}</td>
-          </tr>`
-  return popup_html;
-}
-
-// リンククリックイベント
-document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('record-link')) {
-    e.preventDefault();
-    const key = e.target.dataset.key;
-    const record = recordList.find(r => r[CONFIG.linkField] === key);
-    if (!record) {
-      alert(`「${key}」が見つかりませんでした`);
-      return;
-    }
-    showModal(record, generateSubHTML);
-  }
-});
-</script>
+  </script>
 <!-- ↓モーダル1 -->
-<div id="recordModal_1" class="modal">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <div id="recordDetailContainer_1"></div>
-  </div>
-</div>
+    <div id="recordModal_1" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="recordDetailContainer_1"></div>
+      </div>
+    </div>
 <!-- ↑モーダル1 -->
 <!-- ↓モーダル2 -->
-<div id="recordModal_2" class="modal">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <div id="recordDetailContainer_2"></div>
-  </div>
-</div>
+    <div id="recordModal_2" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="recordDetailContainer_2"></div>
+      </div>
+    </div>
 <!-- ↑モーダル2 -->
 </body>
 </html>

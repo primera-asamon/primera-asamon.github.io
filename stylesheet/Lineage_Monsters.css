@@ -2,7 +2,7 @@
 
   html,body {
     width:100%;
-    height:calc(100% - 68px);
+    height:calc(100% - 64px);
     font-size:0.95em;
   }
   .Monster_table_box{
