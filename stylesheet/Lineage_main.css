@@ -87,7 +87,41 @@
         font-weight:bold;
     }
 
+    /* 元の強調表示 */
     .nav-group>li a.active {
+        border-bottom: #333 solid 2px;
+        color: #999;
+    }
+
+    /* 同一navコピペに対応：bodyに強調classを書く方法 */
+    /* メイン ナビゲーション */
+    body.index .nav-group a.index,
+    body.monst .nav-group a.monst,
+    body.drop  .nav-group a.drop,
+    body.skill .nav-group a.skill,
+    body.acce  .nav-group a.acce,
+    body.kanji .nav-group a.kanji,
+    body.etc   .nav-group a.etc,
+    body.tool  .nav-group a.tool,
+    body.updt  .nav-group a.updt {
+        border-bottom: #333 solid 2px;
+        color: #999;
+    }
+    /* アクセサリー サブナビゲーション */
+    body.crest .nav-group_acce a.crest,
+    body.insig .nav-group_acce a.insig,
+    body.ear   .nav-group_acce a.ear,
+    body.pend1 .nav-group_acce a.pend1,
+    body.pend2 .nav-group_acce a.pend2,
+    body.brace .nav-group_acce a.brace,
+    body.ring1 .nav-group_acce a.ring1,
+    body.ring2 .nav-group_acce a.ring2 {
+        border-bottom: #333 solid 2px;
+        color: #999;
+    }
+    /* ツール サブナビゲーション */
+    body.font  .nav-group_tools a.font,
+    body.inkey .nav-group_tools a.inkey {
         border-bottom: #333 solid 2px;
         color: #999;
     }
