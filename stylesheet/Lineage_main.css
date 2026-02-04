@@ -214,9 +214,13 @@
     }
 
     .article-date {
-        margin: 16px 0 0 0;
         color: #999;
-        font-size: 0.9em;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 18px);
+        text-align: left;
+        margin: 12px 0 0 18px;
+        font-size: 1em;
     }
 
     .article-paragraph {
@@ -831,10 +835,10 @@
         text-align: right;
     }
     td.Restriction {
-        width: 10em;
+        width: 12em;
     }
     td.description {
-        width: 26em;
+        width: 28em;
         text-align: left;
     }
     /* 先頭列は責任分離のため装飾を排除 */
