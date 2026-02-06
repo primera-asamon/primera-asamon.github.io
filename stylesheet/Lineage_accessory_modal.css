@@ -52,6 +52,7 @@ table.lineage_accessory_popup_table {
 .modal_selection tr {
   display: none;
 }
+/* モーダル内タイトル等 
 .lineage_accessory_popup_title {
   margin: 0px;
 }
@@ -65,6 +66,7 @@ table.lineage_accessory_popup_table {
   font-size: 0.9em;
   color: #555;
 }
+*/
 .record-link {
   font-weight: bold;
   font-size: 0.9em;

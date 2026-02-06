@@ -78,16 +78,16 @@ h2 {
     font-weight: normal;
     padding: 6px 8px;
   }
-  .Item_No_acce {
+/*  .Item_No_acce {
     width: 60px;
-  }
-  .drop_item_acce {
+  }*/
+/*  .drop_item_acce {
     width: 320px;
-  }
-  .monster_list_acce {
+  }*/
+/*  .monster_list_acce {
     width: calc(100% - 300px);
     text-align: left;
-  }
+  }*/
   .description_acce {
     text-align: left;
   }

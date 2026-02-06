@@ -2,12 +2,12 @@
 
   html,body {
     width:100%;
-    height:calc(100% - 64px);
+    height:calc(100% - 44px);
     font-size:0.95em;
   }
   .Monster_table_box{
     overflow-y: auto;
-    height:calc(100% - 20px);
+    height:calc(100% - 32px);
     width:100%;
   }
 

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="stylesheet/Lineage_accessory_modal.css">
   <script src="./js/accessory_modal.js"></script>
 </head>
-<body id="top" class="acce pend2">
+<body class="acce pend2">
   <div class="header"> <!-- サイト共通のheaderエリア -->
     <div class="nav"> <!-- site 共通nav -->
       <ul class="nav-group"> <!-- (main nav) -->
@@ -24,7 +24,7 @@
         <li><a href="font.html" class="tool">Tools</a></li>
         <li><a href="updates.html" class="updt">変更歴</a></li>
       </ul> <!-- (main nav) -->
-      <div class="main">リネージュメモ</div> <!-- サイト共通のmain title 帯 -->
+      <div class="title_band">リネージュメモ</div> <!-- サイト共通のmain title 帯 -->
       <ul class="nav-group_acce"> <!-- (sub nav) accessory 共通nav -->
         <li><a href="Lineage_accessory_crest.html" class="crest">紋章</a></li>
         <li><a href="Lineage_accessory_insignia.html" class="insig">インシグニア</a></li>
@@ -43,7 +43,7 @@
   <div class="update_date">更新&nbsp;2025/12/21</div>
   <div class="create_date">初出&nbsp;2025/4/1</div>
   <div class="table_box_acce">
-    <table class="acce">
+    <table id="top" class="acce">
       <thead class="sticky_acce">
         <tr>
           <td rowspan="3">強化数</td>
@@ -157,6 +157,9 @@
       </tbody>
     </table>
     </div><!-- acce_table_box -->
+    <div><!-- ページトップへ戻るボタンエリア -->
+      <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
+    </div>
 <!-- ↓モーダル1 -->
     <div id="recordModal_1" class="modal">
     <div class="modal-content">
@@ -165,5 +168,26 @@
     </div>
     </div>
 <!-- ↑モーダル1 -->
+     <script>
+        // 画面上部にスクロールするボタン
+        $(function() {
+            var pageTop = $('.btn-pagetop');
+            pageTop.hide();
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 600) {
+                    pageTop.fadeIn();
+                } else {
+                    pageTop.fadeOut();
+                }
+            });
+            pageTop.click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500, 'swing');
+                pageTop.blur();
+                return false;
+            });
+        });
+    </script>
   </body>
 </html>
