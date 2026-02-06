@@ -52,6 +52,20 @@
     text-align: center;
   }
 
+  th.Drop_item{
+  width: 260px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    text-align: center;
+  }
+
+  th.remarks2{
+  width: 60px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    text-align: center;
+  }
+
   td {
     width: 20px;
     max-width: 300px;
@@ -115,14 +129,14 @@
     border-right: 1px solid #000;
   }
 
-  .Drop_item{
+  td.Drop_item{
   width: 260px;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     text-align: left;
   }
 
-  .remarks2{
+  td.remarks2{
   width: 60px;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
