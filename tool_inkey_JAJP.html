@@ -71,129 +71,128 @@
 				<li><a href="tool_inkey_JAJP.html" class="inkey">押下釦</a></li>
 			</ul> <!-- (sub nav) tools 共通nav -->
 		</div> <!-- site 共通nav -->
-    <!--<h1 class="header-title">ぷりめらの</h1>-->
-		<div class="header-description"> <!-- サイト共通のheader説明文エリア -->
-		</div> <!-- サイト共通のheader説明文エリア -->
+		<h1>キー押下表示ページ</h1>
+		<!-- <div class="header-description"> --><!-- サイト共通のheader説明文エリア -->
+		<!-- </div> --><!-- サイト共通のheader説明文エリア -->
 	</div> <!-- サイト共通のheaderエリア -->
- <div class="content">
-		<h1>キー押下表示ツール</h1>
-		<p>ShiftキーやCtrlキーなどを押し続けてください。</p>
-		<label for="layout">キーボードレイアウト:</label>
-		<select id="layout">
-			<option value="US">US</option>
-			<option value="JP">JP</option>
-		</select>
-		<input type="radio" name="trap" id="start-trap" value="start"> 判定
-		<input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
-		<div id="output">押されたキーがここに表示されます。</div>
+	<div class="content">
+    <div class="article">
+			<p>ShiftキーやCtrlキーなどを押し続けてください。</p>
+			<label for="layout">キーボードレイアウト:</label>
+			<select id="layout">
+				<option value="JP">JP</option>
+				<option value="US">US</option>
+			</select>
+			<input type="radio" name="trap" id="start-trap" value="start"> 判定
+			<input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
+			<div id="output">押されたキーがここに表示されます。</div>
+		</div>
 	</div>
+	<script>
+			let isTrapping = false;
+			let pressedKeys = new Set();
+			let output = document.getElementById('output');
+			let keyMap = {};
+			let selectedLayout = 'JP';
 
-    <script>
-        let isTrapping = false;
-        let pressedKeys = new Set();
-        let output = document.getElementById('output');
-        let keyMap = {};
-        let selectedLayout = 'US';
+			async function loadKeyMap() {
+				const response = await fetch('./json/keymap.json');
+				keyMap = await response.json();
+			}
 
-        async function loadKeyMap() {
-            const response = await fetch('./json/keymap.json');
-            keyMap = await response.json();
-        }
+			loadKeyMap();
 
-        loadKeyMap();
+			document.getElementById('layout').addEventListener('change', function(event) {
+					selectedLayout = event.target.value;
+			});
 
-        document.getElementById('layout').addEventListener('change', function(event) {
-            selectedLayout = event.target.value;
-        });
+			document.getElementById('start-trap').addEventListener('click', function() {
+					isTrapping = true;
+			});
 
-        document.getElementById('start-trap').addEventListener('click', function() {
-            isTrapping = true;
-        });
+			document.getElementById('stop-trap').addEventListener('click', function() {
+					isTrapping = false;
+					pressedKeys.clear();
+					updateOutput();
+			});
 
-        document.getElementById('stop-trap').addEventListener('click', function() {
-            isTrapping = false;
-            pressedKeys.clear();
-            updateOutput();
-        });
+			window.addEventListener('beforeunload', function() {
+					isTrapping = false;
+			});
 
-        window.addEventListener('beforeunload', function() {
-            isTrapping = false;
-        });
+			document.addEventListener('keydown', function(event) {
+					if (!isTrapping) return;
 
-        document.addEventListener('keydown', function(event) {
-            if (!isTrapping) return;
+					event.preventDefault();
 
-            event.preventDefault();
+					if (event.key === 'Control' || event.key === 'Shift' || event.key === 'Alt' || event.key.length === 1) {
+							pressedKeys.add(event.key);
+					}
 
-            if (event.key === 'Control' || event.key === 'Shift' || event.key === 'Alt' || event.key.length === 1) {
-                pressedKeys.add(event.key);
-            }
+					updateOutput(event);
+			});
 
-            updateOutput(event);
-        });
+			document.addEventListener('keyup', function(event) {
+					if (!isTrapping) return;
 
-        document.addEventListener('keyup', function(event) {
-            if (!isTrapping) return;
+					if (event.key === 'Control' || event.key === 'Shift' || event.key === 'Alt') {
+							pressedKeys.delete(event.key);
+					} else {
+							pressedKeys.clear();
+					}
 
-            if (event.key === 'Control' || event.key === 'Shift' || event.key === 'Alt') {
-                pressedKeys.delete(event.key);
-            } else {
-                pressedKeys.clear();
-            }
+					updateOutput();
+			});
 
-            updateOutput();
-        });
+			function updateOutput(event) {
+					let keys = Array.from(pressedKeys).map(key => keyMap[selectedLayout][key] || key);
+					let locationText = '';
 
-        function updateOutput(event) {
-            let keys = Array.from(pressedKeys).map(key => keyMap[selectedLayout][key] || key);
-            let locationText = '';
+					if (event) {
+							if (event.location === KeyboardEvent.DOM_KEY_LOCATION_LEFT) {
+									locationText = ' (左)';
+							} else if (event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
+									locationText = ' (右)';
+							}
+					}
 
-            if (event) {
-                if (event.location === KeyboardEvent.DOM_KEY_LOCATION_LEFT) {
-                    locationText = ' (Left)';
-                } else if (event.location === KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
-                    locationText = ' (Right)';
-                }
-            }
+					if (keys.length > 0) {
+							output.textContent = `Keys pressed: ${keys.join(' + ')}${locationText}`;
+							output.classList.add('highlight');
+							setTimeout(() => {
+									output.classList.remove('highlight');
+							}, 500); // 500ms後にハイライトを解除
+					} else {
+							output.textContent = '押されたキーがここに表示されます。';
+					}
+			}
+			async function loadKeyMap() {
+			try {
+			const response = await fetch('./json/keymap.json');
+			if (!response.ok) {
+					throw new Error('Network response was not ok');
+			}
+			keyMap = await response.json();
+			} catch (error) {
+			console.error('Failed to load key map:', error);
+			}
+			}
+			document.getElementById('layout').addEventListener('change', function(event) {
+			selectedLayout = event.target.value;
+			console.log('Selected layout:', selectedLayout);
+			});
 
-            if (keys.length > 0) {
-                output.textContent = `Keys pressed: ${keys.join(' + ')}${locationText}`;
-                output.classList.add('highlight');
-                setTimeout(() => {
-                    output.classList.remove('highlight');
-                }, 500); // 500ms後にハイライトを解除
-            } else {
-                output.textContent = '押されたキーがここに表示されます。';
-            }
-        }
-        async function loadKeyMap() {
-    try {
-        const response = await fetch('./json/keymap.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        keyMap = await response.json();
-    } catch (error) {
-        console.error('Failed to load key map:', error);
-    }
-}
-document.getElementById('layout').addEventListener('change', function(event) {
-    selectedLayout = event.target.value;
-    console.log('Selected layout:', selectedLayout);
-});
+			document.getElementById('start-trap').addEventListener('click', function() {
+			isTrapping = true;
+			console.log('Trapping started:', isTrapping);
+			});
 
-document.getElementById('start-trap').addEventListener('click', function() {
-    isTrapping = true;
-    console.log('Trapping started:', isTrapping);
-});
-
-document.getElementById('stop-trap').addEventListener('click', function() {
-    isTrapping = false;
-    console.log('Trapping stopped:', isTrapping);
-    pressedKeys.clear();
-    updateOutput();
-});
-
-    </script>
+			document.getElementById('stop-trap').addEventListener('click', function() {
+			isTrapping = false;
+			console.log('Trapping stopped:', isTrapping);
+			pressedKeys.clear();
+			updateOutput();
+			});
+	</script>
 </body>
 </html>
