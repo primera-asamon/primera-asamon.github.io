@@ -1203,9 +1203,8 @@
     </div>
   </div><!-- フッターエリアの終わり -->
 
-<!-- ── スクリプト｜テーブルの並び替え＆絞込み ──
- Lineage_tabele_drop.html と同一内容
-  -->
+<!-- ── スクリプト｜テーブルの並び替え＆絞込み ── -->
+<!-- ── スクリプト｜テーブルの並び替え＆絞込み ── -->
 <script>
 /* ── ルートオブジェクト ── */
 const tblcontrol = new Object;
@@ -1291,39 +1290,32 @@ width: 80px;
 margin: 2px;
 ` );
 
-/* ── ボタンアイコン ── 
-2026-01-29外部ライブラリ参照は廃止されました。自作svgへ移行しています。
-*/
+/* ── ボタンアイコン ── */
 tblcontrol.btnicon = new Object();
 //─] ソート：昇順
 tblcontrol.btnicon.ascend = new Image();
-tblcontrol.btnicon.ascend.src = "../picture/icons/sort_up.svg";
-/* tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
+tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,3 3,11 13,11" />
-</svg>`;*/
+</svg>`;
 //─] ソート：降順
 tblcontrol.btnicon.descend = new Image();
-tblcontrol.btnicon.descend.src = "../picture/icons/sort_down.svg";
-/* tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
+tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,13 3,5 13,5" />
-</svg>`; */
+</svg>`;
 //─] 絞込み
 tblcontrol.btnicon.refine = new Image();
-tblcontrol.btnicon.refine.src = "../picture/icons/filterfunnel.svg";
-/* tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
+tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 <polygon fill="%23666" stroke="none" points="8,11 3,3 13,3" />
 <rect fill="%23666" stroke="none" x="6" y="6" width="4" height="6" />
-</svg>`; */
+</svg>`;
 
 /* ── 関数：初期化 ── */
 tblcontrol.init =()=> {
-
 //─] コントロール追加
 document.querySelectorAll( "thead th[ data-control ]" ).forEach( th => {
-
 //─]─] 取得
 const index = th.cellIndex;
 const table = th.closest( "table" );
@@ -1361,36 +1353,6 @@ filter.classList.add( "tbl-filter" );
 filter.onsubmit = tblcontrol.refine;
 filter.onreset = tblcontrol.unrefine;
 
-/* ↓　textbox → min/max */
-
-//-] 関数数値範囲での絞り込み
-
-tblcontrol.refine = function(event) {
-  event.preventDefault();
-
-  const form = event.target;
-  const th = form.closest("th");
-  const colIndex = Array.from(th.parentNode.children).indexOf(th);
-
-  const min = parseFloat(form.min.value);
-  const max = parseFloat(form.max.value);
-
-  const rows = th.closest("table").tBodies[0].rows;
-
-  for (const row of rows) {
-    const cell = row.cells[colIndex];
-    const value = parseFloat(cell.textContent.trim());
-
-    let show = true;
-
-    if (!isNaN(min) && value < min) show = false;
-    if (!isNaN(max) && value >= max) show = false;
-
-    row.style.display = show ? "" : "none";
-  }
-};
-/* ↑　textbox → min/max */
-
 //─]─]─]─]─] 全選択
 let div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-all" );
@@ -1402,23 +1364,36 @@ input.checked = true;
 input.onchange = tblcontrol.checkAll;
 label.appendChild( document.createTextNode( "すべて" ) );
 
+// index: フィルター対象列のインデックス
+// th: index番目のth要素
+const th = table.querySelectorAll('th')[index];
+const controlValue = th.dataset.control || "";
+
+// checklistが含まれているか判定
+const isChecklist = controlValue.split(/\s+/).includes("checklist");
+
 //─]─]─]─]─] キーアイテム
 div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-inventory" );
+if (isChecklist) {
+  div.style.display = "block";
+}else{
+  div.style.display = "none";
+}
 const list = [].reduce.call( tbody.rows, ( arr, row ) => {
-const text = row.cells[ index ].textContent;
-if( ! arr.includes( text ) ){ arr.push( text ) }
-return arr;
+  const text = row.cells[ index ].textContent;
+  if( ! arr.includes( text ) ){ arr.push( text ) }
+  return arr;
 }, [] );
 list.forEach( text => {
-label = div.appendChild( document.createElement( "label" ) );
-input = label.appendChild( document.createElement( "input" ) );
-input.name = "filter_item";
-input.type = "checkbox";
-input.value = text;
-input.checked = true;
-input.onchange = tblcontrol.checkAll;
-label.appendChild( document.createTextNode( text ) );
+  label = div.appendChild( document.createElement( "label" ) );
+  input = label.appendChild( document.createElement( "input" ) );
+  input.name = "filter_item";
+  input.type = "checkbox";
+  input.value = text;
+  input.checked = true;
+  input.onchange = tblcontrol.checkAll;
+  label.appendChild( document.createTextNode( text ) );
 } );
 filter.dataset.keyitem = JSON.stringify( list );
 
@@ -1456,19 +1431,21 @@ if (/number/.test(th.dataset.control)) {
 
 /* ↑　textbox → min/max */
 
-
 //─]─]─]─]─] 各ボタン
 div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-buttons" );
+
 input = div.appendChild( document.createElement( "input" ) );
 input.type = "submit";
 input.value = "絞込み";
+
 input = div.appendChild( document.createElement( "input" ) );
 input.type = "reset";
 input.value = "クリア";
+
 input = div.appendChild( document.createElement( "input" ) );
 input.type = "button";
-input.value = "キャンセル";
+input.value = "メニュー閉じる";
 input.onclick = tblcontrol.toggleFilter;
 }
 } );
@@ -1540,35 +1517,58 @@ filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item
 };
 
 /* ── 関数：絞込み ── */
-tblcontrol.refine = evt => {
-//─] フォーム送信中止
-evt.preventDefault();
-//─] 更新
-const filter = evt.target;
-const index = filter.closest( "th" ).cellIndex;
-const rows = filter.closest( "table" ).querySelectorAll( "tbody tr" );
-//─]─] キーアイテム
-const keyitem = Array.from( filter.filter_item ).
-filter( input => input.checked ).
-map( input => input.value );
-filter.dataset.keyitem = JSON.stringify( keyitem );
-//─]─] キーワード
-const keyword =
-filter.dataset.keyword = filter.filter_keyword.value;
-//─] 合算キー
-const keys = keyitem.filter( item => item.indexOf( keyword )>=0 );
-//─] 適用
-rows.forEach( row => {
-const cell = row.cells[ index ];
-cell.dataset.filter = keys.includes( cell.textContent ) ? 1 : 0 ;
-row.style.display = row.querySelector( "[ data-filter='0' ]" ) ? "none" : "table-row" ;
-} );
-//─] ボタンの色
-filter.closest( "th" ).
-querySelector( "button[ data-type='refine' ]" ).
-classList[ ( ! keyword ) && filter.filter_all.checked ? "remove" : "add" ]( "filter" );
-//─] フィルターを閉じる
-filter.classList.remove( "open" );
+/* ↓　textbox → min/max */
+
+//-] 関数数値範囲での絞り込み
+
+tblcontrol.refine = function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const th = form.closest("th");
+  const colIndex = th.cellIndex;
+  const rows = th.closest("table").tBodies[0].rows;
+
+  // 絞り込み条件取得（意味保証された属性から）
+  const controlValue = th.dataset.control ?? "";
+  const isNumber = controlValue.split(/\s+/).includes("number");
+  console.log(controlValue, isNumber, th.dataset.control); // ← デバッグ用
+
+  const min = isNumber ? parseFloat(form.min?.value) : undefined;
+  const max = isNumber ? parseFloat(form.max?.value) : undefined;
+  const keyword = form.filter_keyword?.value?.trim();
+
+  // keyitem（チェックボックス）取得
+  const keyitem = form.filter_item
+    ? Array.from(form.filter_item).filter(input => input.checked).map(input => input.value)
+    : [];
+  form.dataset.keyitem = JSON.stringify(keyitem);
+
+  // 行ごとに絞り込み判定
+  for (const row of rows) {
+    const cell = row.cells[colIndex];
+    const text = cell.textContent.trim();
+    let show = true;
+
+  // チェックボックスによる絞り込み
+    if (keyitem.length > 0 && !keyitem.includes(text)) {
+    show = false;
+  }
+
+    if (isNumber) {
+      const value = parseFloat(text);
+      if (!isNaN(min) && value < min) show = false;
+      if (!isNaN(max) && value >= max) show = false;
+
+      // キーワードでの数値絞り込み完全一致
+      if (keyword && text !== keyword) show = false;
+    } else {
+      // キーワードでの文字列絞り込み部分一致
+      if (keyword && !text.includes(keyword)) show = false;
+    }
+
+    row.style.display = show ? "" : "none";
+  }
 };
 
 /* ── 関数：絞込み解除 ── */

@@ -1,6 +1,8 @@
     html,body {
         margin: 0;
         height:100%;
+        display: flex;
+        flex-direction: column;
         background: #fff;
         color: #444;
         font-size: 14px;
@@ -27,7 +29,7 @@
     .header {
         z-index: 100;
         padding: 0px 0;
-        min-height:42px;
+        /*min-height:42px;*/
         width: 100%;
         border-bottom: #ccd1d9 solid 1px;
         background-color: #fff;
@@ -176,21 +178,20 @@
 
     .content {
         padding: 16px 12px 12px 16px;
-        min-height:calc(100% - 174px);
+        /* min-height:calc(100% - 174px);*/
         display: flex;
         flex-direction: column;
-
+        flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+        min-height: 0; /* ← これが重要 */
     /*zoom: 1;*/
     }
 
     .article {
-        margin: 16px ;
-        padding-bottom: 12px;
+        margin: 16px 0 0 0;
         width: auto;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        flex: 1;
         /*zoom: 1;*/
     }
 
@@ -225,7 +226,7 @@
         justify-content: space-between;
         width: calc(100% - 18px);
         text-align: left;
-        margin: 12px 0 0 18px;
+        margin: 0 0 0 18px;
         font-size: 1em;
     }
 
