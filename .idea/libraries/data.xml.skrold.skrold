@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/data/Lineage_remastered_IME.zip!/" />
+      <root url="jar://$PROJECT_DIR$/data/Lineage_remastered_ATOK.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

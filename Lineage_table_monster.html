@@ -18,10 +18,10 @@
         <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
         <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
         <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
-        <li><a href="LineageREMASTER_kanji.html" class="kanji">Kanji</a></li>
-        <li><a href="LineageREMASTER_etc.html" class="etc">諸表</a></li>
-        <li><a href="font.html" class="tool">Tools</a></li>
-        <li><a href="updates.html" class="updt">変更歴</a></li>
+        <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
+        <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
+        <li><a href="tool_glyph.html" class="tool">Tools</a></li>
+        <li><a href="site_updates.html" class="updt">変更歴</a></li>
       </ul> <!-- (main nav) -->
       <!-- <div class="title_band">リネージュメモ</div> サイト共通のmain title 帯 -->
       <!-- accessory 共通nav <ul>は、ここに入る-->
@@ -1202,6 +1202,7 @@
       <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
     </div>
   </div><!-- フッターエリアの終わり -->
+
 <!-- ── スクリプト｜テーブルの並び替え＆絞込み ──
  Lineage_tabele_drop.html と同一内容
   -->
@@ -1226,10 +1227,10 @@ position: relative;
 text-align: center;
 ` );
 tblcontrol.css( "th[ data-control ] .tbl-control > button", `
-width: 15px;
-height: 15px;
+width: 18px;
+height: 18px;
 padding: 0px;
-margin: 1px;
+margin: 2px;
 border: solid 1px #ccc;
 background: #eee;
 cursor: pointer;
@@ -1282,7 +1283,9 @@ margin: 2px;
 ` );
 tblcontrol.css( `
 th[ data-control ] .tbl-filter-buttons input[ value="絞込み" ],
-th[ data-control ] .tbl-filter-buttons input[ value="クリア" ]
+th[ data-control ] .tbl-filter-buttons input[ value="クリア" ],
+th[ data-control ] .tbl-filter-range input[ name="min" ],
+th[ data-control ] .tbl-filter-range input[ name="max" ]
 `, `
 width: 80px;
 margin: 2px;
@@ -1358,6 +1361,36 @@ filter.classList.add( "tbl-filter" );
 filter.onsubmit = tblcontrol.refine;
 filter.onreset = tblcontrol.unrefine;
 
+/* ↓　textbox → min/max */
+
+//-] 関数数値範囲での絞り込み
+
+tblcontrol.refine = function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const th = form.closest("th");
+  const colIndex = Array.from(th.parentNode.children).indexOf(th);
+
+  const min = parseFloat(form.min.value);
+  const max = parseFloat(form.max.value);
+
+  const rows = th.closest("table").tBodies[0].rows;
+
+  for (const row of rows) {
+    const cell = row.cells[colIndex];
+    const value = parseFloat(cell.textContent.trim());
+
+    let show = true;
+
+    if (!isNaN(min) && value < min) show = false;
+    if (!isNaN(max) && value >= max) show = false;
+
+    row.style.display = show ? "" : "none";
+  }
+};
+/* ↑　textbox → min/max */
+
 //─]─]─]─]─] 全選択
 let div = filter.appendChild( document.createElement( "div" ) );
 div.classList.add( "tbl-filter-all" );
@@ -1396,7 +1429,33 @@ input = div.appendChild( document.createElement( "input" ) );
 input.name = "filter_keyword";
 input.type = "text";
 input.placeholder = "絞込みワード";
+input.style.width = "160px";
 filter.dataset.keyword = "";
+
+/* ↓　textbox → min/max 2025-08-17*/
+
+//─]─]─]─]─] min/max（数値列のみ）
+if (/number/.test(th.dataset.control)) {
+  div = filter.appendChild(document.createElement("div"));
+  div.classList.add("tbl-filter-range");
+
+  input = div.appendChild(document.createElement("input"));
+  input.name = "min";
+  input.type = "number";
+  input.placeholder = "最小";
+  input.style.width = "72px";
+  input.className = "tbl-filter-minmax";
+
+  input = div.appendChild(document.createElement("input"));
+  input.name = "max";
+  input.type = "number";
+  input.placeholder = "最大";
+  input.style.width = "72px";
+  input.className = "tbl-filter-minmax";
+}
+
+/* ↑　textbox → min/max */
+
 
 //─]─]─]─]─] 各ボタン
 div = filter.appendChild( document.createElement( "div" ) );
@@ -1518,6 +1577,12 @@ const filter = evt.target;
 filter.filter_all.checked = true;
 Array.from( filter.filter_item ).forEach( item => item.checked = true );
 filter.filter_keyword.value = "";
+
+/* ↓　textbox → min/max 2025-08-17*/
+filter.min.value = "";
+filter.max.value = "";
+/* ↑　textbox → min/max */
+
 tblcontrol.refine( evt );
 };
 

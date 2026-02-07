@@ -5,9 +5,9 @@ const CONFIG = {
   containerSelector: '#recordDetailContainer_1', 
   closeButtonSelector: '.close-button'
 };
-// popup表示data 外部化(Pop-upRecordDataSource.html)修正部2025-12-20
+// popup表示data 外部化(accessory_performance_db.partial)修正部2025-12-20
   async function loadPopupTable() {
-    const res = await fetch('/partials/Pop-upRecordDataSource.html');
+    const res = await fetch('/partials/accessory_performance_db.partial');
     return await res.text();
   }
 // 全部のフィルター後HTML生成関数
