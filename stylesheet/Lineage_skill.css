@@ -10,14 +10,15 @@ border: 0;
 }
   html,body {
     width:100%;
-    height:calc(100% - 108px);
-    font-size:0.95em;
+    height:calc(100% - 48px);
   }
   .skill_table_box{
-    overflow-y: auto;
-    height:calc(100% - 20px);
+    flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+    min-height: 0; /* ← これが重要 */
+    overflow: auto; /* ← ここでスクロールを閉じ込める */
     width:100%;
-  }
+    position: relative;
+}
 
 table {
     border-collapse: collapse;
@@ -130,11 +131,6 @@ width: calc(100% - 5 * 100px);
 min-width:300px;
 border-left-color: #edf;
 font-size: medium;
-}
-.footer-text {
-margin-bottom: 6px;
-color: #999;
-font-size: 0.8em;
 }
 
 .footer-copyright {

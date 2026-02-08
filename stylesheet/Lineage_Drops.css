@@ -4,17 +4,19 @@
     width: auto;
     height:calc(100% - 44px);
   }
+
   .d2m_table_box{
-    overflow-y: auto;
-    width:98%;
-    height:calc(100% - 32px);
+    flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+    min-height: 0; /* ← これが重要 */
+    overflow: auto; /* ← ここでスクロールを閉じ込める */
+    width:100%;
     position: relative;
   }
 
   table.d2m {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 98%;
+    width: 100%;
     margin: auto;
   }
 

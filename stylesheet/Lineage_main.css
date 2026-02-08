@@ -10,6 +10,16 @@
         line-height: 1.42857;
     }
 
+/* theadがページに対して固定のstickyである
+　テーブル中心のページでフッター以外を包括する
+　高さ制御用コンテナ：/.table-wrapper */
+
+  .page_body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
     a:link {
         color: #1010f0;
         text-decoration: underline;
@@ -183,7 +193,7 @@
         flex-direction: column;
         flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
         min-height: 0; /* ← これが重要 */
-    /*zoom: 1;*/
+        overflow: auto; /* fotterへの潜り込み抑止 */
     }
 
     .article {
@@ -192,7 +202,6 @@
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        /*zoom: 1;*/
     }
 
     .content-block {
@@ -763,7 +772,7 @@
 
     .table_box_main{
     overflow-y: auto;
-    width:98%;
+    width:100%;
     height:calc(100% - 65px);
     position: relative;
   }

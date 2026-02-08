@@ -2,7 +2,8 @@
 
   html,body {
     width: auto;
-    height:calc(100% - 70px);
+    height: calc(100% - 44px); /* ← header の高さを引く */
+    margin: 0;
   }
 
 h2 {
@@ -12,16 +13,17 @@ h2 {
   }
 
   .table_box_acce{
-    overflow-y: auto;
-    width:98%;
-    height:calc(100% - 100px);
+    flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+    min-height: 0; /* ← これが重要 */
+    overflow: auto; /* ← ここでスクロールを閉じ込める */
+    width:100%;
     position: relative;
   }
 
   table.acce {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 98%;
+    width: 100%;
     margin: auto;
   }
 
@@ -60,9 +62,6 @@ h2 {
     padding: 3px 6px;
     font-size:small;
   }
-  tr,td {
-    height:24px;
-  }
   
   .Item_No {
     width: 60px;
@@ -78,16 +77,7 @@ h2 {
     font-weight: normal;
     padding: 6px 8px;
   }
-/*  .Item_No_acce {
-    width: 60px;
-  }*/
-/*  .drop_item_acce {
-    width: 320px;
-  }*/
-/*  .monster_list_acce {
-    width: calc(100% - 300px);
-    text-align: left;
-  }*/
+
   .description_acce {
     text-align: left;
   }
