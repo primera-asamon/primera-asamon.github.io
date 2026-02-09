@@ -787,29 +787,38 @@
   thead.sticky_main {
     position: sticky;
     top: 0;
-    z-index: 2; /* 背景レイヤの ::before より前面 */
+    z-index: 10; /* 背景レイヤの ::before より前面 */
     height: 50px; /* sticky基準の安定化 */
-    background-color: #fec; /* stickyには明示的背景必須 */
+    /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+    background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
   }
   .sticky_main {
     position: sticky;
     top: 0;
     left: 0;
-    border-top: none;
+  }
+  .sticky_main thead tr th {
+    border: 1px solid #888;
+    background-color: #fec;
+		margin: 0px;
   }
   .sticky_main::before {
     content: "";
     position: absolute;
     top: 0px;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 100%;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    background-color: #fec;
+		/* border-topまたはbottomの一方にしないと現状は隙間ができるように見える。 */
+    border-top: 1px solid #888;
+    /* border-bottom: 1px solid #888; */
+    background-color: transparent;
     background-clip: padding-box;
-    z-index: -1;
+    z-index: 2; /* sticky背景用レイヤ */
   }
+  tbody.scroll_main tr td {
+    border: 1px solid #888;
+}			
 
     /* 文中小表 */
     table.smalltable {
