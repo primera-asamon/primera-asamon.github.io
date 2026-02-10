@@ -41,7 +41,7 @@
         padding: 0px 0;
         /*min-height:42px;*/
         width: 100%;
-        border-bottom: #ccd1d9 solid 1px;
+        /*border-bottom: #ccd1d9 solid 1px;*/
         background-color: #fff;
         text-align: center;
         position :sticky;
@@ -797,10 +797,22 @@
     top: 0;
     left: 0;
   }
-  .sticky_main thead tr th {
+  thead.sticky_main {
     border: 1px solid #888;
     background-color: #fec;
-		margin: 0px;
+	margin: 0px;
+  }
+  tr.sticky_main {
+    border: 1px solid #888;
+    background-color: #fec;
+	margin: 0px;
+  }
+  th.sticky_main {
+    border: 1px solid #888;
+    background-color: #fec;
+	margin: 0px;
+    font-weight: normal;
+    padding: 3px 6px;
   }
   .sticky_main::before {
     content: "";

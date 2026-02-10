@@ -30,15 +30,15 @@ h2 {
   thead.sticky_acce {
     position: sticky;
     top: 0;
-    z-index: 2; /* 背景レイヤの ::before より前面 */
+    z-index: 10; /* 背景レイヤの ::before より前面 */
     height: 50px; /* sticky基準の安定化 */
-    background-color: #fec; /* stickyには明示的背景必須 */
+    /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+    background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
   }
   .sticky_acce {
     position: sticky;
     top: 0;
     left: 0;
-    border-top: none;
   }
   .sticky_acce::before {
     content: "";
@@ -47,31 +47,51 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    background-color: #fec;
+		/* border-topまたはbottomの一方にしないと現状は隙間ができるように見える。 */
+    border-top: 3px solid #cbb;
+    /* border-bottom: 1px solid #888; */
+    background-color: transparent;
     background-clip: padding-box;
     z-index: -1;
   }
-  th,td {
+  .sticky_acce td {
     height:24px;
-    border: solid 1px #000;
     text-align: center;
     font-weight: normal;
     margin: 1px;
     padding: 3px 6px;
     font-size:small;
+    outline: 2px solid #cbb;
+    background-color: #fec;
+  }
+  th {
+    height:24px;
+    text-align: center;
+    font-weight: normal;
+    margin: 1px;
+    padding: 3px 6px;
+    font-size:small;
+    border: 4px solid #cbb;
+  }
+  td {
+    height:24px;
+    text-align: center;
+    font-weight: normal;
+    margin: 1px;
+    padding: 3px 6px;
+    font-size:small;
+    border: 4px solid #cbb;
   }
   
   .Item_No {
     width: 60px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
   }
   .Search_Drop {
     width: 320px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
   }
   tbody.acce {
     font-weight: normal;

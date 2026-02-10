@@ -17,18 +17,35 @@
     border-spacing: 0;
     width: 100%;
     margin: auto;
+    font-size: 12px;
   }
 
-  thead {
-    height:50px;
-    text-align: center;
+  thead.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10; /* 背景レイヤの ::before より前面 */
+    height: 50px; /* sticky基準の安定化 */
+    /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+    background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
   }
   .sticky {
     position: sticky;
     top: 0;
     left: 0;
-    border-top: none;
+    /*border-top: none;*/
   }
+  th.sticky {
+    background-color: #cef;
+		margin: 0px;
+    max-width: 300px;
+    min-width: 30px;
+    font-weight: normal;
+    padding: 3px 6px;
+    text-align: center;
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
+  }
+
   .sticky::before {
     content: "";
     position: absolute;
@@ -36,34 +53,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    background-color: #cef;
+		/* border-topまたはbottomの一方にしないと現状は隙間ができるように見える。 */
+    border-top: 1px solid #888;
+    /* border-bottom: 1px solid #888; */
+    border-bottom: none;
+    background-color: transparent;
     background-clip: padding-box;
     z-index: -1;
   }
 
-  th {
-    width: 20px;
-    max-width: 300px;
-    min-width: 30px;
-    border: solid 1px #000;
-    font-weight: normal;
-    padding: 3px 6px;
-    text-align: center;
-  }
-
   th.Drop_item{
-  width: 260px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    width: 260px;
     text-align: center;
   }
 
   th.remarks2{
-  width: 60px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    width: 60px;
     text-align: center;
   }
 
@@ -71,75 +76,47 @@
     width: 20px;
     max-width: 300px;
     min-width: 30px;
-    border: solid 1px #000;
-    font-size:small;
     font-weight: normal;
     padding: 3px 6px;
     text-align: center;
+    border: 1px solid #888;
   }
-  .list_no{
+  td.list_no{
     width: 20px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .hunting_ground{
+  td.hunting_ground{
     width: 100px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .monster_name{
-  width: 100px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+  td.monster_name{
+    width: 100px;
     text-align: left;
   }
-  .monster_lv{
+  td.monster_lv{
     width: 20px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .monster_ac{
+  td.monster_ac{
     width: 20px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .monster_mr{
+  td.monster_mr{
     width: 20px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .monster_hp{
+  td.monster_hp{
     width: 35px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .monster_mp{
+  td.monster_mp{
     width: 30px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
   }
-  .Weakness_Element{
-  width: 50px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+  td.Weakness_Element{
+    width: 50px;
   }
-
-  .SizeinWeapons{
-  width: 40px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+  td.SizeinWeapons{
+    width: 40px;
   }
-
   td.Drop_item{
-  width: 260px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    width: 260px;
     text-align: left;
   }
-
   td.remarks2{
-  width: 60px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    width: 60px;
     text-align: left;
   }
