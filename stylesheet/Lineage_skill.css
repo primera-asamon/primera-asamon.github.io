@@ -9,7 +9,7 @@ clip: rect(0, 0, 0, 0);
 border: 0;
 }
   html,body {
-    width:100%;
+    width:auto;
     height:calc(100% - 48px);
   }
   .skill_table_box{
