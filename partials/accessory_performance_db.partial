@@ -1,4 +1,3 @@
-      <tbody class="modal_selection">
         <tr class="闘士のインシグニア"><th class="col_header">AC</th><td>0</td><td>0</td><td>0</td><td>0</td><td>-1</td><td>-2</td><td>-3</td><td>-3</td><td>-3</td></tr>
         <tr class="闘士のインシグニア"><th class="col_header">最大HP</th><td>+5 </td><td>+10 </td><td>+15 </td><td>+20 </td><td>+25 </td><td>+30 </td><td>+35 </td><td>+40 </td><td>+50 </td></tr>
         <tr class="闘士のインシグニア"><th class="col_header">近距離ダメージ</th><td></td><td></td><td></td><td></td><td></td><td>+1 </td><td>+2 </td><td>+3 </td><td>+4 </td></tr>
@@ -386,5 +385,3 @@
         <tr class="祝福されたルームティスパープルイアリング"><th class="col_header">MR</th><td></td><td></td><td></td><td>+8 </td><td>+9 </td><td>+10 </td><td>+12 </td><td>+15 </td><td>+20 </td></tr>
         <tr class="祝福されたルームティスパープルイアリング"><th class="col_header">SP</th><td></td><td></td><td></td><td>+1 </td><td>+2 </td><td>+2 </td><td>+3 </td><td>+4 </td><td>+7 </td></tr>
         <tr class="祝福されたルームティスパープルイアリング"><th class="col_header">魔法命中</th><td></td><td></td><td></td><td></td><td></td><td></td><td>+3 </td><td>+4 </td><td>+7 </td></tr>
-      </tbody>
-    </table>

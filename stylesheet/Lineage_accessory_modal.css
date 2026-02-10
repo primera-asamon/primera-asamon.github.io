@@ -13,8 +13,8 @@
   margin: 5% auto;
   padding: 1em;
   border: 1px solid #888;
-  width: 460px;
-  max-width:660px;
+  min-width: 460px;
+  max-width: 90vw;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 0 10px #333;

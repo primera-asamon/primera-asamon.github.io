@@ -10,6 +10,7 @@ const CONFIG = {
     const res = await fetch('/partials/accessory_performance_db.partial');
     return await res.text();
   }
+/*
 // 全部のフィルター後HTML生成関数
   async function generateSubHTML_all(key) {
   const tableHTML = await loadPopupTable();
@@ -19,11 +20,54 @@ const CONFIG = {
     <span class="lineage_accessory_popup_subtitle">強化値による性能変化一覧</span><br>
     <table class="lineage_accessory_popup_table">
       <thead>
-        <tr><th>項目</th><th>強化0</th><th>強化1</th><th>強化2</th><th>強化3</th><th>強化4</th><th>強化5</th><th>強化6</th><th>強化7</th><th>強化8</th></tr>
-      </thead>
     ${tableHTML}
   `;
+}*/
+// 修正部2026-02-10
+async function generateSubHTML_all(key) {
+  const tableHTML = await loadPopupTable();
+
+  // 強化列の基本部分（0〜8）
+  let headerRow = `
+    <tr>
+      <th>項目</th>
+      <th>強化0</th><th>強化1</th><th>強化2</th><th>強化3</th>
+      <th>強化4</th><th>強化5</th><th>強化6</th><th>強化7</th><th>強化8</th>
+  `;
+
+  // 強化9 が必要な 6 種
+  const needsPlus9 = [
+    "スナッパーの知恵リング",
+    "祝福されたスナッパーの知恵リング",
+    "スナッパーの勇士リング",
+    "祝福されたスナッパーの勇士リング",
+    "スナッパーの魔法抵抗リング",
+    "祝福されたスナッパーの魔法抵抗リング",
+    "スナッパーの体力リング",
+    "祝福されたスナッパーの体力リング"
+  ];
+
+  if (needsPlus9.includes(key)) {
+    headerRow += `<th>強化9</th>`;
+  }
+
+  // 行を閉じる
+  headerRow += `</tr>`;
+
+    return `
+    <h3 class="lineage_accessory_popup_title">${key}<span class="style_regular">の性能</span></h3>
+    <span class="lineage_accessory_popup_subtitle">強化値による性能変化一覧</span><br>
+    <table class="lineage_accessory_popup_table">
+      <thead>
+        ${headerRow}
+      </thead>
+      <tbody class="modal_selection">
+        ${tableHTML}
+      </tbody>
+    </table>
+    `;
 }
+
 // リンククリックイベント
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('record-link')) {
