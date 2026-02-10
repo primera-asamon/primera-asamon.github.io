@@ -41,8 +41,8 @@ background-color: #ffffff;
 border-color:#ffffff
 }
 th {
-background-color: transparent;
 border: 1px solid #888;
+background-color: #fec;
 padding: 6px;
 text-align: left;
 font-size: small;

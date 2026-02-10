@@ -7,84 +7,8 @@
   <meta name="keywords" content="Lineage">
   <link rel="stylesheet" href="stylesheet/Lineage_main.css">
   <link rel="stylesheet" href="stylesheet/Lineage_skill.css">
+  <link rel="stylesheet" href="stylesheet/Lineage_accessory_modal.css">
 </head>
-  <style>
-/* モーダル用 */
-  .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-.modal-content {
-  background-color: #fdfdf0;
-  margin: 5% auto;
-  padding: 1em;
-  border: 1px solid #888;
-  width: 40%;
-  max-width:460px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 0 10px #333;
-}
-.close-button {
-  float: right;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-table.lineage_accessory_popup_table {
-  border: 1px solid #888;
-  font-size: small;
-  color: #222;
-  text-align:center;
-  border-collapse: collapse;
-  width: 100%;
-}
-.lineage_accessory_popup_table th {
-  height: 20px;
-  border: 1px solid #888;
-  background-color: #bfb;
-  text-align:center;
-  padding: 2px 4px 2px 4px;
-  font-weight: normal;
-}
-.lineage_accessory_popup_table th.col_header {
-  max-width:18px;
-}
-.lineage_accessory_popup_table td {
-  width:64px;
-  border: 1px solid #888;
-  text-align:right;
-  padding: 1px 6px 1px 6px;
-}
-.modal_selection tr {
-  display: none;
-}
-.lineage_accessory_popup_title {
-  margin: 0px;
-}
-.style_regular {
-  font-weight: normal;
-  font-size: 0.8em;
-  color: #555;
-}
-.lineage_accessory_popup_subtitle {
-  margin: 0px;
-  font-size: 0.9em;
-  color: #555;
-}
-.record-link {
-  font-weight: bold;
-  font-size: 0.9em;
-  color: #0066cc;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover { color: #f33; }
-}
-</style>
 <body class="etc">
   <div class="page_body"> <!-- フッター以外の高さ管理するラッパー -->
     <div class="header"> <!-- サイト共通のheaderエリア -->
@@ -116,8 +40,19 @@ table.lineage_accessory_popup_table {
     <div class="update_date">＊1アカウントあたり</div>
     <div class="table_box_main"> <!-- テーブル中心ページのテーブルエリア -->
     <table id="top">
-      <thead class="sticky_main">
-        <tr><th>交換アイテム名称</th><th>画像</th><th class="">交換可能回数＊1</th><th>必要<br>ポイント</th><th>交換アイテム説明</th><th>獲得アイテム名称</th><th>画像</th><th>数量</th><th>不可</th><th>アイテム説明</th></tr>
+      <thead class="sticky">
+        <tr>
+          <th class="sticky">交換アイテム名称</th>
+          <th class="sticky">画像</th>
+          <th class="sticky">交換可能回数＊1</th>
+          <th class="sticky">必要<br>ポイント</th>
+          <th class="sticky">交換アイテム説明</th>
+          <th class="sticky">獲得アイテム名称</th>
+          <th class="sticky">画像</th>
+          <th class="sticky">数量</th>
+          <th class="sticky">不可</th>
+          <th class="sticky">アイテム説明</th>
+        </tr>
       </thead>
       <tbody class="scroll_main">
         <tr>

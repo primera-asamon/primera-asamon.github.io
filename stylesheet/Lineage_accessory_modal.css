@@ -13,7 +13,7 @@
   margin: 5% auto;
   padding: 1em;
   border: 1px solid #888;
-  width: 70%;
+  width: 460px;
   max-width:660px;
   max-height: 90vh;
   overflow-y: auto;
@@ -41,10 +41,10 @@ table.lineage_accessory_popup_table {
   font-weight: normal;
 }
 .lineage_accessory_popup_table th.col_header {
-  max-width:88px;
+  max-width:160px;
 }
 .lineage_accessory_popup_table td {
-  width:44px;
+  min-width:50px;
   border: 1px solid #888;
   text-align:right;
   padding: 1px 6px 1px 6px;
@@ -52,7 +52,7 @@ table.lineage_accessory_popup_table {
 .modal_selection tr {
   display: none;
 }
-/* モーダル内タイトル等 
+/* モーダル内タイトル等 */
 .lineage_accessory_popup_title {
   margin: 0px;
 }
@@ -66,7 +66,7 @@ table.lineage_accessory_popup_table {
   font-size: 0.9em;
   color: #555;
 }
-*/
+
 .record-link {
   font-weight: bold;
   font-size: 0.9em;
