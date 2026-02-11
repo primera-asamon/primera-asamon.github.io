@@ -28,26 +28,6 @@
   /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
   background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
 }
-  .sticky_d2m {
-    position: sticky;
-    top: 0;
-    left: 0;
-    /*border-top: none;*/
-  }
-  .sticky_d2m::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-		/* border-topまたはbottomの一方にしないと現状は隙間ができるように見える。 */
-    border-top: 1px solid #888;
-    /* border-bottom: 1px solid #888; */
-    background-color: transparent;
-    background-clip: padding-box;
-    z-index: -1;
-  }
     th.sticky {
     border: 1px solid #888;
     background-color: #fec;

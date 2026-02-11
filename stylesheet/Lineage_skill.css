@@ -31,11 +31,6 @@ table {
     text-align: center;
   }
 
-.child-table {
-border-collapse: collapse;
-background-color: #ffffff;
-font-size:xx-small;
-}
 tr.record-table{
 background-color: #ffffff;
 border-color:#ffffff
@@ -66,39 +61,26 @@ td.cls {
 width: 2em;
 text-align: right;
 }
-.row-header {
-background-color: #d0d0e0;
-font-weight:normal;
-font-size:smaller;
-min-width:30px;
-}
-.row-header_skillname {
-background-color: #d0d0e0;
-font-weight:normal;
-font-size:smaller;
-width: calc(100% - 5 * 100px);
-min-width:60px;
-}
-.row-data {
-background-color: #ffffff;
-min-width:60px;
-}
-.col-header {
+
+.skill_table_box th {
 background-color: #d0d0e0;
 width:72px;
 font-weight:normal;
 font-size:smaller;
 }
+/* js */
 .col-data {
 background-color: #ffffff;
 min-width:72px;
 }
+/* js */
 .col-data_no {
 background-color: #edf;
 width:60px;
 border-right-color: #edf;
 font-size: small;
 }
+/* js */
 .col-data_level {
 background-color: #edf;
 width: 60px;
@@ -106,6 +88,7 @@ border-left-color: #edf;
 border-right-color: #edf;
 font-size: medium;
 }
+/* js */
 .col-data_skillname {
 background-color: #edf;
 width: calc(100% - 5 * 100px);
@@ -113,28 +96,16 @@ min-width:300px;
 border-left-color: #edf;
 font-size: medium;
 }
-
-.footer-copyright {
-color: #000;
-font-size: 0.8em;
-}
+/* js */
+/* spv(SmartPhoneView) */
 @media (max-width: 438px) {
-.spv-sr-only {
-position: absolute;
-width: 1px;
-height: 1px;
-margin: -1px;
-padding: 0;
-overflow: hidden;
-clip: rect(0, 0, 0, 0);
-border: 0;
-}
 table {
 width: 100%;
 border-collapse: collapse;
 background-color: #ffffff;
 }
-.spv-child-table {
+/* js */
+.child-table {
 border-collapse: collapse;
 background-color: #ffffff;
 font-size:xx-small;
@@ -158,46 +129,26 @@ text-align: left;
 font-size: small;
 font-weight: normal;
 }
-.spv-row-header {
-background-color: #d0d0e0;
-font-weight:normal;
-font-size:smaller;
-min-width:30px;
-}
-.spv-row-header_skillname {
-background-color: #d0d0e0;
-font-weight:normal;
-font-size:smaller;
-width: calc(100% - 5 * 100px);
-min-width:60px;
-}
-.spv-row-data {
-background-color: #ffffff;
-min-width:60px;
-}
+/* js */
 .spv-col-header {
 background-color: #d0d0e0;
 min-width:72px;
 font-weight:normal;
 font-size:smaller;
 }
+/* js */
 .spv-col-data {
 background-color: #ffffff;
 min-width:72px;
 }
+/* js */
 .spv-col-data_no {
 background-color: #edf;
 width:60px;
 border-right-color: #edf;
 font-size: small;
 }
-.spv-col-data_level {
-background-color: #edf;
-width: 60px;
-border-left-color: #edf;
-border-right-color: #edf;
-font-size: medium;
-}
+/* js */
 .spv-col-data_skillname {
 background-color: #edf;
 width: calc(100% - 5 * 100px);
@@ -205,22 +156,17 @@ min-width:300px;
 border-left-color: #edf;
 font-size: medium;
 }
-.spv-footer-text {
-margin-bottom: 6px;
-color: #999;
-font-size: 0.8em;
-}
-
-.spv-footer-copyright {
-color: #000;
-font-size: 0.8em;
-}
 }
 /* ↑スマホ用メディアクエリ対応 2025-06-22-16:40 */
 /* thtdの繰り返しとなって空白が多くスクロールが増えるのでjsによりtrthtdtrthtdにする   */
 /* 2025-06-23 6:00 */
 /* if (window.innerWidth <= 398) 判定によりthtdテーブル構造をスマホ版とPC版で切り分け　*/
 
+.footer-copyright {
+color: #000;
+font-size: 0.8em;
+}
+/* js */
 .highlight {
   background-color: #ffeeba;
   transition: background-color 0.5s ease;
@@ -229,12 +175,14 @@ font-size: 0.8em;
 #loadBtn {
   margin-bottom: 6px;
 }
+/* js */
 /* 折畳み表示icon用 */
 .in-line_icon {
   vertical-align: middle;/*text-bottom または middle */
   height: 18px;
   width: 30px;
 }
+/* js */
 /* 折畳み表示text用 */
 .ellipsis {
   cursor: pointer;

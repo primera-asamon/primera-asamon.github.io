@@ -142,15 +142,6 @@
         color: #999;
     }
 
-    .homeicon {
-        display: inline-block;
-        width: 13px;
-        height: 13px;
-        background-image: url("../picture/home24in.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-}
     /* メインイメージ */
 
     h3 {
@@ -426,44 +417,8 @@
         color: #000;
         font-size: 0.8em;
     }
+
     /* パーツ */
-
-    .btn {
-        margin: 6px;
-        padding: 12px 24px;
-        border: #aab2bd solid 1px;
-        background: #aab2bd;
-        color: #fff;
-        vertical-align: baseline;
-        text-align: center;
-        white-space: nowrap;
-        font-size: 1em;
-        line-height: 1;
-        cursor: pointer;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        -ms-border-radius: 6px;
-        -o-border-radius: 6px;
-        border-radius: 6px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        /*vertical-align: auto;*/
-        zoom: 1;
-        /*display: inline;*/
-    }
-
-    .btn_lg {
-        padding: 18px 36px;
-    }
-
-    .btn_sm {
-        padding: 6px 12px;
-        font-size: 0.8em;
-    }
 
     a.btn:link,
     a.btn:active,
@@ -481,88 +436,6 @@
     a.btn_default:visited {
         color: #656d78;
         text-decoration: none;
-    }
-
-    .btn_normal {
-        border: #aab2bd solid 1px;
-        background: #aab2bd;
-    }
-
-    .btn_default {
-        border: #ccd1d9 solid 1px;
-        background: #f5f7fa;
-    }
-
-    .btn_primary {
-        border: #4a89dc solid 1px;
-        background: #4a89dc;
-    }
-
-    .btn_success {
-        border: #8cc152 solid 1px;
-        background: #8cc152;
-    }
-
-    .btn_warning {
-        border: #f6bb42 solid 1px;
-        background: #f6bb42;
-    }
-
-    .btn_danger {
-        border: #da4453 solid 1px;
-        background: #da4453;
-    }
-
-    .btn_normal:hover {
-        border: #ccd1d9 solid 1px;
-        background: #ccd1d9;
-    }
-
-    .btn_default:hover {
-        border: #aab2bd solid 1px;
-        background: #e6e9ed;
-    }
-
-    .btn_primary:hover {
-        border: #5d9cec solid 1px;
-        background: #5d9cec;
-    }
-
-    .btn_success:hover {
-        border: #a0d468 solid 1px;
-        background: #a0d468;
-    }
-
-    .btn_warning:hover {
-        border: #ffce54 solid 1px;
-        background: #ffce54;
-    }
-
-    .btn_danger:hover {
-        border: #ed5565 solid 1px;
-        background: #ed5565;
-    }
-
-    .img-rounded,
-    .img-circle,
-    .img-thumbnail {
-        margin: 6px;
-    }
-
-    .img-rounded {
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        -ms-border-radius: 6px;
-        -o-border-radius: 6px;
-        border-radius: 6px;
-    }
-
-    .img-circle {
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-        border-radius: 50%;
     }
 
     .img-thumbnail {
@@ -613,148 +486,6 @@
     .label_normal {
         border: #656d78 solid 1px;
         background: #656d78;
-    }
-
-    .label_primary {
-        border: #5d9cec solid 1px;
-        background: #5d9cec;
-    }
-
-    .label_success {
-        border: #a0d468 solid 1px;
-        background: #a0d468;
-    }
-
-    .label_warning {
-        border: #ffce54 solid 1px;
-        background: #ffce54;
-    }
-
-    .label_danger {
-        border: #ed5565 solid 1px;
-        background: #ed5565;
-    }
-
-    .text_normal {
-        color: #656d78;
-    }
-
-    .text_primary {
-        color: #4a89dc;
-    }
-
-    .text_success {
-        color: #8cc152;
-    }
-
-    .text_warning {
-        color: #f6bb42;
-    }
-
-    .text_danger {
-        color: #da4453;
-    }
-
-    .message {
-        margin-bottom: 12px;
-        padding: 12px 24px;
-        border: #656d78 solid 1px;
-        background: #656d78;
-        color: #fff;
-        vertical-align: baseline;
-        line-height: 1;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
-        border-radius: 3px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        /*vertical-align: auto;*/
-        zoom: 1;
-        /*display: inline;*/
-    }
-
-    .message_normal {
-        border: #656d78 solid 1px;
-        background: #656d78;
-    }
-
-    .message_default {
-        border: #ccd1d9 solid 1px;
-        background: #f5f7fa;
-        color: #656d78;
-    }
-
-    .message_primary {
-        border: #4a89dc solid 1px;
-        background: #4a89dc;
-    }
-
-    .message_success {
-        border: #8cc152 solid 1px;
-        background: #8cc152;
-    }
-
-    .message_warning {
-        border: #f6bb42 solid 1px;
-        background: #f6bb42;
-    }
-
-    .message_danger {
-        border: #da4453 solid 1px;
-        background: #da4453;
-    }
-
-    .panel {
-        margin-bottom: 24px;
-        width: 100%;
-        border: #ccd1d9 solid 1px;
-        background: #fff;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        -ms-border-radius: 6px;
-        -o-border-radius: 6px;
-        border-radius: 6px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        /*vertical-align: auto;*/
-        zoom: 1;
-        /*display: inline;*/
-    }
-
-    .panel-header {
-        padding: 12px 24px;
-        border-bottom: #ccd1d9 solid 1px;
-        background: #f5f7fa;
-        font-size: 0.9em;
-        -webkit-border-radius: 6px 6px 0 0;
-        -moz-border-radius: 6px 6px 0 0;
-        -ms-border-radius: 6px 6px 0 0;
-        -o-border-radius: 6px 6px 0 0;
-        border-radius: 6px 6px 0 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    .panel-body {
-        padding: 12px 24px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    .fc2analyzer {
-        text-align:right ;
     }
 
     /* 画像リスト(Lineage_remastered_etc.html) */
@@ -919,17 +650,6 @@
     font-size: 0.9em;
   }
 
-  /* 固定とスクロール */
-.fix_header {
-    position: fixed; /* ヘッダーを固定する */
-    top: 0; /* 上部から配置の基準位置を決める */
-    left: 0; /* 左から配置の基準位置を決める */
-    width: 100%; /* ヘッダーの横幅を指定する */
-    height: 130px; /* ヘッダーの高さを指定する */
-    padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
-    background-color: #ffffff; /* ヘッダーの背景色を指定する */
-    color: #000000; /* フォントの色を指定する */
-}
 /* 折り畳み展開ボタン記号▲▼の強調表示 */
   .toggle-button:hover {
     color: #e22;
