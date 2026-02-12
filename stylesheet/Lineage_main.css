@@ -534,7 +534,7 @@
     /* border-bottom: 1px solid #888; */
     background-color: transparent;
     background-clip: padding-box;
-    z-index: 2; /* sticky背景用レイヤ */
+    z-index: 2-1; /* sticky背景用レイヤ */
   }
 
   thead.sticky {
