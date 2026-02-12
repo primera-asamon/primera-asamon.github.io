@@ -542,16 +542,12 @@
     top: 0;
     z-index: 10; /* 背景レイヤの ::before より前面 */
     height: 50px; /* sticky基準の安定化 */
-    /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
-    background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
-    border: 1px solid #888;
+    background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+    /*background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+    /* border: 1px solid #888; */
     margin: 0px;
   }
-  tr.sticky {
-    border: 1px solid #888;
-    background-color: #fec;
-	margin: 0px;
-  }
+
   th {
     background-color: #CCC; /* default color 個別にcssに記述すること*/
   	margin: 0px;
@@ -562,12 +558,32 @@
     text-align: center;
     border-left: 1px solid #888;
     border-right: 1px solid #888;
+		border-top: none;
+		border-bottom: 1px solid #888;
+
   }
 
-  tbody.scroll_main tr td {
-    border: 1px solid #888;
-}			
+	tr {
+		border: none; /* th/tdにborderは描かせる */
+		margin: 0px;
+	}
 
+	td {
+		border-left: 1px solid #888;
+		border-right: 1px solid #888;
+		border-bottom: 1px solid #888;
+		border-top: none;
+	}
+
+tbody.scroll_main  tr {
+  border: none;
+}
+tbody.scroll_main td {
+  border-left: 1px solid #888;
+  border-right: 1px solid #888;
+  border-bottom: 1px solid #888;
+  border-top: none;
+}
     /* 文中小表 */
     table.smalltable {
         border-collapse: collapse;

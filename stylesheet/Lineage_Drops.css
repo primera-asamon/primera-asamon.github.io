@@ -23,7 +23,7 @@
   thead.sticky_d2m {
   position: sticky;
   top: 0;
-  z-index: 2; /* 背景レイヤの ::before より前面 */
+  z-index: 10; /* 背景レイヤ[Lineage_main.cssの::before(-1)]より前面 */
   height: 50px; /* sticky基準の安定化 */
   /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
   background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
@@ -37,6 +37,7 @@
     font-weight: normal;
     padding: 3px 6px;
     text-align: center;
+		background-color: #fec;
   }
   td {
     height:25px;
