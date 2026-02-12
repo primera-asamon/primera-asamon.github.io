@@ -12,34 +12,52 @@
   }
 
   table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    margin: auto;
     font-size: 12px;
   }
 
+
+/**/
+  thead.sticky th {
+    background-image:
+    linear-gradient(to bottom, #888 0, #888 1px, transparent 1px), /* 上の線 */
+    linear-gradient(to bottom, #888 0, #888 1px, transparent 1px); /* 下の線 */
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-position:
+      left top,        /* 上の線 */
+      left bottom;     /* 下の線 */
+
+    background-size:
+      100% 1px,
+      100% 1px;
+  }
+/**/
   th {
     background-color: #cef;
+    text-align: center;
+    border-left: 1px solid #888; /*Firefox縦罫線消え対応*/
+    border-right: 1px solid #888; /*Firefox縦罫線消え対応*/
   }
+/* th width limit */
   th.Drop_item{
     width: 260px;
-    text-align: center;
   }
-
   th.remarks2{
     width: 60px;
-    text-align: center;
   }
-
+/* 他thは成り行き*/
+/* th width limit */
   td {
-    width: 20px;
     max-width: 300px;
     min-width: 30px;
-    font-weight: normal;
     padding: 3px 6px;
     text-align: center;
-    border: 1px solid #888;
+    height:25px;
+		border-left: 1px solid #888;
+		border-right: 1px solid #888;
+		border-bottom: 1px solid #888;
+		border-top: none;
   }
   td.list_no{
     width: 20px;

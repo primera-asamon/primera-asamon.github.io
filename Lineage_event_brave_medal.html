@@ -17,25 +17,8 @@
   width: 100%; height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-  background-color: #fdfdf0;
-  margin: 5% auto;
-  padding: 1em;
-  border: 1px solid #888;
-  width: 780px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 0 10px #333;
-}
-
-.close-button {
-  float: right;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-</style>
+  }
+  </style>
 <body class="etc">
   <div class="page_body"> <!-- フッター以外の高さ管理するラッパー -->
     <div class="header"> <!-- サイト共通のheaderエリア -->
@@ -333,10 +316,22 @@
       margin-top: 0.9em;
     }
     th, td {
-      border: 1px solid #ccc;
+      border: 1px solid #888;
       padding: 2px 4px 2px 4px;
-      vertical-align: top;
-    }`
+      vertical-align: middle;
+    }
+      .modal table {
+    }
+    th {
+      width: 3em; /* モーダル内テーブルヘッダー幅 */
+      /* text-align-last: justify; 均等にできなくもない*/
+    }
+    .close-button {
+      float: right;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+`
   // モーダル指定によるstyleのケース分け(クラス名を増やしたくない時)
   if (CONFIG.modalSelector==='#recordModal_1'){
       popup_html +=`
@@ -360,58 +355,58 @@
   popup_html += `<tbody id="(${tsvRecord.name})" class="record-table" data-cls=${tsvRecord.cls} data-elf=${tsvRecord.elf}>`;
   // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
     popup_html += `<tr class="record-title">
-                <td class="col-data_no">No.${tsvRecord.no}</td>`
+                <td class="col-data_no" colspan="2">No.${tsvRecord.no}</td>`
     // ...existing code...
     // 等級・スキルレベルの出力部分
                 if (/^\d+$/.test(tsvRecord.level)) {
         // 数字のみの場合
-                    popup_html += `<td class="col-data_level">Lv.${tsvRecord.level}</td>`;
+                    popup_html += `<td class="col-data_level" colspan="2">Lv.${tsvRecord.level}</td>`;
                 } else {
         // 空または文字列（神話・伝説など）の場合
-                    popup_html += `<td class="col-data_level">${tsvRecord.level}</td>`;
+                    popup_html += `<td class="col-data_level" colspan="2">${tsvRecord.level}</td>`;
                 }   
-        popup_html += `<td class="col-data_skillname" colspan="9">${tsvRecord.name}</td>
+        popup_html += `<td class="col-data_skillname" colspan="11">${tsvRecord.name}</td>
             </tr>`
   // skill_domain_eligible_character:5列
   // skill_domain_tendency:2+2+2=6列
     popup_html += `<tr>
                 <th class="col-header">職業</th><td class="col-data" colspan="4">${clsDisplay}</td>`
-    popup_html += `<th class="col-header">活性</th><td class="col-data">${tsvRecord.active}</td>
-                <th class="col-header">種類</th><td class="col-data">${tsvRecord.type}</td>
+    popup_html += `<th class="col-header">活性</th><td class="col-data" colspan="3">${tsvRecord.active}</td>
+                <th class="col-header">種類</th><td class="col-data" colspan="3">${tsvRecord.type}</td>
                 <th class="col-header">性向</th><td class="col-data">${tsvRecord.align}</td>
             </tr>`
   // skill_domain_resource:2+2+3+2+2=11列
     popup_html += `<tr>
                 <th class="col-header">MP</th><td class="col-data">${tsvRecord.mp}</td>
-                <th class="col-header">HP</th><td class="col-data">${tsvRecord.hp}</td>
-                <th class="col-header">材料</th><td class="col-data" colspan="2">${tsvRecord.material}</td>
+                <th class="col-header">HP</th><td class="col-data" colspan="2">${tsvRecord.hp}</td>
+                <th class="col-header">材料</th><td class="col-data" colspan="3">${tsvRecord.material}</td>
                 <th class="col-header">装備</th><td class="col-data">${tsvRecord.gear}</td>
-                <th class="col-header">持続</th><td class="col-data">${tsvRecord.duration}</td>
+                <th class="col-header">持続</th><td class="col-data" colspan="3">${tsvRecord.duration}</td>
             </tr>`
   // skill_domain_effect:3+2+6=11列
     popup_html += `<tr>
-                <th class="col-header">対象</th><td class="col-data" colspan="2">${tsvRecord.target}</td>
-                <th class="col-header">間隔</th><td class="col-data">${tsvRecord.reuse}</td>
-                <th class="col-header">効果</th><td class="col-data" colspan="5">${tsvRecord.effect}</td>
+                <th class="col-header">対象</th><td class="col-data" colspan="3">${tsvRecord.target}</td>
+                <th class="col-header">間隔</th><td class="col-data" colspan="2">${tsvRecord.reuse}</td>
+                <th class="col-header">効果</th><td class="col-data" colspan="7">${tsvRecord.effect}</td>
             </tr>`
   // skill_domain_acquisition:2+3+6=11列
     popup_html += `<tr>
                 <th class="col-header">習得</th><td class="col-data">${tsvRecord.acqLv}</td>
-                <th class="col-header">入手</th><td class="col-data" colspan="2">${tsvRecord.obtain}</td>
+                <th class="col-header">入手</th><td class="col-data" colspan="6">${tsvRecord.obtain}</td>
                 <th class="col-header">価格</th><td class="col-data" colspan="5">${tsvRecord.price}</td>
             </tr>`
   // skill_domain_dropmob:11列
     popup_html += `<tr>
-                <th class="col-header">Drop</th><td class="col-data" colspan="11">${tsvRecord.Droporigin}</td>
+                <th class="col-header">Drop</th><td class="col-data" colspan="15">${tsvRecord.Droporigin}</td>
             </tr>`
   // skill_domain_dropmob:11列
     popup_html += `<tr>
-                <th class="col-header">蘇生</th><td class="col-data" colspan="11">${tsvRecord.Dropcomp}</td>
+                <th class="col-header">蘇生</th><td class="col-data" colspan="15">${tsvRecord.Dropcomp}</td>
             </tr>`
   // skill_domain_notes:6+5=11列
     popup_html += `<tr>
-                <th class="col-header">備考1</th><td class="col-data" colspan="5">${tsvRecord.note1}</td>
-                <th class="col-header">備考2</th><td class="col-data" colspan="4">${tsvRecord.note2}</td>
+                <th class="col-header">備考1</th><td class="col-data" colspan="7">${tsvRecord.note1}</td>
+                <th class="col-header">備考2</th><td class="col-data" colspan="6">${tsvRecord.note2}</td>
             </tr>`
     return popup_html;
   }

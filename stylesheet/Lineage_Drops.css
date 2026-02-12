@@ -1,10 +1,8 @@
 /* Drop2Monster_table (d2m) */
 
   html,body {
-    width: auto;
     height:calc(100% - 44px);
   }
-
   .d2m_table_box{
     flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
     min-height: 0; /* ← これが重要 */
@@ -13,63 +11,61 @@
     position: relative;
   }
 
-  table.d2m {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    margin: auto;
+  table {
+    font-size: 12px;
   }
 
-  thead.sticky_d2m {
-  position: sticky;
-  top: 0;
-  z-index: 10; /* 背景レイヤ[Lineage_main.cssの::before(-1)]より前面 */
-  height: 50px; /* sticky基準の安定化 */
-  /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
-  background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+/**/
+thead.sticky th {
+  background-image:
+    linear-gradient(to bottom, #888 0, #888 1px, transparent 1px), /* 上の線 */
+    linear-gradient(to bottom, #888 0, #888 1px, transparent 1px); /* 下の線 */
+
+  background-repeat: no-repeat, no-repeat;
+
+  background-position:
+    left top,        /* 上の線 */
+    left bottom;     /* 下の線 */
+
+  background-size:
+    100% 1px,
+    100% 1px;
 }
-    th.sticky {
-    border: 1px solid #888;
+/**/
+th {
     background-color: #fec;
-		margin: 0px;
+    text-align: center;
+    border-left: 1px solid #888; /*Firefox縦罫線消え対応*/
+    border-right: 1px solid #888; /*Firefox縦罫線消え対応*/
+  }
+/* th width limit */
+  th.Item_No{
+    width: 40px;
+  }
+  th.Search_Drop{ 
+    width: 300px;
+  }
+/* 他thは成り行き*/
+/* th width limit */
+	td {
     max-width: 300px;
     min-width: 30px;
-    font-weight: normal;
     padding: 3px 6px;
     text-align: center;
-		background-color: #fec;
-  }
-  td {
     height:25px;
-    border: solid 1px #888;
-    text-align: center;
-  }
-  .Item_No{
-    width: 60px;
     border-left: 1px solid #888;
-    border-right: 1px solid #888;
-  }
-  .Search_Drop{
-    width: 320px;
-    border-left: 1px solid #888;
-    border-right: 1px solid #888;
-  }
-  .monster_name_d2m{
-    width: calc(100% - 300px);
-    border-left: 1px solid #888;
-    border-right: 1px solid #888;
-  }
-  tbody.d2m{
-    font-weight: normal;
-    padding: 6px 8px;
-  }
-  .Item_No_d2m{
+		border-right: 1px solid #888;
+		border-bottom: 1px solid #888;
+		border-top: none;
+	}
+
+  td.Item_No_d2m{
     width: 60px;
   }
-  .drop_item_d2m{
+  td.drop_item_d2m{
     width: 320px;
   }
-  .monster_list_d2m{
+  td.monster_list_d2m{
     width: calc(100% - 300px);
     text-align: left;
   }
@@ -79,3 +75,11 @@
     font-weight: normal;
     padding: 3px 6px;
   }
+
+	tr {
+		border: none; /* th/tdにborderは描かせる */
+	}
+  thead.sticky_d2m {
+  background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+  /*background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
+}

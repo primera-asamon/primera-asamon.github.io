@@ -31,13 +31,13 @@ table {
     text-align: center;
   }
 
-tr.record-table{
-background-color: #ffffff;
-border-color:#ffffff
+tbody.record-table tr{
+background-color: #fff;
+border-color:#fff
 }
-th {
+tbody.record-table th {
 border: 1px solid #888;
-background-color: #fec;
+background-color: #dee;
 padding: 6px;
 text-align: left;
 font-size: small;
@@ -61,16 +61,19 @@ td.cls {
 width: 2em;
 text-align: right;
 }
-
+/*
+ resultエリア(class="skill_table_box")に展開されるDOMで
+ class名漏れのdefault th (class名無しでコーディングしない。
+*/
 .skill_table_box th {
-background-color: #d0d0e0;
+background-color: #dde;
 width:72px;
 font-weight:normal;
 font-size:smaller;
 }
 /* js */
 .col-data {
-background-color: #ffffff;
+background-color: #fff;
 min-width:72px;
 }
 /* js */
@@ -102,27 +105,27 @@ font-size: medium;
 table {
 width: 100%;
 border-collapse: collapse;
-background-color: #ffffff;
+background-color: #fff;
 }
 /* js */
 .child-table {
 border-collapse: collapse;
-background-color: #ffffff;
+background-color: #fff;
 font-size:xx-small;
 }
-tr.spv-layout{
-background-color: #ffffff;
-border-color:#ffffff
+tbody.spv-layout tr{
+background-color: #fff;
+border-color:#fff
 }
-th {
-background-color: #d0d0e0;
+tbody.spv-layout th {
+background-color: #dde;
 border: 1px solid #ccc;
 padding: 6px;
 text-align: left;
 font-size: small;
 font-weight: normal;
 }
-td {
+tbody.spv-layout td {
 border: 1px solid #ccc;
 padding: 6px;
 text-align: left;
@@ -131,14 +134,14 @@ font-weight: normal;
 }
 /* js */
 .spv-col-header {
-background-color: #d0d0e0;
+background-color: #dde;
 min-width:72px;
 font-weight:normal;
 font-size:smaller;
 }
 /* js */
 .spv-col-data {
-background-color: #ffffff;
+background-color: #fff;
 min-width:72px;
 }
 /* js */
