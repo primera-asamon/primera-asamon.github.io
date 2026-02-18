@@ -1,0 +1,102 @@
+/* モーダル用 */
+/* flex + gap による帳票 */
+    .modal-content {
+      background-image: url('/picture/parts/texture_00059.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .record-table-wrapper {
+      font-size: 0.95em;
+    }
+    .record-table, .record-title {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 38px;
+      gap:4px 2px;
+      margin-bottom: 2px;
+      padding-block: 2px;
+    }
+
+    .col-data_no, .col-data_level {
+      display: flex;
+      flex: 0 0 70px;          /* 固定幅 */
+      background-color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      padding: 2px 4px;
+      align-items: center;
+    }
+
+    .col_header {
+      display: flex;
+      flex: 0 0 38px;          /* 固定幅 */
+      min-width: 38px;
+      background-color: rgba(225, 225, 240, 0.63);
+      font-weight: 550;
+      padding: 2px 4px;
+      justify-content: center;
+      align-items: center;
+    }
+    .col_header:hover {
+      background-color: rgba(225, 225, 240, 0.9);
+    }
+
+    .col-data_skillname {
+      display: flex;
+      flex: 1 1 auto;
+      min-width: 260px;
+      background-color: rgba(255, 255, 255, 0.6);
+      font-weight: 550;
+      padding: 2px 4px;
+      align-items: center;
+    }
+
+    .col-data {
+      display: flex;
+      flex: 0 1 auto;
+      min-width: 60px;
+      background-color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      padding: 2px 4px;
+      align-items: center;
+    }
+   .col-data:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+     .col-data.empty {
+      flex: 0 1 auto;     /* 必要なら広がるが、固定ではない */
+      min-width: 60px;    /* col-header と揃える */
+    }
+ 
+/*
+    skill_modal.jsにおいて
+    // 6分類の閾値でclass名を振り分け
+    if (len <= 2)  return "minimum";
+    if (len <= 4)  return "short";
+    if (len <= 8)  return "mediumC";
+    if (len <= 16) return "mediumB";
+    if (len <= 32) return "long";
+    return "free"; // 行占有
+*/
+    .col-data.minimum {
+      flex: 0 0 80px;
+    }
+    .col-data.short {
+      flex: 1 0 90px;
+    }
+    .col-data.mediumC {
+      flex: 1 0 120px;
+    }
+    .col-data.mediumB {
+      flex: 1 0 140px;
+    }
+    .col-data.long {
+      flex: 1 0 180px;
+    }
+    .col-data.free {
+      flex: 1 0 240px;
+      min-width: 0;
+    }
+    .col-data.grow1 {
+      flex-grow: 1;
+    }

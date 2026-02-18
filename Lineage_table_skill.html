@@ -5,6 +5,7 @@
     <title>リネージュリマスター・スキル一覧</title>
     <meta name="description" content="">
     <meta name="keywords" content="Lineage">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
@@ -47,6 +48,7 @@
   <!-- <button id="submitBtn">表示</button>
       <div id="output"></div>
   -->
+      <!-- <div id="debug" style="position:fixed;top:0;left:0;background:#000;color:#0f0;padding:4px;z-index:9999;font-size:14px;"></div> -->
   <!-- 技術・魔法一覧のインポート(新仕様)※ファイル名のハードコーディング -->
     <div class="buttons">
       <button id="loadBtn">表示/リセット</button>
@@ -117,6 +119,10 @@
 対策：全ての行はhtml_pcv =+`～ではじめること。またはjs独立ファイルはあきらめる。 -->
 <!--    <script src="lineage_skill.js" defer></script> -->
 <script>
+/*  document.getElementById("debug").textContent =
+  "innerWidth: " + window.innerWidth +
+  " / mode: " + (window.innerWidth < 600 ? "SPV" : "PCV"); */
+
 // スクリプトの読み込みを待つためのDOMContentLoadedイベントリスナー
     document.addEventListener('DOMContentLoaded', function() {
         console.log("DOM読み込み完了");
@@ -219,19 +225,28 @@ function renderSkillTAble(text) {
 				html_pcv += `<thead id="top">`;
 				html_pcv += `</thead>`;
         for (const line of lines) {
-            const fields = line.split('\t');
-            if (fields.length < 25) {
-                console.warn("データ不足:", fields);
-                console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
-                continue; // フィールド数が不足している場合スキップ
-            }
-// 各フィールドの値を変数に格納
-            const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,gear,duration,target,reuse,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2,EOR] = line.split('\t');
+          const fields = line.split('\t');
+
+          // フィールド数チェック
+          if (fields.length < 25) {
+            console.warn("データ不足:", fields);
+            console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
+            continue; // フィールド数が不足している場合スキップ
+          }
+
+          // ★ no の trim + 数値判定
+          const noField = fields[0].trim();
+          if (noField === "" || isNaN(Number(noField)))
+            continue; // フィールド(0)が番号でない場合スキップ
+
+            // 各フィールドの値を変数に格納
+            const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,gear,duration,target,interval,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2,EOR] = line.split('\t');
+
             // 各フィールドをTAB分割 EOR(End Of Record)を無視
             // imgは画像のURLだが、ここでは使用しないので無視。値は"全角Space"
             // EORは行の終わりを示すが、ここでは使用しないので無視。値は"■"
-
             // clsとelfのまとめ表示
+
             let clsDisplay = cls;
             if (cls === "妖" && elf) {
                 clsDisplay += `（${elf}）`;
@@ -260,7 +275,7 @@ function renderSkillTAble(text) {
             html_pcv += `<tr><th class="spv-col-header">装備条件</th><td class="spv-col-data">${gear}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">持続時間</th><td class="spv-col-data">${duration}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">対象</th><td class="spv-col-data">${target}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">再使用時間</th><td class="spv-col-data">${reuse}</td></tr>`;
+            html_pcv += `<tr><th class="spv-col-header">再使用時間</th><td class="spv-col-data">${interval}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">効果・性能</th><td class="spv-col-data">${effect}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">習得Lv.</th><td class="spv-col-data">${acqLv}</td></tr>`;
             html_pcv += `<tr><th class="spv-col-header">取得方法</th><td class="spv-col-data">${obtain}</td></tr>`;
@@ -311,7 +326,7 @@ function renderSkillTAble(text) {
                   <span class="text">${truncateForDisplayWithTag(target,24)}</span>
                   <span class="full-text" style="display:none;">${target}</span>
                   </td>
-                  <th class="col-header">再使用時間</th><td class="col-data">${reuse}</td>
+                  <th class="col-header">再使用時間</th><td class="col-data">${interval}</td>
                   <th class="col-header">効果・性能</th><td class="col-data" colspan="5">
                   <span class="text">${truncateForDisplayWithTag(effect,60)}</span>
                   <span class="full-text" style="display:none;">${effect}</span>

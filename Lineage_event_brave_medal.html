@@ -5,19 +5,26 @@
     <title>勇猛のメダル交換表</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
     <link rel="stylesheet" href="stylesheet/Lineage_skill.css">
+    <link rel="stylesheet" href="stylesheet/Lineage_skill_modal.css">
+    <script src="js/skill_modal.js"></script>
   </head>
   <style>
-  .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+    .modal-content {
+    width:780px; /* モーダル幅 */
+    background-color: #ab8;
+    color: #555;
+    font-size: 14px;
+    box-shadow: 0 0 10px #333;
+    vertical-align: middle;
   }
+    .recordDetailContainer {
+    width: 763px;
+    /* background-color: #ab8; */
+  }
+
   </style>
 <body class="etc">
   <div class="page_body"> <!-- フッター以外の高さ管理するラッパー -->
@@ -42,10 +49,10 @@
       <!-- accessory 共通nav <ul>は、ここに入る-->
       </div> <!-- サイト共通のheader説明文エリア -->
     </div> <!-- サイト共通のheaderエリア -->
-
     <div class="article-date"> <!-- 記事更新日エリア -->
       <span class="lead_text">2025年12月24日(水)定期メンテナンス後～2026年3月18日(水)定期メンテナンス前</span>
-      <span class="update_date">更新&nbsp;2025/2/5</span>
+      <span class="update_date">更新&nbsp;2026/2/5</span>
+      <!-- <div id="debug" style="position:fixed;top:0;left:0;background:#000;color:#0f0;padding:4px;z-index:9999;font-size:14px;"></div> -->
     </div> <!-- 記事更新日エリア -->
     <div class="table_box_main">
       <div class="content" id="top">
@@ -79,19 +86,22 @@
 
             <h3 class="article-paragraph-title">■勇猛のメダル製作ワルーガリスト(通貨:勇猛のメダル)</h3>
             <div class="table_lead">
-              <span class="lead_text">※1　確率製作（それ以外は確定製作）<br>
-              ※2　アイテム削除日は2026年3月18日(水)定期メンテナンス前となります。	</span>
-              <span class="create_date"></span></div>
+              <span class="lead_text">
+                <span id="note1">　※1　確率製作（それ以外は確定製作）</span><br>
+                <span id="note2">　※2　アイテム削除日は2026年3月18日(水)定期メンテナンス前となります。</span>
+              </span>
+              <span class="create_date"><br>2026/2/5</span>
+            </div>
             <table class="smalltable">
               <thead>
                 <tr><th class="noborder"></th><th class="item_name">製作アイテム</th><th class="quantity">枚数</th><th class="Restriction">制限事項</th><th class="description">アイテム説明</th></tr>
               </thead>
               <tbody>
-                <tr><td class="noborder"></td><td class="item_name">職人の防具強化スクロール</td><td class="quantity">500枚</td><td class="Restriction">	確率製作10％　※1</td><td class="description"></td></tr>
+                <tr><td class="noborder"></td><td class="item_name">職人の防具強化スクロール</td><td class="quantity">500枚</td><td class="Restriction">	確率製作10％　<a href="#note1">※1</a></td><td class="description"></td></tr>
                 <tr><td class="noborder"></td><td class="item_name">パンドラの保護強化スクロール</td><td class="quantity">100枚</td><td class="Restriction">アカウントあたり5回まで	</td><td class="description"></td></tr>
-                <tr><td class="noborder">★</td><td class="item_name">ハルパス　キー箱</td><td class="quantity">300枚</td><td class="Restriction">全ワールド合計5個<br>毎日20:00 ~ 22:00のみ製作可能<br>アカウントあたり5回まで<br>確率製作1％　※1</td><td class="description"></td></tr>
-                <tr><td class="noborder">★</td><td class="item_name">魔神の証</td><td class="quantity">500枚</td><td class="Restriction">確率製作5％　※1</td><td class="description"></td></tr>
-                <tr><td class="noborder"></td><td class="item_name">上級スキル選択ボックス(刻印)　※2</td><td class="quantity">600枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">技術書(レイジング フォース)(刻印)<br>
+                <tr><td class="noborder">★</td><td class="item_name">ハルパス　キー箱</td><td class="quantity">300枚</td><td class="Restriction">全ワールド合計5個<br>毎日20:00 ~ 22:00のみ製作可能<br>アカウントあたり5回まで<br>確率製作1％　<a href="#note1">※1</a></td><td class="description"></td></tr>
+                <tr><td class="noborder">★</td><td class="item_name">魔神の証</td><td class="quantity">500枚</td><td class="Restriction">確率製作5％　<a href="#note1">※1</a></td><td class="description"></td></tr>
+                <tr><td class="noborder"></td><td class="item_name">上級スキル選択ボックス(刻印)　<a href="#note1">※2</a></td><td class="quantity">600枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">技術書(レイジング フォース)(刻印)<br>
                 技術書(ブロー アタック)(刻印)<br>
                 技術書(カウンター バリア)(刻印)<br>
                 ウォリアーの印章(タイタン ライジング)(刻印)<br>
@@ -99,11 +109,11 @@
                 闇精霊の水晶(シャドウ ステップ)(刻印)<br>
                 精霊の水晶(ハリケーン)(刻印)<br>
                 ドラゴンナイトの書板(サンダー グラップ：ブレイブ)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (君主)　※2</td><td class="quantity">100枚</td><td class="Restriction"></td><td class="description">魔法書(シャイニング アーマー)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (ナイト)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得	</td><td class="description">技術書(リダクション アーマー)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (君主)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction"></td><td class="description">魔法書(シャイニング アーマー)(刻印)</td></tr>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (ナイト)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得	</td><td class="description">技術書(リダクション アーマー)(刻印)<br>
                     技術書(ソリッド キャリッジ)(刻印)<br>
                     技術書(ショック スタン)(刻印)</td></tr>
-            <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (エルフ)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">精霊の水晶(イレース マジック)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (エルフ)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">精霊の水晶(イレース マジック)(刻印)<br>
                     精霊の水晶(エリア サイレンス)(刻印)<br>
                     精霊の水晶(エルヴン グラヴィティー)(刻印)<br>
                     精霊の水晶(ダンシング ブレイズ)(刻印)<br>
@@ -118,7 +128,7 @@
                     精霊の水晶(イーグル アイ)(刻印)<br>
                     精霊の水晶(サイクロン)(刻印)<br>
                     精霊の水晶(ストライカー ゲイル)(刻印)</td></tr>
-            <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (ウィザード)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">魔法書(カウンター マジック)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (ウィザード)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">魔法書(カウンター マジック)(刻印)<br>
                     魔法書(キャンセレーション)(刻印)<br>
                     魔法書(イラプション)(刻印)<br>
                     魔法書(サン バースト)(刻印)<br>
@@ -133,17 +143,17 @@
                     魔法書(グレーター リザレクション)(刻印)<br>
                     魔法書(アブソルートバリア)(刻印)<br>
                     魔法書(アイス スパイク)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印)(ウォリアー)　※2</td><td class="quantity">100枚</td><td class="Restriction"></td><td class="description">ウォリアーの印章(パワー グリップ)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印)(ドラゴンナイト)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">ドラゴンナイトの書板(覚醒：アンタラス)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印)(ウォリアー)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction"></td><td class="description">ウォリアーの印章(パワー グリップ)(刻印)</td></tr>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印)(ドラゴンナイト)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">ドラゴンナイトの書板(覚醒：アンタラス)(刻印)<br>
                     ドラゴンナイトの書板(マグマ ブレス)(刻印)<br>
                     ドラゴンナイトの書板(覚醒：パプリオン)(刻印)<br>
                     ドラゴンナイトの書板(マグマ アロー)(刻印)<br>
                     ドラゴンナイトの書板(サンダー グラップ)(刻印)<br>
                     ドラゴンナイトの書板(デストロイ：ホラー)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (フェンサー)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">フェンサーの書(ブレード)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (フェンサー)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">フェンサーの書(ブレード)(刻印)<br>
                     フェンサーの書(ヘルファイア)(刻印)<br>
                     フェンサーの書(パンテラ)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (ダークエルフ)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">闇精霊の水晶(ドレス マイティー)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (ダークエルフ)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">闇精霊の水晶(ドレス マイティー)(刻印)<br>
                     闇精霊の水晶(ブラインド ハイディング)(刻印)<br>
                     闇精霊の水晶(エンチャント ベノム)(刻印)<br>
                     闇精霊の水晶(バーニング スピリッツ)(刻印)<br>
@@ -153,7 +163,7 @@
                     闇精霊の水晶(ファイナル バーン)(刻印)<br>
                     闇精霊の水晶(ドレス イベイジョン)(刻印)<br>
                     闇精霊の水晶(ルシファー)(刻印)</td></tr>
-                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (イリュージョニスト)　※2</td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">記憶の水晶(マインド ブレイク)(刻印)<br>
+                <tr><td class="noborder"></td><td class="item_name">補給スキル選択ボックス(刻印) (イリュージョニスト)　<a href="#note1">※2</a></td><td class="quantity">100枚</td><td class="Restriction">右のいずれか1つを獲得</td><td class="description">記憶の水晶(マインド ブレイク)(刻印)<br>
                     記憶の水晶(キューブ[ゴーレム])(刻印)<br>
                     記憶の水晶(ファンタズム)(刻印)<br>
                     記憶の水晶(イリュージョン[ゴーレム])(刻印)<br>
@@ -210,53 +220,111 @@
   <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
 
   <script>
-  // 変数規定部（CONFIGオブジェクトのプロパティとして。必要に応じて変更。）
+// 変数規定部（CONFIGオブジェクトのプロパティとして。必要に応じて変更。）
   const CONFIG = {
   //tsvファイル指定
     tsvPath: 'datasource/Lineage_remastered_skill3.tsv',
+  // jsonファイル指定（データ定義）
+    jsonPath: 'json/lineage_skill_table.json',
   //tsvフィールド数(カラム数)
     expectedFieldCount: 25,
-  // フィールド格納割り当て
+  // フィールド格納割り当て(tsv先頭行を参照して更新すること)
     fieldNames: [
       'no', 'img', 'level', 'name', 'cls', 'elf', 'active', 'type', 'align', 'mp', 'hp',
-      'material', 'gear', 'duration', 'target', 'reuse', 'effect', 'acqLv', 'obtain',
-      'price', 'Droporigin', 'Dropcomp', 'note1', 'note2', 'eor'
+      'material', 'gear', 'duration', 'target', 'interval', 'effect', 'acqLv', 'obtain',
+      'price', 'Droporigin', 'Dropcomp', 'note1', 'note2', 'EOR'
     ],
+    
   //本文探索語句フィールド名
     linkField: 'name',
   //探索対象div ID指定
     articleSelector: '#article',
-  // モーダル構成(html末尾)div ID指定(recordModal_1…,recordDetailContainer_1…)
-    modalSelector: '#recordModal_1',
-    containerSelector: '#recordDetailContainer_1', 
     closeButtonSelector: '.close-button'
   };
-  console.log(CONFIG);
-  // データ保持用
-  let recordList = [];
 
-  // TSV読み込みとリンク化処理
-  fetch(CONFIG.tsvPath)
-    .then(response => response.text())
-    .then(text => {
-      const lines = text.trim().split('\n');
-      for (const line of lines) {
-        const fields = line.split('\t');
-        if (fields.length < CONFIG.expectedFieldCount) continue;
+  function resolverLayout(viewportWidth) {
+    // モーダル構成(html末尾)div ID指定(recordModal_1…,recordDetailContainer_1…)
+    console.log(viewportWidth);
+    return viewportWidth <= 438
+      ? { modalSelector: '#recordModal_2', containerSelector: '#recordDetailContainer_2' }
+      : { modalSelector: '#recordModal_1', containerSelector: '#recordDetailContainer_1' };
+  }
+  function getmodalOptions () {
+    return {
+    ... CONFIG,
+    ... resolverLayout(window.innerWidth)
+    }
+  };
+  console.log(getmodalOptions());
+  const modalOptions = getmodalOptions();
+  
+  // データ保持用 初期化
+  let recordList = [];      // tsv行リスト配列
+  let SKILL_DOMAINS = null; // jsonオブジェクト
+  let skillDomainsLoaded = false;
+  // スキルドメイン読み込み
+  async function loadSkillDomains() {
+  const res = await fetch(modalOptions.jsonPath);
+  SKILL_DOMAINS = await res.json();
+  skillDomainsLoaded = true;
+  }
+  // デバッグ表示
+/* document.getElementById("debug").textContent =
+  "innerWidth: " + window.innerWidth +
+  " / mode: " + (window.innerWidth < 600 ? "SPV" : "PCV");*/
 
-        const record = {};
-        CONFIG.fieldNames.forEach((name, i) => {
-          record[name] = fields[i] || '';
-        });
-        recordList.push(record);
+  // サブ情報HTML生成関数
+  // スキルドメイン読み込み
+  loadSkillDomains();
+// TSV読み込みとリンク化処理
+fetch(modalOptions.tsvPath)
+  .then(response => response.text())
+  .then(text => {
+
+    const lines = text.trim().split('\n').map(line => line.split('\t'));
+
+    // --- 1行目: 内部キー名（JSONのfieldNamesと同義） ---
+    const headerKeys = lines[0];
+
+    // --- 2行目: UI表示ラベル（abbrと同義） ---
+    const headerLabels = lines[1];
+
+    // --- key → label の辞書を作成 ---
+    const headerMap = {};
+    for (let i = 0; i < headerKeys.length; i++) {
+      headerMap[headerKeys[i]] = headerLabels[i];
+    }
+
+    // --- 3行目以降: 実データ ---
+    for (let r = 2; r < lines.length; r++) {
+      const row = lines[r];
+      if (row.length < modalOptions.expectedFieldCount) continue;
+
+      const record = {};
+      for (let c = 0; c < headerKeys.length; c++) {
+        const key = headerKeys[c];
+        record[key] = row[c] || '';
       }
+
+      recordList.push(record);
+    }
+
+    // デバッグ
+    console.log("headerKeys:", headerKeys);
+    console.log("headerLabels:", headerLabels);
+    console.log("headerMap:", headerMap);
+    console.log("recordList:", recordList);
+
+    // 必要ならグローバルに保存
+    window.headerMap = headerMap;
+
   // 語句リンク化
-      const article = document.querySelector(CONFIG.articleSelector);
-  console.log(CONFIG.articleSelector);
-  console.log(document.querySelector(CONFIG.articleSelector));
+      const article = document.querySelector(modalOptions.articleSelector);
+  console.log(modalOptions.articleSelector);
+  console.log(document.querySelector(modalOptions.articleSelector));
   console.log(article);
-      article.innerHTML = autoLink(article.innerHTML, recordList, CONFIG.linkField);
-    });
+      article.innerHTML = autoLink(article.innerHTML, recordList, modalOptions.linkField);
+  });
 
   // 語句自動リンク関数
   function autoLink(text, dataList, keyField) {
@@ -276,11 +344,12 @@
 
   // モーダル表示関数
   function showModal(record, generateHTML) {
-    const modal = document.querySelector(CONFIG.modalSelector);
-    const container = document.querySelector(CONFIG.containerSelector);
-    const closeBtn = document.querySelector(CONFIG.closeButtonSelector);
+    const modal = document.querySelector(modalOptions.modalSelector);
+    const container = document.querySelector(modalOptions.containerSelector);
+    const closeBtn = document.querySelector(modalOptions.closeButtonSelector);
 
-    container.innerHTML = generateHTML(record);
+    const jsonfields = SKILL_DOMAINS.fields
+    container.innerHTML = generateHTML(record,jsonfields);
     modal.style.display = 'block';
 
     closeBtn.onclick = () => modal.style.display = 'none';
@@ -289,134 +358,18 @@
     };
   }
 
-  // SubHTMLのスタイルとタグを記述する。↓はskill一覧表依存、適宜変更する。
-  // HTML生成関数（スキル用テンプレート）
-  function generateSubHTML(tsvRecord) {
-    let clsDisplay = tsvRecord.cls;
-    if (tsvRecord.cls === "妖" && tsvRecord.elf) {
-      clsDisplay += `（${tsvRecord.elf}）`;
-    }
-    let popup_html =`
-        <style>
-    body {
-      font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
-      /* font-family: 'Segoe UI', sans-serif; */
-      padding: 1em;
-      background-color: #fdfdf0;
-      color: #333;
-    }
-    h2 {
-      color: #0066cc;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 4px;
-    }
-    table {
-      border-collapse: collapse;
-      width: auto;
-      margin-top: 0.9em;
-    }
-    th, td {
-      border: 1px solid #888;
-      padding: 2px 4px 2px 4px;
-      vertical-align: middle;
-    }
-      .modal table {
-    }
-    th {
-      width: 3em; /* モーダル内テーブルヘッダー幅 */
-      /* text-align-last: justify; 均等にできなくもない*/
-    }
-    .close-button {
-      float: right;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
-`
-  // モーダル指定によるstyleのケース分け(クラス名を増やしたくない時)
-  if (CONFIG.modalSelector==='#recordModal_1'){
-      popup_html +=`
-      th.col-header {
-        text-align: center;
-        background-color: #d8d8d8;
-      }`
-    } else {
-      popup_html +=`
-      th.col-header {
-        text-align: center;
-        background-color: #68a8a8;
-      }`
-    };
-  popup_html +=`
-    td {
-      text-align: left;
-    }
-    </style>
-    <table>`
-  popup_html += `<tbody id="(${tsvRecord.name})" class="record-table" data-cls=${tsvRecord.cls} data-elf=${tsvRecord.elf}>`;
-  // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
-    popup_html += `<tr class="record-title">
-                <td class="col-data_no" colspan="2">No.${tsvRecord.no}</td>`
-    // ...existing code...
-    // 等級・スキルレベルの出力部分
-                if (/^\d+$/.test(tsvRecord.level)) {
-        // 数字のみの場合
-                    popup_html += `<td class="col-data_level" colspan="2">Lv.${tsvRecord.level}</td>`;
-                } else {
-        // 空または文字列（神話・伝説など）の場合
-                    popup_html += `<td class="col-data_level" colspan="2">${tsvRecord.level}</td>`;
-                }   
-        popup_html += `<td class="col-data_skillname" colspan="11">${tsvRecord.name}</td>
-            </tr>`
-  // skill_domain_eligible_character:5列
-  // skill_domain_tendency:2+2+2=6列
-    popup_html += `<tr>
-                <th class="col-header">職業</th><td class="col-data" colspan="4">${clsDisplay}</td>`
-    popup_html += `<th class="col-header">活性</th><td class="col-data" colspan="3">${tsvRecord.active}</td>
-                <th class="col-header">種類</th><td class="col-data" colspan="3">${tsvRecord.type}</td>
-                <th class="col-header">性向</th><td class="col-data">${tsvRecord.align}</td>
-            </tr>`
-  // skill_domain_resource:2+2+3+2+2=11列
-    popup_html += `<tr>
-                <th class="col-header">MP</th><td class="col-data">${tsvRecord.mp}</td>
-                <th class="col-header">HP</th><td class="col-data" colspan="2">${tsvRecord.hp}</td>
-                <th class="col-header">材料</th><td class="col-data" colspan="3">${tsvRecord.material}</td>
-                <th class="col-header">装備</th><td class="col-data">${tsvRecord.gear}</td>
-                <th class="col-header">持続</th><td class="col-data" colspan="3">${tsvRecord.duration}</td>
-            </tr>`
-  // skill_domain_effect:3+2+6=11列
-    popup_html += `<tr>
-                <th class="col-header">対象</th><td class="col-data" colspan="3">${tsvRecord.target}</td>
-                <th class="col-header">間隔</th><td class="col-data" colspan="2">${tsvRecord.reuse}</td>
-                <th class="col-header">効果</th><td class="col-data" colspan="7">${tsvRecord.effect}</td>
-            </tr>`
-  // skill_domain_acquisition:2+3+6=11列
-    popup_html += `<tr>
-                <th class="col-header">習得</th><td class="col-data">${tsvRecord.acqLv}</td>
-                <th class="col-header">入手</th><td class="col-data" colspan="6">${tsvRecord.obtain}</td>
-                <th class="col-header">価格</th><td class="col-data" colspan="5">${tsvRecord.price}</td>
-            </tr>`
-  // skill_domain_dropmob:11列
-    popup_html += `<tr>
-                <th class="col-header">Drop</th><td class="col-data" colspan="15">${tsvRecord.Droporigin}</td>
-            </tr>`
-  // skill_domain_dropmob:11列
-    popup_html += `<tr>
-                <th class="col-header">蘇生</th><td class="col-data" colspan="15">${tsvRecord.Dropcomp}</td>
-            </tr>`
-  // skill_domain_notes:6+5=11列
-    popup_html += `<tr>
-                <th class="col-header">備考1</th><td class="col-data" colspan="7">${tsvRecord.note1}</td>
-                <th class="col-header">備考2</th><td class="col-data" colspan="6">${tsvRecord.note2}</td>
-            </tr>`
-    return popup_html;
-  }
-
   // リンククリックイベント
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('record-link')) {
       e.preventDefault();
       const key = e.target.dataset.key;
-      const record = recordList.find(r => r[CONFIG.linkField] === key);
+      const record = recordList.find(r => r[modalOptions.linkField] === key);
+// スキルドメインがまだ読み込まれていない場合のエラーハンドリング
+      if (!skillDomainsLoaded) {
+        console.warn("Skill domains not loaded yet");
+        return;
+      }
+//
       if (!record) {
         alert(`「${key}」が見つかりませんでした`);
         return;
@@ -429,15 +382,15 @@
     <div id="recordModal_1" class="modal">
       <div class="modal-content">
         <span class="close-button">&times;</span>
-        <div id="recordDetailContainer_1"></div>
+        <div id="recordDetailContainer_1" class="recordDetailContainer"></div>
       </div>
     </div>
 <!-- ↑モーダル1 -->
 <!-- ↓モーダル2 -->
     <div id="recordModal_2" class="modal">
       <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <div id="recordDetailContainer_2"></div>
+        <span class="close-button">★</span>
+        <div id="recordDetailContainer_2" class="recordDetailContainer"></div>
       </div>
     </div>
 <!-- ↑モーダル2 -->
