@@ -12,14 +12,20 @@
       line-height: 1.42857;
     }
 
-/* theadがページに対して固定のstickyである
+    /* theadがページに対して固定のstickyである
 　テーブル中心のページでフッター以外を包括する
 　高さ制御用コンテナ：/.table-wrapper */
 
   .page_body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+    display: flex; /* sticky・折り畳み共存追加修正 */
+    flex-direction: column; /* sticky・折り畳み共存追加修正 */
+
+    flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+    min-height: 0; /* ← これが重要 */
+    /*overflow: auto; /* ← ここでスクロールを閉じ込める */
+    overflow: visible; /* sticky・折り畳み共存追加修正 */
+    width:100%;
+    position: relative;
   }
 
     a:link {
@@ -38,16 +44,18 @@
     }
     /* ヘッダー */
 
-    .header {
-        z-index: 100;
+    header {
+        /* page_body に対して sticky1 になる */
+        /* (sticky2=thead) */
+        position: sticky;
+        top: 0;
+        z-index: 10;
         padding: 0px 0;
+        background-color: #fff;
+        text-align: center;
         /*min-height:42px;*/
         width: 100%;
         /*border-bottom: #ccd1d9 solid 1px;*/
-        background-color: #fff;
-        text-align: center;
-        position :sticky;
-        top: 0;
     }
 
     .header-title {
@@ -59,6 +67,79 @@
     .header-description {
         color: #444;
     }
+
+    .main-toggle,
+    .footer-toggle {
+        width: 100%;
+        padding: 0px;
+        margin: 2px;
+        line-height: 30px;
+        background: #5c430d;
+        background-image: linear-gradient(90deg, #798f61,#6f702a,#464934,#53571e, #8f5940);
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
+    
+    @media (min-width: 800px) {
+    .main-toggle {
+        position: static;
+    }
+    }
+
+
+    .main-collapsible,
+    .subnav-collapsible,
+    .footer-collapsible,
+    .article-collapsible {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+    }
+
+    .main-collapsible,
+    .footer-collapsible {
+      background-color: #f2f2e8;
+    }
+    .subnav-collapsible {
+      background-color: #f2e8f2;
+    }
+
+    .main-collapsible.open,
+    .subnav-collapsible.open,
+    .footer-collapsible.open,
+    .article-collapsible.open {
+        max-height: 1000px;
+    }
+
+    .main-toggle .arrow,
+    .subnav-toggle .arrow,
+    .footer-toggle .arrow,
+    .article-toggle .arrow {
+        display: inline-block;
+        margin-left: 4px;
+        transition: transform 0.25s ease;
+    }
+
+    .main-toggle.open .arrow,
+    .subnav-toggle.open .arrow,
+    .footer-toggle.open .arrow,
+    .article-toggle.open .arrow {
+        transform: rotate(180deg);
+}
+    /* nav共通化：sub-nav非表示 */
+    /* sub-navを表示するのは、
+       ページ判定のclassが.acce */
+
+    body:not(.acce) .accessory-only {
+        display: none;
+    }
+
     /* ナビゲーション */
 
     .nav {
@@ -104,7 +185,7 @@
     }
 
     /* 元の強調表示 */
-    .nav-group>li a.active {
+    .nav-group>li a:active {
         border-bottom: #333 solid 2px;
         color: #999;
     }
@@ -120,18 +201,6 @@
     body.etc   .nav-group a.etc,
     body.tool  .nav-group a.tool,
     body.updt  .nav-group a.updt {
-        border-bottom: #333 solid 2px;
-        color: #999;
-    }
-    /* アクセサリー サブナビゲーション 8項目 */
-    body.crest .nav-group_acce a.crest,
-    body.insig .nav-group_acce a.insig,
-    body.ear   .nav-group_acce a.ear,
-    body.pend1 .nav-group_acce a.pend1,
-    body.pend2 .nav-group_acce a.pend2,
-    body.brace .nav-group_acce a.brace,
-    body.ring1 .nav-group_acce a.ring1,
-    body.ring2 .nav-group_acce a.ring2 {
         border-bottom: #333 solid 2px;
         color: #999;
     }
@@ -166,22 +235,10 @@
         margin-left: 24px;
     }
 
-    .title_band {
-        margin : 8px 0 0 0;
-        padding: 4px 0;
-        width: 100%;
-        background: #ea5866;
-        background-image: linear-gradient(135deg, #8cc152, #da4453, #f6bb42);
-        color: #fff;
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.2em;
-    }
     /* コンテンツ */
 
     .content {
         padding: 16px 12px 12px 16px;
-        /* min-height:calc(100% - 174px);*/
         display: flex;
         flex-direction: column;
         flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
@@ -361,23 +418,27 @@
         display: inline-block;}
     /* フッター */
 
-    .footer {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         padding: 12px 0;
         border-top: #ccd1d9 solid 1px;
         min-height: 40px;
         background: #fff;
         text-align: center;
-    }
+}
 
     .footer-nav {
-        margin-bottom: 12px;
+        margin-bottom: 6px;
         width: 100%;
         text-align: center;
     }
 
     .footer-nav-group {
         margin: 0;
-        padding: 0;
+        padding: 8px 0 0 0;
         display: -moz-inline-stack;
         display: inline-block;
         vertical-align: middle;
@@ -413,10 +474,8 @@
         font-size: 0.8em;
     }
 
-    .footer-copyright {
-        color: #000;
-        font-size: 0.8em;
-    }
+    /* フッター折り畳み/展開切り替え対応 */
+    /* -toggle, -collapsible, open, .arrow は header-, subnav- と共有 */
 
     /* パーツ */
 
@@ -454,38 +513,6 @@
         -ms-border-radius: 6px;
         -o-border-radius: 6px;
         border-radius: 6px;
-    }
-
-    .label {
-        margin: 0 12px;
-        padding: 3px 6px;
-        border: #656d78 solid 1px;
-        background: #656d78;
-        color: #fff;
-        vertical-align: baseline;
-        text-align: center;
-        white-space: nowrap;
-        font-size: 0.6em;
-        line-height: 1;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
-        border-radius: 3px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        /*vertical-align: auto;*/
-        zoom: 1;
-        /*display: inline;*/
-    }
-
-    .label_normal {
-        border: #656d78 solid 1px;
-        background: #656d78;
     }
 
     /* 画像リスト(Lineage_remastered_etc.html) */
@@ -565,31 +592,33 @@ thead.sticky th {
 		border: none; /* th/tdにborderは描かせる */
 	}
 
-  th {
-    background-color: #CCC; /* default color 個別にcssファイルに記述すること*/
-    text-align: center; /* default position */
-    border-left: 1px solid #888; /*Firefox縦罫線消え対応*/
-    border-right: 1px solid #888; /*Firefox縦罫線消え対応*/
-		border-bottom: none; /* スクロール上下の罫線抜け対応(ボーダーではなくbackground-imageで対処する) */
-		border-top: none; /* スクロール上下の罫線抜け対応(ボーダーではなくbackground-imageで対処する) */
-  }
+    th {
+        background-color: #CCC; /* default color 個別にcssファイルに記述すること*/
+        text-align: center; /* default position */
+        border-left: 1px solid #888; /*Firefox縦罫線消え対応*/
+        border-right: 1px solid #888; /*Firefox縦罫線消え対応*/
+        border-bottom: none; /* スクロール上下の罫線抜け対応(ボーダーではなくbackground-imageで対処する) */
+        border-top: none; /* スクロール上下の罫線抜け対応(ボーダーではなくbackground-imageで対処する) */
+        min-width:38px; /* 列幅の安定化 */
+    }
 
 	td {
 		border-left: 1px solid #888;
 		border-right: 1px solid #888;
 		border-bottom: 1px solid #888;
 		border-top: none; /* theadとの干渉のため */
+        min-width:38px; /* 列幅の安定化 */
 	}
 
-tbody.scroll_main  tr {
-  border: none;
-}
-tbody.scroll_main td {
-  border-left: 1px solid #888;
-  border-right: 1px solid #888;
-  border-bottom: 1px solid #888;
-  border-top: none;
-}
+    tbody.scroll_main  tr {
+        border: none;
+    }
+    tbody.scroll_main td {
+        border-left: 1px solid #888;
+        border-right: 1px solid #888;
+        border-bottom: 1px solid #888;
+        border-top: none;
+    }
     /* 文中小表 */
     table.smalltable {
         border-collapse: collapse;

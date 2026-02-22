@@ -13,32 +13,54 @@
 </head>
 <body class="skill"> <!-- body Lineage_table_skill.htmlにおいてはID="top"を付けてはいけない。scriptの記述(html_pcv += `<thead id="top">`;)でスクロールしたテーブルの先頭にJumpさせるため。 -->
   <div class="page_body"> <!-- フッター以外の高さ管理するラッパー -->
-    <div class="header"> <!-- サイト共通のheaderエリア -->
+      <header> <!-- サイト共通のheaderエリア -->
       <div class="nav"> <!-- site 共通nav -->
-        <ul class="nav-group"> <!-- (main nav) -->
-          <li><a href="index.html" class="index">ホーム</a></li>
-          <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
-          <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
-          <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
-          <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
-          <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
-          <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
-          <li><a href="tool_glyph.html" class="tool">Tools</a></li>
-          <li><a href="site_updates.html" class="updt">変更歴</a></li>
-        </ul> <!-- (main nav) -->
-        <!-- <div class="title_band">リネージュメモ</div> サイト共通のmain title 帯 -->
-        <!-- (sub nav) <ul>は、ここに入る-->
+        <div class="main-collapsible"> <!-- main-nav 折り畳み -->
+          <ul class="nav-group"> <!-- (main nav) -->
+            <li><a href="index.html" class="index">ホーム</a></li>
+            <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
+            <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
+            <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
+            <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
+            <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
+            <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
+            <li><a href="tool_glyph.html" class="tool">Tools</a></li>
+            <li><a href="site_updates.html" class="updt">変更歴</a></li>
+          </ul> <!-- (main nav) -->
+        </div> <!-- main-nav 折り畳み -->
+        <div class="main-toggle"> <!-- main-nav の帯 -->
+          <span class="main-toggle-label">
+            リネージュメモ<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
+        <div class="subnav-collapsible accessory-only"> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+          <ul class="nav-group_acce">
+            <li><a href="Lineage_accessory_crest.html" class="crest">紋章</a></li>
+            <li><a href="Lineage_accessory_insignia.html" class="insig">インシグニア</a></li>
+            <li><a href="Lineage_accessory_earring.html" class="ear">イアリング</a></li>
+            <li><a href="Lineage_accessory_pendant__page1.html" title="闘士/射手/賢者" class="pend1">ペンダント1</a></li>
+            <li><a href="Lineage_accessory_pendant__page2.html" title="ハンター/守護" class="pend2">ペンダント2</a></li>
+            <li><a href="Lineage_accessory_bracelet.html" class="brace">ブレスレット</a></li>
+            <li><a href="Lineage_accessory_ring__page1.html" title="知恵/勇士/魔法抵抗/体力" class="ring1">リング1</a></li>
+            <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">リング2</a></li>
+          </ul> <!-- (sub nav) accessory 共通nav -->
+        </div> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+        <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
+          <span class="subnav-toggle-label">
+            パンドラ装身具<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
       </div> <!-- site 共通nav -->
-      <!--<h1 class="header-title">ぷりめらの</h1>-->
-      <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
-      </div> <!-- サイト共通のheader説明文エリア -->
-    </div> <!-- サイト共通のheaderエリア -->
+        <!--<h1 class="header-title">ぷりめらの</h1>-->
+        <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
+        </div> <!-- サイト共通のheader説明文エリア -->
+      </header> <!-- サイト共通のheaderエリア -->
   <!-- ページ冒頭に非表示で読み上げ対応の国際化・説明テキスト -->
-      <p id="screenreader-info" lang="en">
+      <p id="screenreader-info" lang="en" class="sr-only">
           This page lists MMORPG skills for Japanese-speaking players. It does not contain navigation or language switching. If you are using a screen reader or are not fluent in Japanese, please note that this page is for reference only and may not offer interactive support.
       </p>
   <!-- 日本語でのページ説明（視認表示可） -->
-      <p id="screenreader-info_jp" class="page-description">
+      <p id="screenreader-info_jp" class="page-description sr-only">
           このページは日本語話者向けに設計されたMMORPGスキルの一覧表です。リンクやナビゲーション機能は設けておらず、ページ全体の内容を1ページで完結する構成になっています。内容の把握を主目的としています。
       </p>
   <!-- 技術・魔法一覧のインポート(旧仕様)※スマホでは取得できないから 
@@ -92,478 +114,496 @@
 <!-- 技術・魔法一覧の表示場所 ↑-->
   </div> <!-- フッター以外の高さ管理するラッパーの終わり -->
 <!-- 脚注・権利表記 -->
-  <div class="footer"> <!-- サイト共通のフッター -->
-  <div class="footer-text">
-    <footer role="contentinfo">
-      <section lang="ja">
-      <h5 class="sr-only">著作権情報</h5>
-      <small>当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：</small>
-      </section>
-      <section lang="en">
-      <h5 class="sr-only">Copyright notice</h5>
-      <small>Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
-      NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</small>
-      </section>
-      <section lang="zh-TW">
-      <h5 class="sr-only">版权声明</h5>
-      <small>本頁面使用之《Lineage》相關素材，其版權皆屬原創作者所有。</small>
-      </section>
-    </footer>
-    <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
-  </div>
-  </div><!-- サイト共通のフッターの終わり -->
+    <footer><!-- サイト共通のフッター -->
+      <div class="footer-toggle" data-target="footer" data-class="open">
+        <span class="footer-toggle-label">
+          copyright… <span class="arrow">▼</span>
+        </span>
+      </div>
+      <div class="footer-collapsible"> <!-- 展開表示 -->
+        <div class="footer-nav">
+          <ul class="footer-nav-group">
+            <li>
+              <a href="https://x.com/AsamonPrimera" aria-label="当サイトの X（旧Twitter）公式連絡先"><img src="./picture/icons/X_icon.png" width="16" height="16" alt=""></a>
+            </li>
+          </ul>
+        </div> <!-- class="footer-nav"の終わり -->
+        <div class="footer-text">
+          当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+          Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
+          NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.
+        </div>
+      </div>
+    </footer><!-- サイト共通のフッター -->
   <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
 <!-- ページ上部にスクロールするボタン -->
 
 <!-- FC2ではapplication/scriptでもjsファイル読み込み時にtext/htmlに変更され駆動しない。Javascript中にhtmlタグで開始される行がある場合誤認される。
 対策：全ての行はhtml_pcv =+`～ではじめること。またはjs独立ファイルはあきらめる。 -->
 <!--    <script src="lineage_skill.js" defer></script> -->
-<script>
-/*  document.getElementById("debug").textContent =
-  "innerWidth: " + window.innerWidth +
-  " / mode: " + (window.innerWidth < 600 ? "SPV" : "PCV"); */
+    <script>
+    /*  document.getElementById("debug").textContent =
+      "innerWidth: " + window.innerWidth +
+      " / mode: " + (window.innerWidth < 600 ? "SPV" : "PCV"); */
 
-// スクリプトの読み込みを待つためのDOMContentLoadedイベントリスナー
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log("DOM読み込み完了");
-    });
-// document.getElementById('fileInput').addEventListener('change', function(e) {
-//スマホでは無理だからTSV選択はさせない。TSVファイル名のハードコーディング。
-document.getElementById('loadBtn').addEventListener('click', function () {
-    // 英文・日本語のスクリーンリーダー向け説明を非表示に
-    const info_en = document.getElementById("screenreader-info");
-    const info_jp = document.getElementById("screenreader-info_jp");
-
-    if (!info_en.classList.contains("sr-only")) {
-        info_en.classList.add("sr-only");
-    }
-    if (!info_jp.classList.contains("sr-only")) {
-        info_jp.classList.add("sr-only");
-    }
-
-    // 告知文を非表示に
-    const notice = document.getElementById("notice");
-    if (notice) {
-        notice.style.display = "none";
-    }
-
-    // url掃除。ページロード時をイベントとして処理するのは宿題。今は表示ボタンがトリガー。
-// 表示されていない状態なのに #class=xxx があるならハッシュを消す
-    if (!document.getElementById('result').innerHTML && location.hash.includes("class=")) {
-        history.replaceState(null, null, location.pathname);
-    }
-// TSV読み込みと描画 タイムスタンプを附与したリクエストによる強制再読み込みによって、FC2Serverのキャッシュ寿命を回避。
-    fetch('datasource/Lineage_remastered_skill3.tsv?v=' + new Date().getTime())
-        .then(response => response.text())
-        .then(text => {
-          renderSkillTAble(text); // 読み込み成功時DOM構築関数を呼び出す
-          // DOMContentLoaded イベントを使用して、DOMの読み込み完了を待つ
-          if (document.readyState === 'loading') {
-            console.log("DOM読み込み待機中");
-            document.addEventListener('DOMContentLoaded', setup);
-          } else {
-            console.log("DOMすでに構築済み、即時実行");
-            setup();
-          }
-        })
-        .catch(error => {
-          console.error("読み込みエラー:", error);
-          document.getElementById('result').textContent = '読み込み失敗: ' + error;
+    // スクリプトの読み込みを待つためのDOMContentLoadedイベントリスナー
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM読み込み完了");
         });
-}); // ここでaddEventListenerの関数を閉じる
+    // document.getElementById('fileInput').addEventListener('change', function(e) {
+    //スマホでは無理だからTSV選択はさせない。TSVファイル名のハードコーディング。
+    document.getElementById('loadBtn').addEventListener('click', function () {
+        // 英文・日本語のスクリーンリーダー向け説明を非表示に
+        const info_en = document.getElementById("screenreader-info");
+        const info_jp = document.getElementById("screenreader-info_jp");
 
-function setup() {
-  console.log("setup開始");
-
-  const btn = document.getElementById('loadBtn');
-  if (btn) {
-    console.log("ボタン取得成功");
-    btn.addEventListener('click', () => {
-      console.log("ボタンクリック");
-      fetch('datasource/Lineage_remastered_skill3.tsv?v=' + new Date().getTime())
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          return response.text();
-        })
-        .then(text => {
-          console.log("読み込み成功");
-          document.getElementById('result').innerHTML = html_pcv;
-//        document.getElementById('result').textContent = text;
-
-//      DOM構築後に初期化処理を確実に実行
-        requestAnimationFrame(() => {
-            initializeTableBehavior();
-        });
-
-        })
-        .catch(error => {
-          console.error("読み込みエラー:", error);
-        });
-    });
-  } else {
-    console.log("loadBtn 見つからず");
-  }
-/*
-    // [表示]ボタンを無効化＋グレーアウト
-    const loadBtn = document.getElementById("loadBtn");
-    if (loadBtn) {
-        loadBtn.disabled = true;
-        loadBtn.style.opacity = "0.5";
-        loadBtn.style.cursor = "not-allowed";
-        loadBtn.title = "クラス選択時に自動表示されるため、このボタンは不要です。";
-    }
-*/
-}
-
-function renderSkillTAble(text) {
-        console.log("renderSkillTAble開始");
-        let html_pcv = ''; // PC用レイアウト格納用
-        let html_spv = ''; // スマホ用レイアウト格納用*未実装
-// ここにTSVパース＆表示処理を書く
-        const lines = text.trim().split('\n');
-        html_pcv += `<table>`;
-				html_pcv += `<thead id="top">`;
-				html_pcv += `</thead>`;
-        for (const line of lines) {
-          const fields = line.split('\t');
-
-          // フィールド数チェック
-          if (fields.length < 25) {
-            console.warn("データ不足:", fields);
-            console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
-            continue; // フィールド数が不足している場合スキップ
-          }
-
-          // ★ no の trim + 数値判定
-          const noField = fields[0].trim();
-          if (noField === "" || isNaN(Number(noField)))
-            continue; // フィールド(0)が番号でない場合スキップ
-
-            // 各フィールドの値を変数に格納
-            const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,gear,duration,target,interval,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2,EOR] = line.split('\t');
-
-            // 各フィールドをTAB分割 EOR(End Of Record)を無視
-            // imgは画像のURLだが、ここでは使用しないので無視。値は"全角Space"
-            // EORは行の終わりを示すが、ここでは使用しないので無視。値は"■"
-            // clsとelfのまとめ表示
-
-            let clsDisplay = cls;
-            if (cls === "妖" && elf) {
-                clsDisplay += `（${elf}）`;
-            }
-            if (window.innerWidth <= 438) {
-// #region sauce
-//  --- スマホ用テーブル出力 ---
-            // 等級・スキルレベルの出力部分
-            let lvDisplay ="";
-            if (/^\d+$/.test(level)) {
-            // 数字のみの場合
-                lvDisplay += `Lv.${level}`;
-            } else {
-            // 空または文字列（神話・伝説など）の場合
-                lvDisplay += `${level}`;
-            }
-            html_pcv += `<tbody class="record-table" id="(${name})" data-cls="${cls}" data-elf="${elf}">`  // 1レコードが1tbodyで341個(2025/07/07時点)～ある
-            html_pcv += `<tr class="spv-layout record-title"><td class="spv-col-data_no">No.${no}</td><td class="spv-col-data_skillname">${lvDisplay}　${name}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">習得クラス</th><td class="spv-col-data">${clsDisplay}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">活性</th><td class="spv-col-data">${active}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">種類</th><td class="spv-col-data">${type}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">性向</th><td class="spv-col-data">${align}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">消耗MP</th><td class="spv-col-data">${mp}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">消耗HP</th><td class="spv-col-data">${hp}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">材料・触媒</th><td class="spv-col-data">${material}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">装備条件</th><td class="spv-col-data">${gear}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">持続時間</th><td class="spv-col-data">${duration}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">対象</th><td class="spv-col-data">${target}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">再使用時間</th><td class="spv-col-data">${interval}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">効果・性能</th><td class="spv-col-data">${effect}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">習得Lv.</th><td class="spv-col-data">${acqLv}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">取得方法</th><td class="spv-col-data">${obtain}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">価格</th><td class="spv-col-data">${price}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">ドロップ</th><td class="spv-col-data">${Droporigin}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">【蘇生】</th><td class="spv-col-data">${Dropcomp}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">備考1</th><td class="spv-col-data">${note1}</td></tr>`;
-            html_pcv += `<tr><th class="spv-col-header">備考2</th><td class="spv-col-data">${note2}</td></tr>`;
-            html_pcv += `</tbody>`;
-            } else {
-// #endregion
-//  --- PC用テーブル出力 ---
-            html_pcv += `<tbody id="(${name})" class="record-table" data-cls=${cls} data-elf=${elf}>`;
-            // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
-                html_pcv += `<tr class="record-title">
-                    <td class="col-data_no">No.${no}</td>`
-                // ...existing code...
-                // 等級・スキルレベルの出力部分
-                      if (/^\d+$/.test(level)) {
-                    // 数字のみの場合
-                    html_pcv += `<td class="col-data_level">Lv.${level}</td>`;
-                      } else {
-                    // 空または文字列（神話・伝説など）の場合
-                    html_pcv += `<td class="col-data_level">${level}</td>`;
-                      }
-                // スキル名:9列   
-                html_pcv += `<td class="col-data_skillname" colspan="9">${name}</td>
-                  </tr>`
-            // skill_domain_eligible_character:5列
-            // skill_domain_tendency:2+2+2=6列
-                html_pcv += `<tr>
-                    <th class="col-header">習得クラス</th><td class="col-data" colspan="4">${clsDisplay}</td>
-                    <th class="col-header">活性</th><td class="col-data">${active}</td>
-                    <th class="col-header">種類</th><td class="col-data">${type}</td>
-                    <th class="col-header">性向</th><td class="col-data">${align}</td>
-                  </tr>`
-            // skill_domain_resource:2+2+3+2+2=11列
-                html_pcv += `<tr>
-                  <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
-                  <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
-                  <th class="col-header">材料・触媒</th><td class="col-data" colspan="2">${material}</td>
-                  <th class="col-header">装備条件</th><td class="col-data">${gear}</td>
-                  <th class="col-header">持続時間</th><td class="col-data">${duration}</td>
-                </tr>`
-            // skill_domain_effect:3+2+6=11列
-                html_pcv += `<tr>
-                  <th class="col-header">対象</th><td class="col-data" colspan="2">
-                  <span class="text">${truncateForDisplayWithTag(target,24)}</span>
-                  <span class="full-text" style="display:none;">${target}</span>
-                  </td>
-                  <th class="col-header">再使用時間</th><td class="col-data">${interval}</td>
-                  <th class="col-header">効果・性能</th><td class="col-data" colspan="5">
-                  <span class="text">${truncateForDisplayWithTag(effect,60)}</span>
-                  <span class="full-text" style="display:none;">${effect}</span>
-                  </td>
-                </tr>`
-            // skill_domain_acquisition:2+3+6=11列
-                html_pcv += `<tr>
-                  <th class="col-header">習得Lv.</th><td class="col-data">${acqLv}</td>
-                  <th class="col-header">取得方法</th><td class="col-data" colspan="2">${obtain}</td>
-                  <th class="col-header">価格</th><td class="col-data" colspan="5">${price}</td>
-                </tr>`
-            // skill_domain_dropmob:11列
-                html_pcv += `<tr>
-                  <th class="col-header">ドロップ</th><td class="col-data" colspan="11">
-                  <span class="text">${truncateForDisplayWithTag(Droporigin,150)}</span>
-                  <span class="full-text" style="display:none;">${Droporigin}</span>
-                  </td>
-                </tr>`
-            // skill_domain_dropmob:11列
-                html_pcv += `<tr>
-                  <th class="col-header">【蘇生】</th><td class="col-data" colspan="11">
-                  <span class="text">${truncateForDisplayWithTag(Dropcomp,150)}</span>
-                  <span class="full-text" style="display:none;">${Dropcomp}</span>
-                  </td>
-                </tr>`
-            // skill_domain_notes:6+5=11列
-                html_pcv += `<tr>
-                  <th class="col-header">備考1</th><td class="col-data" colspan="5">
-                  <span class="text">${truncateForDisplayWithTag(note1,78)}</span>
-                  <span class="full-text" style="display:none;">${note1}</span>
-                  </td>
-                  <th class="col-header">備考2</th><td class="col-data" colspan="4">
-                  <span class="text">${truncateForDisplayWithTag(note2,78)}</span>
-                  <span class="full-text" style="display:none;">${note2}</span>
-                  </td>
-                </tr>`
-            }
-          html_pcv +=`</tbody>`;
+        if (!info_en.classList.contains("sr-only")) {
+            info_en.classList.add("sr-only");
         }
-        html_pcv += `</table>`;
-        document.getElementById('result').innerHTML = html_pcv;
-// テーブル描画後
-// クラスフィルタリングの初期化
-        document.querySelectorAll('.class-btn').forEach(btn => {
-            btn.classList.remove('active'); // すべてのボタンからアクティブクラスを削除
-        });
-// 初期状態で「all」ボタンをアクティブにする
-// 今は[all]ボタンはないから初期化しない
-// document.querySelector('.class-btn[data-cls="all"]').classList.add('active');
-// tbodyごとに初期表示を設定（record-titleのみ表示）
-// 初期状態は「all」相当で全tbody展開
-        document.querySelectorAll('tbody.record-table').forEach(tbody => {
-            tbody.dataset.collapsed = 'true'; // 折りたたみ済み：クリックで確実に展開するように。
-            tbody.querySelectorAll('tr').forEach(tr => {
-                const isTitle = tr.classList.contains('record-title');
-                tr.style.display = isTitle ? '' : 'none'; // タイトル行のみ表示
+        if (!info_jp.classList.contains("sr-only")) {
+            info_jp.classList.add("sr-only");
+        }
+
+        // 告知文を非表示に
+        const notice = document.getElementById("notice");
+        if (notice) {
+            notice.style.display = "none";
+        }
+
+        // url掃除。ページロード時をイベントとして処理するのは宿題。今は表示ボタンがトリガー。
+    // 表示されていない状態なのに #class=xxx があるならハッシュを消す
+        if (!document.getElementById('result').innerHTML && location.hash.includes("class=")) {
+            history.replaceState(null, null, location.pathname);
+        }
+    // TSV読み込みと描画 タイムスタンプを附与したリクエストによる強制再読み込みによって、FC2Serverのキャッシュ寿命を回避。
+        fetch('datasource/Lineage_remastered_skill3.tsv?v=' + new Date().getTime())
+            .then(response => response.text())
+            .then(text => {
+              renderSkillTAble(text); // 読み込み成功時DOM構築関数を呼び出す
+              // DOMContentLoaded イベントを使用して、DOMの読み込み完了を待つ
+              if (document.readyState === 'loading') {
+                console.log("DOM読み込み待機中");
+                document.addEventListener('DOMContentLoaded', setup);
+              } else {
+                console.log("DOMすでに構築済み、即時実行");
+                setup();
+              }
+            })
+            .catch(error => {
+              console.error("読み込みエラー:", error);
+              document.getElementById('result').textContent = '読み込み失敗: ' + error;
+            });
+    }); // ここでaddEventListenerの関数を閉じる
+
+    function setup() {
+      console.log("setup開始");
+
+      const btn = document.getElementById('loadBtn');
+      if (btn) {
+        console.log("ボタン取得成功");
+        btn.addEventListener('click', () => {
+          console.log("ボタンクリック");
+          fetch('datasource/Lineage_remastered_skill3.tsv?v=' + new Date().getTime())
+            .then(response => {
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              return response.text();
+            })
+            .then(text => {
+              console.log("読み込み成功");
+              document.getElementById('result').innerHTML = html_pcv;
+    //        document.getElementById('result').textContent = text;
+
+    //      DOM構築後に初期化処理を確実に実行
+            requestAnimationFrame(() => {
+                initializeTableBehavior();
+            });
+
+            })
+            .catch(error => {
+              console.error("読み込みエラー:", error);
             });
         });
-// document.querySelectorAll('tbody.record-table').forEach(tbody => {
-//     const isTarget = tbody.dataset.cls === 'all';
-//     tbody.dataset.collapsed = isTarget ? 'false' : 'true';
-// 各クラス毎の表示非表示判定は？
-//     console.log(`tbody ${tbody.dataset.cls} → collapsed=${tbody.dataset.collapsed}`);
-//    tbody.querySelectorAll('tr').forEach(tr => {
-//        const isTitle = tr.classList.contains('record-title');
-//        tr.style.display = (isTarget || isTitle) ? '' : 'none';
-// isTitle=true？それともrecord-titleでない行がtrueなの？
-//        const text = tr.textContent.trim().slice(0, 10);
-//				console.log(`tr: "${text}", isTitle: ${isTitle}`);
-//    });
-//});
-// 各ボタンにクリックイベントリスナーを追加
-document.querySelectorAll('.class-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        // アクティブクラスの切り替え
-        document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        const selectedCls = this.dataset.cls;
-        const selectedElf = this.dataset.elf || '';
-        const matchType = document.querySelector('input[name="matchType"]:checked').value;
-        // tbodyごとにフィルタリング
-        document.querySelectorAll('tbody.record-table').forEach(tbody => {
-            const cls = tbody.dataset.cls || '';
-            const elf = tbody.dataset.elf || '';
-        // 初期値isMatchはfalse＝非表示
-            let isMatch = false;
-            if (selectedCls === 'all') {
-                isMatch = true;
-        // ラジオボタンの選択状態
-            } else if (matchType === 'only') {
-        // 完全一致モード
-                if (selectedCls === '妖') {
-                    isMatch =
-                        (cls === '妖') &&
-                        (elf === selectedElf || elf === '共');
-                } else {
-                    isMatch = cls === selectedCls;
+      } else {
+        console.log("loadBtn 見つからず");
+      }
+    /*
+        // [表示]ボタンを無効化＋グレーアウト
+        const loadBtn = document.getElementById("loadBtn");
+        if (loadBtn) {
+            loadBtn.disabled = true;
+            loadBtn.style.opacity = "0.5";
+            loadBtn.style.cursor = "not-allowed";
+            loadBtn.title = "クラス選択時に自動表示されるため、このボタンは不要です。";
+        }
+    */
+    }
+
+    function renderSkillTAble(text) {
+            console.log("renderSkillTAble開始");
+            let html_pcv = ''; // PC用レイアウト格納用
+            let html_spv = ''; // スマホ用レイアウト格納用*未実装
+    // ここにTSVパース＆表示処理を書く
+            const lines = text.trim().split('\n');
+            html_pcv += `<table>`;
+            html_pcv += `<thead id="top">`;
+            html_pcv += `</thead>`;
+            for (const line of lines) {
+              const fields = line.split('\t');
+
+              // フィールド数チェック
+              if (fields.length < 25) {
+                console.warn("データ不足:", fields);
+                console.log(`フィールド数(${line}):`, fields.length); // フィールド数を確認
+                continue; // フィールド数が不足している場合スキップ
+              }
+
+              // ★ no の trim + 数値判定
+              const noField = fields[0].trim();
+              if (noField === "" || isNaN(Number(noField)))
+                continue; // フィールド(0)が番号でない場合スキップ
+
+                // 各フィールドの値を変数に格納
+                const [no,img,level,name,cls,elf,active,type,align,mp,hp,material,gear,duration,target,interval,effect,acqLv,obtain,price,Droporigin,Dropcomp,note1,note2,EOR] = line.split('\t');
+
+                // 各フィールドをTAB分割 EOR(End Of Record)を無視
+                // imgは画像のURLだが、ここでは使用しないので無視。値は"全角Space"
+                // EORは行の終わりを示すが、ここでは使用しないので無視。値は"■"
+                // clsとelfのまとめ表示
+
+                let clsDisplay = cls;
+                if (cls === "妖" && elf) {
+                    clsDisplay += `（${elf}）`;
                 }
-            } else {
-        // 部分一致モード
-                if (selectedCls === '妖') {
-                    isMatch =
-                        cls.includes('妖') &&
-                        (elf === selectedElf || elf === '共');
+                if (window.innerWidth <= 438) {
+    // #region sauce
+    //  --- スマホ用テーブル出力 ---
+                // 等級・スキルレベルの出力部分
+                let lvDisplay ="";
+                if (/^\d+$/.test(level)) {
+                // 数字のみの場合
+                    lvDisplay += `Lv.${level}`;
                 } else {
-                    isMatch = cls.includes(selectedCls);
+                // 空または文字列（神話・伝説など）の場合
+                    lvDisplay += `${level}`;
                 }
+                html_pcv += `<tbody class="record-table" id="(${name})" data-cls="${cls}" data-elf="${elf}">`  // 1レコードが1tbodyで341個(2025/07/07時点)～ある
+                html_pcv += `<tr class="spv-layout record-title"><td class="spv-col-data_no">No.${no}</td><td class="spv-col-data_skillname">${lvDisplay}　${name}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">習得クラス</th><td class="spv-col-data">${clsDisplay}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">活性</th><td class="spv-col-data">${active}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">種類</th><td class="spv-col-data">${type}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">性向</th><td class="spv-col-data">${align}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">消耗MP</th><td class="spv-col-data">${mp}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">消耗HP</th><td class="spv-col-data">${hp}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">材料・触媒</th><td class="spv-col-data">${material}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">装備条件</th><td class="spv-col-data">${gear}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">持続時間</th><td class="spv-col-data">${duration}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">対象</th><td class="spv-col-data">${target}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">再使用時間</th><td class="spv-col-data">${interval}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">効果・性能</th><td class="spv-col-data">${effect}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">習得Lv.</th><td class="spv-col-data">${acqLv}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">取得方法</th><td class="spv-col-data">${obtain}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">価格</th><td class="spv-col-data">${price}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">ドロップ</th><td class="spv-col-data">${Droporigin}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">【蘇生】</th><td class="spv-col-data">${Dropcomp}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">備考1</th><td class="spv-col-data">${note1}</td></tr>`;
+                html_pcv += `<tr><th class="spv-col-header">備考2</th><td class="spv-col-data">${note2}</td></tr>`;
+                html_pcv += `</tbody>`;
+                } else {
+    // #endregion
+    //  --- PC用テーブル出力 ---
+                html_pcv += `<tbody id="(${name})" class="record-table" data-cls=${cls} data-elf=${elf}>`;
+                // No.とLevelとスキル名は「<th>～」を使用しない。1+1+9=11列。
+                    html_pcv += `<tr class="record-title">
+                        <td class="col-data_no">No.${no}</td>`
+                    // ...existing code...
+                    // 等級・スキルレベルの出力部分
+                          if (/^\d+$/.test(level)) {
+                        // 数字のみの場合
+                        html_pcv += `<td class="col-data_level">Lv.${level}</td>`;
+                          } else {
+                        // 空または文字列（神話・伝説など）の場合
+                        html_pcv += `<td class="col-data_level">${level}</td>`;
+                          }
+                    // スキル名:9列   
+                    html_pcv += `<td class="col-data_skillname" colspan="9">${name}</td>
+                      </tr>`
+                // skill_domain_eligible_character:5列
+                // skill_domain_tendency:2+2+2=6列
+                    html_pcv += `<tr>
+                        <th class="col-header">習得クラス</th><td class="col-data" colspan="4">${clsDisplay}</td>
+                        <th class="col-header">活性</th><td class="col-data">${active}</td>
+                        <th class="col-header">種類</th><td class="col-data">${type}</td>
+                        <th class="col-header">性向</th><td class="col-data">${align}</td>
+                      </tr>`
+                // skill_domain_resource:2+2+3+2+2=11列
+                    html_pcv += `<tr>
+                      <th class="col-header">消耗MP</th><td class="col-data">${mp}</td>
+                      <th class="col-header">消耗HP</th><td class="col-data">${hp}</td>
+                      <th class="col-header">材料・触媒</th><td class="col-data" colspan="2">${material}</td>
+                      <th class="col-header">装備条件</th><td class="col-data">${gear}</td>
+                      <th class="col-header">持続時間</th><td class="col-data">${duration}</td>
+                    </tr>`
+                // skill_domain_effect:3+2+6=11列
+                    html_pcv += `<tr>
+                      <th class="col-header">対象</th><td class="col-data" colspan="2">
+                      <span class="text">${truncateForDisplayWithTag(target,24)}</span>
+                      <span class="full-text" style="display:none;">${target}</span>
+                      </td>
+                      <th class="col-header">再使用時間</th><td class="col-data">${interval}</td>
+                      <th class="col-header">効果・性能</th><td class="col-data" colspan="5">
+                      <span class="text">${truncateForDisplayWithTag(effect,60)}</span>
+                      <span class="full-text" style="display:none;">${effect}</span>
+                      </td>
+                    </tr>`
+                // skill_domain_acquisition:2+3+6=11列
+                    html_pcv += `<tr>
+                      <th class="col-header">習得Lv.</th><td class="col-data">${acqLv}</td>
+                      <th class="col-header">取得方法</th><td class="col-data" colspan="2">${obtain}</td>
+                      <th class="col-header">価格</th><td class="col-data" colspan="5">${price}</td>
+                    </tr>`
+                // skill_domain_dropmob:11列
+                    html_pcv += `<tr>
+                      <th class="col-header">ドロップ</th><td class="col-data" colspan="11">
+                      <span class="text">${truncateForDisplayWithTag(Droporigin,150)}</span>
+                      <span class="full-text" style="display:none;">${Droporigin}</span>
+                      </td>
+                    </tr>`
+                // skill_domain_dropmob:11列
+                    html_pcv += `<tr>
+                      <th class="col-header">【蘇生】</th><td class="col-data" colspan="11">
+                      <span class="text">${truncateForDisplayWithTag(Dropcomp,150)}</span>
+                      <span class="full-text" style="display:none;">${Dropcomp}</span>
+                      </td>
+                    </tr>`
+                // skill_domain_notes:6+5=11列
+                    html_pcv += `<tr>
+                      <th class="col-header">備考1</th><td class="col-data" colspan="5">
+                      <span class="text">${truncateForDisplayWithTag(note1,78)}</span>
+                      <span class="full-text" style="display:none;">${note1}</span>
+                      </td>
+                      <th class="col-header">備考2</th><td class="col-data" colspan="4">
+                      <span class="text">${truncateForDisplayWithTag(note2,78)}</span>
+                      <span class="full-text" style="display:none;">${note2}</span>
+                      </td>
+                    </tr>`
+                }
+              html_pcv +=`</tbody>`;
             }
-            tbody.dataset.collapsed = 'true'; // 既定：折りたたみ
-            tbody.querySelectorAll('tr').forEach(tr => {
-                    // 一致するクラスのみ表示、そうでなければ完全非表示
-                const isTitle = tr.classList.contains('record-title');
-                tr.style.display = isMatch && isTitle ? '' : 'none';
+            html_pcv += `</table>`;
+            document.getElementById('result').innerHTML = html_pcv;
+    // テーブル描画後
+    // クラスフィルタリングの初期化
+            document.querySelectorAll('.class-btn').forEach(btn => {
+                btn.classList.remove('active'); // すべてのボタンからアクティブクラスを削除
+            });
+    // 初期状態で「all」ボタンをアクティブにする
+    // 今は[all]ボタンはないから初期化しない
+    // document.querySelector('.class-btn[data-cls="all"]').classList.add('active');
+    // tbodyごとに初期表示を設定（record-titleのみ表示）
+    // 初期状態は「all」相当で全tbody展開
+            document.querySelectorAll('tbody.record-table').forEach(tbody => {
+                tbody.dataset.collapsed = 'true'; // 折りたたみ済み：クリックで確実に展開するように。
+                tbody.querySelectorAll('tr').forEach(tr => {
+                    const isTitle = tr.classList.contains('record-title');
+                    tr.style.display = isTitle ? '' : 'none'; // タイトル行のみ表示
+                });
+            });
+    // document.querySelectorAll('tbody.record-table').forEach(tbody => {
+    //     const isTarget = tbody.dataset.cls === 'all';
+    //     tbody.dataset.collapsed = isTarget ? 'false' : 'true';
+    // 各クラス毎の表示非表示判定は？
+    //     console.log(`tbody ${tbody.dataset.cls} → collapsed=${tbody.dataset.collapsed}`);
+    //    tbody.querySelectorAll('tr').forEach(tr => {
+    //        const isTitle = tr.classList.contains('record-title');
+    //        tr.style.display = (isTarget || isTitle) ? '' : 'none';
+    // isTitle=true？それともrecord-titleでない行がtrueなの？
+    //        const text = tr.textContent.trim().slice(0, 10);
+    //				console.log(`tr: "${text}", isTitle: ${isTitle}`);
+    //    });
+    //});
+    // 各ボタンにクリックイベントリスナーを追加
+    document.querySelectorAll('.class-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            // アクティブクラスの切り替え
+            document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const selectedCls = this.dataset.cls;
+            const selectedElf = this.dataset.elf || '';
+            const matchType = document.querySelector('input[name="matchType"]:checked').value;
+            // tbodyごとにフィルタリング
+            document.querySelectorAll('tbody.record-table').forEach(tbody => {
+                const cls = tbody.dataset.cls || '';
+                const elf = tbody.dataset.elf || '';
+            // 初期値isMatchはfalse＝非表示
+                let isMatch = false;
+                if (selectedCls === 'all') {
+                    isMatch = true;
+            // ラジオボタンの選択状態
+                } else if (matchType === 'only') {
+            // 完全一致モード
+                    if (selectedCls === '妖') {
+                        isMatch =
+                            (cls === '妖') &&
+                            (elf === selectedElf || elf === '共');
+                    } else {
+                        isMatch = cls === selectedCls;
+                    }
+                } else {
+            // 部分一致モード
+                    if (selectedCls === '妖') {
+                        isMatch =
+                            cls.includes('妖') &&
+                            (elf === selectedElf || elf === '共');
+                    } else {
+                        isMatch = cls.includes(selectedCls);
+                    }
+                }
+                tbody.dataset.collapsed = 'true'; // 既定：折りたたみ
+                tbody.querySelectorAll('tr').forEach(tr => {
+                        // 一致するクラスのみ表示、そうでなければ完全非表示
+                    const isTitle = tr.classList.contains('record-title');
+                    tr.style.display = isMatch && isTitle ? '' : 'none';
+                });
             });
         });
     });
-});
-// タイトル行クリックで展開／折りたたみ切り替え
-document.querySelectorAll('tr.record-title').forEach(titleRow => {
-    titleRow.addEventListener('click', function () {
-        const tbody = this.closest('tbody');
-        const isCollapsed = tbody.dataset.collapsed === 'true';
+    // タイトル行クリックで展開／折りたたみ切り替え
+    document.querySelectorAll('tr.record-title').forEach(titleRow => {
+        titleRow.addEventListener('click', function () {
+            const tbody = this.closest('tbody');
+            const isCollapsed = tbody.dataset.collapsed === 'true';
 
-        tbody.dataset.collapsed = isCollapsed ? 'false' : 'true';
+            tbody.dataset.collapsed = isCollapsed ? 'false' : 'true';
 
-        tbody.querySelectorAll('tr').forEach(tr => {
-            const isTitle = tr.classList.contains('record-title');
-            tr.style.display = isCollapsed || isTitle ? '' : 'none';
+            tbody.querySelectorAll('tr').forEach(tr => {
+                const isTitle = tr.classList.contains('record-title');
+                tr.style.display = isCollapsed || isTitle ? '' : 'none';
+            });
         });
     });
-});
-// クラスコードマップ(url用/数字は公式webページのClassID)
-const classCodeMap = {
-//  "全": "all"   //-/全クラスallクラスとして設定しない。未定義として全件表示扱い。
-  "君": "pri",  //0/君主prince・princess
-  "騎": "kni",  //1/ナイトknight
-  "妖": "elf",  //2/エルフelf
-  "魔": "wiz",  //3/ウィザードwizard
-  "闇": "dak",  //4/ダークエルフdarkelf
-  "竜": "dra",  //5/ドラゴンナイトdragonknight
-  "幻": "ill",  //6/イリュージョニストillusionist
-  "戦": "war",  //7/ウォリアーwarrior
-  "剣": "fen",  //8/フェンサーFencer
-  "槍": "lan",  //9/ランサーlancer
-  "聖": "Pal",  //10/パラディンPaladin
-  "闘": "fig"   //11/ファイターfighter
-};
-// クラスコード取得関数
-function getClassCode(label) {
-  return classCodeMap[label] || "all"; // 未定義なら仮のフォールバック
-}// クラスフィルタリング関数
-document.querySelectorAll('.class-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const label = this.dataset.cls; // たとえば "聖"
-        const code = getClassCode(label); // たとえば "hol"
-        history.replaceState(null, null, `#class=${code}`);
-//        filterByClass(code); // 既存の注出関数
+    // クラスコードマップ(url用/数字は公式webページのClassID)
+    const classCodeMap = {
+    //  "全": "all"   //-/全クラスallクラスとして設定しない。未定義として全件表示扱い。
+      "君": "pri",  //0/君主prince・princess
+      "騎": "kni",  //1/ナイトknight
+      "妖": "elf",  //2/エルフelf
+      "魔": "wiz",  //3/ウィザードwizard
+      "闇": "dak",  //4/ダークエルフdarkelf
+      "竜": "dra",  //5/ドラゴンナイトdragonknight
+      "幻": "ill",  //6/イリュージョニストillusionist
+      "戦": "war",  //7/ウォリアーwarrior
+      "剣": "fen",  //8/フェンサーFencer
+      "槍": "lan",  //9/ランサーlancer
+      "聖": "Pal",  //10/パラディンPaladin
+      "闘": "fig"   //11/ファイターfighter
+    };
+    // クラスコード取得関数
+    function getClassCode(label) {
+      return classCodeMap[label] || "all"; // 未定義なら仮のフォールバック
+    }// クラスフィルタリング関数
+    document.querySelectorAll('.class-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const label = this.dataset.cls; // たとえば "聖"
+            const code = getClassCode(label); // たとえば "hol"
+            history.replaceState(null, null, `#class=${code}`);
+    //        filterByClass(code); // 既存の注出関数
+        });
     });
-});
 
-// イベントリスナーの再登録を含めた初期化関数↓ここから
-function initializeTableBehavior() {
-  console.log("🔁 initializeTableBehavior 実行");
-  document.querySelectorAll('tbody.record-table').forEach(tbody => {
-    const isTarget = tbody.dataset.cls === 'all';
-    tbody.dataset.collapsed = isTarget ? 'false' : 'true';
-    console.log(`tbody ${tbody.dataset.cls} → collapsed=${tbody.dataset.collapsed}`);
-    tbody.querySelectorAll('tr').forEach(tr => {
-      const isTitle = tr.classList.contains('record-title');
-      tr.style.display = (isTarget || isTitle) ? '' : 'none';
-    });
-  });
-  document.querySelectorAll('tr.record-title').forEach(titleRow => {
-    titleRow.addEventListener('click', function () {
-      const tbody = this.closest('tbody');
-      const isCollapsed = tbody.dataset.collapsed === 'true';
-      tbody.dataset.collapsed = isCollapsed ? 'false' : 'true';
-      console.log(`トグル: ${tbody.dataset.cls} → ${tbody.dataset.collapsed}`);
-      tbody.querySelectorAll('tr').forEach(tr => {
-        const isTitle = tr.classList.contains('record-title');
-        tr.style.display = isCollapsed || isTitle ? '' : 'none';
+    // イベントリスナーの再登録を含めた初期化関数↓ここから
+      function initializeTableBehavior() {
+        console.log("🔁 initializeTableBehavior 実行");
+        document.querySelectorAll('tbody.record-table').forEach(tbody => {
+          const isTarget = tbody.dataset.cls === 'all';
+          tbody.dataset.collapsed = isTarget ? 'false' : 'true';
+          console.log(`tbody ${tbody.dataset.cls} → collapsed=${tbody.dataset.collapsed}`);
+          tbody.querySelectorAll('tr').forEach(tr => {
+            const isTitle = tr.classList.contains('record-title');
+            tr.style.display = (isTarget || isTitle) ? '' : 'none';
+          });
+        });
+        document.querySelectorAll('tr.record-title').forEach(titleRow => {
+          titleRow.addEventListener('click', function () {
+            const tbody = this.closest('tbody');
+            const isCollapsed = tbody.dataset.collapsed === 'true';
+            tbody.dataset.collapsed = isCollapsed ? 'false' : 'true';
+            console.log(`トグル: ${tbody.dataset.cls} → ${tbody.dataset.collapsed}`);
+            tbody.querySelectorAll('tr').forEach(tr => {
+              const isTitle = tr.classList.contains('record-title');
+              tr.style.display = isCollapsed || isTitle ? '' : 'none';
+            });
+          });
+        });
+      }
+      };
+      // イベントリスナーの再登録を含めた初期化関数↑ここまで
+    // 文字列を指定バイト数で切り詰め、末尾に「…」を付与する関数
+      function truncateForDisplayWithTag(str, maxDisplayBytes = 180) {
+        const encoder = new TextEncoder();
+        const encoded = encoder.encode(str);
+
+        // 先頭 maxDisplayBytes バイト以内に "<" が含まれていたら省略処理を行わない
+        const headStr = new TextDecoder().decode(encoded.slice(0, maxDisplayBytes));
+        if (headStr.includes("<")) return str;
+
+        // 「…」含めて maxDisplayBytes バイト未満なら省略不要
+        if (encoded.length <= maxDisplayBytes - 3) return str;
+
+        const maxContentBytes = maxDisplayBytes - 3; // 「…」分を除く
+        let bytes = 0;
+        let result = '';
+        for (const char of str) {
+          const charBytes = encoder.encode(char).length;
+          if (bytes + charBytes > maxContentBytes) break;
+          bytes += charBytes;
+          result += char;
+        }
+
+        // 「…」にタグを附与
+        const icon = '<img src="./picture/icons/ellipsis_icon.png" alt="省略記号" width="30" height="18" class="ellipsis in-line_icon" />';
+        //return icon + escapeHtml(text.slice(0, maxBytes)) + '...';
+        return result+ '<span class="ellipsis">…</span>' + icon;
+      }
+    // 省略表示「…」クリックで全文表示
+      document.addEventListener('click', e => {
+        if (e.target.classList.contains('ellipsis')) {
+          const td = e.target.closest('td');
+          const full = td.querySelector('.full-text');
+          const short = td.querySelector('.text');
+          short.style.display = 'none';
+          full.style.display = 'inline';
+        }
       });
-    });
-  });
-}
-// イベントリスナーの再登録を含めた初期化関数↑ここまで
-};
-// 文字列を指定バイト数で切り詰め、末尾に「…」を付与する関数
-function truncateForDisplayWithTag(str, maxDisplayBytes = 180) {
-  const encoder = new TextEncoder();
-  const encoded = encoder.encode(str);
 
-  // 先頭 maxDisplayBytes バイト以内に "<" が含まれていたら省略処理を行わない
-  const headStr = new TextDecoder().decode(encoded.slice(0, maxDisplayBytes));
-  if (headStr.includes("<")) return str;
+    // URLパラメータからskillを取得して該当行にスクロール＆ハイライト
+      const params = new URLSearchParams(window.location.search);
+      const skillName = params.get('skill');
 
-  // 「…」含めて maxDisplayBytes バイト未満なら省略不要
-  if (encoded.length <= maxDisplayBytes - 3) return str;
+      window.addEventListener('DOMContentLoaded', () => {
+      const target = document.getElementById(skillName);
+      if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('highlight'); // CSSで注目表示
+        }
+      });
 
-  const maxContentBytes = maxDisplayBytes - 3; // 「…」分を除く
-  let bytes = 0;
-  let result = '';
-  for (const char of str) {
-    const charBytes = encoder.encode(char).length;
-    if (bytes + charBytes > maxContentBytes) break;
-    bytes += charBytes;
-    result += char;
-  }
+      document.querySelector('.footer-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.footer-collapsible').classList.toggle('open');
+          document.querySelector('.footer-toggle').classList.toggle('open');
+      });
 
-  // 「…」にタグを附与
-  const icon = '<img src="./picture/icons/ellipsis_icon.png" alt="省略記号" width="30" height="18" class="ellipsis in-line_icon" />';
-  //return icon + escapeHtml(text.slice(0, maxBytes)) + '...';
-  return result+ '<span class="ellipsis">…</span>' + icon;
-}
-// 省略表示「…」クリックで全文表示
-document.addEventListener('click', e => {
-  if (e.target.classList.contains('ellipsis')) {
-    const td = e.target.closest('td');
-    const full = td.querySelector('.full-text');
-    const short = td.querySelector('.text');
-    short.style.display = 'none';
-    full.style.display = 'inline';
-  }
-});
+      document.querySelector('.main-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.main-collapsible').classList.toggle('open');
+          document.querySelector('.main-toggle').classList.toggle('open');
+      });
 
-// URLパラメータからskillを取得して該当行にスクロール＆ハイライト
-const params = new URLSearchParams(window.location.search);
-const skillName = params.get('skill');
-
-window.addEventListener('DOMContentLoaded', () => {
-  const target = document.getElementById(skillName);
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    target.classList.add('highlight'); // CSSで注目表示
-  }
-});
-
-</script>
-</body>
+      document.querySelector('.subnav-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.subnav-collapsible').classList.toggle('open');
+          document.querySelector('.subnav-toggle').classList.toggle('open');
+      });
+    </script>
+  </body>
 </html>

@@ -13,8 +13,9 @@
   </head>
   <body class="acce ear">
     <div class="page_body"> <!-- フッター以外の高さ管理するラッパー -->
-      <div class="header"> <!-- サイト共通のheaderエリア -->
-        <div class="nav"> <!-- site 共通nav -->
+      <header> <!-- サイト共通のheaderエリア -->
+      <div class="nav"> <!-- site 共通nav -->
+        <div class="main-collapsible"> <!-- main-nav 折り畳み -->
           <ul class="nav-group"> <!-- (main nav) -->
             <li><a href="index.html" class="index">ホーム</a></li>
             <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
@@ -26,24 +27,38 @@
             <li><a href="tool_glyph.html" class="tool">Tools</a></li>
             <li><a href="site_updates.html" class="updt">変更歴</a></li>
           </ul> <!-- (main nav) -->
-          <div class="title_band">リネージュメモ</div> <!-- サイト共通のmain title 帯 -->
-          <ul class="nav-group_acce"> <!-- (sub nav) accessory 共通nav -->
+        </div> <!-- main-nav 折り畳み -->
+        <div class="main-toggle"> <!-- main-nav の帯 -->
+          <span class="main-toggle-label">
+            リネージュメモ<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
+        <div class="subnav-collapsible accessory-only"> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+          <ul class="nav-group_acce">
             <li><a href="Lineage_accessory_crest.html" class="crest">紋章</a></li>
             <li><a href="Lineage_accessory_insignia.html" class="insig">インシグニア</a></li>
-            <li><a href="Lineage_accessory_earring.html" class="ear">ルームティスの<br>イアリング</a></li>
-            <li><a href="Lineage_accessory_pendant__page1.html" title="闘士/射手/賢者" class="pend1">ルームティスの<br>ペンダント1</a></li>
-            <li><a href="Lineage_accessory_pendant__page2.html" title="ハンター/守護" class="pend2">ルームティスの<br>ペンダント2</a></li>
+            <li><a href="Lineage_accessory_earring.html" class="ear">イアリング</a></li>
+            <li><a href="Lineage_accessory_pendant__page1.html" title="闘士/射手/賢者" class="pend1">ペンダント1</a></li>
+            <li><a href="Lineage_accessory_pendant__page2.html" title="ハンター/守護" class="pend2">ペンダント2</a></li>
             <li><a href="Lineage_accessory_bracelet.html" class="brace">ブレスレット</a></li>
-            <li><a href="Lineage_accessory_ring__page1.html" title="知恵/勇士/魔法抵抗/体力" class="ring1">スナッパーの<br>リング1</a></li>
-            <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">スナッパーの<br>リング2</a></li>
+            <li><a href="Lineage_accessory_ring__page1.html" title="知恵/勇士/魔法抵抗/体力" class="ring1">リング1</a></li>
+            <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">リング2</a></li>
           </ul> <!-- (sub nav) accessory 共通nav -->
-        </div> <!-- site 共通nav -->
+        </div> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+        <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
+          <span class="subnav-toggle-label">
+            パンドラ装身具<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
+      </div> <!-- site 共通nav -->
         <!--<h1 class="header-title">ぷりめらの</h1>-->
         <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
         </div> <!-- サイト共通のheader説明文エリア -->
-      </div> <!-- サイト共通のheaderエリア -->
-      <div class="update_date">更新&nbsp;2025/12/21</div>
-      <div class="create_date">初出&nbsp;2025/4/26</div>
+      </header> <!-- サイト共通のheaderエリア -->
+      <div class="table_lead"> <!-- テーブル中心ページのテーブル説明文エリア -->
+        <span class="lead_text">ルームティスイアリング<br></span>
+        <span class="update_date">更新&nbsp;2025/12/21<br>初出&nbsp;2025/4/26</span>
+      </div>
       <div class="table_box_acce"> <!-- accessory 共通table スクロールbox -->
         <table id="top" class="acce">
           <thead class="sticky_acce">
@@ -371,12 +386,27 @@
         </table>
       </div><!-- acce_table_box -->
     </div> <!-- page_body フッター以外の高さ管理するラッパーの終わり -->
-    <div class="footer"> <!-- サイト共通のフッター -->
-      <div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
-        Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
-        NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
-      <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
-    </div> <!-- サイト共通のフッターの終わり -->
+    <footer><!-- サイト共通のフッター -->
+      <div class="footer-toggle" data-target="footer" data-class="open">
+        <span class="footer-toggle-label">
+          copyright… <span class="arrow">▼</span>
+        </span>
+      </div>
+      <div class="footer-collapsible"> <!-- 展開表示 -->
+        <div class="footer-nav">
+          <ul class="footer-nav-group">
+            <li>
+              <a href="https://x.com/AsamonPrimera" aria-label="当サイトの X（旧Twitter）公式連絡先"><img src="./picture/icons/X_icon.png" width="16" height="16" alt=""></a>
+            </li>
+          </ul>
+        </div> <!-- class="footer-nav"の終わり -->
+        <div class="footer-text">
+          当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+          Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
+          NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.
+        </div>
+      </div>
+    </footer><!-- サイト共通のフッター -->
     <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
   <!-- ↓モーダル1 -->
     <div id="recordModal_1" class="modal">
@@ -405,6 +435,25 @@
               pageTop.blur();
               return false;
           });
+      });
+    </script>
+    <script>
+      document.querySelector('.footer-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.footer-collapsible').classList.toggle('open');
+          document.querySelector('.footer-toggle').classList.toggle('open');
+      });
+
+      document.querySelector('.main-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.main-collapsible').classList.toggle('open');
+          document.querySelector('.main-toggle').classList.toggle('open');
+      });
+
+      document.querySelector('.subnav-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.subnav-collapsible').classList.toggle('open');
+          document.querySelector('.subnav-toggle').classList.toggle('open');
       });
     </script>
   </body>

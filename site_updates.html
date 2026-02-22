@@ -10,1131 +10,1221 @@
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
   </head>
   <body class="updt">
-    <div class="header"> <!-- サイト共通のheaderエリア -->
+    <header> <!-- サイト共通のheaderエリア -->
       <div class="nav"> <!-- site 共通nav -->
-        <ul class="nav-group"> <!-- (main nav) -->
-          <li><a href="index.html" class="index">ホーム</a></li>
-          <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
-          <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
-          <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
-          <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
-          <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
-          <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
-          <li><a href="tool_glyph.html" class="tool">Tools</a></li>
-          <li><a href="site_updates.html" class="updt">変更歴</a></li>
-        </ul> <!-- (main nav) -->
-        <div class="title_band">リネージュメモ</div> <!-- サイト共通のmain title 帯 -->
-        <!-- accessory 共通nav <ul>は、ここに入る-->
+        <div class="main-collapsible"> <!-- main-nav 折り畳み -->
+          <ul class="nav-group"> <!-- (main nav) -->
+            <li><a href="index.html" class="index">ホーム</a></li>
+            <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
+            <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
+            <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
+            <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
+            <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
+            <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
+            <li><a href="tool_glyph.html" class="tool">Tools</a></li>
+            <li><a href="site_updates.html" class="updt">変更歴</a></li>
+          </ul> <!-- (main nav) -->
+        </div> <!-- main-nav 折り畳み -->
+        <div class="main-toggle"> <!-- main-nav の帯 -->
+          <span class="main-toggle-label">
+            リネージュメモ<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
+        <div class="subnav-collapsible accessory-only"> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+          <ul class="nav-group_acce">
+            <li><a href="Lineage_accessory_crest.html" class="crest">紋章</a></li>
+            <li><a href="Lineage_accessory_insignia.html" class="insig">インシグニア</a></li>
+            <li><a href="Lineage_accessory_earring.html" class="ear">イアリング</a></li>
+            <li><a href="Lineage_accessory_pendant__page1.html" title="闘士/射手/賢者" class="pend1">ペンダント1</a></li>
+            <li><a href="Lineage_accessory_pendant__page2.html" title="ハンター/守護" class="pend2">ペンダント2</a></li>
+            <li><a href="Lineage_accessory_bracelet.html" class="brace">ブレスレット</a></li>
+            <li><a href="Lineage_accessory_ring__page1.html" title="知恵/勇士/魔法抵抗/体力" class="ring1">リング1</a></li>
+            <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">リング2</a></li>
+          </ul> <!-- (sub nav) accessory 共通nav -->
+        </div> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+        <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
+          <span class="subnav-toggle-label">
+            パンドラ装身具<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
       </div> <!-- site 共通nav -->
       <h1 class="header-title">更新履歴</h1>
       <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
         リネージュ リマスターのデータなど。
       </div> <!-- サイト共通のheader説明文エリア -->
-    </div> <!-- サイト共通のheaderエリア -->
-    <div class="content"><!-- サイト共通のcontentエリア -->
-      <div id="top" class="article"><!-- 個別の記事エリア -->
+    </header> <!-- サイト共通のheaderエリア -->
+<div class="content"><!-- サイト共通のcontentエリア -->
+<div id="top" class="article"><!-- 個別の記事エリア -->
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2026年02月20日</div>
-        <h2 class="article-title">諸表に新規掲載：<a href="Lineage_event_kingaman_shop.html">キングアマンの倉庫大放出</a>2026年2月期<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">2026年02月19日(木) 定期メンテナンス終了時 ～ 2026年03月04日(水) 定期メンテナンス開始時まで開催。</h3>
-          <!-- <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" /> -->
-          <div class="h3-indent"><p>交換アイテム(製作可能数：全ワールド合計またはアカウントあたり回数制限あり)<br>
-          ●アンシャルの英雄魔法研磨書(刻印)・確率製作(5,000,000アデナ)<br>
-          ●アンシャルの伝説魔法研磨書(刻印)・確率製作(10,000,000アデナ)<br>
-          ●ハルパス キー・確率製作(50,000,000アデナ)<br>
-          ●魔神の証・確率製作(10,000,000アデナ)<br>
-          ほか</p>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年02月20日</div>
+<h2 class="article-title">諸表に新規掲載：<a href="Lineage_event_kingaman_shop.html">キングアマンの倉庫大放出</a>2026年2月期<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">2026年02月19日(木) 定期メンテナンス終了時 ～ 2026年03月04日(水) 定期メンテナンス開始時まで開催。</h3>
+<!-- <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" /> -->
+<div class="h3-indent"><p>交換アイテム(製作可能数：全ワールド合計またはアカウントあたり回数制限あり)<br>
+●アンシャルの英雄魔法研磨書(刻印)・確率製作(5,000,000アデナ)<br>
+●アンシャルの伝説魔法研磨書(刻印)・確率製作(10,000,000アデナ)<br>
+●ハルパス キー・確率製作(50,000,000アデナ)<br>
+●魔神の証・確率製作(10,000,000アデナ)<br>
+ほか</p>
+</div>
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2026年02月05日</div>
-        <h2 class="article-title">諸表：<a href="Lineage_event_brave_medal.html">勇猛のメダル交換表</a>2025年12月期更新<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">2025年12月24日(水)定期メンテナンス後～2026年3月18日(水)定期メンテナンス前開催。イベント告知の内容差し替え。</h3>
-          <!-- <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" /> -->
-          <div class="h3-indent"><p>交換アイテムに以下の4アイテムが追加されました。今回「潜在力強化の秘薬(100枚)」はありません。<br>
-            他は2025年2月期以来ラインナップとレートは同じ。<br>
-          ●アンシャルの英雄魔法研磨書(刻印)(2,700枚)<br>
-          ●アンシャルの伝説魔法研磨書(刻印)(6,200枚)<br>
-          ●ハルパス　キー箱[製作条件アリ・確率製作1％](300枚)<br>
-          ●魔神の証[確率製作5％](500枚)</p>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年02月05日</div>
+<h2 class="article-title">諸表：<a href="Lineage_event_brave_medal.html">勇猛のメダル交換表</a>2025年12月期更新<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">2025年12月24日(水)定期メンテナンス後～2026年3月18日(水)定期メンテナンス前開催。イベント告知の内容差し替え。</h3>
+<!-- <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" /> -->
+<div class="h3-indent"><p>交換アイテムに以下の4アイテムが追加されました。今回「潜在力強化の秘薬(100枚)」はありません。<br>
+他は2025年2月期以来ラインナップとレートは同じ。<br>
+●アンシャルの英雄魔法研磨書(刻印)(2,700枚)<br>
+●アンシャルの伝説魔法研磨書(刻印)(6,200枚)<br>
+●ハルパス　キー箱[製作条件アリ・確率製作1％](300枚)<br>
+●魔神の証[確率製作5％](500枚)</p>
+</div>
+</div>
 <!-- site -->
-        <div class="article-date">更新&nbsp;2026年02月01日</div>
-          <h2 class="article-title">サイト：ページ構成変更<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">ページのナビゲーションを変更しました。<br>
-            大字/押下釦のリンクを廃止し、Toolsリンクにまとめました。<br>
-            諸表のアクセサリー強化性能表をAccessorysリンクに移動しました。またホームページの諸表の項目からテーブルのリンクを除きました。<br>
-            <img class="ss" src="picture\site_ss\site_navigation_20260201update.png" width="600" height="575" alt="シグネチャーポイント交換表【2025-12月期】" /><br>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年02月01日</div>
+<h2 class="article-title">サイト：ページ構成変更<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">ページのナビゲーションを変更しました。<br>
+大字/押下釦のリンクを廃止し、Toolsリンクにまとめました。<br>
+諸表のアクセサリー強化性能表をAccessorysリンクに移動しました。またホームページの諸表の項目からテーブルのリンクを除きました。<br>
+<img class="ss" src="picture\site_ss\site_navigation_20260201update.png" width="600" height="575" alt="シグネチャーポイント交換表【2025-12月期】" /><br>
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2026年01月31日</div>
-          <h2 class="article-title">諸表：アクセサリー強化性能表訂正<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">
-            <a href="Lineage_accessory_crest.html">紋章ほか各アクセサリーページ</a>：表頭「エンチャント」→「強化数」に統一。<br>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月31日</div>
+<h2 class="article-title">諸表：アクセサリー強化性能表訂正<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<a href="Lineage_accessory_crest.html">紋章ほか各アクセサリーページ</a>：表頭「エンチャント」→「強化数」に統一。<br>
+</div>
 <!-- Monsters -->
-        <div class="article-date">更新&nbsp;2026年01月31日</div>
-          <h2 class="article-title">モンスター一覧表：tsv読込み廃止<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">マスターエクセルのデータを直接記述に戻しました。<br>
-            <h3 class="article-paragraph-title">[表示]ボタンを廃止</h3>
-              <div class="h3-indent">
-                初期からテーブルを表示します。tsvフェッチは廃止しました。併せてCSSとJSを修正。sort_down&up/filterボタンのsvgを作成。<br>
-              </div>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月31日</div>
+<h2 class="article-title">モンスター一覧表：tsv読込み廃止<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">マスターエクセルのデータを直接記述に戻しました。<br>
+<h3 class="article-paragraph-title">[表示]ボタンを廃止</h3>
+<div class="h3-indent">
+初期からテーブルを表示します。tsvフェッチは廃止しました。併せてCSSとJSを修正。sort_down&up/filterボタンのsvgを作成。<br>
+</div>
+</div>
 <!-- skills -->
-        <div class="article-date">更新&nbsp;2026年01月28日</div>
-        <h2 class="article-title">スキル一覧表：効果・性能<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">2026-01-28　Update反映。
-          <br>
-          <h3 class="article-paragraph-title">効果・性能：語句修正</h3>
-            「回避/反撃」→「反撃スキルの回避」<br>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月28日</div>
+<h2 class="article-title">スキル一覧表：効果・性能<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">2026-01-28　Update反映。
+<br>
+<h3 class="article-paragraph-title">効果・性能：語句修正</h3>
+「回避/反撃」→「反撃スキルの回避」<br>
+</div>
 <!-- 漢字 -->
-        <div class="article-date">更新&nbsp;2026年01月19日</div>
-        <h2 class="article-title">漢字辞書：記事追加<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <div>登録状況</div>
-          <h3 class="article-paragraph-title">登録数と内訳を追記</h3>
-          <div class="h3-indent">
-            <ul>
-              <li>登録数</li>
-              <li>品詞別内訳</li>
-              <li>コメント別内訳</li>
-            </ul>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月19日</div>
+<h2 class="article-title">漢字辞書：記事追加<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<div>登録状況</div>
+<h3 class="article-paragraph-title">登録数と内訳を追記</h3>
+<div class="h3-indent">
+<ul>
+<li>登録数</li>
+<li>品詞別内訳</li>
+<li>コメント別内訳</li>
+</ul>
+</div>
+</div>
 <!-- 漢字 -->
-        <div class="article-date">更新&nbsp;2026年01月18日</div>
-        <h2 class="article-title">漢字辞書：辞書を更新<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <div>コメントの訂正</div>
-          <h3 class="article-paragraph-title">「魔法」→「スキル」</h3>
-          <div class="h3-indent">
-            <ul>
-              <li>でぃばいんそうる/聖書(ディバイン ソウル)(刻印)</li>
-              <li>とりぷるあろー/精霊の水晶(トリプル アロー)(刻印)</li>
-              <li>ふぁんとむ/フェンサーの書(ファントム)(刻印)</li>
-              <li>ふぉーすれいやー/ドラゴンナイトの書板(フォー スレイヤー)(刻印)</li>
-            </ul>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月18日</div>
+<h2 class="article-title">漢字辞書：辞書を更新<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<div>コメントの訂正</div>
+<h3 class="article-paragraph-title">「魔法」→「スキル」</h3>
+<div class="h3-indent">
+<ul>
+<li>でぃばいんそうる/聖書(ディバイン ソウル)(刻印)</li>
+<li>とりぷるあろー/精霊の水晶(トリプル アロー)(刻印)</li>
+<li>ふぁんとむ/フェンサーの書(ファントム)(刻印)</li>
+<li>ふぉーすれいやー/ドラゴンナイトの書板(フォー スレイヤー)(刻印)</li>
+</ul>
+</div>
+</div>
 <!-- 漢字 -->
-        <div class="article-date">更新&nbsp;2026年01月15日</div>
-        <h2 class="article-title">漢字辞書(kanji)：新設<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <div>ATOK/IME別のページを統合</div>
-          <h3 class="article-paragraph-title">ATOK/IME辞書更新</h3>
-          <div class="h3-indent">
-            変更：ボス名の末尾から「 ボス(★)」を除去。コメントのスキル、アイテム、モンスター名から場所を除去。スキルアイテム名読みでの登録を削除。<br>
-            旧版に追加：2024.11.20「騎士道」、2025.03.19「UNLIMITアップデート」、2025.07.23「GLORY」、2025.12.17「FIGHTING SPIRITS」までのスキルとアイテム他<br>
-            ページ統合に伴ってリンクを変更(IME、ATOKを削除。kanjiを追加)<br>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月15日</div>
+<h2 class="article-title">漢字辞書(kanji)：新設<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<div>ATOK/IME別のページを統合</div>
+<h3 class="article-paragraph-title">ATOK/IME辞書更新</h3>
+<div class="h3-indent">
+変更：ボス名の末尾から「 ボス(★)」を除去。コメントのスキル、アイテム、モンスター名から場所を除去。スキルアイテム名読みでの登録を削除。<br>
+旧版に追加：2024.11.20「騎士道」、2025.03.19「UNLIMITアップデート」、2025.07.23「GLORY」、2025.12.17「FIGHTING SPIRITS」までのスキルとアイテム他<br>
+ページ統合に伴ってリンクを変更(IME、ATOKを削除。kanjiを追加)<br>
+</div>
+</div>
 <!-- 横断訂正 -->
-        <div class="article-date">更新&nbsp;2026年01月10日</div>
-        <h2 class="article-title">モンスター一覧表/ドロップ一覧表/スキル一覧表：Update対応<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <div>2025/12/17「FIGHTING SPIRITS」</div>
-          <h3 class="article-paragraph-title">モンスター一覧表/ドロップ一覧表</h3>
-          <div class="h3-indent">
-            ドロップアイテム(スキル戦闘日誌・装備フィスト)の追加<br>
-          ▶悪魔王のフィスト、戦場のフィスト、ブラッド フィスト、守護者のフィスト、守護者のフィスト(蘇生)<br>
-          ▶戦闘日誌(インプリシット ヒット)(蘇生)、戦闘日誌(インプリシット ヒット)、戦闘日誌(オーバーカム)(蘇生)、戦闘日誌(オーバーカム)、戦闘日誌(クラスト)(蘇生)、戦闘日誌(クラスト)、戦闘日誌(モータル フィスト)(蘇生)、戦闘日誌(モータル フィスト)、戦闘日誌(オーバーカム：ウィル)(蘇生)、戦闘日誌(オーバーカム：ウィル)、戦闘日誌(ファイティング スピリット：インデュア)(蘇生)、戦闘日誌(ファイティング スピリット：インデュア)、戦闘日誌(インプリシット ヒット：エクストーション)(蘇生)、戦闘日誌(インプリシット ヒット：エクストーション)、戦闘日誌(ファイティング スピリット：スマッシュ)(蘇生)、戦闘日誌(ファイティング スピリット：スマッシュ)、戦闘日誌(ラッシュ：スタック)(蘇生)、戦闘日誌(ラッシュ：スタック)、戦闘日誌(コンパルション：リミット)(蘇生)、戦闘日誌(コンパルション：リミット)、戦闘日誌(レコニング：ナイトメア)(蘇生)、戦闘日誌(レコニング：ナイトメア)、戦闘日誌(ラッシュ：ピアス)(蘇生)、戦闘日誌(ラッシュ：ピアス)、戦闘日誌(アウトバースト)(蘇生)、戦闘日誌(アウトバースト)<br>
-          </div>
-          <h3 class="article-paragraph-title">スキル一覧表</h3>
-          <div class="h3-indent">
-            スキルの追加<br>
-            <h4>闘士</h4>
-            <div>レコニング、コンパルション、ラッシュ、アウトバースト、ファイティング スピリット、モータル フィスト、クラスト、インプリシット ヒット、オーバーカム、ファイティング スピリット：インデュア、オーバーカム：ウィル、インプリシット ヒット：エクストーション、ラッシュ：スタック、ファイティング スピリット：スマッシュ、コンパルション：リミット、レコニング：ナイトメア、ラッシュ：ピアス</div>
-            <h4>クラスリバランス関連スキル追加と変更</h4>
-            <div>アーマーブレイク：アビス(闇),メイルストロム：レヴェナント(槍),フォー スレイヤー：レビアタン(竜),エーテリアル マスター(魔),イリュージョン：ホライズン(幻),オーソリティ(君),セイクリッドマーク：インクイジター(聖),クルセイダー(騎),エスパーダ(剣),マジック シールド：リバティ(妖),タイタン：コロッサス(戦)</div>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2026年01月10日</div>
+<h2 class="article-title">モンスター一覧表/ドロップ一覧表/スキル一覧表：Update対応<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<div>2025/12/17「FIGHTING SPIRITS」</div>
+<h3 class="article-paragraph-title">モンスター一覧表/ドロップ一覧表</h3>
+<div class="h3-indent">
+ドロップアイテム(スキル戦闘日誌・装備フィスト)の追加<br>
+▶悪魔王のフィスト、戦場のフィスト、ブラッド フィスト、守護者のフィスト、守護者のフィスト(蘇生)<br>
+▶戦闘日誌(インプリシット ヒット)(蘇生)、戦闘日誌(インプリシット ヒット)、戦闘日誌(オーバーカム)(蘇生)、戦闘日誌(オーバーカム)、戦闘日誌(クラスト)(蘇生)、戦闘日誌(クラスト)、戦闘日誌(モータル フィスト)(蘇生)、戦闘日誌(モータル フィスト)、戦闘日誌(オーバーカム：ウィル)(蘇生)、戦闘日誌(オーバーカム：ウィル)、戦闘日誌(ファイティング スピリット：インデュア)(蘇生)、戦闘日誌(ファイティング スピリット：インデュア)、戦闘日誌(インプリシット ヒット：エクストーション)(蘇生)、戦闘日誌(インプリシット ヒット：エクストーション)、戦闘日誌(ファイティング スピリット：スマッシュ)(蘇生)、戦闘日誌(ファイティング スピリット：スマッシュ)、戦闘日誌(ラッシュ：スタック)(蘇生)、戦闘日誌(ラッシュ：スタック)、戦闘日誌(コンパルション：リミット)(蘇生)、戦闘日誌(コンパルション：リミット)、戦闘日誌(レコニング：ナイトメア)(蘇生)、戦闘日誌(レコニング：ナイトメア)、戦闘日誌(ラッシュ：ピアス)(蘇生)、戦闘日誌(ラッシュ：ピアス)、戦闘日誌(アウトバースト)(蘇生)、戦闘日誌(アウトバースト)<br>
+</div>
+<h3 class="article-paragraph-title">スキル一覧表</h3>
+<div class="h3-indent">
+スキルの追加<br>
+<h4>闘士</h4>
+<div>レコニング、コンパルション、ラッシュ、アウトバースト、ファイティング スピリット、モータル フィスト、クラスト、インプリシット ヒット、オーバーカム、ファイティング スピリット：インデュア、オーバーカム：ウィル、インプリシット ヒット：エクストーション、ラッシュ：スタック、ファイティング スピリット：スマッシュ、コンパルション：リミット、レコニング：ナイトメア、ラッシュ：ピアス</div>
+<h4>クラスリバランス関連スキル追加と変更</h4>
+<div>アーマーブレイク：アビス(闇),メイルストロム：レヴェナント(槍),フォー スレイヤー：レビアタン(竜),エーテリアル マスター(魔),イリュージョン：ホライズン(幻),オーソリティ(君),セイクリッドマーク：インクイジター(聖),クルセイダー(騎),エスパーダ(剣),マジック シールド：リバティ(妖),タイタン：コロッサス(戦)</div>
+</div>
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年12月21日</div>
-        <h2 class="article-title">諸表：シグネチャーポイント交換表(テーブル)<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">シグネチャーポイント交換表【2025-12月期】を掲載しました。</h3>
-          <img class="ss" src="./picture/site_ss/signature_point_exchange_2025-12.png" width="225" height="115" alt="シグネチャーポイント交換表【2025-12月期】" />
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年12月21日</div>
+<h2 class="article-title">諸表：シグネチャーポイント交換表(テーブル)<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">シグネチャーポイント交換表【2025-12月期】を掲載しました。</h3>
+<img class="ss" src="./picture/site_ss/signature_point_exchange_2025-12.png" width="225" height="115" alt="シグネチャーポイント交換表【2025-12月期】" />
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年12月21日</div>
-        <h2 class="article-title">諸表：アクセサリー強化性能表訂正<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">単独アイテムの確認用モーダル表示</h3>
-          <div class="h3-indent">先行インシグニア以外のアクセサリーをモーダル表示対応。併せてPop-up用TableRecordDataを外部共通ファイル化。<br>
-          <img class="ss" src="./picture/site_ss/ring_modal2025-12-21_01.png" width="450" alt="スナッパーリングpopupの例" />
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年12月21日</div>
+<h2 class="article-title">諸表：アクセサリー強化性能表訂正<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">単独アイテムの確認用モーダル表示</h3>
+<div class="h3-indent">先行インシグニア以外のアクセサリーをモーダル表示対応。併せてPop-up用TableRecordDataを外部共通ファイル化。<br>
+<img class="ss" src="./picture/site_ss/ring_modal2025-12-21_01.png" width="450" alt="スナッパーリングpopupの例" />
+</div>
+</div>
 <!-- 横断訂正 -->
-        <div class="article-date">更新&nbsp;2025年11月11日</div>
-        <h2 class="article-title">モンスター一覧表/ドロップ一覧表/スキル一覧表：入力誤り訂正<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <div>入力内容半角スペース漏れの訂正</div>
-          <h3 class="article-paragraph-title">モンスター一覧表</h3>
-          <div class="h3-indent">
-            精鋭ブラックナイト → 精鋭 ブラックナイト<br>
-            フローティング アイ肉 → フローティング アイ 肉
-          </div>
-          <h3 class="article-paragraph-title">ドロップ一覧表</h3>
-          <div class="h3-indent">
-            Dropモンスター名訂正：精鋭ブラックナイト → 精鋭 ブラックナイト<br>
-            アイテム項目削除：フローティング アイ肉
-          </div>
-          <h3 class="article-paragraph-title">スキル一覧表</h3>
-          <div class="h3-indent">
-            Dropモンスター名訂正：精鋭ブラックナイト → 精鋭 ブラックナイト<br>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年11月11日</div>
+<h2 class="article-title">モンスター一覧表/ドロップ一覧表/スキル一覧表：入力誤り訂正<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<div>入力内容半角スペース漏れの訂正</div>
+<h3 class="article-paragraph-title">モンスター一覧表</h3>
+<div class="h3-indent">
+精鋭ブラックナイト → 精鋭 ブラックナイト<br>
+フローティング アイ肉 → フローティング アイ 肉
+</div>
+<h3 class="article-paragraph-title">ドロップ一覧表</h3>
+<div class="h3-indent">
+Dropモンスター名訂正：精鋭ブラックナイト → 精鋭 ブラックナイト<br>
+アイテム項目削除：フローティング アイ肉
+</div>
+<h3 class="article-paragraph-title">スキル一覧表</h3>
+<div class="h3-indent">
+Dropモンスター名訂正：精鋭ブラックナイト → 精鋭 ブラックナイト<br>
+</div>
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年10月30日</div>
-        <h2 class="article-title">諸表：高級以上のスキル検索表<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">スキル選択箱のみか直接個別にドロップもあるかの確認表。
-          <br>
-          <h3 class="article-paragraph-title">高級以上スキル一覧</h3>
-          <div class="h3-indent">
-            一部：例<br>
-            <table class="smalltable">
-              <thead>
-                <tr><th class="grade">G</th><th class="grade">等級</th><th>CLS</th><th>クラス</th><th>スキルアイテム名</th><th>直Drop</th><th>直Drop蘇生</th></tr>
-              </thead>
-              <tbody>
-                <tr><td class="grade_no">-4</td><td>神話</td><td class="cls">1</td><td>君</td><td>魔法書(コンカラー)</td><td>無し</td><td>無し</td></tr>
-                <tr><td class="grade_no">0</td><td>高級</td><td class="cls">1</td><td>君</td><td>魔法書(タイラント)</td><td>バーニング ウォリアー、ダーク ドッペルゲンガー</td><td>無し</td></tr>
-                <tr><td class="grade_no">-3</td><td>伝説</td><td class="cls">2</td><td>騎</td><td>技術書(フォース スタン)</td><td>無し</td><td>無し</td></tr>
-                <tr><td class="grade_no">-2</td><td>英雄</td><td class="cls">2</td><td>騎</td><td>技術書(レイジング ウェポン)</td><td>ジャイアント グレイブ ガーディアン</td><td>無し</td></tr>
-                <tr><td class="grade_no">-2</td><td>英雄</td><td class="cls">3</td><td>魔</td><td>魔法書(ホーリー ウォーク：エボリューション)</td><td>ジャイアント グレイブ ガーディアン、潜んでいるカープ</td><td>ジャイアント グレイブ ガーディアン、潜んでいるカープ</td></tr>
-                <tr><td class="grade_no">-2</td><td>英雄</td><td class="cls">9</td><td>剣</td><td>フェンサーの書(ファントム：リーパー)</td><td>無し</td><td>死神の監視者</td></tr>
-               </tbody>
-            </table>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年10月30日</div>
+<h2 class="article-title">諸表：高級以上のスキル検索表<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">スキル選択箱のみか直接個別にドロップもあるかの確認表。
+<br>
+<h3 class="article-paragraph-title">高級以上スキル一覧</h3>
+<div class="h3-indent">
+一部：例<br>
+<table class="smalltable">
+<thead>
+<tr><th class="grade">G</th><th class="grade">等級</th><th>CLS</th><th>クラス</th><th>スキルアイテム名</th><th>直Drop</th><th>直Drop蘇生</th></tr>
+</thead>
+<tbody>
+<tr><td class="grade_no">-4</td><td>神話</td><td class="cls">1</td><td>君</td><td>魔法書(コンカラー)</td><td>無し</td><td>無し</td></tr>
+<tr><td class="grade_no">0</td><td>高級</td><td class="cls">1</td><td>君</td><td>魔法書(タイラント)</td><td>バーニング ウォリアー、ダーク ドッペルゲンガー</td><td>無し</td></tr>
+<tr><td class="grade_no">-3</td><td>伝説</td><td class="cls">2</td><td>騎</td><td>技術書(フォース スタン)</td><td>無し</td><td>無し</td></tr>
+<tr><td class="grade_no">-2</td><td>英雄</td><td class="cls">2</td><td>騎</td><td>技術書(レイジング ウェポン)</td><td>ジャイアント グレイブ ガーディアン</td><td>無し</td></tr>
+<tr><td class="grade_no">-2</td><td>英雄</td><td class="cls">3</td><td>魔</td><td>魔法書(ホーリー ウォーク：エボリューション)</td><td>ジャイアント グレイブ ガーディアン、潜んでいるカープ</td><td>ジャイアント グレイブ ガーディアン、潜んでいるカープ</td></tr>
+<tr><td class="grade_no">-2</td><td>英雄</td><td class="cls">9</td><td>剣</td><td>フェンサーの書(ファントム：リーパー)</td><td>無し</td><td>死神の監視者</td></tr>
+</tbody>
+</table>
+</div>
+</div>
 <!-- skills -->
-        <div class="article-date">更新&nbsp;2025年10月30日</div>
-        <h2 class="article-title">スキル一覧表：スキル選択箱を展開<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">スキル選択箱以外の従来ドロップとスキル選択箱を展開したDropモンスターを収録</h3>
-          <ul>
-            <li>スキル選択箱には該当する等級の全てのスキルがえられるものとして塔11階層のボスなどを全て網羅してDropモンスターとして収録した。蘇生スキル選択箱も該当する等級の全ての蘇生スキルがえられるものとして同様に収録した。</li>
-            <li>また高級以上のスキルを狩り場図鑑で検索して、個別にドロップするモンスターを加えた。</li>
-          </ul>
-          <img class="ss" src="./picture/site_ss/lineage_skill_2025-10-30.png" width="1138" height="605" alt="スキル選択箱ドロップモンスターもスキルのドロップモンスター欄へ" />
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年10月30日</div>
+<h2 class="article-title">スキル一覧表：スキル選択箱を展開<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">スキル選択箱以外の従来ドロップとスキル選択箱を展開したDropモンスターを収録</h3>
+<ul>
+<li>スキル選択箱には該当する等級の全てのスキルがえられるものとして塔11階層のボスなどを全て網羅してDropモンスターとして収録した。蘇生スキル選択箱も該当する等級の全ての蘇生スキルがえられるものとして同様に収録した。</li>
+<li>また高級以上のスキルを狩り場図鑑で検索して、個別にドロップするモンスターを加えた。</li>
+</ul>
+<img class="ss" src="./picture/site_ss/lineage_skill_2025-10-30.png" width="1138" height="605" alt="スキル選択箱ドロップモンスターもスキルのドロップモンスター欄へ" />
+</div>
 <!-- Drops -->
-        <div class="article-date">更新&nbsp;2025年10月28日</div>
-        <h2 class="article-title">ドロップ一覧表：狩り場図鑑見直し<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">2024.11.20「騎士道」、2025.03.19「UNLIMIT」、2025.07.23「GLORY」アップデートなどの反映。
-          <br>
-          <h3 class="article-paragraph-title">Drops(Item2Monsterリスト)</h3>
-          <div class="h3-indent">
-            シーレンの神殿、シーレンの神殿地下、ヘオス前哨基地、アントクイーンの隠れ処など、追加・変更修正モンスターに対応。<br>
-            各種スキル選択箱、亡者の記憶類、ドラゴンの下級箱・上級箱(封印)、古代魔神の装備、古代巨石の装備、忘れられた島の古書の欠片、忘れられた島テレポート スクロール、精霊の水晶(グローリー アース)の変更などの追加。<br>
-            エルシャベの伝説の武器箱、エルシャベの伝説スキルブック箱、エルシャベの英雄スキルブック箱、エルシャベの蘇生英雄スキルブック箱、審判者のグレートソード、精霊の水晶(グローリー アース)(蘇生)、クロノスの恐怖、ガイアの激怒、支配者の処刑、死神のソード、ヒュペリオンの絶望、アインハザードの閃光、グランカインの審判、テイアの混沌、エヴァの誓約、ホーリー へドロン スタッフなどの削除。
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年10月28日</div>
+<h2 class="article-title">ドロップ一覧表：狩り場図鑑見直し<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">2024.11.20「騎士道」、2025.03.19「UNLIMIT」、2025.07.23「GLORY」アップデートなどの反映。
+<br>
+<h3 class="article-paragraph-title">Drops(Item2Monsterリスト)</h3>
+<div class="h3-indent">
+シーレンの神殿、シーレンの神殿地下、ヘオス前哨基地、アントクイーンの隠れ処など、追加・変更修正モンスターに対応。<br>
+各種スキル選択箱、亡者の記憶類、ドラゴンの下級箱・上級箱(封印)、古代魔神の装備、古代巨石の装備、忘れられた島の古書の欠片、忘れられた島テレポート スクロール、精霊の水晶(グローリー アース)の変更などの追加。<br>
+エルシャベの伝説の武器箱、エルシャベの伝説スキルブック箱、エルシャベの英雄スキルブック箱、エルシャベの蘇生英雄スキルブック箱、審判者のグレートソード、精霊の水晶(グローリー アース)(蘇生)、クロノスの恐怖、ガイアの激怒、支配者の処刑、死神のソード、ヒュペリオンの絶望、アインハザードの閃光、グランカインの審判、テイアの混沌、エヴァの誓約、ホーリー へドロン スタッフなどの削除。
+</div>
+</div>
 <!-- Monsters -->
-        <div class="article-date">更新&nbsp;2025年10月28日</div>
-        <h2 class="article-title">モンスター一覧表：狩り場図鑑見直し<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <div>2024.11.20「騎士道」、2025.03.19「UNLIMIT」、2025.07.23「GLORY」アップデートなどの反映。</div>
-          <h3 class="article-paragraph-title">追加モンスター:40</h3>
-          <div class="h3-indent">
-            <h4>アデン大陸</h4>
-            <div class="h4-indent">
-              グリッド キング ボス(★),
-              貪欲の原罪 グリッド キング ボス(★)
-            </div>
-            <h4>アントクイーンの隠れ処</h4>
-            <div class="h4-indent">
-              エルシャベ
-            </div>
-            <h4>シーレンの神殿</h4>
-            <div class="h4-indent">
-              シーレンの武官,
-              シーレンの巫女,
-              シーレンの司祭,
-              シーレンの騎士,
-              シーレンの兵士
-            </div>
-            <h4>シーレンの神殿地下</h4>
-            <div class="h4-indent">
-              真紅の狙撃手,
-              真紅の巫女,
-              真紅の司祭,
-              真紅の騎士,
-              シーレンの兵士,
-              真紅の神官
-            </div>
-            <h4>ヘオス前哨基地</h4>
-            <div class="h4-indent">
-              忘却の演奏者,
-              魂のネクロマンサー,
-              忘却のディエゴ,
-              忘却のスピリッド,
-              タランチュラ,
-              イビル フェンサー,
-              スケルトン アックスマン,
-              忘却のアリオク,
-              混沌のケルベロス ボス(★),
-              レイブン ランサー,
-              忘却の魔女,
-              腐敗の司祭,
-              闇のネクロマンサー,
-              忘却のレイブン キング,
-              死滅のデスナイト ボス(★),
-              スケルトン マークスマン,
-              サーベル タイガー,
-              忘却のリザード,
-              サラマンダー,
-              スケルトン パイクマン,
-              レイブン メイジ,
-              イビル ブレイズ,
-              レイブン アーチャー,
-              ペルティア ガルーダ,
-              マンドラゴラ,
-              イビル クラッシャー
-            </div>
-          </div>
-          <h3 class="article-paragraph-title">変更修正モンスター:242</h3>
-          <div class="h3-indent">
-            <h4>アデン大陸</h4>
-            <div class="h4-indent">
-              サンドワーム ボス(★)(アイテム),
-              オルクス ボス(★)(アイテム),
-              カーツ ボス(★)(アイテム),
-              リカント ボス(★)(アイテム),
-              ドッペルゲンガー ボス ボス(★)(アイテム),
-              バンディット ボス ボス(★)(アイテム),
-              疾風のシャスキー ボス(★)(アイテム),
-              狂風のシャスキー ボス(★)(アイテム)
-            </div>
-            <h4>アンタラス生息地</h4>
-            <div class="h4-indent">
-            	アンタラス ボス(★)(アイテム)
-            </div>
-            <h4>アントクイーンの隠れ処</h4>
-            <div class="h4-indent">
-            	エルシャベ(ステータス/アイテム),
-	            クイーン センチュリオン(アイテム)
-            </div>
-            <h4>エルフの森のダンジョン3階</h4>
-            <div class="h4-indent">
-              地の精霊のガーディアン(アイテム)
-            </div>
-            <h4>エルモア激戦地</h4>
-            <div class="h4-indent">
-              エルモア ウィザード(アイテム),
-              エルモア ウィザード(アイテム)
-            </div>
-            <h4>エヴァ王国</h4>
-            <div class="h4-indent">
-            	潜んでいるカープ(アイテム)
-            </div>
-            <h4>エヴァ王国水路1階</h4>
-            <div class="h4-indent">
-	            ジャイアント ラット(アイテム)
-            </div>
-            <h4>エヴァ王国水路2階</h4>
-            <div class="h4-indent">
-	            ニュートリア(アイテム)
-            </div>
-            <h4>エヴァ王国水路3階</h4>
-            <div class="h4-indent">
-              リザード ウィザード(アイテム),
-              リザード ウォリアー(アイテム)
-            </div>
-            <h4>オークの集落</h4>
-            <div class="h4-indent">
-            	フォノス オーク ソードマン(アイテム)
-            </div>
-            <h4>オーレン雪山</h4>
-            <div class="h4-indent">
-              アイス ゴーレム(アイテム),
-              ビッグフット マーヨ ボス(★)(アイテム)
-            </div>
-            <h4>ギラン監獄2階</h4>
-            <div class="h4-indent">
-            	看守長 タロス ボス(★)(アイテム)
-            </div>
-            <h4>シルバーナイトタウンのダンジョン4階</h4>
-            <div class="h4-indent">
-              殺気に満ちたアーチャー(アイテム),
-              エルジェン ボス(★)(アイテム)
-            </div>
-            <h4>ドラゴンバレー</h4>
-            <div class="h4-indent">
-              グレート ブラック エルダー ボス(★)(アイテム),
-              ゼロス ボス(★)(アイテム),
-              フランティック スケルトン マークスマン(アイテム),
-              クールヘッド スケルトン マークスマン(アイテム),
-              フランティック スケルトン ファイター(アイテム),
-              ジャイアント コカトリス(アイテム)
-            </div>
-            <h4>ドラゴンバレー ダンジョン4階</h4>
-            <div class="h4-indent">
-            	地竜のサキュバス(アイテム)
-            </div>
-            <h4>ドラゴンバレー ダンジョン5階</h4>
-            <div class="h4-indent">
-              地竜のサキュバス(アイテム)
-            </div>
-            <h4>ドラゴンバレー ダンジョン6階</h4>
-            <div class="h4-indent">
-              地竜のエリート ソルジャー(アイテム),
-              地竜のサキュバス(アイテム),
-              地竜のサキュバス クイーン(アイテム)
-            </div>
-            <h4>ドラゴンバレー ダンジョン7階</h4>
-            <div class="h4-indent">
-              アクモ ボス(★)(アイテム)
-            </div>
-            <h4>ドラゴンバレー海岸</h4>
-            <div class="h4-indent">
-              ジャイアントドレイク ボス(★)(アイテム),
-              ドレイク(アイテム),
-              渓谷のオーガ(アイテム)
-            </div>
-            <h4>ハイネの森</h4>
-            <div class="h4-indent">
-              ジュラカ(アイテム)
-            </div>
-            <h4>パプリオンの棲息地</h4>
-            <div class="h4-indent">
-            	パプリオン ボス(★)(アイテム)
-            </div>
-            <h4>ブラック バトルシップ2階</h4>
-            <div class="h4-indent">
-	            ブラックナイト近衛兵(アイテム)
-            </div>
-            <h4>ブラック バトルシップ3階</h4>
-            <div class="h4-indent">
-	            ブラックナイト ガーディアン(アイテム)
-            </div>
-            <h4>メインランドのダンジョン4階</h4>
-            <div class="h4-indent">
-              セマ ボス(★)(アイテム),
-              メルキオール ボス(★)(アイテム),
-              カスパー ボス(★)(アイテム),
-              バルタザール ボス(★)(アイテム)
-            </div>
-            <h4>メインランドのダンジョン6階</h4>
-            <div class="h4-indent">
-	            ネクロマンサー ボス(★)(アイテム)
-            </div>
-            <h4>メインランドのダンジョン7階</h4>
-            <div class="h4-indent">
-              デスナイト ボス(★)(アイテム),
-              デスナイト ボス(★)(アイテム),
-              デスナイト ボス(★)(アイテム)
-            </div>
-            <h4>ユニコーンテンプル</h4>
-            <div class="h4-indent">
-              風の大精霊(アイテム),
-              地の大精霊(アイテム),
-              夢幻のベネボス(アイテム)
-            </div>
-            <h4>ユニコーンテンプルBOOST</h4>
-            <div class="h4-indent">
-              風の大精霊(アイテム),
-              地の大精霊(アイテム)
-            </div>
-            <h4>リンドビオル棲息地</h4>
-            <div class="h4-indent">
-            	リンドビオル ボス(★)(アイテム)
-            </div>
-            <h4>ルウン城</h4>
-            <div class="h4-indent">
-              剣鬼 ボス(★)(ステータス/アイテム),
-              ルウン3世 ボス(★)(アイテム),
-              変面ピエロ ボス(★)(ステータス/アイテム),
-              偵察団長 ボス(★)(アイテム),
-              監視者のルウン人形(アイテム),
-              幹部のルウン人形(アイテム),
-              奇怪博士 ボス(★)(アイテム)
-            </div>
-            <h4>ヴァラカス棲息地</h4>
-            <div class="h4-indent">
-            	ヴァラカス ボス(★)(アイテム)
-            </div>
-            <h4>暗黒竜のダンジョン1階</h4>
-            <div class="h4-indent">
-            	ダーク ドッペルゲンガー(アイテム)
-            </div>
-            <h4>暗黒竜のダンジョン2階</h4>
-            <div class="h4-indent">
-              ダーク ドッペルゲンガー(アイテム),
-              憤怒のバルログ ボス(★)(アイテム)
-            </div>
-            <h4>暗黒竜の傷跡</h4>
-            <div class="h4-indent">
-              ヘルクリーチャー(アイテム),
-              ダークロード ボス(★)(アイテム)
-            </div>
-            <h4>隠されたエヴァ王国水路</h4>
-            <div class="h4-indent">
-              リザード ウォリアー(アイテム),
-              リザード ウィザード(アイテム)
-            </div>
-            <h4>隠されたエヴァ王国水路Boost</h4>
-            <div class="h4-indent">
-              リザード ウィザード(アイテム),
-              リザード ウォリアー(アイテム)
-            </div>
-            <h4>隠された見棄てられた者たちの地Boost</h4>
-            <div class="h4-indent">
-              見棄てられたソルジャー(アイテム),
-              見棄てられたダークウィザード(アイテム)
-            </div>
-            <h4>火竜の棲処</h4>
-            <div class="h4-indent">
-              ラヴァ ゴーレム(アイテム),
-              バーニング ウォリアー(アイテム),
-              フェニックス ボス(★)(アイテム),
-              イフリート ボス(★)(アイテム),
-              ラヴァ ゴーレム(分身)(アイテム),
-              火竜のガーディアン(アイテム)
-            </div>
-            <h4>乾いた砂漠</h4>
-            <div class="h4-indent">
-              スコーピオン(アイテム),
-              サンド スコーピオン(ステータス)
-            </div>
-            <h4>古代巨人の墓</h4>
-            <div class="h4-indent">
-	            ジャイアント グレイブ ガーディアン(アイテム)
-            </div>
-            <h4>古代神の寺院</h4>
-            <div class="h4-indent">
-              歪みのアーチャー(アイテム),
-              歪みのデーモン(アイテム),
-              歪みのウギル(アイテム),
-              歪みの支配者(アイテム),
-              歪みのウォーウルフ(アイテム),
-              歪みの監視者(アイテム),
-              歪みのクルータ(アイテム),
-              歪みの捕食者(アイテム)
-            </div>
-            <h4>古代精霊の墓</h4>
-            <div class="h4-indent">
-              風の精霊(アイテム),
-              精霊監視者 ボス(★)(アイテム),
-              水の精霊(アイテム),
-              マンボ キング ボス(★)(アイテム)
-            </div>
-            <h4>極寒の神殿</h4>
-            <div class="h4-indent">
-              アイスクイーン ボス(★)(アイテム),
-              アイス デーモン ボス(★)(アイテム)
-            </div>
-            <h4>極寒の神殿(HARD)</h4>
-            <div class="h4-indent">
-              アイス デーモン ボス(★)(アイテム),
-              アイスクイーン ボス(★)(アイテム),
-              アイス マンボ ラビット ボス(★)(アイテム)
-            </div>
-            <h4>支配の塔1階</h4>
-            <div class="h4-indent">
-            	ディストーション ゼニス クイーン ボス(★)(ステータス/アイテム)
-            </div>
-            <h4>支配の塔2階</h4>
-            <div class="h4-indent">
-	            ミストラスト シアー ボス(★)(ステータス/アイテム)
-            </div>
-            <h4>支配の塔3階</h4>
-            <div class="h4-indent">
-              ホラー イフリート(アイテム),
-              フィア バンパイア ボス(★)(ステータス/アイテム)
-            </div>
-            <h4>支配の塔4階</h4>
-            <div class="h4-indent">
-              デス ゾンビ ロード ボス(★)(ステータス/アイテム),
-              デス ゴースト(アイテム),
-              デス クリーチャー(アイテム)
-            </div>
-            <h4>支配の塔5階</h4>
-            <div class="h4-indent">
-              ヘル フォフス(ステータス),
-              ヘル スプレッド(ステータス),
-              ヘル クーガー ボス(★)(ステータス/アイテム),
-              ヘル ボーンドラゴン(アイテム),
-              ヘル ドーベルマン(アイテム)
-            </div>
-            <h4>支配の塔6階</h4>
-            <div class="h4-indent">
-              イモータル マミー ロード ボス(★)(ステータス/アイテム),
-              イモータル ニ バス(ステータス),
-              イモータル カルビス(ステータス),
-              イモータル サンド ソルジャー(アイテム),
-              イモータル サンド ウィザード(アイテム)
-            </div>
-            <h4>支配の塔7階</h4>
-            <div class="h4-indent">
-              ブルータル メイド(ステータス),
-              ブルータル アイリス ボス(★)(ステータス/アイテム),
-              ブルータル アイスマン(ステータス)
-            </div>
-            <h4>支配の塔8階</h4>
-            <div class="h4-indent">
-              ダーク アーマー ナイト(ステータス),
-              ダーク ナイトバルド ボス(★)(ステータス/アイテム),
-              ダーク ミノタウロス(ステータス)
-            </div>
-            <h4>支配の塔9階</h4>
-            <div class="h4-indent">
-              不滅の信徒(ステータス),
-              フォーエバー リッチ ボス(★)(ステータス/アイテム),
-              不滅の司祭(ステータス/アイテム)
-            </div>
-            <h4>支配の塔10階</h4>
-            <div class="h4-indent">
-              パート ウグヌス ボス(★)(ステータス/アイテム),
-              パート デビルマン(ステータス),
-              パート レッサーデーモン(ステータス),
-              パート アスモデウス(ステータス),
-              パート サキュバス クイーン(アイテム),
-              パート クリムゾン(ステータス)
-            </div>
-            <h4>支配の塔最上階</h4>
-            <div class="h4-indent">
-              デス グリムリーパー ボス(★)(ステータス/アイテム),
-              ゾンビ ロード(アイテム),
-              リッチ(アイテム),
-              ウグヌス(アイテム),
-              ナイトバルド(アイテム),
-              ゼニス クイーン(アイテム),
-              シアー(アイテム),
-              バンパイア(アイテム),
-              マミー ロード(アイテム),
-              クーガー(アイテム),
-              アイリス(アイテム)
-            </div>
-            <h4>死の廃墟</h4>
-            <div class="h4-indent">
-            	バグベアー(アイテム)
-            </div>
-            <h4>象牙の塔4階</h4>
-            <div class="h4-indent">
-            	ダンシング ソード(アイテム)
-            </div>
-            <h4>象牙の塔5階</h4>
-            <div class="h4-indent">
-	            隠された ハーディンの分身 ボス(★)(アイテム)
-            </div>
-            <h4>象牙の塔6階</h4>
-            <div class="h4-indent">
-              隠された ハーディンの分身 ボス(★)(アイテム),
-              デーモン ゴーレム(アイテム),
-              デーモンの司祭(アイテム)
-            </div>
-            <h4>象牙の塔7階</h4>
-            <div class="h4-indent">
-              隠された ハーディンの分身 ボス(★)(アイテム),
-              デーモン ボス(★)(アイテム),
-              デーモンの司祭(アイテム)
-            </div>
-            <h4>風竜の棲処</h4>
-            <div class="h4-indent">
-              ワイバーン(アイテム),
-              マイノ シャーマン ボス(★)(アイテム),
-              風竜のセターレン (アイテム)
-            </div>
-            <h4>忘れられた島</h4>
-            <div class="h4-indent">
-              ミノタウロス(アイテム),
-              ミノタウロス(アイテム),
-              ブルート(アイテム),
-              ハーピー(アイテム),
-              ラミア(アイテム),
-              ラミア(アイテム),
-              ウェアウルフ(アイテム),
-              ライカンスロープ(アイテム),
-              ライカンスロープ(アイテム),
-              キング バグベアー(アイテム),
-              ガースト(アイテム),
-              ガースト ロード(アイテム),
-              バグベアー(アイテム),
-              サイクロプス(ステータス/アイテム),
-              グリフォン(アイテム),
-              コカトリス(アイテム),
-              グレート ミノタウロス ボス(★)(アイテム),
-              キング バグベアー(アイテム),
-              バシリスク(アイテム),
-              ドレッドスパイダー(アイテム),
-              ガースト ロード(アイテム),
-              ラミア(アイテム),
-              サイクロプス(アイテム),
-              ラミア(ステータス/アイテム),
-              ドッペルゲンガー(アイテム),
-              キング バグベアー(アイテム),
-              ミノタウロス(アイテム),
-              ジャイアント クロコダイル(アイテム),
-              ダークエルフ(アイテム),
-              ドレイク(アイテム),
-              バグベアー(アイテム),
-              ウェアウルフ(アイテム),
-              ライカンスロープ(アイテム),
-              ガースト(アイテム),
-              ミノタウロス(アイテム),
-              アリゲーター(アイテム),
-              ブルート(アイテム)
-            </div>
-            <h4>話せる島ダンジョン2階</h4>
-            <div class="h4-indent">
-              ドレッドスパイダー(アイテム),
-              腐食したスケルトン ガード(アイテム)
-            </div>
-            <h4>話せる島フィールド</h4>
-            <div class="h4-indent">
-              オーク(アイテム),
-              ジャイアント スパイダー(アイテム),
-              ブラックナイト(アイテム)
-            </div>
-            <h4>傲慢の塔1階</h4>
-            <div class="h4-indent">
-              ディストーション ゼニス クイーン (分身) ボス(★)(アイテム),
-              リベリオン ジルレタ(アイテム),
-              ディストーション ドレッドスパイダー(アイテム)
-            </div>
-            <h4>傲慢の塔2階</h4>
-            <div class="h4-indent">
-              ミストラスト シアー (分身) ボス(★)(アイテム),
-              リベリオン ブルート(アイテム)
-            </div>
-            <h4>傲慢の塔3階</h4>
-            <div class="h4-indent">
-              フィア バンパイア (分身) ボス(★)(アイテム),
-              リベリオン インキュバス(アイテム)
-            </div>
-            <h4>傲慢の塔4階</h4>
-            <div class="h4-indent">
-              デス ゾンビ ロード (分身) ボス(★)(アイテム),
-              リベリオン ウォーカー(アイテム)
-            </div>
-            <h4>傲慢の塔5階</h4>
-            <div class="h4-indent">
-              ヘル クーガー (分身) ボス(★)(アイテム),
-              ヘル ドーベルマン(アイテム),
-              ヘル ボーンドラゴン(アイテム),
-              リベリオン スプレッド(ステータス/アイテム)
-            </div>
-            <h4>傲慢の塔6階</h4>
-            <div class="h4-indent">
-              イモータル マミー ロード (分身) ボス(★)(アイテム),
-              リベリオン カルビス(ステータス/アイテム)
-            </div>
-            <h4>傲慢の塔7階</h4>
-            <div class="h4-indent">
-              マーシレス アイリス (分身) ボス(★)(アイテム),
-              ブルータル バーニング アーチャー(アイテム),
-              リベリオン アイスマン(ステータス/アイテム)
-            </div>
-            <h4>傲慢の塔8階</h4>
-            <div class="h4-indent">
-              ダーク ナイトバルド (分身) ボス(★)(アイテム),
-              リベリオン アーマー ナイト(ステータス/アイテム)
-            </div>
-            <h4>傲慢の塔9階</h4>
-            <div class="h4-indent">
-              フォーエバー リッチ (分身) ボス(★)(アイテム),
-              リベリオン プリースト(ステータス/アイテム)
-            </div>
-            <h4>傲慢の塔10階</h4>
-            <div class="h4-indent">
-              パート ウグヌス (分身) ボス(★)(アイテム),
-              パート アスモデウス(ステータス),
-              パート クリムゾン(ステータス),
-              リベリオン レッサー デーモン(ステータス/アイテム)
-            </div>
-            <h4>傲慢の塔最上階</h4>
-            <div class="h4-indent">
-              デス グリムリーパー ボス(★)(アイテム),
-              死神のサキュバス(ステータス/アイテム),
-              死神のゴースト(アイテム),
-              死神の監視者(アイテム),
-              死神のイフリート(アイテム),
-              監視者ゼニス クイーン(アイテム),
-              監視者シアー(アイテム),
-              監視者アイリス(アイテム),
-              監視者ウグヌス(ステータス/アイテム),
-              監視者ゾンビ ロード(アイテム),
-              監視者リッチ(ステータス/アイテム),
-              監視者クーガー(アイテム),
-              監視者ナイトバルド(アイテム)
-            </div>
-            <h4>傲慢の塔地下神殿</h4>
-            <div class="h4-indent">
-              神殿のプリースト(ステータス),
-              神殿のハイプリースト(ステータス),
-              カヘル ヤヒ ボス(★)(アイテム)
-            </div>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年10月28日</div>
+<h2 class="article-title">モンスター一覧表：狩り場図鑑見直し<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<div>2024.11.20「騎士道」、2025.03.19「UNLIMIT」、2025.07.23「GLORY」アップデートなどの反映。</div>
+<h3 class="article-paragraph-title">追加モンスター:40</h3>
+<div class="h3-indent">
+<h4>アデン大陸</h4>
+<div class="h4-indent">
+グリッド キング ボス(★),
+貪欲の原罪 グリッド キング ボス(★)
+</div>
+<h4>アントクイーンの隠れ処</h4>
+<div class="h4-indent">
+エルシャベ
+</div>
+<h4>シーレンの神殿</h4>
+<div class="h4-indent">
+シーレンの武官,
+シーレンの巫女,
+シーレンの司祭,
+シーレンの騎士,
+シーレンの兵士
+</div>
+<h4>シーレンの神殿地下</h4>
+<div class="h4-indent">
+真紅の狙撃手,
+真紅の巫女,
+真紅の司祭,
+真紅の騎士,
+シーレンの兵士,
+真紅の神官
+</div>
+<h4>ヘオス前哨基地</h4>
+<div class="h4-indent">
+忘却の演奏者,
+魂のネクロマンサー,
+忘却のディエゴ,
+忘却のスピリッド,
+タランチュラ,
+イビル フェンサー,
+スケルトン アックスマン,
+忘却のアリオク,
+混沌のケルベロス ボス(★),
+レイブン ランサー,
+忘却の魔女,
+腐敗の司祭,
+闇のネクロマンサー,
+忘却のレイブン キング,
+死滅のデスナイト ボス(★),
+スケルトン マークスマン,
+サーベル タイガー,
+忘却のリザード,
+サラマンダー,
+スケルトン パイクマン,
+レイブン メイジ,
+イビル ブレイズ,
+レイブン アーチャー,
+ペルティア ガルーダ,
+マンドラゴラ,
+イビル クラッシャー
+</div>
+</div>
+<h3 class="article-paragraph-title">変更修正モンスター:242</h3>
+<div class="h3-indent">
+<h4>アデン大陸</h4>
+<div class="h4-indent">
+サンドワーム ボス(★)(アイテム),
+オルクス ボス(★)(アイテム),
+カーツ ボス(★)(アイテム),
+リカント ボス(★)(アイテム),
+ドッペルゲンガー ボス ボス(★)(アイテム),
+バンディット ボス ボス(★)(アイテム),
+疾風のシャスキー ボス(★)(アイテム),
+狂風のシャスキー ボス(★)(アイテム)
+</div>
+<h4>アンタラス生息地</h4>
+<div class="h4-indent">
+アンタラス ボス(★)(アイテム)
+</div>
+<h4>アントクイーンの隠れ処</h4>
+<div class="h4-indent">
+エルシャベ(ステータス/アイテム),
+クイーン センチュリオン(アイテム)
+</div>
+<h4>エルフの森のダンジョン3階</h4>
+<div class="h4-indent">
+地の精霊のガーディアン(アイテム)
+</div>
+<h4>エルモア激戦地</h4>
+<div class="h4-indent">
+エルモア ウィザード(アイテム),
+エルモア ウィザード(アイテム)
+</div>
+<h4>エヴァ王国</h4>
+<div class="h4-indent">
+潜んでいるカープ(アイテム)
+</div>
+<h4>エヴァ王国水路1階</h4>
+<div class="h4-indent">
+ジャイアント ラット(アイテム)
+</div>
+<h4>エヴァ王国水路2階</h4>
+<div class="h4-indent">
+ニュートリア(アイテム)
+</div>
+<h4>エヴァ王国水路3階</h4>
+<div class="h4-indent">
+リザード ウィザード(アイテム),
+リザード ウォリアー(アイテム)
+</div>
+<h4>オークの集落</h4>
+<div class="h4-indent">
+フォノス オーク ソードマン(アイテム)
+</div>
+<h4>オーレン雪山</h4>
+<div class="h4-indent">
+アイス ゴーレム(アイテム),
+ビッグフット マーヨ ボス(★)(アイテム)
+</div>
+<h4>ギラン監獄2階</h4>
+<div class="h4-indent">
+看守長 タロス ボス(★)(アイテム)
+</div>
+<h4>シルバーナイトタウンのダンジョン4階</h4>
+<div class="h4-indent">
+殺気に満ちたアーチャー(アイテム),
+エルジェン ボス(★)(アイテム)
+</div>
+<h4>ドラゴンバレー</h4>
+<div class="h4-indent">
+グレート ブラック エルダー ボス(★)(アイテム),
+ゼロス ボス(★)(アイテム),
+フランティック スケルトン マークスマン(アイテム),
+クールヘッド スケルトン マークスマン(アイテム),
+フランティック スケルトン ファイター(アイテム),
+ジャイアント コカトリス(アイテム)
+</div>
+<h4>ドラゴンバレー ダンジョン4階</h4>
+<div class="h4-indent">
+地竜のサキュバス(アイテム)
+</div>
+<h4>ドラゴンバレー ダンジョン5階</h4>
+<div class="h4-indent">
+地竜のサキュバス(アイテム)
+</div>
+<h4>ドラゴンバレー ダンジョン6階</h4>
+<div class="h4-indent">
+地竜のエリート ソルジャー(アイテム),
+地竜のサキュバス(アイテム),
+地竜のサキュバス クイーン(アイテム)
+</div>
+<h4>ドラゴンバレー ダンジョン7階</h4>
+<div class="h4-indent">
+アクモ ボス(★)(アイテム)
+</div>
+<h4>ドラゴンバレー海岸</h4>
+<div class="h4-indent">
+ジャイアントドレイク ボス(★)(アイテム),
+ドレイク(アイテム),
+渓谷のオーガ(アイテム)
+</div>
+<h4>ハイネの森</h4>
+<div class="h4-indent">
+ジュラカ(アイテム)
+</div>
+<h4>パプリオンの棲息地</h4>
+<div class="h4-indent">
+パプリオン ボス(★)(アイテム)
+</div>
+<h4>ブラック バトルシップ2階</h4>
+<div class="h4-indent">
+ブラックナイト近衛兵(アイテム)
+</div>
+<h4>ブラック バトルシップ3階</h4>
+<div class="h4-indent">
+ブラックナイト ガーディアン(アイテム)
+</div>
+<h4>メインランドのダンジョン4階</h4>
+<div class="h4-indent">
+セマ ボス(★)(アイテム),
+メルキオール ボス(★)(アイテム),
+カスパー ボス(★)(アイテム),
+バルタザール ボス(★)(アイテム)
+</div>
+<h4>メインランドのダンジョン6階</h4>
+<div class="h4-indent">
+ネクロマンサー ボス(★)(アイテム)
+</div>
+<h4>メインランドのダンジョン7階</h4>
+<div class="h4-indent">
+デスナイト ボス(★)(アイテム),
+デスナイト ボス(★)(アイテム),
+デスナイト ボス(★)(アイテム)
+</div>
+<h4>ユニコーンテンプル</h4>
+<div class="h4-indent">
+風の大精霊(アイテム),
+地の大精霊(アイテム),
+夢幻のベネボス(アイテム)
+</div>
+<h4>ユニコーンテンプルBOOST</h4>
+<div class="h4-indent">
+風の大精霊(アイテム),
+地の大精霊(アイテム)
+</div>
+<h4>リンドビオル棲息地</h4>
+<div class="h4-indent">
+リンドビオル ボス(★)(アイテム)
+</div>
+<h4>ルウン城</h4>
+<div class="h4-indent">
+剣鬼 ボス(★)(ステータス/アイテム),
+ルウン3世 ボス(★)(アイテム),
+変面ピエロ ボス(★)(ステータス/アイテム),
+偵察団長 ボス(★)(アイテム),
+監視者のルウン人形(アイテム),
+幹部のルウン人形(アイテム),
+奇怪博士 ボス(★)(アイテム)
+</div>
+<h4>ヴァラカス棲息地</h4>
+<div class="h4-indent">
+ヴァラカス ボス(★)(アイテム)
+</div>
+<h4>暗黒竜のダンジョン1階</h4>
+<div class="h4-indent">
+ダーク ドッペルゲンガー(アイテム)
+</div>
+<h4>暗黒竜のダンジョン2階</h4>
+<div class="h4-indent">
+ダーク ドッペルゲンガー(アイテム),
+憤怒のバルログ ボス(★)(アイテム)
+</div>
+<h4>暗黒竜の傷跡</h4>
+<div class="h4-indent">
+ヘルクリーチャー(アイテム),
+ダークロード ボス(★)(アイテム)
+</div>
+<h4>隠されたエヴァ王国水路</h4>
+<div class="h4-indent">
+リザード ウォリアー(アイテム),
+リザード ウィザード(アイテム)
+</div>
+<h4>隠されたエヴァ王国水路Boost</h4>
+<div class="h4-indent">
+リザード ウィザード(アイテム),
+リザード ウォリアー(アイテム)
+</div>
+<h4>隠された見棄てられた者たちの地Boost</h4>
+<div class="h4-indent">
+見棄てられたソルジャー(アイテム),
+見棄てられたダークウィザード(アイテム)
+</div>
+<h4>火竜の棲処</h4>
+<div class="h4-indent">
+ラヴァ ゴーレム(アイテム),
+バーニング ウォリアー(アイテム),
+フェニックス ボス(★)(アイテム),
+イフリート ボス(★)(アイテム),
+ラヴァ ゴーレム(分身)(アイテム),
+火竜のガーディアン(アイテム)
+</div>
+<h4>乾いた砂漠</h4>
+<div class="h4-indent">
+スコーピオン(アイテム),
+サンド スコーピオン(ステータス)
+</div>
+<h4>古代巨人の墓</h4>
+<div class="h4-indent">
+ジャイアント グレイブ ガーディアン(アイテム)
+</div>
+<h4>古代神の寺院</h4>
+<div class="h4-indent">
+歪みのアーチャー(アイテム),
+歪みのデーモン(アイテム),
+歪みのウギル(アイテム),
+歪みの支配者(アイテム),
+歪みのウォーウルフ(アイテム),
+歪みの監視者(アイテム),
+歪みのクルータ(アイテム),
+歪みの捕食者(アイテム)
+</div>
+<h4>古代精霊の墓</h4>
+<div class="h4-indent">
+風の精霊(アイテム),
+精霊監視者 ボス(★)(アイテム),
+水の精霊(アイテム),
+マンボ キング ボス(★)(アイテム)
+</div>
+<h4>極寒の神殿</h4>
+<div class="h4-indent">
+アイスクイーン ボス(★)(アイテム),
+アイス デーモン ボス(★)(アイテム)
+</div>
+<h4>極寒の神殿(HARD)</h4>
+<div class="h4-indent">
+アイス デーモン ボス(★)(アイテム),
+アイスクイーン ボス(★)(アイテム),
+アイス マンボ ラビット ボス(★)(アイテム)
+</div>
+<h4>支配の塔1階</h4>
+<div class="h4-indent">
+ディストーション ゼニス クイーン ボス(★)(ステータス/アイテム)
+</div>
+<h4>支配の塔2階</h4>
+<div class="h4-indent">
+ミストラスト シアー ボス(★)(ステータス/アイテム)
+</div>
+<h4>支配の塔3階</h4>
+<div class="h4-indent">
+ホラー イフリート(アイテム),
+フィア バンパイア ボス(★)(ステータス/アイテム)
+</div>
+<h4>支配の塔4階</h4>
+<div class="h4-indent">
+デス ゾンビ ロード ボス(★)(ステータス/アイテム),
+デス ゴースト(アイテム),
+デス クリーチャー(アイテム)
+</div>
+<h4>支配の塔5階</h4>
+<div class="h4-indent">
+ヘル フォフス(ステータス),
+ヘル スプレッド(ステータス),
+ヘル クーガー ボス(★)(ステータス/アイテム),
+ヘル ボーンドラゴン(アイテム),
+ヘル ドーベルマン(アイテム)
+</div>
+<h4>支配の塔6階</h4>
+<div class="h4-indent">
+イモータル マミー ロード ボス(★)(ステータス/アイテム),
+イモータル ニ バス(ステータス),
+イモータル カルビス(ステータス),
+イモータル サンド ソルジャー(アイテム),
+イモータル サンド ウィザード(アイテム)
+</div>
+<h4>支配の塔7階</h4>
+<div class="h4-indent">
+ブルータル メイド(ステータス),
+ブルータル アイリス ボス(★)(ステータス/アイテム),
+ブルータル アイスマン(ステータス)
+</div>
+<h4>支配の塔8階</h4>
+<div class="h4-indent">
+ダーク アーマー ナイト(ステータス),
+ダーク ナイトバルド ボス(★)(ステータス/アイテム),
+ダーク ミノタウロス(ステータス)
+</div>
+<h4>支配の塔9階</h4>
+<div class="h4-indent">
+不滅の信徒(ステータス),
+フォーエバー リッチ ボス(★)(ステータス/アイテム),
+不滅の司祭(ステータス/アイテム)
+</div>
+<h4>支配の塔10階</h4>
+<div class="h4-indent">
+パート ウグヌス ボス(★)(ステータス/アイテム),
+パート デビルマン(ステータス),
+パート レッサーデーモン(ステータス),
+パート アスモデウス(ステータス),
+パート サキュバス クイーン(アイテム),
+パート クリムゾン(ステータス)
+</div>
+<h4>支配の塔最上階</h4>
+<div class="h4-indent">
+デス グリムリーパー ボス(★)(ステータス/アイテム),
+ゾンビ ロード(アイテム),
+リッチ(アイテム),
+ウグヌス(アイテム),
+ナイトバルド(アイテム),
+ゼニス クイーン(アイテム),
+シアー(アイテム),
+バンパイア(アイテム),
+マミー ロード(アイテム),
+クーガー(アイテム),
+アイリス(アイテム)
+</div>
+<h4>死の廃墟</h4>
+<div class="h4-indent">
+バグベアー(アイテム)
+</div>
+<h4>象牙の塔4階</h4>
+<div class="h4-indent">
+ダンシング ソード(アイテム)
+</div>
+<h4>象牙の塔5階</h4>
+<div class="h4-indent">
+隠された ハーディンの分身 ボス(★)(アイテム)
+</div>
+<h4>象牙の塔6階</h4>
+<div class="h4-indent">
+隠された ハーディンの分身 ボス(★)(アイテム),
+デーモン ゴーレム(アイテム),
+デーモンの司祭(アイテム)
+</div>
+<h4>象牙の塔7階</h4>
+<div class="h4-indent">
+隠された ハーディンの分身 ボス(★)(アイテム),
+デーモン ボス(★)(アイテム),
+デーモンの司祭(アイテム)
+</div>
+<h4>風竜の棲処</h4>
+<div class="h4-indent">
+ワイバーン(アイテム),
+マイノ シャーマン ボス(★)(アイテム),
+風竜のセターレン (アイテム)
+</div>
+<h4>忘れられた島</h4>
+<div class="h4-indent">
+ミノタウロス(アイテム),
+ミノタウロス(アイテム),
+ブルート(アイテム),
+ハーピー(アイテム),
+ラミア(アイテム),
+ラミア(アイテム),
+ウェアウルフ(アイテム),
+ライカンスロープ(アイテム),
+ライカンスロープ(アイテム),
+キング バグベアー(アイテム),
+ガースト(アイテム),
+ガースト ロード(アイテム),
+バグベアー(アイテム),
+サイクロプス(ステータス/アイテム),
+グリフォン(アイテム),
+コカトリス(アイテム),
+グレート ミノタウロス ボス(★)(アイテム),
+キング バグベアー(アイテム),
+バシリスク(アイテム),
+ドレッドスパイダー(アイテム),
+ガースト ロード(アイテム),
+ラミア(アイテム),
+サイクロプス(アイテム),
+ラミア(ステータス/アイテム),
+ドッペルゲンガー(アイテム),
+キング バグベアー(アイテム),
+ミノタウロス(アイテム),
+ジャイアント クロコダイル(アイテム),
+ダークエルフ(アイテム),
+ドレイク(アイテム),
+バグベアー(アイテム),
+ウェアウルフ(アイテム),
+ライカンスロープ(アイテム),
+ガースト(アイテム),
+ミノタウロス(アイテム),
+アリゲーター(アイテム),
+ブルート(アイテム)
+</div>
+<h4>話せる島ダンジョン2階</h4>
+<div class="h4-indent">
+ドレッドスパイダー(アイテム),
+腐食したスケルトン ガード(アイテム)
+</div>
+<h4>話せる島フィールド</h4>
+<div class="h4-indent">
+オーク(アイテム),
+ジャイアント スパイダー(アイテム),
+ブラックナイト(アイテム)
+</div>
+<h4>傲慢の塔1階</h4>
+<div class="h4-indent">
+ディストーション ゼニス クイーン (分身) ボス(★)(アイテム),
+リベリオン ジルレタ(アイテム),
+ディストーション ドレッドスパイダー(アイテム)
+</div>
+<h4>傲慢の塔2階</h4>
+<div class="h4-indent">
+ミストラスト シアー (分身) ボス(★)(アイテム),
+リベリオン ブルート(アイテム)
+</div>
+<h4>傲慢の塔3階</h4>
+<div class="h4-indent">
+フィア バンパイア (分身) ボス(★)(アイテム),
+リベリオン インキュバス(アイテム)
+</div>
+<h4>傲慢の塔4階</h4>
+<div class="h4-indent">
+デス ゾンビ ロード (分身) ボス(★)(アイテム),
+リベリオン ウォーカー(アイテム)
+</div>
+<h4>傲慢の塔5階</h4>
+<div class="h4-indent">
+ヘル クーガー (分身) ボス(★)(アイテム),
+ヘル ドーベルマン(アイテム),
+ヘル ボーンドラゴン(アイテム),
+リベリオン スプレッド(ステータス/アイテム)
+</div>
+<h4>傲慢の塔6階</h4>
+<div class="h4-indent">
+イモータル マミー ロード (分身) ボス(★)(アイテム),
+リベリオン カルビス(ステータス/アイテム)
+</div>
+<h4>傲慢の塔7階</h4>
+<div class="h4-indent">
+マーシレス アイリス (分身) ボス(★)(アイテム),
+ブルータル バーニング アーチャー(アイテム),
+リベリオン アイスマン(ステータス/アイテム)
+</div>
+<h4>傲慢の塔8階</h4>
+<div class="h4-indent">
+ダーク ナイトバルド (分身) ボス(★)(アイテム),
+リベリオン アーマー ナイト(ステータス/アイテム)
+</div>
+<h4>傲慢の塔9階</h4>
+<div class="h4-indent">
+フォーエバー リッチ (分身) ボス(★)(アイテム),
+リベリオン プリースト(ステータス/アイテム)
+</div>
+<h4>傲慢の塔10階</h4>
+<div class="h4-indent">
+パート ウグヌス (分身) ボス(★)(アイテム),
+パート アスモデウス(ステータス),
+パート クリムゾン(ステータス),
+リベリオン レッサー デーモン(ステータス/アイテム)
+</div>
+<h4>傲慢の塔最上階</h4>
+<div class="h4-indent">
+デス グリムリーパー ボス(★)(アイテム),
+死神のサキュバス(ステータス/アイテム),
+死神のゴースト(アイテム),
+死神の監視者(アイテム),
+死神のイフリート(アイテム),
+監視者ゼニス クイーン(アイテム),
+監視者シアー(アイテム),
+監視者アイリス(アイテム),
+監視者ウグヌス(ステータス/アイテム),
+監視者ゾンビ ロード(アイテム),
+監視者リッチ(ステータス/アイテム),
+監視者クーガー(アイテム),
+監視者ナイトバルド(アイテム)
+</div>
+<h4>傲慢の塔地下神殿</h4>
+<div class="h4-indent">
+神殿のプリースト(ステータス),
+神殿のハイプリースト(ステータス),
+カヘル ヤヒ ボス(★)(アイテム)
+</div>
+</div>
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年09月26日</div>
-        <h2 class="article-title">諸表：アクセサリー強化性能表(インシグニア表)訂正<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">賢者の守護インシグニア：訂正</h3>
-          <div class="h3-indent">強化＋５～＋８近距離命中漏れのため追加</div>
-          <h3 class="article-paragraph-title">単独アイテムの確認用モーダル表示</h3>
-          <div class="h3-indent">インシグニアで先行試験にモーダル表示<br>
-          <img class="ss" src="./picture/site_ss/insignia_modal2025-09-26_01.png" width="450" alt="インシグニアpopupの例" />
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月26日</div>
+<h2 class="article-title">諸表：アクセサリー強化性能表(インシグニア表)訂正<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">賢者の守護インシグニア：訂正</h3>
+<div class="h3-indent">強化＋５～＋８近距離命中漏れのため追加</div>
+<h3 class="article-paragraph-title">単独アイテムの確認用モーダル表示</h3>
+<div class="h3-indent">インシグニアで先行試験にモーダル表示<br>
+<img class="ss" src="./picture/site_ss/insignia_modal2025-09-26_01.png" width="450" alt="インシグニアpopupの例" />
+</div>
+</div>
 <!--  -->
-        <div class="article-date">更新&nbsp;2025年09月18日</div>
-        <h2 class="article-title">諸表に新規掲載：勇猛のメダル交換スキル入手性表<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">勇猛のメダル交換スキルのdropと購入可不可を追記した表</h3>
-          <div class="h3-indent">8ページのpdfと各ページのpng画像を掲載<br>
-          <img class="ss" src="./picture/item_thumbnail/valor_medal_rarity_evaluation_1_corner.png" width="300" alt="勇猛のメダル交換スキル入手表例" />
-          <img class="ss" src="./picture/item_thumbnail/valor_medal_rarity_evaluation_2_corner.png" width="300" alt="勇猛のメダル交換スキル入手表例" />
-          <img class="ss" src="./picture/item_thumbnail/valor_medal_rarity_evaluation_8_corner.png" width="300" alt="勇猛のメダル交換スキル入手表例" />
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月18日</div>
+<h2 class="article-title">諸表に新規掲載：勇猛のメダル交換スキル入手性表<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">勇猛のメダル交換スキルのdropと購入可不可を追記した表</h3>
+<div class="h3-indent">8ページのpdfと各ページのpng画像を掲載<br>
+<img class="ss" src="./picture/item_thumbnail/valor_medal_rarity_evaluation_1_corner.png" width="300" alt="勇猛のメダル交換スキル入手表例" />
+<img class="ss" src="./picture/item_thumbnail/valor_medal_rarity_evaluation_2_corner.png" width="300" alt="勇猛のメダル交換スキル入手表例" />
+<img class="ss" src="./picture/item_thumbnail/valor_medal_rarity_evaluation_8_corner.png" width="300" alt="勇猛のメダル交換スキル入手表例" />
+</div>
+</div>
 <!-- skills -->
-        <div class="article-date">更新&nbsp;2025年09月24日</div>
-        <h2 class="article-title">スキル一覧ページ体裁など修整。(skills)<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">ボタンの集約、長いテキストの折畳み。
-          <br>
-          <h3 class="article-paragraph-title">skill(スキル一覧表)</h3>
-          <ol>
-            <li>[all]ボタンを廃止[表示/リセット]に一本化。</li>
-            <li>ラジオボタンに説明文を追加。ウィザード以外の一般魔法</li>
-            <li>長いテキストは折りたたんで折りたたみ表示を追加。</li>
-          </ol>
-            <img class="ss" src="./picture/site_ss/lineage_skill_2025-09-24_01.png" width="995" height="522" alt="スキル一覧：レコード表示の修正点" />
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月24日</div>
+<h2 class="article-title">スキル一覧ページ体裁など修整。(skills)<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">ボタンの集約、長いテキストの折畳み。
+<br>
+<h3 class="article-paragraph-title">skill(スキル一覧表)</h3>
+<ol>
+<li>[all]ボタンを廃止[表示/リセット]に一本化。</li>
+<li>ラジオボタンに説明文を追加。ウィザード以外の一般魔法</li>
+<li>長いテキストは折りたたんで折りたたみ表示を追加。</li>
+</ol>
+<img class="ss" src="./picture/site_ss/lineage_skill_2025-09-24_01.png" width="995" height="522" alt="スキル一覧：レコード表示の修正点" />
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年09月17日</div>
-        <h2 class="article-title">諸表：勇猛のメダル交換表2025年9月期更新<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">2025年9月17日(水)定期メンテナンス後～2025年12月24日(水)定期メンテナンス前開催。イベント告知の内容差し替え。</h3>
-          <!-- <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" /> -->
-          <div class="h3-indent">交換アイテムに以下のスキルが復活されました。2025年2月期以来ラインナップとレートは同じ。<br>
-          魔法書(グレイス)(刻印)(1500枚)、魔法書(マジェスティ)(刻印)(3000枚)、技術書(アブソルート ブレイド)(刻印)(600枚)、技術書(リダクション アーマー：ベテラン)(刻印)(1500枚)、技術書(エクセレント ソード)(刻印)(4500枚)、精霊の水晶(ソウル バリア)(刻印)(600枚)、精霊の水晶(マジック シールド)(刻印)(1500枚)、魔法書(デス ヒール)(刻印)(1500枚)、魔法書(メテオ ストライク)(刻印)(4500枚)、闇精霊の水晶(ダブル ブレイク：デスティニー)(刻印)(1500枚)、闇精霊の水晶(アーマー ブレイク)(刻印)(4500枚)、ドラゴンナイトの書板(アウラキア)(刻印)(1500枚)、ドラゴンナイトの書板(ランページ)(刻印)(4500枚)、記憶の水晶(メビウス)(刻印)(1500枚)、記憶の水晶(インパクト)(刻印)(4500枚)、ウォリアーの印章(タイタン ロック)(刻印)(1500枚)、ウォリアーの印章(タイタン ブリッツ)(刻印)(3000枚)、フェンサーの書(サヴァイヴ)(刻印)(1500枚)、フェンサーの書(インフィニティ：ブリッツ)(刻印)(1500枚)、フェンサーの書(パラドックス)(刻印)(4500枚)、槍術書(プレッシャー)(刻印)(1500枚)、槍術書(ヴァンガード)(刻印)(4500枚)、槍術書(ドッジ ブレイク)(刻印)(3000枚)、聖書(ディバイン ソウル：グレイス)(刻印)(1500枚)、聖書(ホーリー チャージ)(刻印)(4500枚)<br>
-          </div>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月17日</div>
+<h2 class="article-title">諸表：勇猛のメダル交換表2025年9月期更新<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">2025年9月17日(水)定期メンテナンス後～2025年12月24日(水)定期メンテナンス前開催。イベント告知の内容差し替え。</h3>
+<!-- <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" /> -->
+<div class="h3-indent">交換アイテムに以下のスキルが復活されました。2025年2月期以来ラインナップとレートは同じ。<br>
+魔法書(グレイス)(刻印)(1500枚)、魔法書(マジェスティ)(刻印)(3000枚)、技術書(アブソルート ブレイド)(刻印)(600枚)、技術書(リダクション アーマー：ベテラン)(刻印)(1500枚)、技術書(エクセレント ソード)(刻印)(4500枚)、精霊の水晶(ソウル バリア)(刻印)(600枚)、精霊の水晶(マジック シールド)(刻印)(1500枚)、魔法書(デス ヒール)(刻印)(1500枚)、魔法書(メテオ ストライク)(刻印)(4500枚)、闇精霊の水晶(ダブル ブレイク：デスティニー)(刻印)(1500枚)、闇精霊の水晶(アーマー ブレイク)(刻印)(4500枚)、ドラゴンナイトの書板(アウラキア)(刻印)(1500枚)、ドラゴンナイトの書板(ランページ)(刻印)(4500枚)、記憶の水晶(メビウス)(刻印)(1500枚)、記憶の水晶(インパクト)(刻印)(4500枚)、ウォリアーの印章(タイタン ロック)(刻印)(1500枚)、ウォリアーの印章(タイタン ブリッツ)(刻印)(3000枚)、フェンサーの書(サヴァイヴ)(刻印)(1500枚)、フェンサーの書(インフィニティ：ブリッツ)(刻印)(1500枚)、フェンサーの書(パラドックス)(刻印)(4500枚)、槍術書(プレッシャー)(刻印)(1500枚)、槍術書(ヴァンガード)(刻印)(4500枚)、槍術書(ドッジ ブレイク)(刻印)(3000枚)、聖書(ディバイン ソウル：グレイス)(刻印)(1500枚)、聖書(ホーリー チャージ)(刻印)(4500枚)<br>
+</div>
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年09月11日</div>
-        <h2 class="article-title">諸表に新規掲載：アクセサリー強化性能表(テーブル)<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">紋章/インシグニア/ルームティスのイアリング・ペンダント/ブレスレット/スナッパーのリングhtml表掲載。</h3>
-          <img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" />
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月11日</div>
+<h2 class="article-title">諸表に新規掲載：アクセサリー強化性能表(テーブル)<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">紋章/インシグニア/ルームティスのイアリング・ペンダント/ブレスレット/スナッパーのリングhtml表掲載。</h3>
+<img class="ss" src="./picture/table/page_ss_accessory_20250912.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" />
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年09月07日</div>
-        <h2 class="article-title">諸表：勇猛のメダル交換表(テーブル)にモーダル表示<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">勇猛のメダル交換表の記事中、交換スキル名を語句自動リンクにしてスキル一覧情報をモーダル表示するようにしました。</h3>
-          <img class="ss" src="./picture/site_ss/brave_medal_exchange_modal_window2025-09-07.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" />
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月07日</div>
+<h2 class="article-title">諸表：勇猛のメダル交換表(テーブル)にモーダル表示<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">勇猛のメダル交換表の記事中、交換スキル名を語句自動リンクにしてスキル一覧情報をモーダル表示するようにしました。</h3>
+<img class="ss" src="./picture/site_ss/brave_medal_exchange_modal_window2025-09-07.png" width="408" height="196" alt="勇猛のメダル交換表モーダル表示例" />
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年09月03日</div>
-        <h2 class="article-title">諸表に新規掲載：シグネチャーポイント交換表(テーブル)<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">シグネチャーポイント交換表【2025-7月期】を掲載しました。</h3>
-          <img class="ss" src="./picture/site_ss/signature_point_exchange.png" width="225" height="115" alt="シグネチャーポイント交換表【2025-7月期】" />
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月03日</div>
+<h2 class="article-title">諸表に新規掲載：シグネチャーポイント交換表(テーブル)<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">シグネチャーポイント交換表【2025-7月期】を掲載しました。</h3>
+<img class="ss" src="./picture/site_ss/signature_point_exchange.png" width="225" height="115" alt="シグネチャーポイント交換表【2025-7月期】" />
+</div>
 <!-- etc -->
-        <div class="article-date">更新&nbsp;2025年09月02日</div>
-        <h2 class="article-title">諸表に新規掲載：シグネチャーポイント獲得コンテンツ・交換表・アクセサリー性能表<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">
-          <h3 class="article-paragraph-title">諸表のページに以下の表を掲載しました。</h3>
-          <ul>
-            <li>シグネチャーポイント獲得コンテンツ(画像)<br>
-            <img class="ss" src="./picture/table/signature_point_achievement_table_2025-07.jpg" width="175" height="250" alt="シグネチャーポイント獲得コンテンツ" /></li>
-            <li>アクセサリーの強化数別性能表<br>
-              <ol>
-                <li>紋章(テーブル/画像)<br><img class="ss" src="./picture/table/accessory_crest_typeB_2025-05-21.png" width="290" height="300" alt="強化数別紋章性能一覧表" /></li>
-                <li>インシグニア(画像)<br><img class="ss" src="./picture/table/accessory_insignia_typeB_2025-05-21.png" width="287" height="202" alt="強化数別インシグニア性能一覧表" /></li>
-                <li>ルームティスイアリング(画像)<br><img class="ss" src="./picture/table/accessory_earring_typeB_2025-05-21.jpg" width="330" height="242" alt="強化数別ルームティスイアリング性能一覧表" /></li>
-                <li>ブレスレット(画像)<br><img class="ss" src="./picture/table/accessory_bracelet_typeB_2025-04-10.png" width="240" height="180" alt="強化数別ブレスレット性能一覧表" /></li>
-                <li>ルームティスのペンダント(画像)<br><img class="ss" src="./picture/table/accessory_pendant_typeB_2025-04-02_1.png" width="262" height="176" alt="強化数別ルームティスのペンダント性能一覧表" /></li>
-                <li>スナッパーのリング(画像)<br><img class="ss" src="./picture/table/accessory_ring_typeB_2025-03-25_1.jpg" width="300" height="220" alt="強化数別スナッパーのリング性能一覧表" /></li>
-              </ol>
-            </li>
-            <li>シグネチャーポイント交換表【2025-7月期】(テーブル/画像)<br>
-            <img class="ss" src="./picture/table/signature_point_exchange_table_2025-07_1.jpg" width="248" height="175" alt="シグネチャーポイント交換アイテム一覧【2025-7月期】1ページ目" /></li>
-          </ul>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月02日</div>
+<h2 class="article-title">諸表に新規掲載：シグネチャーポイント獲得コンテンツ・交換表・アクセサリー性能表<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">諸表のページに以下の表を掲載しました。</h3>
+<ul>
+<li>シグネチャーポイント獲得コンテンツ(画像)<br>
+<img class="ss" src="./picture/table/signature_point_achievement_table_2025-07.jpg" width="175" height="250" alt="シグネチャーポイント獲得コンテンツ" /></li>
+<li>アクセサリーの強化数別性能表<br>
+<ol>
+<li>紋章(テーブル/画像)<br><img class="ss" src="./picture/table/accessory_crest_typeB_2025-05-21.png" width="290" height="300" alt="強化数別紋章性能一覧表" /></li>
+<li>インシグニア(画像)<br><img class="ss" src="./picture/table/accessory_insignia_typeB_2025-05-21.png" width="287" height="202" alt="強化数別インシグニア性能一覧表" /></li>
+<li>ルームティスイアリング(画像)<br><img class="ss" src="./picture/table/accessory_earring_typeB_2025-05-21.jpg" width="330" height="242" alt="強化数別ルームティスイアリング性能一覧表" /></li>
+<li>ブレスレット(画像)<br><img class="ss" src="./picture/table/accessory_bracelet_typeB_2025-04-10.png" width="240" height="180" alt="強化数別ブレスレット性能一覧表" /></li>
+<li>ルームティスのペンダント(画像)<br><img class="ss" src="./picture/table/accessory_pendant_typeB_2025-04-02_1.png" width="262" height="176" alt="強化数別ルームティスのペンダント性能一覧表" /></li>
+<li>スナッパーのリング(画像)<br><img class="ss" src="./picture/table/accessory_ring_typeB_2025-03-25_1.jpg" width="300" height="220" alt="強化数別スナッパーのリング性能一覧表" /></li>
+</ol>
+</li>
+<li>シグネチャーポイント交換表【2025-7月期】(テーブル/画像)<br>
+<img class="ss" src="./picture/table/signature_point_exchange_table_2025-07_1.jpg" width="248" height="175" alt="シグネチャーポイント交換アイテム一覧【2025-7月期】1ページ目" /></li>
+</ul>
+</div>
 <!-- skills -->
-        <div class="article-date">更新&nbsp;2025年09月01日</div>
-        <h2 class="article-title">棲息場所と階層を集約(skills)<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">モンスター毎に棲息場所を集約、生息場所毎に階層を集約
-          <br>
-          <h3 class="article-paragraph-title">skill(スキル一覧表)</h3>
-          <ul>
-            <li>モンスター毎に棲息場所を集約、生息場所毎に階層を集約従来は「ダークエルフ(アデン大陸)、ダークエルフ(暗黒竜の傷跡)」であったものを「ダークエルフ〈アデン大陸、暗黒竜の傷跡〉」のように同じモンスター毎に集約した。<br>
-            <img class="ss" src="./picture/site_ss/skill_monster_habitat_integration.png" width="737" height="433" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
-            <li>また「ケルベロス(メインランドのダンジョン4階)、ケルベロス(メインランドのダンジョン5階)」であったものを「ケルベロス〈メインランドのダンジョン4階、5階〉」のように同じ狩り場の階層を集約した。<br>
-            <img class="ss" src="./picture/site_ss/skill_monster_floor_integration.png" width="832" height="476" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
-          </ul>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年09月01日</div>
+<h2 class="article-title">棲息場所と階層を集約(skills)<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">モンスター毎に棲息場所を集約、生息場所毎に階層を集約
+<br>
+<h3 class="article-paragraph-title">skill(スキル一覧表)</h3>
+<ul>
+<li>モンスター毎に棲息場所を集約、生息場所毎に階層を集約従来は「ダークエルフ(アデン大陸)、ダークエルフ(暗黒竜の傷跡)」であったものを「ダークエルフ〈アデン大陸、暗黒竜の傷跡〉」のように同じモンスター毎に集約した。<br>
+<img class="ss" src="./picture/site_ss/skill_monster_habitat_integration.png" width="737" height="433" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+<li>また「ケルベロス(メインランドのダンジョン4階)、ケルベロス(メインランドのダンジョン5階)」であったものを「ケルベロス〈メインランドのダンジョン4階、5階〉」のように同じ狩り場の階層を集約した。<br>
+<img class="ss" src="./picture/site_ss/skill_monster_floor_integration.png" width="832" height="476" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+</ul>
+</div>
 <!-- drops -->
-        <div class="article-date">更新&nbsp;2025年08月29日</div>
-        <h2 class="article-title">棲息場所と階層を集約(drops)<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-        <div class="article-paragraph content-block">モンスター毎に棲息場所を集約、生息場所毎に階層を集約
-          <br>
-          <h3 class="article-paragraph-title">Drops(Item2Monsterリスト)</h3>
-          <ul>
-            <li>モンスター毎に棲息場所を集約、生息場所毎に階層を集約従来は「悪魔王のアックス：デーモン ゴーレム(隠された象牙の塔)、デーモン ゴーレム(隠された象牙の塔Boost)、デーモン ゴーレム(象牙の塔6階)、デーモン ゴーレム(象牙の塔7階)」であったものを「悪魔王のアックス	：デーモン ゴーレム〈隠された象牙の塔、隠された象牙の塔Boost、象牙の塔6階、7階〉」のように同じモンスター毎に集約した。<br>
-            <img class="ss" src="./picture/site_ss/d2m_floorintegration1.png" width="961" height="301" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
-            <li>また「地竜のスケルトン ガード(ドラゴンバレー ダンジョン4階)、地竜のスケルトン ガード(ドラゴンバレー ダンジョン5階)、地竜のスケルトン ガード(ドラゴンバレー ダンジョン6階)」であったものを「地竜のスケルトン ガード〈ドラゴンバレー ダンジョン4階、5階、6階〉」のように同じ狩り場の階層を集約した。<br>
-            <img class="ss" src="./picture/site_ss/d2m_floorintegration2.png" width="1245" height="310" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
-          </ul>
-        </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年08月29日</div>
+<h2 class="article-title">棲息場所と階層を集約(drops)<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">モンスター毎に棲息場所を集約、生息場所毎に階層を集約
+<br>
+<h3 class="article-paragraph-title">Drops(Item2Monsterリスト)</h3>
+<ul>
+<li>モンスター毎に棲息場所を集約、生息場所毎に階層を集約従来は「悪魔王のアックス：デーモン ゴーレム(隠された象牙の塔)、デーモン ゴーレム(隠された象牙の塔Boost)、デーモン ゴーレム(象牙の塔6階)、デーモン ゴーレム(象牙の塔7階)」であったものを「悪魔王のアックス	：デーモン ゴーレム〈隠された象牙の塔、隠された象牙の塔Boost、象牙の塔6階、7階〉」のように同じモンスター毎に集約した。<br>
+<img class="ss" src="./picture/site_ss/d2m_floorintegration1.png" width="961" height="301" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+<li>また「地竜のスケルトン ガード(ドラゴンバレー ダンジョン4階)、地竜のスケルトン ガード(ドラゴンバレー ダンジョン5階)、地竜のスケルトン ガード(ドラゴンバレー ダンジョン6階)」であったものを「地竜のスケルトン ガード〈ドラゴンバレー ダンジョン4階、5階、6階〉」のように同じ狩り場の階層を集約した。<br>
+<img class="ss" src="./picture/site_ss/d2m_floorintegration2.png" width="1245" height="310" alt="修正後画面スクリーンショット：同じモンスター毎や同じ生息地毎で表示集約" /></li>
+</ul>
+</div>
 <!-- Monsters -->
-        <div class="article-date">更新&nbsp;2025年08月27日</div>
-          <h2 class="article-title">htmlとデータtsv分離。追記<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">マスターエクセルのデータをHTML直接記述からTSVファイル読み込みに変更しました。<br>
-            <h3 class="article-paragraph-title">モンスター一覧表</h3>
-            <ul>
-              <li>初期表示はtableがblankになりました。テキストファイル読み込みの[表示]ボタンをクリックしてください。
-              <img class="ss" src="./picture/site_ss/blankpage_renderbutton.png" width="642" height="118" alt="修正後画面スクリーンショット：blanktableとrenderbutton" /><br>
-              クリック後表示されるtableはソートとフィルター機能は従来と同様です。</li>
-              <li>ドロップの一部修正
-                <ul>
-                  <li>ライカンスロープ：○武器強化スクロール×防具強化スクロール</li>
-                  <li>亡者の看守：高級スキル選択箱、高級蘇生スキル選択箱追加</li>
-                  <li>ブラックナイト チーフ：技術書(アブソルート ブレイド：プリズン)、技術書(アブソルート ブレイド：プリズン)(蘇生)、高級スキル選択箱、高級蘇生スキル選択箱追加</li>
-                </ul>
-              </li>
-              <li>記事欄の追記。出現場所と周期、アップデート付記
-                <ul>
-                  <li>アクモ ボス(★)：ドラゴンバレー ダンジョン7階＠6時間</li>
-                  <li>イフリート ボス(★)：火竜の棲処＠8時間</li>
-                  <li>オルクス ボス(★)：オークの森＠4時間</li>
-                  <li>カーツ ボス(★)：メインランド フィールド＠8時間</li>
-                  <li>カスパー ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
-                  <li>グレート ブラック エルダー ボス(★)：ドラゴンバレーフィールド＠毎日22時～23時</li>
-                  <li>サンドワーム ボス(★)：砂漠＠金曜日・土曜日21時</li>
-                  <li>ジャイアントドレイク ボス(★)：ドラゴンバレーフィールド＠12時間</li>
-                  <li>セマ ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
-                  <li>ゼロス ボス(★)：ドラゴンバレーフィールド＠12時間</li>
-                  <li>デーモン ボス(★)：象牙の塔7階＠4時間</li>
-                  <li>デスナイト ボス(★)：メインランドのダンジョン7階＠12時間</li>
-                  <li>デスナイト ボス(★)：2段階(マント)、メインランドのダンジョン7階＠12時間</li>
-                  <li>デスナイト ボス(★)：2段階(騎乗)、メインランドのダンジョン7階＠12時間</li>
-                  <li>ドッペルゲンガー ボス ボス(★)：鏡の森＠8時間</li>
-                  <li>ネクロマンサー ボス(★)：ドラゴンバレーフィールド＠6時間</li>
-                  <li>バルタザール ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
-                  <li>ビッグフット マーヨ ボス(★)：オーレン雪山＠8時間</li>
-                  <li>フェニックス ボス(★)：火竜の棲処＠12時間</li>
-                  <li>ブラックナイト チーフ ボス(★)(アデン大陸)：「騎士道」Up＝アブソルート ブレイド：プリズン、亡者の墓・ケント フィールド＠6時間</li>
-                  <li>ブラックナイト チーフ ボス(★)(亡者の墓)：「騎士道」Up＝アブソルート ブレイド：プリズン、亡者の墓・ケント フィールド＠6時間</li>
-                  <li>マイノ シャーマン ボス(★)：風竜の棲処＠8時間</li>
-                  <li>マンボ キング ボス(★)：古代精霊の墓＠6時間</li>
-                  <li>メルキオール ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
-                  <li>リカント ボス(★)：メインランド フィールド</li>
-                  <li>看守長 タロス ボス(★)：ギラン監獄2階＠毎日21時</li>
-                  <li>狂風のシャスキー ボス(★)：エルモア激戦地＠8時間</li>
-                  <li>疾風のシャスキー ボス(★)：エルモア激戦地＠8時間</li>
-                  <li>精霊監視者 ボス(★)：古代精霊の墓＠4時間</li>
-                  <li>亡者の看守 ボス(★)：死の廃墟＠6時間</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年08月27日</div>
+<h2 class="article-title">htmlとデータtsv分離。追記<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">マスターエクセルのデータをHTML直接記述からTSVファイル読み込みに変更しました。<br>
+<h3 class="article-paragraph-title">モンスター一覧表</h3>
+<ul>
+<li>初期表示はtableがblankになりました。テキストファイル読み込みの[表示]ボタンをクリックしてください。
+<img class="ss" src="./picture/site_ss/blankpage_renderbutton.png" width="642" height="118" alt="修正後画面スクリーンショット：blanktableとrenderbutton" /><br>
+クリック後表示されるtableはソートとフィルター機能は従来と同様です。</li>
+<li>ドロップの一部修正
+<ul>
+<li>ライカンスロープ：○武器強化スクロール×防具強化スクロール</li>
+<li>亡者の看守：高級スキル選択箱、高級蘇生スキル選択箱追加</li>
+<li>ブラックナイト チーフ：技術書(アブソルート ブレイド：プリズン)、技術書(アブソルート ブレイド：プリズン)(蘇生)、高級スキル選択箱、高級蘇生スキル選択箱追加</li>
+</ul>
+</li>
+<li>記事欄の追記。出現場所と周期、アップデート付記
+<ul>
+<li>アクモ ボス(★)：ドラゴンバレー ダンジョン7階＠6時間</li>
+<li>イフリート ボス(★)：火竜の棲処＠8時間</li>
+<li>オルクス ボス(★)：オークの森＠4時間</li>
+<li>カーツ ボス(★)：メインランド フィールド＠8時間</li>
+<li>カスパー ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+<li>グレート ブラック エルダー ボス(★)：ドラゴンバレーフィールド＠毎日22時～23時</li>
+<li>サンドワーム ボス(★)：砂漠＠金曜日・土曜日21時</li>
+<li>ジャイアントドレイク ボス(★)：ドラゴンバレーフィールド＠12時間</li>
+<li>セマ ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+<li>ゼロス ボス(★)：ドラゴンバレーフィールド＠12時間</li>
+<li>デーモン ボス(★)：象牙の塔7階＠4時間</li>
+<li>デスナイト ボス(★)：メインランドのダンジョン7階＠12時間</li>
+<li>デスナイト ボス(★)：2段階(マント)、メインランドのダンジョン7階＠12時間</li>
+<li>デスナイト ボス(★)：2段階(騎乗)、メインランドのダンジョン7階＠12時間</li>
+<li>ドッペルゲンガー ボス ボス(★)：鏡の森＠8時間</li>
+<li>ネクロマンサー ボス(★)：ドラゴンバレーフィールド＠6時間</li>
+<li>バルタザール ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+<li>ビッグフット マーヨ ボス(★)：オーレン雪山＠8時間</li>
+<li>フェニックス ボス(★)：火竜の棲処＠12時間</li>
+<li>ブラックナイト チーフ ボス(★)(アデン大陸)：「騎士道」Up＝アブソルート ブレイド：プリズン、亡者の墓・ケント フィールド＠6時間</li>
+<li>ブラックナイト チーフ ボス(★)(亡者の墓)：「騎士道」Up＝アブソルート ブレイド：プリズン、亡者の墓・ケント フィールド＠6時間</li>
+<li>マイノ シャーマン ボス(★)：風竜の棲処＠8時間</li>
+<li>マンボ キング ボス(★)：古代精霊の墓＠6時間</li>
+<li>メルキオール ボス(★)：メインランドのダンジョン3階、4階＠6時間</li>
+<li>リカント ボス(★)：メインランド フィールド</li>
+<li>看守長 タロス ボス(★)：ギラン監獄2階＠毎日21時</li>
+<li>狂風のシャスキー ボス(★)：エルモア激戦地＠8時間</li>
+<li>疾風のシャスキー ボス(★)：エルモア激戦地＠8時間</li>
+<li>精霊監視者 ボス(★)：古代精霊の墓＠4時間</li>
+<li>亡者の看守 ボス(★)：死の廃墟＠6時間</li>
+</ul>
+</li>
+</ul>
+</div>
 <!-- Monsters -->
-          <div class="article-date">更新&nbsp;2025年08月20日</div>
-          <h2 class="article-title">絞り込み機能強化<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">フィルターボタンのダイアログに最小値と最大値のBOXを追加しました。<br>
-            <h3 class="article-paragraph-title">モンスター一覧表</h3>
-            <img class="ss" src="./picture/site_ss/filter20250820001.png" width="283" height="437" alt="最小/最大値対応ダイアログ" /><img class="ss" src="./picture/site_ss/filter20250820002.png" height="331" width="240" alt="チェックボックスリスト対応ダイアログ" /><br>
-            「Lv.」「AC」「MR」「HP」「MP」の各項目に最小値と最大値の入力欄を追加しました。<br>
-            一方しか入力がない場合はそれ以上・それ未満を表示します。<br>
-            なお、両方の入力がある場合はその範囲内のモンスターを表示します。<br>
-            「狩り場リスト」「弱点属性」「大きさ」にはチェックボックスリストがあります。<br>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年08月20日</div>
+<h2 class="article-title">絞り込み機能強化<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">フィルターボタンのダイアログに最小値と最大値のBOXを追加しました。<br>
+<h3 class="article-paragraph-title">モンスター一覧表</h3>
+<img class="ss" src="./picture/site_ss/filter20250820001.png" width="283" height="437" alt="最小/最大値対応ダイアログ" /><img class="ss" src="./picture/site_ss/filter20250820002.png" height="331" width="240" alt="チェックボックスリスト対応ダイアログ" /><br>
+「Lv.」「AC」「MR」「HP」「MP」の各項目に最小値と最大値の入力欄を追加しました。<br>
+一方しか入力がない場合はそれ以上・それ未満を表示します。<br>
+なお、両方の入力がある場合はその範囲内のモンスターを表示します。<br>
+「狩り場リスト」「弱点属性」「大きさ」にはチェックボックスリストがあります。<br>
+</div>
 <!-- Monsters -->
-        <div class="article-date">更新&nbsp;2025年08月05日</div>
-          <h2 class="article-title">スキル箱化対応<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">「騎士道」アップデート　2024.11.20. 09:55 一部対応  
-            <h3 class="article-paragraph-title">モンスター一覧表</h3>
-            一部スキルを削除しスキル選択箱を登録 (＊下記[]のモンスターは未収録・狩り場図鑑ベース)
-            <ul>
-              <li>一部のモンスターがドロップする唯一～高級等級の魔法書(蘇生含む)を削除しました。
-                <ul>
-                  <li>[アステリオス]、カヘル ヤヒ、[抑制したハルパス]、[ハルパス]</li>
-                  <li>支配の塔各階層ボスモンスター11種(覚醒ボス含む)、傲慢の塔各階層ボスモンスター11種</li>
-                  <li>[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス、[エルシャベ]、[クイーン センチュリオン]</li>
-                </ul>
-              </li>
-              <li>等級別の魔法書(スキル)選択箱をドロップするモンスターを追加しました。
-                <ol>
-                  <li>唯一スキル選択箱</li>
-                    [アステリオス3段階]、カヘル ヤヒ、[ハルパス]、[覚醒したデス グリムリーパー]
-                  <li>唯一蘇生スキル選択箱</li>
-                    [アステリオス3段階]、カヘル ヤヒ、[ハルパス]、[覚醒したデス グリムリーパー]
-                  <li>神話スキル選択箱</li>
-                    [アステリオス2/3段階]、カヘル ヤヒ、[ハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、ヴァラカス、パプリオン、リンドビオル、アンタラス、憤怒のバルログ
-                   <li>神話蘇生スキル選択箱</li>
-                    [ハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、ヴァラカス、パプリオン、リンドビオル、アンタラス、憤怒のバルログ
-                   <li>伝説のスキル選択箱</li>
-                    [アステリオス1/2/3段階]、カヘル ヤヒ、[ハルパス]、デス グリムリーパー、支配の塔各階層覚醒ボスモンスター11種、[エルシャベ]、憤怒のバルログ、[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス
-                   <li>伝説蘇生スキル選択箱</li>
-                    [ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス
-                   <li>英雄スキル選択箱</li>
-                    [アステリオス1/2/3段階]、カヘル ヤヒ、[ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、ヴァラカス、パプリオン、リンドビオル、アンタラス、[ラザルス]、デス グリムリーパー(傲慢の塔最上階)、[エルシャベ]
-                   <li>英雄蘇生スキル選択箱</li>
-                    [ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]、[クイーン センチュリオン]
-                   <li>希少スキル選択箱</li>
-                    [アステリオス1/2/3段階]、カヘル ヤヒ、[抑制したハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]
-                   <li>希少蘇生スキル選択箱</li>
-                    [抑制したハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]
-                   <li>高級スキル選択箱</li>
-                    [アステリオス1/2/3段階]、カヘル ヤヒ、[抑制したハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、傲慢の塔各階層ボスモンスター11種
-                   <li>高級蘇生スキル選択箱</li>
-                    [抑制したハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、傲慢の塔各階層ボスモンスター11種
-                </ol>
-              </li>
-            </ul>
-            <h3 class="article-paragraph-title">ドロップ一覧表</h3>
-            一部スキルを削除しスキル選択箱を登録 (＊上記[]のモンスターは未収録・狩り場図鑑ベース)
-            <h3 class="article-paragraph-title">スキル一覧表</h3>
-            スキル選択箱以外の従来ドロップとスキル選択箱を展開したスキルアイテムを統合。<br>スキル使用条件：装備を追加
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年08月05日</div>
+<h2 class="article-title">スキル箱化対応<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">「騎士道」アップデート　2024.11.20. 09:55 一部対応  
+<h3 class="article-paragraph-title">モンスター一覧表</h3>
+一部スキルを削除しスキル選択箱を登録 (＊下記[]のモンスターは未収録・狩り場図鑑ベース)
+<ul>
+<li>一部のモンスターがドロップする唯一～高級等級の魔法書(蘇生含む)を削除しました。
+<ul>
+<li>[アステリオス]、カヘル ヤヒ、[抑制したハルパス]、[ハルパス]</li>
+<li>支配の塔各階層ボスモンスター11種(覚醒ボス含む)、傲慢の塔各階層ボスモンスター11種</li>
+<li>[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス、[エルシャベ]、[クイーン センチュリオン]</li>
+</ul>
+</li>
+<li>等級別の魔法書(スキル)選択箱をドロップするモンスターを追加しました。
+<ol>
+<li>唯一スキル選択箱</li>
+[アステリオス3段階]、カヘル ヤヒ、[ハルパス]、[覚醒したデス グリムリーパー]
+<li>唯一蘇生スキル選択箱</li>
+[アステリオス3段階]、カヘル ヤヒ、[ハルパス]、[覚醒したデス グリムリーパー]
+<li>神話スキル選択箱</li>
+[アステリオス2/3段階]、カヘル ヤヒ、[ハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、ヴァラカス、パプリオン、リンドビオル、アンタラス、憤怒のバルログ
+<li>神話蘇生スキル選択箱</li>
+[ハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、ヴァラカス、パプリオン、リンドビオル、アンタラス、憤怒のバルログ
+<li>伝説のスキル選択箱</li>
+[アステリオス1/2/3段階]、カヘル ヤヒ、[ハルパス]、デス グリムリーパー、支配の塔各階層覚醒ボスモンスター11種、[エルシャベ]、憤怒のバルログ、[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス
+<li>伝説蘇生スキル選択箱</li>
+[ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、[ラザルス]、ヴァラカス、パプリオン、リンドビオル、アンタラス
+<li>英雄スキル選択箱</li>
+[アステリオス1/2/3段階]、カヘル ヤヒ、[ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、ヴァラカス、パプリオン、リンドビオル、アンタラス、[ラザルス]、デス グリムリーパー(傲慢の塔最上階)、[エルシャベ]
+<li>英雄蘇生スキル選択箱</li>
+[ハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、憤怒のバルログ、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]、[クイーン センチュリオン]
+<li>希少スキル選択箱</li>
+[アステリオス1/2/3段階]、カヘル ヤヒ、[抑制したハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]
+<li>希少蘇生スキル選択箱</li>
+[抑制したハルパス]、支配の塔各階層ボスモンスター11種(覚醒ボス含む)、ヴァラカス、パプリオン、リンドビオル、アンタラス、傲慢の塔各階層ボスモンスター11種、[ラザルス]
+<li>高級スキル選択箱</li>
+[アステリオス1/2/3段階]、カヘル ヤヒ、[抑制したハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、傲慢の塔各階層ボスモンスター11種
+<li>高級蘇生スキル選択箱</li>
+[抑制したハルパス]、デス グリムリーパー(支配の塔)、[覚醒したデス グリムリーパー]、傲慢の塔各階層ボスモンスター11種
+</ol>
+</li>
+</ul>
+<h3 class="article-paragraph-title">ドロップ一覧表</h3>
+一部スキルを削除しスキル選択箱を登録 (＊上記[]のモンスターは未収録・狩り場図鑑ベース)
+<h3 class="article-paragraph-title">スキル一覧表</h3>
+スキル選択箱以外の従来ドロップとスキル選択箱を展開したスキルアイテムを統合。<br>スキル使用条件：装備を追加
+</div>
 <!-- skills -->
-        <div class="article-date">更新&nbsp;2025年07月10日</div>
-          <h2 class="article-title">スキル一覧表追加・ページ体裁調整<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">
-            <h3 class="article-paragraph-title">スキル一覧表を追加</h3>
-                スキル一覧表ドロップとチュートリアルクエストNPCから購入などスキルの入手方法の表を作成。
-            <ol>
-              <li>Skillと入手方法の詠唱コストや効果・能力などをブロックで表示<br>
-                <ul>表の概要
-                  <li>スキルテーブル<a href="datasource/Lineage_remastered_skill3.tsv">TSV本体</a></li>
-                  <!-- 表示用JSON構造の提供は技術的制約により見送っています -->
-                  <li>skill_domain_identification：通し番号やスキル名称</li>
-                  <li>skill_domain_eligible_character：習得クラスとエルフ属性</li>
-                  <li>skill_domain_tendency：アクティブ/パッシブ、性向など</li>
-                  <li>skill_domain_resource：詠唱コスト消費HPMPと材料・触媒</li>
-                  <li>skill_domain_effect：スキルの効果持続時間、対象、効果・性能など</li>
-                  <li>skill_domain_acquisition：習得条件。習得レベル、取得方法、NPC価格</li>
-                  <li>skill_domain_dropmob：ドロップモンスター(レギュラー・蘇生)</li>
-                  <li>skill_domain_notes：備考</li>
-                  <li>習得レベルやドロップモンスターに未収載があります。<br>
-                    覚えていないスキルはスキルウィンドウの説明のまま。<br>
-                    持っていないスキルは魔法書や書板などアイテム説明に書いてある情報などが未収載</li>
-                </ul>
-              </li>
-              <li>折りたたみ表示・クラス表示ボタン<br>
-                <ul>
-                  <li>初期表示は全件折りたたみ</li>
-                  <li>クラス名ボタンをクリックするとそのクラスのみを表示</li>
-                  <li>完全一致はクラス固有スキル、部分一致は共通一般魔法を含めたスキルを表示</li>
-                </ul>
-              </li>
-            </ol>
-            <h3 class="article-paragraph-title">ページの体裁調整</h3>
-            　ページのリンクの追加。スタイルの変更。
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2025年07月10日</div>
+<h2 class="article-title">スキル一覧表追加・ページ体裁調整<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">スキル一覧表を追加</h3>
+スキル一覧表ドロップとチュートリアルクエストNPCから購入などスキルの入手方法の表を作成。
+<ol>
+<li>Skillと入手方法の詠唱コストや効果・能力などをブロックで表示<br>
+<ul>表の概要
+<li>スキルテーブル<a href="datasource/Lineage_remastered_skill3.tsv">TSV本体</a></li>
+<!-- 表示用JSON構造の提供は技術的制約により見送っています -->
+<li>skill_domain_identification：通し番号やスキル名称</li>
+<li>skill_domain_eligible_character：習得クラスとエルフ属性</li>
+<li>skill_domain_tendency：アクティブ/パッシブ、性向など</li>
+<li>skill_domain_resource：詠唱コスト消費HPMPと材料・触媒</li>
+<li>skill_domain_effect：スキルの効果持続時間、対象、効果・性能など</li>
+<li>skill_domain_acquisition：習得条件。習得レベル、取得方法、NPC価格</li>
+<li>skill_domain_dropmob：ドロップモンスター(レギュラー・蘇生)</li>
+<li>skill_domain_notes：備考</li>
+<li>習得レベルやドロップモンスターに未収載があります。<br>
+覚えていないスキルはスキルウィンドウの説明のまま。<br>
+持っていないスキルは魔法書や書板などアイテム説明に書いてある情報などが未収載</li>
+</ul>
+</li>
+<li>折りたたみ表示・クラス表示ボタン<br>
+<ul>
+<li>初期表示は全件折りたたみ</li>
+<li>クラス名ボタンをクリックするとそのクラスのみを表示</li>
+<li>完全一致はクラス固有スキル、部分一致は共通一般魔法を含めたスキルを表示</li>
+</ul>
+</li>
+</ol>
+<h3 class="article-paragraph-title">ページの体裁調整</h3>
+　ページのリンクの追加。スタイルの変更。
+</div>
 <!-- IME/ATOK -->
-        <div class="article-date">更新&nbsp;2024年11月21日</div>
-          <h2 class="article-title">漢字辞書：辞書を更新。ページの体裁調整<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">
-            <h3 class="article-paragraph-title">漢字変換辞書を更新</h3>
-              リネージュリマスターItemMonster辞書2024(ATOK)の更新<br>
-              リネージュリマスターItemMonster辞書2024(IME)の更新<br>
-            <h3 class="article-paragraph-title">ページの体裁調整</h3>
-            　辞書更新履歴をそれぞれの辞書ページに移動
-            　CSS、アイコンなどの調整
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2024年11月21日</div>
+<h2 class="article-title">漢字辞書：辞書を更新。ページの体裁調整<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">漢字変換辞書を更新</h3>
+リネージュリマスターItemMonster辞書2024(ATOK)の更新<br>
+リネージュリマスターItemMonster辞書2024(IME)の更新<br>
+<h3 class="article-paragraph-title">ページの体裁調整</h3>
+　辞書更新履歴をそれぞれの辞書ページに移動
+　CSS、アイコンなどの調整
+</div>
 <!-- Drops -->
-        <div class="article-date">更新&nbsp;2024年11月13日</div>
-          <h2 class="article-title">DropListを公開<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">
-            <h3 class="article-paragraph-title">MonsterListのアイテムからの逆引き</h3>
-            <ol>
-              <li>DropItemとMonsterの2列<br>
-                <ul>
-                  <li>Drop：アイテム名の辞書よみで並んでいます</li>
-                  <li>Monster：モンスター名（生息地）です。「★」はボスです。</li>
-                </ul>
-              </li>
-              <li>表示順など<br>
-                <ul>
-                  <li>初期表示は「b-」「c-」「(蘇生)」「魔法書(」などの接頭語や接尾語を除いた名称で並べています。<br>例：「精霊の水晶(ハリケーン)」は【せいれいのすいしょう～】ではなく【はりけーん】の場所に並んでいます。</li>
-                  <li>「－ドロップなし」「アデナ」も入っています。</li>
-                  <li>一つのアイテムに名前が同じモンスターが含まれることがあります。</li>
-                  <li>MonsterListと同じようにフィルターが使えます。「フェンサーの書」を指定してスキルだけを表示したりできます。</li>
-                </ul>
-              </li>
-            </ol>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2024年11月13日</div>
+<h2 class="article-title">DropListを公開<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">MonsterListのアイテムからの逆引き</h3>
+<ol>
+<li>DropItemとMonsterの2列<br>
+<ul>
+<li>Drop：アイテム名の辞書よみで並んでいます</li>
+<li>Monster：モンスター名（生息地）です。「★」はボスです。</li>
+</ul>
+</li>
+<li>表示順など<br>
+<ul>
+<li>初期表示は「b-」「c-」「(蘇生)」「魔法書(」などの接頭語や接尾語を除いた名称で並べています。<br>例：「精霊の水晶(ハリケーン)」は【せいれいのすいしょう～】ではなく【はりけーん】の場所に並んでいます。</li>
+<li>「－ドロップなし」「アデナ」も入っています。</li>
+<li>一つのアイテムに名前が同じモンスターが含まれることがあります。</li>
+<li>MonsterListと同じようにフィルターが使えます。「フェンサーの書」を指定してスキルだけを表示したりできます。</li>
+</ul>
+</li>
+</ol>
+</div>
 <!-- IME/ATOK -->
-        <div class="article-date">更新&nbsp;2024年11月11日</div>
-          <h2 class="article-title">漢字辞書：辞書を更新<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">
-          　リネージュリマスターItemMonster辞書2024(ATOK)の更新<br>
-          　リネージュリマスターItemMonster辞書2024(IME)の更新<br>
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2024年11月11日</div>
+<h2 class="article-title">漢字辞書：辞書を更新<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+　リネージュリマスターItemMonster辞書2024(ATOK)の更新<br>
+　リネージュリマスターItemMonster辞書2024(IME)の更新<br>
+</div>
 <!-- IME/ATOK -->
-        <div class="article-date">更新&nbsp;2024年10月30日</div>
-          <h2 class="article-title">モンスターリスト/漢字辞書：辞書を公開<span class="toggle-button" title="クリックで詳細表示">▲</span></h2>
-          <div class="article-paragraph content-block">
-            <h3 class="article-paragraph-title">モンスターリスト</h3>
-            　狩場図鑑を入力していた資料を一覧できるようにしたものです
-            <h3 class="article-paragraph-title">漢字変換辞書テキスト</h3>
-            　狩り場図鑑の入力中正しい名称が面倒になってきたので副産物のIMEとATOKの辞書も公開。<br>
-            　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。
-          </div>
+<div class="article-toggle">
+<div class="article-date">更新&nbsp;2024年10月30日</div>
+<h2 class="article-title">モンスターリスト/漢字辞書：辞書を公開<span class="arrow">▼</span></h2>
+</div>
+<div class="article-paragraph  article-collapsible">
+<h3 class="article-paragraph-title">モンスターリスト</h3>
+　狩場図鑑を入力していた資料を一覧できるようにしたものです
+<h3 class="article-paragraph-title">漢字変換辞書テキスト</h3>
+　狩り場図鑑の入力中正しい名称が面倒になってきたので副産物のIMEとATOKの辞書も公開。<br>
+　略語やゲーム用語、顔文字は収録していません。狩場図鑑の「場所」「モンスター名」「ドロップアイテム名」を収録しています。
+</div>
       </div><!-- 個別の記事エリア -->
     </div><!-- サイト共通のcontentエリア -->
-    <div class="footer"> <!-- サイト共通のフッター -->
-      <div class="footer-text">当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
-        Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
-        NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.</div>
-      <div class="footer-copyright">Copyright &copy; 2024 asamon.</div>
-    </div> <!-- サイト共通のフッターの終わり -->
+    <footer><!-- サイト共通のフッター -->
+      <div class="footer-toggle" data-target="footer" data-class="open">
+        <span class="footer-toggle-label">
+          copyright… <span class="arrow">▼</span>
+        </span>
+      </div>
+      <div class="footer-collapsible"> <!-- 展開表示 -->
+        <div class="footer-nav">
+          <ul class="footer-nav-group">
+            <li>
+              <a href="https://x.com/AsamonPrimera" aria-label="当サイトの X（旧Twitter）公式連絡先"><img src="./picture/icons/X_icon.png" width="16" height="16" alt=""></a>
+            </li>
+          </ul>
+        </div> <!-- class="footer-nav"の終わり -->
+        <div class="footer-text">
+          当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
+          Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
+          NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.
+        </div>
+      </div>
+    </footer><!-- サイト共通のフッター -->
     <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
 
     <script>
-        // 画面上部にスクロールするボタン
-        $(function() {
-            var pageTop = $('.btn-pagetop');
-            pageTop.hide();
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 600) {
-                    pageTop.fadeIn();
-                } else {
-                    pageTop.fadeOut();
-                }
-            });
-            pageTop.click(function() {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 500, 'swing');
-                pageTop.blur();
-                return false;
-            });
-        });
-    </script>
-    <script>
-// 折りたたみ表示の共通スクリプト。スタイルはLineage_main.css
-      document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".toggle-button");
-        buttons.forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            // const next = btn.nextElementSibling; //spanに次の要素はないのでエラーになる。親のh2から探す
-              const h2 = btn.closest("h2");
-              const next = h2.nextElementSibling;
-            if (next && next.classList.contains("content-block")) {
-              const isHidden = window.getComputedStyle(next).display === "none";
-              next.style.display = isHidden ? "block" : "none";
-              btn.title = isHidden
-               ? "クリックで折り畳み"
-               : "クリックで詳細表示";
-              btn.textContent = isHidden
-                ? btn.textContent.replace("▲", "▼")
-                : btn.textContent.replace("▼", "▲");
-            }
-          });
+      document.querySelector('.footer-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.footer-collapsible').classList.toggle('open');
+          document.querySelector('.footer-toggle').classList.toggle('open');
+      });
+
+      document.querySelector('.main-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.main-collapsible').classList.toggle('open');
+          document.querySelector('.main-toggle').classList.toggle('open');
+      });
+
+      document.querySelector('.subnav-toggle')
+        .addEventListener('click', () => {
+          document.querySelector('.subnav-collapsible').classList.toggle('open');
+          document.querySelector('.subnav-toggle').classList.toggle('open');
+      });
+
+      document.querySelectorAll('.article-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('open');
+          toggle.nextElementSibling.classList.toggle('open');
         });
       });
-    </script>
+
+</script>
   </body>
 </html>

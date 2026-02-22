@@ -2,7 +2,7 @@
 
   html,body {
     width: auto;
-    height: calc(100% - 44px); /* ← header の高さを引く */
+    height: calc(100% - 40px); /* ← header の高さを引く */
     margin: 0;
   }
 
@@ -85,13 +85,13 @@ h2 {
   
   .Item_No {
     width: 60px;
-    border-left: 1px solid #888;
-    border-right: 1px solid #888;
+    border-left: 1px solid #a88;
+    border-right: 1px solid #a88;
   }
   .Search_Drop {
     width: 320px;
-    border-left: 1px solid #888;
-    border-right: 1px solid #888;
+    border-left: 1px solid #a88;
+    border-right: 1px solid #a88;
   }
   tbody.acce {
     font-weight: normal;
@@ -107,6 +107,24 @@ h2 {
   .Not_applicable {
     background-color: #ddd;
   }
+
+  .subnav-toggle {
+      width: 100%;
+      padding: 0px;
+      margin: 2px;
+      line-height: 30px;
+      background: #5c430d;
+      background-image: linear-gradient(90deg,  #8f5940,#472d2d,#2c101c,#3f323e, #ffffff);
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+  }
+
       .nav-group_acce {
         margin: 0;
         padding: 0;
@@ -133,16 +151,29 @@ h2 {
     .nav-group_acce>li a {
         display: block;
         padding: 6px 6px;
-        color: #333;
+        color: #548;
         text-decoration: none;
     }
 
     .nav-group_acce li a:hover {
-        color: #e22;
+        color: #75e;
         font-weight:bold;
     }
 
-    .nav-group_acce>li a.active {
-        border-bottom: #333 solid 2px;
-        color: #999;
+    .nav-group_acce>li a:active {
+        border-bottom: #86f solid 3px;
+        color: #86f;
+    }
+
+    /* アクセサリー サブナビゲーション 8項目 */
+    body.crest .nav-group_acce a.crest,
+    body.insig .nav-group_acce a.insig,
+    body.ear   .nav-group_acce a.ear,
+    body.pend1 .nav-group_acce a.pend1,
+    body.pend2 .nav-group_acce a.pend2,
+    body.brace .nav-group_acce a.brace,
+    body.ring1 .nav-group_acce a.ring1,
+    body.ring2 .nav-group_acce a.ring2 {
+        border-bottom: #86f solid 2px;
+        color: #97f;
     }

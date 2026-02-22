@@ -1,22 +1,32 @@
 /* monster_table */
 
-  html,body {
-    height:calc(100% - 44px);
-  }
+  /* html,body の規定は無用。種制御はLinage_main.cssに移管 */
+
+  /* page_body の規定は共通css(Linage_main.css)に移管 */
+
+  /* header の規定は共通css(Linage_main.css)に移管 */
+
   .Monster_table_box{
     flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
     min-height: 0; /* ← これが重要 */
-    overflow: auto; /* ← ここでスクロールを閉じ込める */
-    width:100%;
+    overflow-y: auto; /* ← scroll container 唯一 */
+    overflow-x: auto; /* 横スクロール表示 */
     position: relative;
+  }
+
+  /* 800px 以上では横スクロールを消す */
+  @media (min-width: 800px) {
+    .main-toggle {
+        position: static;
+    }
   }
 
   table {
     font-size: 12px;
   }
 
-
-/**/
+    /* page_body に対して sticky2 になる */
+    /* (sticky1=thead) */
   thead.sticky th {
     background-image:
     linear-gradient(to bottom, #888 0, #888 1px, transparent 1px), /* 上の線 */
