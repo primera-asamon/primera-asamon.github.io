@@ -15,8 +15,7 @@
       background-color: #fff7ac; /* シグネチャーポイント交換表用ヘッダー色 */
     }
     .modal-content {
-      width:460px; /* モーダル幅小さめに制限 */
-      box-shadow: 0 0 10px #333;
+      max-width: 200px;
     }
   </style>
   <body class="etc">
@@ -65,10 +64,10 @@
         </div> <!-- サイト共通のheader説明文エリア -->
       </header> <!-- サイト共通のheaderエリア -->
       <div class="table_lead"> <!-- テーブル中心ページのテーブル説明文エリア -->
-        <span class="lead_text">2025年12月17日(水) 定期メンテナンス終了時～2026年02月04日(水) 定期メンテナンス開始時</span>
-        <span class="update_date">更新&nbsp;2025/12/21</span>
+        <span class="lead_text">2025年12月17日(水) メンテナンス終了時～<br>2026年02月04日(水) メンテナンス開始時</span>
+        <span><span class="update_date">更新&nbsp;2025/12/21</span><br><span class="create_date">初出&nbsp;2025/7/24</span></span>
       </div>
-      <div class="create_date">初出&nbsp;2025/7/24</div>
+      
       <div class="update_date">＊1アカウントあたり</div>
       <div class="table_box_main"> <!-- テーブル中心ページのテーブルエリア -->
       <table id="top">
@@ -522,9 +521,9 @@
         <h3 class="lineage_accessory_popup_title">${key}<span class="style_regular">の強化等級と確率</span></h3>
         <span class="lineage_accessory_popup_subtitle">装飾品強化NPCフレアの各強化券(イベント)による確率一覧</span><br>
         <table class="lineage_accessory_popup_table">
-    <!--      <thead>
-            <tr><th>項目</th><th>強化0</th><th>強化1</th><th>強化2</th><th>強化3</th><th>強化4</th><th>強化5</th><th>強化6</th><th>強化7</th><th>強化8</th></tr>
-          </thead> -->
+          <thead>
+            <tr><th class="col_header">強化等級</th><th class="col_header">強化確率</th></tr>
+          </thead>
         ${tableHTML}
       `;
     }
