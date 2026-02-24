@@ -7,12 +7,20 @@
     <meta name="keywords" content="Lineage,リネージュ,リネージュリマスター">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
-    <link rel="stylesheet" href="stylesheet/Lineage_skill.css">
-    <link rel="stylesheet" href="stylesheet/Lineage_accessory_modal.css">
   </head>
   <style>
     th {
       background-color: #fff7ac; /* シグネチャーポイント交換表用ヘッダー色 */
+    }
+    .lineage_accessory_popup_table th{
+      border: #666 1px solid; /* 強化確率表モーダルセルの罫線 */
+    }
+    .lineage_accessory_popup_table td {
+      background-color: #ffffff; /* 強化確率表モーダルセルの色 */
+      text-align: center;
+    }
+    .lineage_accessory_popup_table td.is_number {
+      text-align: right; /* 強化確率表モーダルの数値列の右寄せ */
     }
     .modal-content {
       max-width: 200px;
@@ -89,8 +97,8 @@
           <tr>
             <td>クラスチェンジコイン</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/class_change_coin.png" height="48" width="48" alt="クラスチェンジコイン_ゲーム内画像" /></td>
-            <td>2個</td>
-            <td>50,000</td>
+            <td class="is_number">2個</td>
+            <td class="is_number">50,000</td>
             <td class="description_acce">使用すると、クラスチェンジUIが開かれクラスチェンジを行うことができます。</td>
             <td></td>
             <td></td>
@@ -102,8 +110,8 @@
     <!-- アンシャルの英雄魔法研磨書(刻印) -->
             <td>アンシャルの英雄魔法研磨書(刻印)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/ansari_hero_magic_polishing_book.png" height="48" width="48" alt="アンシャルの英雄魔法研磨書(刻印)_ゲーム内画像" /></td>
-            <td>1個</td>
-            <td>100,000</td>
+            <td class="is_number">1個</td>
+            <td class="is_number">100,000</td>
             <td class="description_acce">英雄等級のスキル研磨に必要なアイテムです。</td>
             <td>★2025-12追加アイテム</td>
             <td></td>
@@ -128,20 +136,20 @@
           <tr>
             <td>騎士団のコイン箱 6個</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/knighthood_coin_box.png" height="48" width="48" alt="騎士団のコイン箱_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>100</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">100</td>
             <td class="description_acce">使用時、「騎士団のコイン」を獲得します。</td>
             <td>騎士団のコイン</td>
             <td></td>
-            <td>1,000,000枚</td>
+            <td class="is_number">1,000,000枚</td>
             <td>移動、削除</td>
             <td class="description_acce">使用時、「騎士団のコイン」を1,000,000枚獲得します。</td>
           </tr>
           <tr>
             <td>+4 ルームティスイヤリング選択箱(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/earring_g4_box_event.png" height="48" width="48" alt="+4 ルームティスイヤリング選択箱_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td class="description_acce">いずれかのルームティスのイアリング１つを選択して獲得することができます。</td>
             <td>+4 ルームティス レッド イアリング<br>+4 ルームティス ブルー イアリング<br>+4 ルームティス パープル イアリング<br>+4 ルームティス ブラック イアリング</td>
             <td></td>
@@ -152,8 +160,8 @@
           <tr>
             <td>+4 スナッパーのリング選択箱(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/ring_g4_box_event.png" height="48" width="48" alt="+4 スナッパーのリング選択箱_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td class="description_acce">いずれかのスナッパーのリング１つを選択して獲得することができます。</td>
             <td>+4 スナッパーの体力リング<br>+4 スナッパーの魔法抵抗リング<br>+4 スナッパーの知恵リング<br>+4 スナッパーの勇士リング</td>
             <td></td>
@@ -164,8 +172,8 @@
           <tr>
             <td>+3 ルームティスペンダント選択箱(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_g3_box_event.png" height="48" width="48" alt="+3 ルームティスペンダント選択箱_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td class="description_acce">いずれかのスナッパーのリング１つを選択して獲得することができます。</td>
             <td>+3 ルームティスの闘士のペンダント<br>+3 ルームティスの射手のペンダント<br>+3 ルームティスの賢者のペンダント<br>+3 ルームティスのハンターのペンダント</td>
             <td></td>
@@ -176,8 +184,8 @@
           <tr>
             <td>+3 合成インシグニア選択箱(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/insignia_g3_box_event.png" height="48" width="48" alt="+3 合成インシグニア選択箱_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td class="description_acce">いずれかの守護紋章１つを選択して獲得することができます。</td>
             <td>+3 闘士の守護インシグニア<br>+3 射手の守護インシグニア<br>+3 賢者の守護インシグニア</td>
             <td></td>
@@ -188,8 +196,8 @@
           <tr>
             <td>+3 合成紋章選択箱(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/crest_g3_box_event.png" height="48" width="48" alt="+3 合成紋章選択箱_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td class="description_acce">いずれかの守護紋章１つを選択して獲得することができます。</td>
             <td>+3 闘士の守護紋章<br>+3 射手の守護紋章<br>+3 賢者の守護紋章</td>
             <td></td>
@@ -200,8 +208,8 @@
           <tr>
             <td rowspan="2">凍りついたマジックドールの箱</td>
             <td rowspan="2"><img class="icon_pict" src="./picture/item_thumbnail/frozen_md_box.png" height="48" width="48" alt="凍りついたマジックドールの箱_ゲーム内画像" /></td>
-            <td rowspan="2">1回</td>
-            <td rowspan="2">15,000</td>
+            <td rowspan="2" class="is_number">1回</td>
+            <td rowspan="2" class="is_number">15,000</td>
             <td rowspan="2" class="description_acce">使用時、「凍りついたデスナイト」といずれかの「凍りついた潜在力強化スクロール」を獲得することができます。</td>
             <td>凍りついたデスナイト</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/frozen_md_deathknight.png" height="48" width="48" alt="MD(マジック ドール)凍りついたデスナイト_ゲーム内画像" /></td>
@@ -219,8 +227,8 @@
           <tr>
             <td rowspan="4">戦場の成長支援箱</td>
             <td rowspan="4"><img class="icon_pict" src="./picture/item_thumbnail/growth_booster_choice_chest.png  " height="48" width="48" alt="戦場の成長支援箱_ゲーム内画像" /></td>
-            <td rowspan="4">1回</td>
-            <td rowspan="4">50,000</td>
+            <td rowspan="4" class="is_number">1回</td>
+            <td rowspan="4" class="is_number">50,000</td>
             <td rowspan="4" class="description_acce">使用時、右記のアイテムを獲得することができます</td>
             <td>祝福の加護</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/divine_exp_blessing.png" height="48" width="48" alt="祝福の加護_ゲーム内画像" /></td>
@@ -231,29 +239,29 @@
           <tr>
             <td>戦場のエリクサー(EXP)キューブ</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/battle_elixir_cube.png" height="48" width="48" alt="戦場のエリクサー(EXP)キューブ_ゲーム内画像" /></td>
-            <td>30個</td>
+            <td class="is_number">30個</td>
             <td>移動、削除、倉庫、追加倉庫<br></td>
             <td class="description_acce">使用時、「ピュア エリクサー(EXP)」を獲得することができます。<br>※このアイテムは1日に1回使用することが出来ます。</td>
           </tr>
           <tr>
             <td>戦場のドラゴンキューブ</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/battle_dragon_cube.png" height="48" width="48" alt="戦場のドラゴンキューブ_ゲーム内画像" /></td>
-            <td>30個</td>
+            <td class="is_number">30個</td>
             <td>移動、削除、倉庫、追加倉庫<br></td>
             <td class="description_acce">使用時、「ドラゴンの高級ダイアモンド(刻印)」を獲得することができます。<br>※このアイテムは1日に1回使用することが出来ます。<br></td>
           </tr>
           <tr>
             <td>戦場の成長キューブ</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/battle_growth_cube.png" height="48" width="48" alt="戦場の成長キューブ_ゲーム内画像" /></td>
-            <td>30個</td>
+            <td class="is_number">30個</td>
             <td>移動、削除、倉庫、追加倉庫<br></td>
             <td class="description_acce">使用時、「光る成長のポーション(イベント)」を獲得することができます。<br>※このアイテムは1日に1回使用することが出来ます。<br></td>
           </tr>
           <tr>
             <td>エリクサー100％製作券(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/elixir_exp100_ticket_event.png" height="48" width="48" alt="エリクサー100％製作券_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td></td>
             <td>エリクサー100％製作券(イベント)</td>
             <td></td>
@@ -264,8 +272,8 @@
           <tr>
             <td rowspan="6">装身具強化券選択箱</td>
             <td rowspan="6"><img class="icon_pict" src="./picture/item_thumbnail/accessory_enhance_choice_chest_event.png" height="48" width="48" alt="装身具強化券選択箱_ゲーム内画像" /></td>
-            <td rowspan="6">2回</td>
-            <td rowspan="6">50,000</td>
+            <td rowspan="6" class="is_number">2回</td>
+            <td rowspan="6" class="is_number">50,000</td>
             <td rowspan="6" class="description_acce">使用時、右記のアイテムの中から1つを選択して獲得することができます。</td>
             <td>ルームティス イアリング強化券(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/roomtiss_earring_enhance_ticket_event.png" height="48" width="48" alt="ルームティス イアリング強化券_ゲーム内画像" /></td>
@@ -276,43 +284,43 @@
           <tr>
             <td>スナッパー リング強化券(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/snapper_ring_enhance_ticket_event.png" height="48" width="48" alt="スナッパー リング強化券_ゲーム内画像" /></td>
-            <td>1個</td>
+            <td class="is_number">1個</td>
             <td>移動、削除</td>
             <td class="description_acce">NPCフレアにて+4～7の一般/祝福されたスナッパーのリングの強化製作の材料にすることができます。<br>※スナッパーのリング(刻印)には使用できません。<br>※+5への強化は確定製作、+6～+8への製作は確率強化製作となります。確率はゲーム内をご確認ください。<a href="#" class="record-link" data-key="スナッパーのリング" title="クリックで詳細表示">※レート抜粋</a></td>
           </tr>
           <tr>
             <td>紋章強化券(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/crest_enhance_ticket_event.png" height="48" width="48" alt="紋章強化券_ゲーム内画像" /></td>
-            <td>1個</td>
+            <td class="is_number">1個</td>
             <td>移動、削除</td>
             <td class="description_acce">NPCフレアにて+4～7の守護紋章の強化製作の材料にすることができます。<br>※+5への強化は確定製作、+6～+8への製作は確率強化製作となります。確率はゲーム内をご確認ください。<a href="#" class="record-link" data-key="紋章" title="クリックで詳細表示">※レート抜粋</a></td>
           </tr>
           <tr>
             <td>インシグニア強化券(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/insignia_enhance_ticket_event.png" height="48" width="48" alt="インシグニア強化券_ゲーム内画像" /></td>
-            <td>1個</td>
+            <td class="is_number">1個</td>
             <td>移動、削除</td>
             <td class="description_acce">NPCフレアにて+4～7の守護インシグニアの強化製作の材料にすることができます。<br>※+5への強化は確定製作、+6～+8への製作は確率強化製作となります。確率はゲーム内をご確認ください。<a href="#" class="record-link" data-key="インシグニア" title="クリックで詳細表示">※レート抜粋</a></td>
           </tr>
           <tr>
             <td>ペンダント強化券(イベント)<br>★2025-12追加アイテム</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/pendant_enhance_ticket_event.png" height="48" width="48" alt="ペンダント強化券_ゲーム内画像" /></td>
-            <td>1個</td>
+            <td class="is_number">1個</td>
             <td>移動、削除</td>
             <td class="description_acce">NPCフレアにて+4～7のルームティスのペンダントの強化製作の材料にすることができます。<br>※+5への強化は確定製作、+6～+8への製作は確率強化製作となります。確率はゲーム内をご確認ください。<a href="#" class="record-link" data-key="ルームティスのペンダント" title="クリックで詳細表示">※レート抜粋</a></td>
           </tr>
           <tr>
             <td>ブレスレット強化券(イベント)<br>★2025-12追加アイテム</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/bracelet_enhance_ticket_event.png" height="48" width="48" alt="ブレスレット強化券_ゲーム内画像" /></td>
-            <td>1個</td>
+            <td class="is_number" >1個</td>
             <td>移動、削除</td>
             <td class="description_acce">NPCフレアにて+3～5のブレスレットの強化製作の材料にすることができます。<br>※+4への強化は確定製作、+5～+6への製作は確率強化製作となります。確率はゲーム内をご確認ください。<a href="#" class="record-link" data-key="ブレスレット" title="クリックで詳細表示">※レート抜粋</a></td>
           </tr>
           <tr>
             <td>エリクサー(EXP)100％製作券(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/elixir_exp100_ticket_event.png" height="48" width="48" alt="エリクサー(EXP)100％製作券_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>5,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">5,000</td>
             <td></td>
             <td>エリクサー(EXP)100％製作券(イベント)</td>
             <td></td>
@@ -323,8 +331,8 @@
           <tr>
           <td>カルバ トロフェウム</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/karva_tropaeum.png" height="48" width="48" alt="カルバ トロフェウム_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>5,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">5,000</td>
             <td></td>
             <td>カルバ トロフェウム</td>
             <td></td>
@@ -335,8 +343,8 @@
           <tr>
             <td>カルバ トロフィー</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/karva_trophy.png" height="48" width="48" alt="カルバ トロフィー_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>3,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">3,000</td>
             <td></td>
             <td>カルバ トロフィー</td>
             <td></td>
@@ -347,8 +355,8 @@
           <tr>
           <td>ピュア エリクサーの箱</td>
           <td><img class="icon_pict" src="./picture/item_thumbnail/pure_elixir_chest.png" height="48" width="48" alt="ピュア エリクサーの箱_ゲーム内画像" /></td>
-          <td>5回</td>
-          <td>5,000</td>
+          <td class="is_number">5回</td>
+          <td class="is_number">5,000</td>
           <td></td>
           <td>ピュア エリクサーの箱</td>
           <td></td>
@@ -359,8 +367,8 @@
           <tr>
           <td>ピュア エリクサー(EXP)の箱</td>
           <td><img class="icon_pict" src="./picture/item_thumbnail/pure_elixir_exp_chest.png" height="48" width="48" alt="ピュア エリクサー(EXP)の箱_ゲーム内画像" /></td>
-          <td>5回</td>
-          <td>5,000</td>
+          <td class="is_number">5回</td>
+          <td class="is_number">5,000</td>
           <td></td>
           <td>ピュア エリクサー(EXP)の箱</td>
           <td></td>
@@ -371,8 +379,8 @@
           <tr>
             <td>ミソフィアのスポールダー</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/mysophia_spaulder.png" height="48" width="48" alt="ミソフィアのスポールダー_ゲーム内画像" /></td>
-            <td>3回</td>
-            <td>3,000</td>
+            <td class="is_number">3回</td>
+            <td class="is_number">3,000</td>
             <td></td>
             <td>ミソフィアのスポールダー</td>
             <td></td>
@@ -383,8 +391,8 @@
           <tr>
             <td>ミソフィアのブーツ</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/mysophia_boots.png" height="48" width="48" alt="ミソフィアのブーツ_ゲーム内画像" /></td>
-            <td>3回</td>
-            <td>3,000</td>
+            <td class="is_number">3回</td>
+            <td class="is_number">3,000</td>
             <td></td>
             <td>ミソフィアのブーツ</td>
             <td></td>
@@ -395,8 +403,8 @@
           <tr>
             <td>アラガンス ゲートル</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/arrogance_gaiter.png" height="48" width="48" alt="アラガンス ゲートル_ゲーム内画像" /></td>
-            <td>3回</td>
-            <td>3,000</td>
+            <td class="is_number">3回</td>
+            <td class="is_number">3,000</td>
             <td></td>
             <td>アンガラス ゲートル</td>
             <td></td>
@@ -407,8 +415,8 @@
           <tr>
             <td>アインハザードの加護:7日(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/einhasad_divin_7days_event.png" height="48" width="48" alt="アインハザードの加護:7日_ゲーム内画像" /></td>
-            <td>4回</td>
-            <td>5,000</td>
+            <td class="is_number">4回</td>
+            <td class="is_number">5,000</td>
             <td></td>
             <td>アインハザードの加護:7日(イベント)</td>
             <td></td>
@@ -419,8 +427,8 @@
           <tr>
             <td>特別な勇猛のメダル箱</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/special_brave_medal_box.png" height="48" width="48" alt="特別な勇猛のメダル箱_ゲーム内画像" /></td>
-            <td>5回</td>
-            <td>5,000</td>
+            <td class="is_number">5回</td>
+            <td class="is_number">5,000</td>
             <td></td>
             <td>勇猛のメダル</td>
             <td></td>
@@ -431,8 +439,8 @@
           <tr>
             <td>光る成長のポーション(イベント)</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/shining_growth_potion_event.png" height="48" width="48" alt="光る成長のポーション_ゲーム内画像" /></td>
-            <td>制限なし</td>
-            <td>500</td>
+            <td class="is_number">制限なし</td>
+            <td class="is_number">500</td>
             <td></td>
             <td>光る成長のポーション(イベント)</td>
             <td></td>
@@ -443,8 +451,8 @@
           <tr>
             <td>ケプリシャのオラクル 10個</td>
             <td><img class="icon_pict" src="./picture/item_thumbnail/keprisha_oracle.png" height="48" width="48" alt="ケプリシャのオラクル_ゲーム内画像" /></td>
-            <td>1回</td>
-            <td>50,000</td>
+            <td class="is_number">1回</td>
+            <td class="is_number">50,000</td>
             <td></td>
             <td>ケプリシャのオラクル</td>
             <td></td>

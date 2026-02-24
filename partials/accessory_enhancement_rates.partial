@@ -1,26 +1,26 @@
       <tbody class="modal_selection">
-        <tr class="インシグニア"><th>＋4→＋5</th><td>100.00%</td></tr>
-        <tr class="インシグニア"><th>＋5→＋6</th><td>24.00%</td></tr>
-        <tr class="インシグニア"><th>＋6→＋7</th><td>3.00%</td></tr>
-        <tr class="インシグニア"><th>＋7→＋8</th><td>0.30%</td></tr>
-        <tr class="スナッパーのリング"><th>＋4→＋5</th><td>100.00%</td></tr>
-        <tr class="スナッパーのリング"><th>＋5→＋6</th><td>50.00%</td></tr>
-        <tr class="スナッパーのリング"><th>＋6→＋7</th><td>6.00%</td></tr>
-        <tr class="スナッパーのリング"><th>＋7→＋8</th><td>0.30%</td></tr>
-        <tr class="ブレスレット"><th>＋3→＋4</th><td>100.00%</td></tr>
-        <tr class="ブレスレット"><th>＋4→＋5</th><td>12.00%</td></tr>
-        <tr class="ブレスレット"><th>＋5→＋6</th><td>2.00%</td></tr>
-        <tr class="紋章"><th>＋4→＋5</th><td>100.00%</td></tr>
-        <tr class="紋章"><th>＋5→＋6</th><td>24.00%</td></tr>
-        <tr class="紋章"><th>＋6→＋7</th><td>3.00%</td></tr>
-        <tr class="紋章"><th>＋7→＋8</th><td>0.30%</td></tr>
-        <tr class="ルームティスイアリング"><th>＋4→＋5</th><td>100.00%</td></tr>
-        <tr class="ルームティスイアリング"><th>＋5→＋6</th><td>50.00%</td></tr>
-        <tr class="ルームティスイアリング"><th>＋6→＋7</th><td>6.00%</td></tr>
-        <tr class="ルームティスイアリング"><th>＋7→＋8</th><td>0.30%</td></tr>
-        <tr class="ルームティスのペンダント"><th>＋4→＋5</th><td>100.00%</td></tr>
-        <tr class="ルームティスのペンダント"><th>＋5→＋6</th><td>24.00%</td></tr>
-        <tr class="ルームティスのペンダント"><th>＋6→＋7</th><td>3.00%</td></tr>
-        <tr class="ルームティスのペンダント"><th>＋7→＋8</th><td>0.30%</td></tr>
+        <tr class="インシグニア"><td>＋4→＋5</td><td class="is_number">100.00%</td></tr>
+        <tr class="インシグニア"><td>＋5→＋6</td><td class="is_number">24.00%</td></tr>
+        <tr class="インシグニア"><td>＋6→＋7</td><td class="is_number">3.00%</td></tr>
+        <tr class="インシグニア"><td>＋7→＋8</td><td class="is_number">0.30%</td></tr>
+        <tr class="スナッパーのリング"><td>＋4→＋5</td><td class="is_number">100.00%</td></tr>
+        <tr class="スナッパーのリング"><td>＋5→＋6</td><td class="is_number">50.00%</td></tr>
+        <tr class="スナッパーのリング"><td>＋6→＋7</td><td class="is_number">6.00%</td></tr>
+        <tr class="スナッパーのリング"><td>＋7→＋8</td><td class="is_number">0.30%</td></tr>
+        <tr class="ブレスレット"><td>＋3→＋4</td><td class="is_number">100.00%</td></tr>
+        <tr class="ブレスレット"><td>＋4→＋5</td><td class="is_number">12.00%</td></tr>
+        <tr class="ブレスレット"><td>＋5→＋6</td><td class="is_number">2.00%</td></tr>
+        <tr class="紋章"><td>＋4→＋5</td><td class="is_number">100.00%</td></tr>
+        <tr class="紋章"><td>＋5→＋6</td><td class="is_number">24.00%</td></tr>
+        <tr class="紋章"><td>＋6→＋7</td><td class="is_number">3.00%</td></tr>
+        <tr class="紋章"><td>＋7→＋8</td><td class="is_number">0.30%</td></tr>
+        <tr class="ルームティスイアリング"><td>＋4→＋5</td><td class="is_number">100.00%</td></tr>
+        <tr class="ルームティスイアリング"><td>＋5→＋6</td><td class="is_number">50.00%</td></tr>
+        <tr class="ルームティスイアリング"><td>＋6→＋7</td><td class="is_number">6.00%</td></tr>
+        <tr class="ルームティスイアリング"><td>＋7→＋8</td><td class="is_number">0.30%</td></tr>
+        <tr class="ルームティスのペンダント"><td>＋4→＋5</td><td class="is_number">100.00%</td></tr>
+        <tr class="ルームティスのペンダント"><td>＋5→＋6</td><td class="is_number">24.00%</td></tr>
+        <tr class="ルームティスのペンダント"><td>＋6→＋7</td><td class="is_number">3.00%</td></tr>
+        <tr class="ルームティスのペンダント"><td>＋7→＋8</td><td class="is_number">0.30%</td></tr>
       </tbody>
     </table>

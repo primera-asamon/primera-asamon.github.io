@@ -609,6 +609,12 @@ thead.sticky th {
 		border-top: none; /* theadとの干渉のため */
         min-width:38px; /* 列幅の安定化 */
 	}
+/* 数値列の右寄せと左右の余白 */
+    td.is_number {
+        text-align: right;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
 
     tbody.scroll_main  tr {
         border: none;
