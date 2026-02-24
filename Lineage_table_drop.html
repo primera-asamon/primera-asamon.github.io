@@ -6,11 +6,13 @@
     <meta name="description" content="">
     <meta name="keywords" content="Lineage, リネージュ, リネージュリマスター, ドロップ, モンスター">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
     <link rel="stylesheet" href="stylesheet/Lineage_Drops.css">
+    <script src="./js/datatable_sortfilter.js"></script>
   </head>
   <body class="drop">
+    <!-- 2026-01-30 header と table の両方をスクロール固定するため、
+     page_bodyにflexを適用して残りの高さを占有させる構成に変更しました。 -->
     <div class="page_body"> <!-- フッター以外の高さ管理するラッパー -->
       <header> <!-- サイト共通のheaderエリア -->
       <div class="nav"> <!-- site 共通nav -->
@@ -62,10 +64,26 @@
           <th class="sticky Item_No" data-control="sort number">No.</th>
           <th class="sticky Search_Drop" data-control="sort refine">Drop</th>
           <th class="sticky monster_name" data-control="sort refine">モンスター</th>
+            <!--
+            データコントロール。列ごとに処理区分を設定する 
+            　sort：ソートアイコンボタンと文字列としての並び替え
+            　number：ソートアイコンボタンと数値としての並び替え
+            　refine：フィルターアイコンボタンとクリックによるダイアログフォーム表示
+            　checklist：ダイアログフォームにチェックボックス付リストアイテムを表示する
+            --> 
         </tr>
       </thead>
       <span id="top"></span>
       <tbody>
+            <!-- 外部TSVファイル読み込みは非実装。
+            Excelによるtableタグ付き<tr></tr>を挿入します。
+            各フィールドのタグは以下の通りです。
+            <tr>
+              <td class="Item_No_d2m"></td>
+              <td class="drop_item_d2m"></td>
+              <td class="monster_list_d2m"></td>
+            </tr>
+            -->
         <tr> <td class="Item_No_d2m">1</td> <td class="drop_item_d2m">Tシャツ</td> <td class="monster_list_d2m">精鋭 ブラックナイト〈アデン大陸〉、ブラックナイト兵士〈ブラック バトルシップ1階〉、ブラックナイト〈亡者の墓、話せる島フィールド〉、ダーク ブラックナイト〈傲慢の塔8階〉</td> </tr>
         <tr> <td class="Item_No_d2m">2</td> <td class="drop_item_d2m">聖書(アーケイン バースト)</td> <td class="monster_list_d2m">バーニング ウォリアー〈火竜の棲処〉、不滅の司祭〈支配の塔9階〉、リベリオン アーマー ナイト〈傲慢の塔8階〉</td> </tr>
         <tr> <td class="Item_No_d2m">3</td> <td class="drop_item_d2m">聖書(アーケイン バースト)(蘇生)</td> <td class="monster_list_d2m">不滅の司祭〈支配の塔9階〉、リベリオン アーマー ナイト〈傲慢の塔8階〉</td> </tr>
@@ -1052,341 +1070,5 @@
       </div>
     </footer><!-- サイト共通のフッター -->
     <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
-
-  <!-- ── スクリプト｜テーブルの並び替え＆絞込み ── -->
-    <script>
-      /* ── ルートオブジェクト ── */
-      const tblcontrol = new Object;
-
-      /* ── スタイルシート ── */
-      //─] オブジェクト
-      tblcontrol.stylesheet =
-      document.querySelector( "head" ).
-      appendChild( document.createElement( "style" ) ).sheet;
-      //─] 関数
-      tblcontrol.css =( selector, style )=> {
-      const sheet = tblcontrol.stylesheet;
-      sheet.insertRule( `${ selector } { ${ style } }`, sheet.cssRules.length );
-      };
-      //─] 設定
-      //─]─] コントロール
-      tblcontrol.css( "th[ data-control ] .tbl-control", `
-      position: relative;
-      text-align: center;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-control > button", `
-      width: 15px;
-      height: 15px;
-      padding: 0px;
-      margin: 2px;
-      border: solid 1px #ccc;
-      background: #eee;
-      cursor: pointer;
-      outline: none !important;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-control > button:hover", `
-      border-color: #666;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-control > button:active", `
-      background: #fff;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-control button.filter", `
-      border-color: #fc6;
-      background: #ffc;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-control button img", `
-      width: 100%; height: 100%;
-      border: none;
-      pointer-events: none;
-      ` );
-      //─]─] フィルター
-      tblcontrol.css( "th[ data-control ] .tbl-filter", `
-      position: absolute; left: 0px; top: 100%; z-index: 100;
-      display: none;
-      box-sizing: border-box;
-      width: 200px;
-      padding: 4px;
-      margin: 0px;
-      border: solid 1px #ccc;
-      background: #ffe;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-filter.open", `
-      display: block;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-filter label", `
-      display: block;
-      text-align: left;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-filter-inventory", `
-      max-height: 200px;
-      overflow: auto;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-filter-keyword", `
-      margin: 4px auto;
-      ` );
-      tblcontrol.css( "th[ data-control ] .tbl-filter-buttons input", `
-      box-sizing: border-box;
-      width: 164px;
-      margin: 2px;
-      ` );
-      tblcontrol.css( `
-      th[ data-control ] .tbl-filter-buttons input[ value="絞込み" ],
-      th[ data-control ] .tbl-filter-buttons input[ value="クリア" ]
-      `, `
-      width: 80px;
-      margin: 2px;
-      ` );
-
-      /* ── ボタンアイコン ── */
-      tblcontrol.btnicon = new Object();
-      //─] ソート：昇順
-      tblcontrol.btnicon.ascend = new Image();
-      tblcontrol.btnicon.ascend.src = "../picture/icons/sort_up.svg";
-      /* tblcontrol.btnicon.ascend.src = `data:image/svg+xml;charset=utf-8,
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-      <polygon fill="%23666" stroke="none" points="8,3 3,11 13,11" />
-      </svg>`;*/
-      //─] ソート：降順
-      tblcontrol.btnicon.descend = new Image();
-      tblcontrol.btnicon.descend.src = "../picture/icons/sort_down.svg";
-      /* tblcontrol.btnicon.descend.src = `data:image/svg+xml;charset=utf-8,
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-      <polygon fill="%23666" stroke="none" points="8,13 3,5 13,5" />
-      </svg>`; */
-      //─] 絞込み
-      tblcontrol.btnicon.refine = new Image();
-      tblcontrol.btnicon.refine.src = "../picture/icons/filterfunnel.svg";
-      /* tblcontrol.btnicon.refine.src = `data:image/svg+xml;charset=utf-8,
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-      <polygon fill="%23666" stroke="none" points="8,11 3,3 13,3" />
-      <rect fill="%23666" stroke="none" x="6" y="6" width="4" height="6" />
-      </svg>`; */
-
-      /* ── 関数：初期化 ── */
-      tblcontrol.init =()=> {
-
-      //─] コントロール追加
-      document.querySelectorAll( "thead th[ data-control ]" ).forEach( th => {
-
-      //─]─] 取得
-      const index = th.cellIndex;
-      const table = th.closest( "table" );
-      const tbody = table.querySelector( "tbody" );
-
-      //─]─] コントロール
-      const control = th.appendChild( document.createElement( "div" ) );
-      control.classList.add( "tbl-control" );
-
-      //─]─]─] ソート
-      if( /sort/.test( th.dataset.control ) ){
-      //─]─]─]─] 昇順ボタン
-      const ascend = control.appendChild( document.createElement( "button" ) );
-      ascend.dataset.type = "sort-ascend";
-      ascend.appendChild( tblcontrol.btnicon.ascend.cloneNode( true ) );
-      //─]─]─]─] 降順ボタン
-      const descend = control.appendChild( document.createElement( "button" ) );
-      descend.dataset.type = "sort-descend";
-      descend.appendChild( tblcontrol.btnicon.descend.cloneNode( true ) );
-      //─]─]─]─] イベントハンドラ
-      ascend.onclick = descend.onclick = tblcontrol.sort;
-      }
-
-      //─]─]─] 絞込み
-      if( /refine/.test( th.dataset.control ) ){
-      //─]─]─]─] ボタン
-      const refine = control.appendChild( document.createElement( "button" ) );
-      refine.dataset.type = "refine";
-      refine.appendChild( tblcontrol.btnicon.refine.cloneNode( true ) );
-      refine.onclick = tblcontrol.toggleFilter;
-
-      //─]─]─]─] フィルター
-      const filter = control.appendChild( document.createElement( "form" ) );
-      filter.classList.add( "tbl-filter" );
-      filter.onsubmit = tblcontrol.refine;
-      filter.onreset = tblcontrol.unrefine;
-
-      //─]─]─]─]─] 全選択
-      let div = filter.appendChild( document.createElement( "div" ) );
-      div.classList.add( "tbl-filter-all" );
-      let label = div.appendChild( document.createElement( "label" ) );
-      let input = label.appendChild( document.createElement( "input" ) );
-      input.name = "filter_all";
-      input.type = "checkbox";
-      input.checked = true;
-      input.onchange = tblcontrol.checkAll;
-      label.appendChild( document.createTextNode( "すべて" ) );
-
-      //─]─]─]─]─] キーアイテム
-      div = filter.appendChild( document.createElement( "div" ) );
-      div.classList.add( "tbl-filter-inventory" );
-      const list = [].reduce.call( tbody.rows, ( arr, row ) => {
-      const text = row.cells[ index ].textContent;
-      if( ! arr.includes( text ) ){ arr.push( text ) }
-      return arr;
-      }, [] );
-      list.forEach( text => {
-      label = div.appendChild( document.createElement( "label" ) );
-      input = label.appendChild( document.createElement( "input" ) );
-      input.name = "filter_item";
-      input.type = "checkbox";
-      input.value = text;
-      input.checked = true;
-      input.onchange = tblcontrol.checkAll;
-      label.appendChild( document.createTextNode( text ) );
-      } );
-      filter.dataset.keyitem = JSON.stringify( list );
-
-      //─]─]─]─]─] キーワード
-      div = filter.appendChild( document.createElement( "div" ) );
-      div.classList.add( "tbl-filter-keyword" );
-      input = div.appendChild( document.createElement( "input" ) );
-      input.name = "filter_keyword";
-      input.type = "text";
-      input.placeholder = "絞込みワード";
-      filter.dataset.keyword = "";
-
-      //─]─]─]─]─] 各ボタン
-      div = filter.appendChild( document.createElement( "div" ) );
-      div.classList.add( "tbl-filter-buttons" );
-      input = div.appendChild( document.createElement( "input" ) );
-      input.type = "submit";
-      input.value = "絞込み";
-      input = div.appendChild( document.createElement( "input" ) );
-      input.type = "reset";
-      input.value = "クリア";
-      input = div.appendChild( document.createElement( "input" ) );
-      input.type = "button";
-      input.value = "キャンセル";
-      input.onclick = tblcontrol.toggleFilter;
-      }
-      } );
-
-      };
-
-      /* ── 関数：並び替え ── */
-      tblcontrol.sort = evt => {
-      //─] HTML 要素
-      const target = evt.target;
-      const thead = target.closest( "thead" );
-      const th = target.closest( "th" );
-      const tbody = target.closest( "table" ).querySelector( "tbody" );
-      //─] 列番号
-      const index = th.cellIndex;
-      //─] ソート方法
-      const type = target.dataset.type;
-      const numsort = /number/.test( th.dataset.control );
-      //─] ソート
-      Array.from( tbody.rows ).sort( ( row1, row2 ) => {
-      const [ a, b ] = [
-      row1.cells[ index ].textContent,
-      row2.cells[ index ].textContent
-      ].map( value => numsort ? Number( value ) : value );
-      return a==b ? 0 :
-      type=="sort-ascend" ? ( a>b ? 1 : -1 ) : ( a>b ? -1 : 1 ) ;
-      } ).forEach( row => tbody.appendChild( row ) );
-      //─] ボタンの色
-      thead.querySelectorAll( "button[ data-type|='sort' ]" ).
-      forEach( button => button.classList[ button==target ? "add" : "remove" ]( "filter" ) );
-      };
-
-      /* ── 関数：フィルター開閉 ── */
-      tblcontrol.toggleFilter = evt => {
-      //─] HTML 要素
-      const target = evt.target.closest( ".tbl-control" ).querySelector( ".tbl-filter" );
-      const filters = target.closest( "thead" ).querySelectorAll( ".tbl-filter" );
-      //─] 開閉フラグ
-      const open = ! target.classList.contains( "open" );
-      //─] すべてのフィルターを閉じる
-      filters.forEach( filter => {
-      //──] リセット：キーアイテム
-      const keyitem = JSON.parse( filter.dataset.keyitem );
-      filter.filter_item.forEach(
-      item => item.checked = keyitem.includes( item.value )
-      );
-      filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item.checked ) ;
-      //──] リセット：キーワード
-      const keyword =
-      filter.filter_keyword.value = filter.dataset.keyword;
-      //──] ボタンの色
-      filter.closest( "th" ).
-      querySelector( "button[ data-type='refine' ]" ).
-      classList[ ( ! keyword ) && filter.filter_all.checked ? "remove" : "add" ]( "filter" );
-      //──] 閉じる
-      filter.classList.remove( "open" );
-      } );
-      //─] フィルターを開く
-      if( open ) target.classList.add( "open" );
-      };
-
-      /* ── 関数：全選択 ── */
-      tblcontrol.checkAll = evt => {
-      const target = evt.target;
-      const filter = target.form;
-      target.name=="filter_all" ?
-      Array.from( filter.filter_item ).forEach( item => item.checked = target.checked ) :
-      filter.filter_all.checked = Array.from( filter.filter_item ).every( item => item.checked ) ;
-      };
-
-      /* ── 関数：絞込み ── */
-      tblcontrol.refine = evt => {
-      //─] フォーム送信中止
-      evt.preventDefault();
-      //─] 更新
-      const filter = evt.target;
-      const index = filter.closest( "th" ).cellIndex;
-      const rows = filter.closest( "table" ).querySelectorAll( "tbody tr" );
-      //─]─] キーアイテム
-      const keyitem = Array.from( filter.filter_item ).
-      filter( input => input.checked ).
-      map( input => input.value );
-      filter.dataset.keyitem = JSON.stringify( keyitem );
-      //─]─] キーワード
-      const keyword =
-      filter.dataset.keyword = filter.filter_keyword.value;
-      //─] 合算キー
-      const keys = keyitem.filter( item => item.indexOf( keyword )>=0 );
-      //─] 適用
-      rows.forEach( row => {
-      const cell = row.cells[ index ];
-      cell.dataset.filter = keys.includes( cell.textContent ) ? 1 : 0 ;
-      row.style.display = row.querySelector( "[ data-filter='0' ]" ) ? "none" : "table-row" ;
-      } );
-      //─] ボタンの色
-      filter.closest( "th" ).
-      querySelector( "button[ data-type='refine' ]" ).
-      classList[ ( ! keyword ) && filter.filter_all.checked ? "remove" : "add" ]( "filter" );
-      //─] フィルターを閉じる
-      filter.classList.remove( "open" );
-      };
-
-      /* ── 関数：絞込み解除 ── */
-      tblcontrol.unrefine = evt => {
-      const filter = evt.target;
-      filter.filter_all.checked = true;
-      Array.from( filter.filter_item ).forEach( item => item.checked = true );
-      filter.filter_keyword.value = "";
-      tblcontrol.refine( evt );
-      };
-      /* ── 実装 ── */
-      window.addEventListener( "DOMContentLoaded", tblcontrol.init, false );
-
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
-      });
-    </script>
   </body>
 </html>
