@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
   </head>
   <style>
+    .table_box_main{
+      height:calc(100% - 208px);
+    }
+
     th {
       background-color: #fff7ac; /* シグネチャーポイント交換表用ヘッダー色 */
+      font-size: 0.9em;
     }
     .lineage_accessory_popup_table th{
       border: #666 1px solid; /* 強化確率表モーダルセルの罫線 */
@@ -66,17 +71,21 @@
           </span>
         </div>
       </div> <!-- site 共通nav -->
-        <h1 class="header-title">シグネチャーポイント交換表</h1>
-        <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
-        ログインボーナスや公式ショップ無料購入等で獲得できるシグネチャーポイントを各種アイテムと交換できます。
-        </div> <!-- サイト共通のheader説明文エリア -->
+      <div class="header-description"> <!-- サイト共通のheader説明文エリア -->
+      </div> <!-- サイト共通のheader説明文エリア -->
       </header> <!-- サイト共通のheaderエリア -->
-      <div class="table_lead"> <!-- テーブル中心ページのテーブル説明文エリア -->
-        <span class="lead_text">2025年12月17日(水) メンテナンス終了時～<br>2026年02月04日(水) メンテナンス開始時</span>
-        <span><span class="update_date">更新&nbsp;2025/12/21</span><br><span class="create_date">初出&nbsp;2025/7/24</span></span>
+      <div class="article-toggle">
+        <span class="header-title">シグネチャーポイント交換表</span>
+        <span class="arrow">▼</span>
       </div>
-      
-      <div class="update_date">＊1アカウントあたり</div>
+      <div class="article-collapsible">
+        ログインボーナスや公式ショップ無料購入等で獲得できるシグネチャーポイントを各種アイテムと交換できます。
+        <div class="table_lead"> <!-- テーブル中心ページのテーブル説明文エリア -->
+          <span class="lead_text">2025年12月17日(水) メンテナンス終了時～2026年02月04日(水) メンテナンス開始時</span>
+          <div class="table_lead_date"><span class="update_date">更新&nbsp;2025/12/21</span><br><span class="create_date">初出&nbsp;2025/7/24</span></div>
+        </div>
+        <div class="update_date">＊1アカウントあたり</div>
+      </div>
       <div class="table_box_main"> <!-- テーブル中心ページのテーブルエリア -->
       <table id="top">
         <thead class="sticky">
@@ -585,6 +594,13 @@
         .addEventListener('click', () => {
           document.querySelector('.subnav-collapsible').classList.toggle('open');
           document.querySelector('.subnav-toggle').classList.toggle('open');
+      });
+
+      document.querySelectorAll('.article-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('open');
+          toggle.nextElementSibling.classList.toggle('open');
+        });
       });
   </script>
   <!-- ↓モーダル1 -->
