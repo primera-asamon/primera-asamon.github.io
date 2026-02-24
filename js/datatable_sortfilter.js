@@ -452,18 +452,3 @@ tblcontrol.unrefine = (evt) => {
 
 /* ── 実装 ── */
 window.addEventListener("DOMContentLoaded", tblcontrol.init, false);
-
-document.querySelector(".footer-toggle").addEventListener("click", () => {
-  document.querySelector(".footer-collapsible").classList.toggle("open");
-  document.querySelector(".footer-toggle").classList.toggle("open");
-});
-
-document.querySelector(".main-toggle").addEventListener("click", () => {
-  document.querySelector(".main-collapsible").classList.toggle("open");
-  document.querySelector(".main-toggle").classList.toggle("open");
-});
-
-document.querySelector(".subnav-toggle").addEventListener("click", () => {
-  document.querySelector(".subnav-collapsible").classList.toggle("open");
-  document.querySelector(".subnav-toggle").classList.toggle("open");
-});
