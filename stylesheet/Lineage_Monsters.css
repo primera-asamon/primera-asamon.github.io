@@ -7,7 +7,7 @@
   /* header の規定は共通css(Linage_main.css)に移管 */
 
   .Monster_table_box{
-    flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+    flex: 1 1 auto; /* ← header の高さを自動で差し引いて残りを占有 */
     min-height: 0; /* ← これが重要 */
     overflow-y: auto; /* ← scroll container 唯一 */
     overflow-x: auto; /* 横スクロール表示 */
@@ -29,8 +29,8 @@
     /* (sticky1=thead) */
   thead.sticky th {
     background-image:
-    linear-gradient(to bottom, #888 0, #888 1px, transparent 1px), /* 上の線 */
-    linear-gradient(to bottom, #888 0, #888 1px, transparent 1px); /* 下の線 */
+    linear-gradient(#888, #888), /* 上の線 */
+    linear-gradient(#888, #888); /* 下の線 */
 
     background-repeat: no-repeat, no-repeat;
 
@@ -46,8 +46,8 @@
   th {
     background-color: #cef;
     text-align: center;
-    border-left: 1px solid #888; /*Firefox縦罫線消え対応*/
-    border-right: 1px solid #888; /*Firefox縦罫線消え対応*/
+    /*border-left: 1px solid #888; /*Firefox縦罫線消え対応*/
+    /*border-right: 1px solid #888; /*Firefox縦罫線消え対応*/
   }
 /* th width limit */
   th.Drop_item{

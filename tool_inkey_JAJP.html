@@ -52,65 +52,68 @@
     </style>
 </head>
 <body id="top" class="tool inkey">
-  <header> <!-- サイト共通のheaderエリア -->
-      <div class="nav"> <!-- site 共通nav -->
-        <div class="main-collapsible"> <!-- main-nav 折り畳み -->
-          <ul class="nav-group"> <!-- (main nav) -->
-            <li><a href="index.html" class="index">ホーム</a></li>
-            <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
-            <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
-            <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
-            <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
-            <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
-            <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
-            <li><a href="tool_glyph.html" class="tool">Tools</a></li>
-            <li><a href="site_updates.html" class="updt">変更歴</a></li>
-          </ul> <!-- (main nav) -->
-        </div> <!-- main-nav 折り畳み -->
-        <div class="main-toggle"> <!-- main-nav の帯 -->
-          <span class="main-toggle-label">
-            リネージュメモ<span class="arrow">▼</span>メニュー
-          </span>
-        </div>
-        <div class="subnav-collapsible accessory-only"> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
-          <ul class="nav-group_acce">
-            <li><a href="Lineage_accessory_crest.html" class="crest">紋章</a></li>
-            <li><a href="Lineage_accessory_insignia.html" class="insig">インシグニア</a></li>
-            <li><a href="Lineage_accessory_earring.html" class="ear">イアリング</a></li>
-            <li><a href="Lineage_accessory_pendant__page1.html" title="闘士/射手/賢者" class="pend1">ペンダント1</a></li>
-            <li><a href="Lineage_accessory_pendant__page2.html" title="ハンター/守護" class="pend2">ペンダント2</a></li>
-            <li><a href="Lineage_accessory_bracelet.html" class="brace">ブレスレット</a></li>
-            <li><a href="Lineage_accessory_ring__page1.html" title="知恵/勇士/魔法抵抗/体力" class="ring1">リング1</a></li>
-            <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">リング2</a></li>
-          </ul> <!-- (sub nav) accessory 共通nav -->
-        </div> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
-        <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
-          <span class="subnav-toggle-label">
-            パンドラ装身具<span class="arrow">▼</span>メニュー
-          </span>
-        </div>
-			<ul class="nav-group_tools"><!-- (sub nav) tools 共通 -->
-				<li><a href="tool_glyph.html" class="font">大字</a></li>
-				<li><a href="tool_inkey_JAJP.html" class="inkey">押下釦</a></li>
-			</ul> <!-- (sub nav) tools 共通nav -->
-		</div> <!-- site 共通nav -->
-		<h1>キー押下表示ページ</h1>
-		<!-- <div class="header-description"> --><!-- サイト共通のheader説明文エリア -->
-		<!-- </div> --><!-- サイト共通のheader説明文エリア -->
-	</header> <!-- サイト共通のheaderエリア -->
-	<div class="content">
-    <div class="article">
-			<p>ShiftキーやCtrlキーなどを押し続けてください。</p>
-			<label for="layout">キーボードレイアウト:</label>
-			<select id="layout">
-				<option value="JP">JP</option>
-				<option value="US">US</option>
-			</select>
-			<input type="radio" name="trap" id="start-trap" value="start"> 判定
-			<input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
-			<div id="output">押されたキーがここに表示されます。</div>
-		</div>
-	</div>
+    <header> <!-- サイト共通のheaderエリア -->
+    <div class="nav"> <!-- site 共通nav -->
+      <div class="main-collapsible"> <!-- main-nav 折り畳み -->
+        <ul class="nav-group"> <!-- (main nav) -->
+          <li><a href="index.html" class="index">ホーム</a></li>
+          <li><a href="Lineage_table_monster.html" class="monst">Monsters</a></li>
+          <li><a href="Lineage_table_drop.html" class="drop">Drops</a></li>
+          <li><a href="Lineage_table_skill.html" class="skill">Skills</a></li>
+          <li><a href="Lineage_accessory_crest.html" class="acce">パンドラ装身具</a></li>
+          <li><a href="Lineage_remastered_kanji.html" class="kanji">Kanji</a></li>
+          <li><a href="Lineage_remastered_etc.html" class="etc">諸表</a></li>
+          <li><a href="tool_glyph.html" class="tool">Tools</a></li>
+          <li><a href="site_updates.html" class="updt">変更歴</a></li>
+        </ul> <!-- (main nav) -->
+      </div> <!-- main-nav 折り畳み -->
+      <div class="main-toggle"> <!-- main-nav の帯 -->
+        <span class="main-toggle-label">
+          リネージュメモ<span class="arrow">▼</span>メニュー
+        </span>
+      </div>
+      <div class="subnav-collapsible accessory-only"> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+        <ul class="nav-group_acce">
+          <li><a href="Lineage_accessory_crest.html" class="crest">紋章</a></li>
+          <li><a href="Lineage_accessory_insignia.html" class="insig">インシグニア</a></li>
+          <li><a href="Lineage_accessory_earring.html" class="ear">イアリング</a></li>
+          <li><a href="Lineage_accessory_pendant__page1.html" title="闘士/射手/賢者" class="pend1">ペンダント1</a></li>
+          <li><a href="Lineage_accessory_pendant__page2.html" title="ハンター/守護" class="pend2">ペンダント2</a></li>
+          <li><a href="Lineage_accessory_bracelet.html" class="brace">ブレスレット</a></li>
+          <li><a href="Lineage_accessory_ring__page1.html" title="知恵/勇士/魔法抵抗/体力" class="ring1">リング1</a></li>
+          <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">リング2</a></li>
+        </ul> <!-- (sub nav) accessory 共通nav -->
+      </div> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
+      <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
+        <span class="subnav-toggle-label">
+          パンドラ装身具<span class="arrow">▼</span>メニュー
+        </span>
+      </div>
+    </div> <!-- site 共通nav -->
+    <!--<h1 class="header-title">ぷりめらの</h1> index.htmlにのみ設置します。
+    <div class="header-description"> サイトのheader説明文エリア
+    </div> サイトのheader説明文エリア -->
+    </header> <!-- サイト共通のheaderエリア -->
+    <div class="page_body"> <!-- ページ本文エリア -->
+      <div class="page_lead"> <!-- ページの説明文エリア -->
+        <h2 class="page-title">キー押下表示ページ</h2>
+  			<ul class="nav-group_tools"><!-- (sub nav) tools 共通 -->
+          <li><a href="tool_glyph.html" class="font">大字</a></li>
+          <li><a href="tool_inkey_JAJP.html" class="inkey">押下釦</a></li>
+        </ul> <!-- (sub nav) tools 共通nav -->
+      </div> <!-- site 共通nav -->
+      <div class="article">
+        <p>ShiftキーやCtrlキーなどを押し続けてください。</p>
+        <label for="layout">キーボードレイアウト:</label>
+        <select id="layout">
+          <option value="JP">JP</option>
+          <option value="US">US</option>
+        </select>
+        <input type="radio" name="trap" id="start-trap" value="start"> 判定
+        <input type="radio" name="trap" id="stop-trap" value="stop" checked> 終了
+        <div id="output">押されたキーがここに表示されます。</div>
+      </div>
+    </div>
     <footer><!-- サイト共通のフッター -->
       <div class="footer-toggle" data-target="footer" data-class="open">
         <span class="footer-toggle-label">

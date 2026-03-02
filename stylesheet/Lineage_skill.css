@@ -1,17 +1,22 @@
-.sr-only {
-position: absolute;
-width: 1px;
-height: 1px;
-margin: -1px;
-padding: 0;
-overflow: hidden;
-clip: rect(0, 0, 0, 0);
-border: 0;
-}
-  html,body {
-    width:auto;
-    height:calc(100% - 48px);
+/* skill_table */
+
+  /* html,body の規定は無用。種制御はLinage_main.cssに移管 */
+
+  /* page_body の規定は共通css(Linage_main.css)に移管 */
+
+  /* header の規定は共通css(Linage_main.css)に移管 */
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
   }
+
   .skill_table_box{
     flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
     min-height: 0; /* ← これが重要 */
@@ -30,7 +35,10 @@ table {
     height:1px;
     text-align: center;
   }
-
+  .pcv,
+  .spv {
+    font-size: 12px;
+  }
 tbody.record-table tr{
 background-color: #fff;
 border-color:#fff
@@ -40,7 +48,6 @@ border: 1px solid #888;
 background-color: #dee;
 padding: 6px;
 text-align: left;
-font-size: small;
 font-weight: normal;
 }
 th.grade{
@@ -50,7 +57,6 @@ td {
 border: 1px solid #888;
 padding: 6px;
 text-align: left;
-font-size: small;
 font-weight: normal;
 }
 td.grade_no {
@@ -69,7 +75,7 @@ text-align: right;
 background-color: #dde;
 width:72px;
 font-weight:normal;
-font-size:smaller;
+font-size:12.5pxer;
 }
 /* js */
 .col-data {
@@ -81,7 +87,7 @@ min-width:72px;
 background-color: #edf;
 width:60px;
 border-right-color: #edf;
-font-size: small;
+font-size: 12.5px;
 }
 /* js */
 .col-data_level {
@@ -89,7 +95,7 @@ background-color: #edf;
 width: 60px;
 border-left-color: #edf;
 border-right-color: #edf;
-font-size: medium;
+font-size: 12.5px;
 }
 /* js */
 .col-data_skillname {
@@ -97,7 +103,7 @@ background-color: #edf;
 width: calc(100% - 5 * 100px);
 min-width:300px;
 border-left-color: #edf;
-font-size: medium;
+font-size: 12.5px;
 }
 /* js */
 /* spv(SmartPhoneView) */
@@ -111,7 +117,7 @@ background-color: #fff;
 .child-table {
 border-collapse: collapse;
 background-color: #fff;
-font-size:xx-small;
+font-size:12px;
 }
 tbody.spv-layout tr{
 background-color: #fff;
@@ -122,14 +128,14 @@ background-color: #dde;
 border: 1px solid #ccc;
 padding: 6px;
 text-align: left;
-font-size: small;
+font-size: 12.5px;
 font-weight: normal;
 }
 tbody.spv-layout td {
 border: 1px solid #ccc;
 padding: 6px;
 text-align: left;
-font-size: small;
+font-size: 12.5px;
 font-weight: normal;
 }
 /* js */
@@ -137,7 +143,7 @@ font-weight: normal;
 background-color: #dde;
 min-width:72px;
 font-weight:normal;
-font-size:smaller;
+font-size:12.5px;
 }
 /* js */
 .spv-col-data {
@@ -149,7 +155,7 @@ min-width:72px;
 background-color: #edf;
 width:60px;
 border-right-color: #edf;
-font-size: small;
+font-size: 12.5px;
 }
 /* js */
 .spv-col-data_skillname {
@@ -157,7 +163,7 @@ background-color: #edf;
 width: calc(100% - 5 * 100px);
 min-width:300px;
 border-left-color: #edf;
-font-size: medium;
+font-size: 12.5px;
 }
 }
 /* ↑スマホ用メディアクエリ対応 2025-06-22-16:40 */

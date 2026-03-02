@@ -1,10 +1,11 @@
 /* accessory table(acce) */
 
-  html,body {
-    width: auto;
-    height: calc(100% - 40px); /* ← header の高さを引く */
-    margin: 0;
-  }
+  /* html,body の規定は無用。種制御はLinage_main.cssに移管 */
+
+  /* page_body の規定は共通css(Linage_main.css)に移管 */
+
+  /* header の規定は共通css(Linage_main.css)に移管 */
+
 
 h2 {
     text-align: left;
@@ -13,18 +14,21 @@ h2 {
   }
 
   .table_box_acce{
-    flex: 1; /* ← header の高さを自動で差し引いて残りを占有 */
+    flex: 1 1 auto; /* ← header の高さを自動で差し引いて残りを占有 */
     min-height: 0; /* ← これが重要 */
     overflow: auto; /* ← ここでスクロールを閉じ込める */
-    width:100%;
     position: relative;
   }
 
-  table.acce {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    margin: auto;
+  /* 800px 以上では横スクロールを消す */
+  @media (min-width: 800px) {
+    .main-toggle {
+        position: static;
+    }
+  }
+
+  table {
+    font-size: 12px;
   }
 
   thead.sticky_acce {
@@ -54,23 +58,13 @@ h2 {
     background-clip: padding-box;
     z-index: -1;
   }
-  .sticky_acce td {
-    height:24px;
-    text-align: center;
-    font-weight: normal;
-    margin: 1px;
-    padding: 3px 6px;
-    font-size:small;
-    outline: 2px solid #cbb;
-    background-color: #fec;
-  }
+/**/
   th {
     height:24px;
     text-align: center;
     font-weight: normal;
     margin: 1px;
     padding: 3px 6px;
-    font-size:small;
     border: 4px solid #cbb;
   }
   td {
@@ -81,6 +75,33 @@ h2 {
     padding: 3px 6px;
     font-size:small;
     border: 4px solid #cbb;
+  }
+    /* page_body に対して sticky2 になる */
+    /* (sticky1=thead) */
+  thead.sticky th {
+    background-image:
+    linear-gradient(#888, #888), /* 上の線 */
+    linear-gradient(#888, #888); /* 下の線 */
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-position:
+      left top,        /* 上の線 */
+      left bottom;     /* 下の線 */
+
+    background-size:
+      100% 1px,
+      100% 1px;
+  }
+  .sticky_acce td {
+    height:24px;
+    text-align: center;
+    font-weight: normal;
+    margin: 1px;
+    padding: 3px 6px;
+    font-size:small;
+    outline: 2px solid #cbb;
+    background-color: #fec;
   }
   
   .Item_No {
