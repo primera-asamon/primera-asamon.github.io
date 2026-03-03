@@ -1,10 +1,15 @@
 // footer以外の高さ制御
 // footer_vali_wrapper の padding-bottom 調整
 function updateFooterPadding() {
-  const footer = document.querySelector("footer");
-  const wrapper = document.querySelector(".footer_vali_wrapper");
-  const height = footer.classList.contains("open") ? footer.offsetHeight : 0;
-  wrapper.style.paddingBottom = height + "px";
+  const collapsible = document.querySelector(".footer-collapsible");
+  const pageBody = document.querySelector(".page_body");
+  if (!collapsible || !pageBody) return;
+
+  const height = collapsible.classList.contains("open")
+    ? collapsible.offsetHeight
+    : 0;
+
+  pageBody.style.paddingBottom = height + "px";
 }
 // 折り畳み表示
 const footerToggle = document.querySelector(".footer-toggle");
