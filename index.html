@@ -7,6 +7,7 @@
     <meta name="keywords" content="Lineage,リネージュ,リネージュリマスター">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
+    <script src="/js/main.js" defer></script>
   </head>
   <body class="index"><!-- bodyタグにページ識別classを付与 -->
     <header> <!-- サイト共通のheaderエリア -->
@@ -225,31 +226,5 @@
       </div>
     </footer><!-- サイト共通のフッター -->
     <a href="#top" class="btn-pagetop"><img class="btn-pagetop" src="./picture/icons/jump2top.svg" width="24px" height="24px" alt="ページの先頭へ戻る" /></a>
-    <script>
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
-      });
-
-      document.querySelectorAll('.article-toggle').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          toggle.classList.toggle('open');
-          toggle.nextElementSibling.classList.toggle('open');
-        });
-      });
-    </script>
   </body>
 </html>

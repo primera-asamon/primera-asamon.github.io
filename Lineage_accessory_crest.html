@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylesheet/Lineage_accessory.css">
     <link rel="stylesheet" href="stylesheet/Lineage_accessory_modal.css">
     <script src="./js/accessory_modal.js"></script>
+    <script src="/js/main.js" defer></script>
   </head>
   <body class="acce crest">
     <header> <!-- サイト共通のheaderエリア -->
@@ -252,25 +253,6 @@
               pageTop.blur();
               return false;
           });
-      });
-    </script>
-    <script>
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
       });
     </script>
   </body>

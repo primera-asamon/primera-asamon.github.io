@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
     <link rel="stylesheet" href="stylesheet/Lineage_skill.css">
+    <script src="/js/main.js" defer></script>
   </head>
   <body class="skill">
   <!-- body Lineage_table_skill.htmlにおいてはID="top"を付けてはいけない。
@@ -541,24 +542,6 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'center' });
           target.classList.add('highlight'); // CSSで注目表示
         }
-      });
-
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
       });
     </script>
   </body>

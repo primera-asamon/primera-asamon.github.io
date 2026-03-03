@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>キー押下表示</title>
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
+	<script src="/js/main.js" defer></script>
+</head>
     <style>
         #output {
             font-size: 24px;
@@ -50,7 +52,6 @@
 				color: #999;
 			}
     </style>
-</head>
 <body id="top" class="tool inkey">
     <header> <!-- サイト共通のheaderエリア -->
     <div class="nav"> <!-- site 共通nav -->
@@ -241,23 +242,6 @@
 			updateOutput();
 			});
 
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
-      });
 	</script>
 </body>
 </html>

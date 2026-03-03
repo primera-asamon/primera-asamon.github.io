@@ -7,6 +7,7 @@
     <meta name="keywords" content="Lineage,リネージュ,リネージュリマスター">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet/Lineage_main.css">
+    <script src="/js/main.js" defer></script>
   </head>
   <style>
     .table_box_main{
@@ -585,30 +586,6 @@
         if (event.target === modal) modal.style.display = 'none';
       };
     }
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
-      });
-
-      document.querySelectorAll('.article-toggle').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          toggle.classList.toggle('open');
-          toggle.nextElementSibling.classList.toggle('open');
-        });
-      });
   </script>
   <!-- ↓モーダル1 -->
       <div id="recordModal_1" class="modal">

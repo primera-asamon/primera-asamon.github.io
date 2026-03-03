@@ -5,6 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>おおきなフォントサイズ</title>
       <link rel="stylesheet" href="stylesheet/Lineage_main.css">
+      <script src="/js/main.js" defer></script>
+  </head>
       <style>
         @font-face {
         font-family: 'Kyoukasho'; src: url('HGKyokashotai.woff') format('woff');
@@ -58,7 +60,6 @@
           color: #999;
         }
       </style>
-  </head>
   <body id="top" class="tool font">
     <header> <!-- サイト共通のheaderエリア -->
     <div class="nav"> <!-- site 共通nav -->
@@ -133,24 +134,5 @@
         </div>
       </div>
     </footer><!-- サイト共通のフッター -->
-    <script>
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
-      });
-    </script>
   </body>
 </html>

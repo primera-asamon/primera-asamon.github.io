@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylesheet/Lineage_skill.css">
     <link rel="stylesheet" href="stylesheet/Lineage_skill_modal.css">
     <script src="js/skill_modal.js"></script>
+    <script src="/js/main.js" defer></script>
   </head>
   <style>
     .modal-content {
@@ -408,23 +409,6 @@ fetch(modalOptions.tsvPath)
       showModal(record, generateSubHTML);
     }
   });
-      document.querySelector('.footer-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.footer-collapsible').classList.toggle('open');
-          document.querySelector('.footer-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.main-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.main-collapsible').classList.toggle('open');
-          document.querySelector('.main-toggle').classList.toggle('open');
-      });
-
-      document.querySelector('.subnav-toggle')
-        .addEventListener('click', () => {
-          document.querySelector('.subnav-collapsible').classList.toggle('open');
-          document.querySelector('.subnav-toggle').classList.toggle('open');
-      });
     </script>
 <!-- ↓モーダル1 -->
     <div id="recordModal_1" class="modal">
