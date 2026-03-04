@@ -40,10 +40,11 @@ table.lineage_accessory_popup_table {
   font-weight: normal;
 }
 .lineage_accessory_popup_table th.col_header {
+  min-width:24px;
   max-width:160px;
 }
 .lineage_accessory_popup_table td {
-  min-width:50px;
+  width:24px;
   border: 1px solid #888;
   text-align:right;
   padding: 1px 6px 1px 6px;

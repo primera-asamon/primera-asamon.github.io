@@ -34,7 +34,7 @@ h2 {
   thead.sticky_acce {
     position: sticky;
     top: 0;
-    z-index: 10; /* 背景レイヤの ::before より前面 */
+    z-index: 1000; /* 背景レイヤの ::before より前面 */
     height: 50px; /* sticky基準の安定化 */
     /*background-color: #fec; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
     background-color: transparent; /* stickyには明示的背景必須、透明だとスクロールしてくるBodyが重なって見える */
@@ -47,14 +47,14 @@ h2 {
   .sticky_acce::before {
     content: "";
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 		/* border-topまたはbottomの一方にしないと現状は隙間ができるように見える。 */
     border-top: 3px solid #cbb;
     /* border-bottom: 1px solid #888; */
-    background-color: transparent;
+    background-color: #cbb;
     background-clip: padding-box;
     z-index: -1;
   }
@@ -63,9 +63,8 @@ h2 {
     height:24px;
     text-align: center;
     font-weight: normal;
-    margin: 1px;
-    padding: 3px 6px;
     border: 4px solid #cbb;
+    background-color: #fec;
   }
   td {
     height:24px;
@@ -80,8 +79,8 @@ h2 {
     /* (sticky1=thead) */
   thead.sticky th {
     background-image:
-    linear-gradient(#888, #888), /* 上の線 */
-    linear-gradient(#888, #888); /* 下の線 */
+    linear-gradient(#cbb, #cbb), /* 上の線 */
+    linear-gradient(#cbb, #cbb); /* 下の線 */
 
     background-repeat: no-repeat, no-repeat;
 
@@ -92,6 +91,7 @@ h2 {
     background-size:
       100% 1px,
       100% 1px;
+    background-color: #fec;
   }
   .sticky_acce td {
     height:24px;
@@ -100,7 +100,7 @@ h2 {
     margin: 1px;
     padding: 3px 6px;
     font-size:small;
-    outline: 2px solid #cbb;
+    outline: 3px solid #cbb;
     background-color: #fec;
   }
   
