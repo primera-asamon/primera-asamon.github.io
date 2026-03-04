@@ -112,11 +112,6 @@
         user-select: none;
     }
     
-    @media (min-width: 800px) {
-    .main-toggle {
-        position: static;
-    }
-    }
 
 
     .main-collapsible,
@@ -135,7 +130,7 @@
       background-color: #f2f2e8;
     }
     .subnav-collapsible {
-      background-color: #f2e8f2;
+      background-color: #f7f1fa;
     }
 
     .main-collapsible.open,
@@ -172,8 +167,22 @@
         display: none;
     }
 
-    /* ナビゲーション */
+    /* 800px 以上では */
+    @media (min-width: 800px) {
+    /* 折りたたまない */
+    .main-collapsible,
+    .subnav-collapsible {
+        display: block;
+        margin-left:2px;
+    }
+    /* メニューバーなし */
+    .main-toggle,
+    .subnav-toggle.accessory-only {
+        display: none;
+    }
+    }
 
+    /* ナビゲーション */
     .nav,
     .nav-group_tools {
         z-index: 100;
@@ -198,7 +207,7 @@
     .nav-group>li,
     .nav-group_tools>li {
         margin: 0;
-        padding: 0 12px;
+        padding: 0 8px;
         display: -moz-inline-stack;
         display: inline-block;
         vertical-align: middle;
@@ -210,7 +219,7 @@
     .nav-group>li a,
     .nav-group_tools>li a {
         display: block;
-        padding: 6px 12px;
+        padding: 6px;
         color: #333;
         text-decoration: none;
     }
