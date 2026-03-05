@@ -195,6 +195,7 @@ h2 {
     body.brace .nav-group_acce a.brace,
     body.ring1 .nav-group_acce a.ring1,
     body.ring2 .nav-group_acce a.ring2 {
+        background-color:#fff;
         border-bottom: #86f solid 2px;
         color: #97f;
     }

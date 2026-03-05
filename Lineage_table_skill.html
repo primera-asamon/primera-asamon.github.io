@@ -17,6 +17,11 @@
    scriptの記述(html_pcv += `<thead id="top">`;)でスクロールしたテーブルの先頭にJumpさせるため。 -->
     <header> <!-- サイト共通のheaderエリア -->
       <div class="nav"> <!-- site 共通nav -->
+        <div class="main-toggle"> <!-- main-nav の帯 -->
+          <span class="main-toggle-label">
+            リネージュメモ<span class="arrow">▼</span>メニュー
+          </span>
+        </div>
         <div class="main-collapsible"> <!-- main-nav 折り畳み -->
           <ul class="nav-group"> <!-- (main nav) -->
             <li><a href="index.html" class="index">ホーム</a></li>
@@ -30,9 +35,9 @@
             <li><a href="site_updates.html" class="updt">変更歴</a></li>
           </ul> <!-- (main nav) -->
         </div> <!-- main-nav 折り畳み -->
-        <div class="main-toggle"> <!-- main-nav の帯 -->
-          <span class="main-toggle-label">
-            リネージュメモ<span class="arrow">▼</span>メニュー
+        <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
+          <span class="subnav-toggle-label">
+            パンドラ装身具<span class="arrow">▼</span>メニュー
           </span>
         </div>
         <div class="subnav-collapsible accessory-only"> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
@@ -47,15 +52,10 @@
             <li><a href="Lineage_accessory_ring__page2.html" title="集中/マナ/回復" class="ring2">リング2</a></li>
           </ul> <!-- (sub nav) accessory 共通nav -->
         </div> <!-- sub-nav 折り畳み（装身具ページだけ表示） -->
-        <div class="subnav-toggle accessory-only"> <!-- sub-nav の帯（装身具ページだけ表示） -->
-          <span class="subnav-toggle-label">
-            パンドラ装身具<span class="arrow">▼</span>メニュー
-          </span>
-        </div>
       </div> <!-- site 共通nav -->
-      <!--<h1 class="header-title">ぷりめらの</h1> index.htmlにのみ設置します。
-      <div class="header-description"> サイトのheader説明文エリア
-      </div> サイトのheader説明文エリア -->
+    <!--<h1 class="header-title">ぷりめらの</h1> index.htmlにのみ設置します。
+    <div class="header-description"> サイトのheader説明文エリア
+    </div> サイトのheader説明文エリア -->
     </header> <!-- サイト共通のheaderエリア -->
     <div class="page_body"> <!-- ページ本文エリア -->
   <!-- ページ冒頭に非表示で読み上げ対応の国際化・説明テキスト -->
@@ -105,27 +105,20 @@
       <div id="result"  class="skill_table_box">
       </div>
 <!-- 技術・魔法一覧の表示場所 ↑-->
-    </div> <!-- フッター以外の高さ管理するラッパーの終わり -->
+    </div> <!-- page_body フッター以外の高さ管理するラッパーの終わり -->
 <!-- 脚注・権利表記 -->
     <footer><!-- サイト共通のフッター -->
-      <div class="footer-toggle" data-target="footer" data-class="open">
-        <span class="footer-toggle-label">
-          copyright… <span class="arrow">▼</span>
-        </span>
-      </div>
       <div class="footer-collapsible"> <!-- 展開表示 -->
-        <div class="footer-nav">
-          <ul class="footer-nav-group">
-            <li>
-              <a href="https://x.com/AsamonPrimera" aria-label="当サイトの X（旧Twitter）公式連絡先"><img src="./picture/icons/X_icon.png" width="16" height="16" alt=""></a>
-            </li>
-          </ul>
-        </div> <!-- class="footer-nav"の終わり -->
         <div class="footer-text">
           当サイトで使用されているリネージュの画像・BGM及びその他の表現物の権利は下記のとおり権利者に帰属します：<br>
           Lineage and Lineage Eternal Life are registered trademarks of NCsoft Corporation. 1998-2011 Copyright NCsoft Corporation.<br>
           NC Japan K.K. was granted by NCsoft Corporation the right to publish, distribute, and transmit Lineage Eternal Life in Japan. All Rights Reserved.
         </div>
+      </div>
+      <div class="footer-toggle" data-target="footer" data-class="open"> <!-- 折畳み表示 -->
+        <span class="footer-toggle-label">
+          copyright… <span class="arrow">▼</span>
+        </span>
       </div>
     </footer><!-- サイト共通のフッター -->
 <!-- ページ上部にスクロールするボタン -->

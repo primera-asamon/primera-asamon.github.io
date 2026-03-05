@@ -169,17 +169,17 @@
 
     /* 800px 以上では */
     @media (min-width: 800px) {
-    /* 折りたたまない */
-    .main-collapsible,
-    .subnav-collapsible {
-        display: block;
-        margin-left:2px;
-    }
-    /* メニューバーなし */
-    .main-toggle,
-    .subnav-toggle.accessory-only {
-        display: none;
-    }
+        /* 折りたたまない */
+        .main-collapsible,
+        .subnav-collapsible {
+            display: block;
+            margin-left:2px;
+        }
+        /* メニューバーなし */
+        .main-toggle,
+        .subnav-toggle.accessory-only {
+            display: none;
+        }
     }
 
     /* ナビゲーション */
@@ -248,6 +248,7 @@
     body.etc   .nav-group a.etc,
     body.tool  .nav-group a.tool,
     body.updt  .nav-group a.updt {
+        background-color:#fff;
         border-bottom: #333 solid 2px;
         color: #999;
     }
