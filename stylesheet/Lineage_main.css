@@ -8,7 +8,7 @@
       padding: 0px 4px 0px 4px;
       display: flex;
       flex-direction: column;
-      background: #fff;
+      background: #fffcfa;
       color: #444;
       font-size: 14px;
       font-family: "UD デジタル 教科書体 N",
@@ -175,7 +175,7 @@
     .nav,
     .nav-group_tools {
         z-index: 100;
-        padding: 4px 0;
+        padding: 0;
         width: 100%;
         background-color: #fff;
         text-align: center;
@@ -234,7 +234,7 @@
     body.skill .nav-group a.skill,
     body.acce  .nav-group a.acce,
     body.kanji .nav-group a.kanji,
-    body.etc   .nav-group a.etc,
+    body.others   .nav-group a.others,
     body.tool  .nav-group a.tool,
     body.updt  .nav-group a.updt {
         background-color:#fff;
@@ -746,7 +746,7 @@ thead.sticky th {
     justify-content: space-between;
     width: auto;
     text-align: left;
-    margin: 12px 0 0 4px;
+    margin: 12px 20px 0 4px; /* right:20px=スクロールバー＋tableborder */
     font-size: 1em;
   }
   /* テーブル前リード文 */
@@ -818,4 +818,29 @@ thead.sticky th {
 
 .article {
   list-style: none;
+}
+
+/* index.html h3 表示形式 */
+.item_container {
+  display: flex;
+  align-items: center;
+}
+
+.left_text {
+  width: 5em;        /* ← ラベルの幅を揃える（日本語は em が安定） */
+  text-align: right;
+}
+/* 800px 以上では */
+@media (min-width: 800px) {
+.left_text {
+  width: 8em;        /* ← ラベルの幅を揃える（日本語は em が安定） */
+}
+}
+.separator {
+  width: 20px;       /* ← 中央の空隙を固定 */
+}
+
+.right_text {
+  flex: 1;           /* ← 残りを全部使う */
+  text-align: left;
 }

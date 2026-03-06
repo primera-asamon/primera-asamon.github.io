@@ -1,7 +1,10 @@
 /* accessory table(acce) */
 
   /* html,body の規定は無用。種制御はLinage_main.cssに移管 */
-
+  /* ページ全体色のみ解禁 */
+body {
+  background-color:#fdf9fb;
+}
   /* page_body の規定は共通css(Linage_main.css)に移管 */
 
   /* header の規定は共通css(Linage_main.css)に移管 */
@@ -135,8 +138,8 @@ h2 {
       margin: 2px;
       line-height: 30px;
       background: #5c430d;
-      background-image: linear-gradient(90deg,  #8f5940,#472d2d,#2c101c,#3f323e, #ffffff);
-      color: #fff;
+      background-image: linear-gradient(90deg,  #8f5940,#472d2d,#2c101c,#3f323e, #fdf9fb);
+      color: #fdf9fb;
       text-align: center;
       font-weight: bold;
       font-size: 1em;
@@ -195,7 +198,7 @@ h2 {
     body.brace .nav-group_acce a.brace,
     body.ring1 .nav-group_acce a.ring1,
     body.ring2 .nav-group_acce a.ring2 {
-        background-color:#fff;
+        background-color:#fdf9fb;
         border-bottom: #86f solid 2px;
         color: #97f;
     }
