@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ぷりめらの</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="Lineage,リネージュ,リネージュリマスター">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+    #spiralSvg {
+      width: 100%;
+      height: 75vh; /* ← 画面高さの75% */
+      display: block;
+    }
+  </style>
+  <body>
+    <div id="tooltip" style="
+      position:absolute;
+      background:#fff;
+      border:1px solid #888;
+      padding:4px 8px;
+      font-size:12px;
+      pointer-events:none;
+      display:none;
+      white-space:nowrap;
+      border-radius:4px;
+      box-shadow:0 2px 4px rgba(0,0,0,0.2);
+    ">
+    </div>
+    <svg id="spiralSvg"></svg>
+  </body>
+  <script>
+    // ============================================================
+//  Spiral Event Bands Renderer
+//  Makoto仕様：360°=365日、1ヶ月=30°、31日は30日扱い
+//  2月29〜31日は角度同一・半径方向延長
+//  4年スパイラル、帯幅20%、最大5スロット
+// ============================================================
+
+// -----------------------------
+// 1. データ
+// -----------------------------
+const rawData = `
+2025-02-05;2025-04-02;勇猛のメダル
+2025-04-02;2025-06-25;勇猛のメダル
+2025-05-07;2025-05-28;アデン大陸に眠る宝
+2025-06-25;2025-09-17;勇猛のメダル
+2025-07-23;2025-09-10;シグネチャーポイント
+2025-07-23;2025-09-10;ステータスリニューアル体験キャンペーン
+2025-08-13;2025-09-10;常夏のスイカ狂騒曲
+2025-09-17;2025-12-24;勇猛のメダル
+2025-12-17;2026-02-04;シグネチャーポイント
+2025-12-24;2026-03-18;勇猛のメダル
+2026-02-19;2026-03-04;キングアマンの倉庫大放出
+2026-03-18;2026-06-17;勇猛のメダル
+`.trim();
+
+// -----------------------------
+// 2. パース
+// -----------------------------
+function parseData(raw) {
+  return raw.split("\n").map(line => {
+    const [s, e, label] = line.split(";");
+    return {
+      start: new Date(s),
+      end: new Date(e),
+      label
+    };
+  });
+}
+
+const events = parseData(rawData);
+
+// -----------------------------
+// 3. 角度計算（Makoto仕様）
+// -----------------------------
+function dateToAngle(date) {
+  const month = date.getMonth() + 1; // 1-12
+  const day = date.getDate();        // 1-31
+
+  const baseMonthAngle = (month - 1) * 30; // 1ヶ月=30°
+  const d = Math.min(day, 30);             // 31日は30日扱い
+  const dayAngle = (d - 1) * 1;            // 1日=1°
+
+  return baseMonthAngle + dayAngle;
+}
+
+// -----------------------------
+// 4. 年オフセット（今年=0）
+// -----------------------------
+const CURRENT_YEAR = 2026;
+
+function yearOffset(date) {
+  return CURRENT_YEAR - date.getFullYear();
+}
+
+// -----------------------------
+// 5. スロット割り当て（最大5）
+// -----------------------------
+function assignSlots(events) {
+  // 開始日順にソート
+  events.sort((a, b) => a.start - b.start);
+
+  const slots = []; // 各スロットの「最後の終了日」
+
+  events.forEach(ev => {
+    let assigned = false;
+
+    for (let i = 0; i < 5; i++) {
+      if (!slots[i] || slots[i] < ev.start) {
+        ev.slot = i;
+        slots[i] = ev.end;
+        assigned = true;
+        break;
+      }
+    }
+
+    if (!assigned) ev.slot = 4; // 念のため
+  });
+
+  return events;
+}
+
+assignSlots(events);
+
+// -----------------------------
+// 6. 半径計算（4年スパイラル）
+// -----------------------------
+const centerX = 300;
+const centerY = 300;
+
+const yearStep = 40;     // 年ごとの半径差
+const bandWidth = 30;    // 1年の帯幅
+const slotWidth = bandWidth * 0.2; // 20%
+
+function spiralRadius(date, slot) {
+  const yOff = yearOffset(date);
+  const base = 200 - yOff * yearStep; // 外周=今年
+
+  // スロット位置（0〜4）
+  const slotCenter = base + (slot - 2) * slotWidth;
+
+  // 2月29〜31日は半径方向に延長
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  let leapExtend = 0;
+  if (m === 2 && d > 28) {
+    leapExtend = (d - 28) * 1.5; // px
+  }
+
+  return slotCenter + leapExtend;
+}
+
+// -----------------------------
+// 7. 極座標 → XY
+// -----------------------------
+function polarToXY(r, angleDeg) {
+  const rad = (angleDeg - 90) * Math.PI / 180; // 上を0°にする
+  return {
+    x: centerX + r * Math.cos(rad),
+    y: centerY + r * Math.sin(rad)
+  };
+}
+
+// -----------------------------
+// 8. イベント帯パス生成
+// -----------------------------
+function buildEventPath(ev) {
+  const a1 = dateToAngle(ev.start);
+  const a2 = dateToAngle(ev.end);
+
+  const rCenter = spiralRadius(ev.start, ev.slot);
+  const rInner = rCenter - slotWidth / 2;
+  const rOuter = rCenter + slotWidth / 2;
+
+  const p1 = polarToXY(rInner, a1);
+  const p2 = polarToXY(rInner, a2);
+  const p3 = polarToXY(rOuter, a2);
+  const p4 = polarToXY(rOuter, a1);
+
+  return `
+    M ${p1.x},${p1.y}
+    A ${rInner} ${rInner} 0 0 1 ${p2.x},${p2.y}
+    L ${p3.x},${p3.y}
+    A ${rOuter} ${rOuter} 0 0 0 ${p4.x},${p4.y}
+    Z
+  `;
+}
+
+// -----------------------------
+// 月ごとのガイドライン（30°放射線）
+// -----------------------------
+function drawMonthGuidelines(svg) {
+  for (let m = 0; m < 12; m++) {
+    const angle = m * 30;
+    const p1 = polarToXY(50, angle);   // 内側
+    const p2 = polarToXY(260, angle);  // 外側（年帯の外周より少し外）
+
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", p1.x);
+    line.setAttribute("y1", p1.y);
+    line.setAttribute("x2", p2.x);
+    line.setAttribute("y2", p2.y);
+    line.setAttribute("stroke", "#ccc");
+    line.setAttribute("stroke-width", "1");
+    line.setAttribute("stroke-dasharray", "4 4");
+
+    svg.appendChild(line);
+  }
+}
+
+// -----------------------------
+// ツールチップ
+// -----------------------------
+const tooltip = document.getElementById("tooltip");
+
+function showTooltip(ev, x, y) {
+  tooltip.style.left = (x + 10) + "px";
+  tooltip.style.top = (y + 10) + "px";
+  tooltip.style.display = "block";
+
+  tooltip.innerHTML = `
+    <div><strong>${ev.label}</strong></div>
+    <div>${ev.start.toISOString().slice(0,10)} → ${ev.end.toISOString().slice(0,10)}</div>
+    <div>スロット: ${ev.slot}</div>
+  `;
+}
+
+function hideTooltip() {
+  tooltip.style.display = "none";
+}
+// -----------------------------
+// 9. SVG描画
+// -----------------------------
+function render() {
+  const svg = document.getElementById("spiralSvg");
+  svg.setAttribute("viewBox", "0 0 600 600");
+
+  drawMonthGuidelines(svg);  // ← 月ガイドライン
+
+  // イベント帯
+  events.forEach(ev => {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", buildEventPath(ev));
+    path.setAttribute("fill", "rgba(255,100,100,0.5)");
+    path.setAttribute("stroke", "red");
+    path.setAttribute("stroke-width", "1");
+    path.setAttribute("data-label", ev.label);
+
+    // ▼ ツールチップ（ここが正しい位置）
+    path.addEventListener("mousemove", (e) => {
+      showTooltip(ev, e.clientX, e.clientY);
+    });
+
+    path.addEventListener("mouseleave", hideTooltip);
+
+    svg.appendChild(path);
+  });
+}
+
+render();
+  </script>
+</html> 
