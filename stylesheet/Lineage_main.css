@@ -129,7 +129,7 @@
 /*        max-height: 10000px;
 */
         display: block; /* 折り畳み展開の切り替えはdisplayで行う */
-        margin-left:2px;
+        padding-left:12px;
     }
 
     .main-toggle .arrow,
