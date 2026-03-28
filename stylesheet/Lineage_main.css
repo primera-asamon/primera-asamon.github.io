@@ -660,6 +660,10 @@ thead.sticky th {
         min-width:38px; /* 列幅の安定化 */
     }
 
+    th.sentence {
+        min-width:120px;
+    }
+
 	td {
 		border-left: 1px solid #888;
 		border-right: 1px solid #888;
