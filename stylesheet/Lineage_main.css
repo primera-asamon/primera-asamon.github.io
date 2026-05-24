@@ -717,6 +717,13 @@ thead.sticky th {
     th.description {
         width: 26em;
     }
+    th.hunting_ground{
+        width: 11em;
+    }
+    th.monster_name{
+        width: 10em;
+        text-align: left;
+    }
 
     .smalltable td {
         border: 1px solid #cc0;
